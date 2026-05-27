@@ -1,0 +1,27 @@
+{
+  "name": "my-hey-doctor-ai-website",
+  "version": "3.0.0",
+  "description": "Advanced Multimodal AI Health Concierge - Heydoctor.ai",
+  "main": "index.html.html",
+  "scripts": {
+    "dev": "echo 'This is a static HTML website. Open index.html.html in a browser or use a local server.'",
+    "vercel-build": "echo 'No build step required for static HTML'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/X-Studios-ops/My-Hey-Doctor.ai-website.git"
+  },
+  "keywords": [
+    "health",
+    "ai",
+    "medical",
+    "concierge",
+    "diagnostics"
+  ],
+  "author": "Pratyush",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/X-Studios-ops/My-Hey-Doctor.ai-website/issues"
+  },
+  "homepage": "https://github.com/X-Studios-ops/My-Hey-Doctor.ai-website#readme"
+}
