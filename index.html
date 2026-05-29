@@ -1,4 +1,200 @@
-<div class="crisis-banner">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heydoctor.ai Ecosystem</title>
+    <style>
+        /* Modern Dark Premium Theme CSS */
+        :root {
+            --bg-color: #0d0f12;
+            --card-bg: #161a22;
+            --accent-color: #00ff87;
+            --text-color: #e2e8f0;
+            --text-muted: #8a99ad;
+            --border-color: #242b35;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .crisis-banner {
+            background: linear-gradient(90deg, #7a1515, #b91c1c);
+            color: #fff;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            border-bottom: 2px solid #ef4444;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.2);
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                margin: 20px auto;
+            }
+        }
+
+        .developer-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .dev-badge {
+            background: rgba(0, 255, 135, 0.1);
+            color: var(--accent-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(0, 255, 135, 0.2);
+        }
+
+        .developer-card h2 {
+            font-size: 2rem;
+            margin: 15px 0 5px 0;
+            color: #fff;
+        }
+
+        .title {
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin-top: 0;
+            font-weight: 500;
+        }
+
+        .bio {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .content-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .content-box h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            color: #fff;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .blog-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(0, 255, 135, 0.3);
+        }
+
+        .blog-card h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .blog-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .chat-wrapper {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+        }
+
+        .chat-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        }
+
+        .chat-header {
+            background: #1c212c;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .status-online {
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            background: #090b0e;
+        }
+
+        .footer b {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="crisis-banner">
         🚨 <b>CRITICAL DISPATCH PROTOCOL:</b> If you are facing life-threatening medical events (e.g., crushing chest pressure, severe dyspnea), abort digital screening immediately. Dial <b>102</b> or <b>112</b> instantly.
     </div>
 
@@ -43,8 +239,9 @@
         <p style="font-family: monospace; color: #777; margin-top: 5px;">Core Version: 3.0.0-PRO</p>
     </footer>
 
-    <!-- AdSterra Social Bar Ad Code Below (Safe & Tested) -->
+    <!-- AdSterra Social Bar Ad Code (Error-free placement) -->
     <script src="https://pl29578563.effectivecpmnetwork.com/68/17/9b/68179be1efa04653017b5f3418b088e0.js"></script>
 
 </body>
 </html>
+
