@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heydoctor.ai | Advanced AI Health Concierge</title>
+    
+    <!-- YAHAN TERA FAVICON AUR SITE NAME ADD KIYA HAI (Vercel hatane ke liye) -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta property="og:site_name" content="Hey Doctor.ai">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
@@ -49,6 +54,18 @@
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid rgba(30, 189, 116, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-logo-img {
+            height: 45px;
+            width: auto;
+            border-radius: 8px; /* Thoda curve dene ke liye */
         }
 
         .logo {
@@ -256,7 +273,12 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">Heydoctor<span>.ai</span></div>
+        <!-- YAHAN NAVBAR MEIN LOGO IMAGE ADD KI HAI -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Heydoctor AI Logo" class="navbar-logo-img">
+            <div class="logo">Heydoctor<span>.ai</span></div>
+        </div>
+        
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Founder</a></li>
