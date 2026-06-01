@@ -25,7 +25,20 @@
     <meta name="msvalidate.01" content="9641647AAC080917041D66007DCA9920" />
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+window.OneSignalDeferred = window.OneSignalDeferred || [];
+OneSignalDeferred.push(async function(OneSignal) {
+  await OneSignal.init({
+    appId: "556c36ff-11ec-4d55-b73d-2fd933b475ca",
+    notifyButton: {
+      enable: true,
+    }
+  });
+});
+</script>
+
+<style>
     <style>
         :root {
             --bg-color: #0b1510;
