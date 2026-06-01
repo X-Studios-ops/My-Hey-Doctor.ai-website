@@ -1,20 +1,14 @@
 {
   "name": "Heydoctor.ai",
   "short_name": "Heydoctor",
-  "description": "Advanced AI Health Concierge",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0b1510",
   "theme_color": "#1ebd74",
   "icons": [
     {
-      "src": "logo.png",
+      "src": "/logo.png",
       "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "logo.png",
-      "sizes": "512x512",
       "type": "image/png"
     }
   ]
