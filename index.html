@@ -358,6 +358,12 @@
     <div class="adsterra-layer-fix">
         <script src="https://pl29578563.effectivecpmnetwork.com/68/17/9b/68179be1efa04653017b5f3418b088e0.js"></script>
     </div>
-
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(() => console.log("PWA Service Worker Registered"))
+      .catch((err) => console.log("PWA Registration Failed:", err));
+  }
+</script>
 </body>
 </html>
