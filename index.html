@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heydoctor.ai | Advanced AI Health Concierge</title>
     
-    <link rel="manifest" href='data:application/json,{"name":"Heydoctor.ai","short_name":"Heydoctor","start_url":"/","display":"standalone","background_color":"#0b1510","theme_color":"#1ebd74","icons":[{"src":"logo.png","sizes":"192x192","type":"image/png"}]}'>
+   <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1ebd74">
     
     <!-- YAHAN TERA FAVICON AUR SITE NAME ADD KIYA HAI (Vercel hatane ke liye) -->
@@ -364,6 +364,36 @@
       .then(() => console.log("PWA Service Worker Registered"))
       .catch((err) => console.log("PWA Registration Failed:", err));
   }
+</script>
+    
+<script>
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  const btn = document.createElement("button");
+  btn.innerText = "📱 Install HeyDoctor";
+  btn.style.position = "fixed";
+  btn.style.bottom = "20px";
+  btn.style.right = "20px";
+  btn.style.padding = "12px 20px";
+  btn.style.background = "#1ebd74";
+  btn.style.color = "#fff";
+  btn.style.border = "none";
+  btn.style.borderRadius = "10px";
+  btn.style.cursor = "pointer";
+  btn.style.zIndex = "99999";
+
+  document.body.appendChild(btn);
+
+  btn.onclick = async () => {
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    btn.remove();
+  };
+});
 </script>
 </body>
 </html>
