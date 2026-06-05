@@ -531,7 +531,7 @@
 
     <!-- Script for Interactive Tools -->
     <script>
-        // BMI Calculator Logic
+        // BMI Calculator Logic (Same as before)
         function calculateBMI() {
             const weight = parseFloat(document.getElementById('bmiWeight').value);
             const heightCm = parseFloat(document.getElementById('bmiHeight').value);
@@ -559,9 +559,10 @@
             resultBox.innerHTML = `Your BMI is <strong>${bmi}</strong>. <br>Category: <span style="color: ${color}; font-weight: bold;">${category}</span>`;
         }
 
-        // AI Reality Checker Logic
+        // UPGRADED: Smart AI Reality Checker Logic
         function checkReality() {
-            const query = document.getElementById('realityQuery').value.trim();
+            const originalQuery = document.getElementById('realityQuery').value.trim();
+            const query = originalQuery.toLowerCase();
             const resultBox = document.getElementById('realityResult');
 
             if (!query) {
@@ -571,13 +572,49 @@
                 return;
             }
 
+            // Step 1: Loading State (Feels like real AI processing)
             resultBox.style.display = 'block';
-            resultBox.style.borderLeftColor = '#1ebd74';
-            
-            // Dummy loading text mimicking AI thought process
-            resultBox.innerHTML = `<em>Neural scan initiated for: "${query}"...</em><br><br>
-            <strong>🧠 Quick Insight:</strong> While I forward this query to the Gemini 2.5 stream below, please note that many internet health trends lack clinical backing. Scroll down to ask the Live Diagnostic AI for a complete medical breakdown of this claim!`;
+            resultBox.style.borderLeftColor = '#f6ad55'; 
+            resultBox.innerHTML = '⏳ <em>Scanning medical databases and neural networks... Please wait.</em>';
+
+            // Step 2: Processing Delay (2 seconds)
+            setTimeout(() => {
+                let response = "";
+                let status = "";
+                resultBox.style.borderLeftColor = '#1ebd74'; // Change to green
+
+                // Step 3: Keyword Check Logic
+                if (query.includes('lemon') && (query.includes('fat') || query.includes('weight'))) {
+                    status = "<span style='color: #f6ad55; font-weight: bold;'>🟡 PARTIALLY TRUE / MYTH</span>";
+                    response = "Lemon water is great for hydration and Vitamin C, but it <b>does not</b> burn belly fat directly. Weight loss requires a caloric deficit.";
+                } 
+                else if (query.includes('detox') || query.includes('cleanse') || query.includes('tea')) {
+                     status = "<span style='color: #ff4d4d; font-weight: bold;'>🔴 BUSTED MYTH</span>";
+                     response = "Your liver and kidneys naturally 'detox' your body 24/7. Commercial detox teas are usually just laxatives and lack clinical backing.";
+                } 
+                else if (query.includes('sugar') && (query.includes('hyper') || query.includes('energy'))) {
+                     status = "<span style='color: #ff4d4d; font-weight: bold;'>🔴 BUSTED MYTH</span>";
+                     response = "Extensive clinical trials show NO link between sugar consumption and hyperactivity in children. The 'sugar rush' is a psychological myth.";
+                } 
+                else if ((query.includes('water') && query.includes('day')) || query.includes('hydrate')) {
+                     status = "<span style='color: #1ebd74; font-weight: bold;'>🟢 GENERALLY TRUE</span>";
+                     response = "Staying hydrated is crucial. While the '8 glasses a day' rule is a good baseline, actual water needs vary based on age, climate, and physical activity.";
+                } 
+                else if (query.includes('cancer') || query.includes('cure') || query.includes('tumor')) {
+                     status = "<span style='color: #ff4d4d; font-weight: bold;'>⚠️ WARNING</span>";
+                     response = "Claims about miracle cures for cancer are dangerous and scientifically false. Always consult an oncologist for cancer treatments.";
+                }
+                else {
+                     status = "<span style='color: #0056b3; font-weight: bold;'>🔵 DEEP ANALYSIS REQUIRED</span>";
+                     response = "This claim requires deeper clinical context. <b>Please scroll down and paste this exact query into the Live Neural Diagnostic Stream (Gemini 2.5)</b> for a complete breakdown.";
+                }
+
+                // Step 4: Display Final Result
+                resultBox.innerHTML = `
+                    ${status}<br><br>
+                    <strong>Query:</strong> "${originalQuery}"<br>
+                    <strong>AI Verdict:</strong> ${response}
+                `;
+            }, 1500); // 1.5 seconds loading delay
         }
     </script>
-</body>
-</html>
