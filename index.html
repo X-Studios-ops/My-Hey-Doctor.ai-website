@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heydoctor.ai | Advanced AI Health Concierge</title>
     
-   <link rel="manifest" href="manifest.json">
+    <!-- SEO META TAGS (Indexing aur Search Ranking ke liye) -->
+    <meta name="description" content="Heydoctor.ai - Your Advanced AI Health Concierge. Access instant medical insights, BMI Calculator, and AI Reality Checker for fact-checking health myths.">
+    <meta name="keywords" content="Heydoctor AI, AI medical assistant, BMI Calculator, AI Reality Checker, health diagnostic tool, Pratyush AI">
+    <meta name="robots" content="index, follow">
+    
+    <title>Heydoctor.ai | Advanced AI Health Concierge & Tools</title>
+    
+    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1ebd74">
     
-    <!-- YAHAN TERA FAVICON AUR SITE NAME ADD KIYA HAI (Vercel hatane ke liye) -->
+    <!-- YAHAN TERA FAVICON AUR SITE NAME ADD KIYA HAI -->
     <link rel="icon" type="image/png" href="logo.png">
     <meta property="og:site_name" content="Hey Doctor.ai">
 
-    <!-- GOOGLE SCHEMA MARKUP: Vercel hatakar apna brand name dikhane ke liye -->
+    <!-- GOOGLE SCHEMA MARKUP -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -25,19 +31,19 @@
     <meta name="msvalidate.01" content="9641647AAC080917041D66007DCA9920" />
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "556c36ff-11ec-4d55-b73d-2fd933b475ca",
-      safari_web_id: "web.onesignal.auto.5c56364e-78e6-4c38-97c1-5b5f4d3e0076",
-      notifyButton: {
-        enable: true,
-      },
-    });
-  });
-</script>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "556c36ff-11ec-4d55-b73d-2fd933b475ca",
+          safari_web_id: "web.onesignal.auto.5c56364e-78e6-4c38-97c1-5b5f4d3e0076",
+          notifyButton: {
+            enable: true,
+          },
+        });
+      });
+    </script>
 
     <style>
         :root {
@@ -63,7 +69,6 @@
             overflow-x: hidden;
         }
 
-        /* AdSterra Layer Fix Wrapper */
         .adsterra-layer-fix {
             position: relative;
             z-index: 99999 !important;
@@ -93,7 +98,7 @@
         .navbar-logo-img {
             height: 45px;
             width: auto;
-            border-radius: 8px; /* Thoda curve dene ke liye */
+            border-radius: 8px;
         }
 
         .logo {
@@ -252,6 +257,91 @@
         .blog-card h3 { color: var(--accent-green); margin-bottom: 10px; font-size: 16px; }
         .blog-card p { color: var(--text-muted); font-size: 13px; }
 
+        /* Health Tools Section CSS */
+        .tools-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .tool-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(30, 189, 116, 0.2);
+            padding: 30px;
+            border-radius: 16px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-green);
+        }
+
+        .tool-card h3 {
+            color: var(--text-main);
+            margin-bottom: 10px;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tool-desc {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .tool-input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .tool-input:focus {
+            border-color: var(--accent-green);
+        }
+
+        .tool-btn {
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .tool-btn:hover {
+            opacity: 0.9;
+        }
+
+        .tool-result {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--text-main);
+            display: none;
+            border-left: 3px solid var(--accent-green);
+        }
+
         /* Chat Section */
         .chat-wrapper {
             max-width: 1200px;
@@ -292,6 +382,7 @@
         @media (max-width: 768px) {
             .main-container { grid-template-columns: 1fr; }
             .blog-grid { grid-template-columns: 1fr; }
+            .tools-grid { grid-template-columns: 1fr; }
             .hero-content h1 { font-size: 32px; }
             .navbar { padding: 15px 5%; }
             .nav-links { display: none; }
@@ -301,7 +392,6 @@
 <body>
 
     <nav class="navbar">
-        <!-- YAHAN NAVBAR MEIN LOGO IMAGE ADD KI HAI -->
         <div class="logo-container">
             <img src="logo.png" alt="Heydoctor AI Logo" class="navbar-logo-img">
             <div class="logo">Heydoctor<span>.ai</span></div>
@@ -309,7 +399,8 @@
         
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Founder</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#health-tools">Tools</a></li>
             <li><a href="#chat-section" class="btn-chat">Launch AI</a></li>
         </ul>
     </nav>
@@ -349,6 +440,36 @@
         </div>
     </section>
 
+    <!-- NEW SECTION: Health Tools (SEO Indexed Structure) -->
+    <section id="health-tools" class="tools-section">
+        <h2 style="text-align: center; margin-bottom: 30px; font-size: 28px;">Interactive <span class="gradient-text">Health Tools</span></h2>
+        
+        <div class="tools-grid">
+            <!-- Tool 1: BMI Calculator -->
+            <div class="tool-card">
+                <h3>⚖️ BMI Calculator</h3>
+                <p class="tool-desc">Quickly evaluate your Body Mass Index to stay on track with your fitness goals.</p>
+                
+                <input type="number" id="bmiWeight" class="tool-input" placeholder="Weight in kg (e.g., 70)">
+                <input type="number" id="bmiHeight" class="tool-input" placeholder="Height in cm (e.g., 175)">
+                
+                <button onclick="calculateBMI()" class="tool-btn">Calculate BMI</button>
+                <div id="bmiResult" class="tool-result"></div>
+            </div>
+
+            <!-- Tool 2: AI Reality Checker -->
+            <div class="tool-card">
+                <h3>🔍 AI Reality Checker</h3>
+                <p class="tool-desc">Separate fact from fiction. Enter a health trend or claim to verify its scientific reality.</p>
+                
+                <input type="text" id="realityQuery" class="tool-input" placeholder="e.g., Does hot lemon water burn belly fat?">
+                
+                <button onclick="checkReality()" class="tool-btn">Analyze Claim</button>
+                <div id="realityResult" class="tool-result"></div>
+            </div>
+        </div>
+    </section>
+
     <section id="chat-section" class="chat-wrapper">
         <div class="chat-container">
             <div class="chat-header">
@@ -371,42 +492,92 @@
     <div class="adsterra-layer-fix">
         <script src="https://pl29578563.effectivecpmnetwork.com/68/17/9b/68179be1efa04653017b5f3418b088e0.js"></script>
     </div>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-      .then(() => console.log("PWA Service Worker Registered"))
-      .catch((err) => console.log("PWA Registration Failed:", err));
-  }
-</script>
-    
-<script>
-let deferredPrompt;
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
+    <!-- Script for PWA -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+          .then(() => console.log("PWA Service Worker Registered"))
+          .catch((err) => console.log("PWA Registration Failed:", err));
+      }
 
-  const btn = document.createElement("button");
-  btn.innerText = "📱 Install HeyDoctor";
-  btn.style.position = "fixed";
-  btn.style.bottom = "20px";
-  btn.style.right = "20px";
-  btn.style.padding = "12px 20px";
-  btn.style.background = "#1ebd74";
-  btn.style.color = "#fff";
-  btn.style.border = "none";
-  btn.style.borderRadius = "10px";
-  btn.style.cursor = "pointer";
-  btn.style.zIndex = "99999";
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
 
-  document.body.appendChild(btn);
+        const btn = document.createElement("button");
+        btn.innerText = "📱 Install HeyDoctor";
+        btn.style.position = "fixed";
+        btn.style.bottom = "20px";
+        btn.style.right = "20px";
+        btn.style.padding = "12px 20px";
+        btn.style.background = "#1ebd74";
+        btn.style.color = "#fff";
+        btn.style.border = "none";
+        btn.style.borderRadius = "10px";
+        btn.style.cursor = "pointer";
+        btn.style.zIndex = "99999";
 
-  btn.onclick = async () => {
-    deferredPrompt.prompt();
-    await deferredPrompt.userChoice;
-    btn.remove();
-  };
-});
-</script>
+        document.body.appendChild(btn);
+
+        btn.onclick = async () => {
+          deferredPrompt.prompt();
+          await deferredPrompt.userChoice;
+          btn.remove();
+        };
+      });
+    </script>
+
+    <!-- Script for Interactive Tools -->
+    <script>
+        // BMI Calculator Logic
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('bmiWeight').value);
+            const heightCm = parseFloat(document.getElementById('bmiHeight').value);
+            const resultBox = document.getElementById('bmiResult');
+
+            if (!weight || !heightCm || weight <= 0 || heightCm <= 0) {
+                resultBox.style.display = 'block';
+                resultBox.style.borderLeftColor = '#ff4d4d';
+                resultBox.innerHTML = '⚠️ Please enter valid weight and height.';
+                return;
+            }
+
+            const heightM = heightCm / 100;
+            const bmi = (weight / (heightM * heightM)).toFixed(1);
+            let category = '';
+            let color = '';
+
+            if (bmi < 18.5) { category = 'Underweight'; color = '#f6ad55'; }
+            else if (bmi >= 18.5 && bmi < 24.9) { category = 'Normal Weight'; color = '#1ebd74'; }
+            else if (bmi >= 25 && bmi < 29.9) { category = 'Overweight'; color = '#f6ad55'; }
+            else { category = 'Obese'; color = '#ff4d4d'; }
+
+            resultBox.style.display = 'block';
+            resultBox.style.borderLeftColor = color;
+            resultBox.innerHTML = `Your BMI is <strong>${bmi}</strong>. <br>Category: <span style="color: ${color}; font-weight: bold;">${category}</span>`;
+        }
+
+        // AI Reality Checker Logic
+        function checkReality() {
+            const query = document.getElementById('realityQuery').value.trim();
+            const resultBox = document.getElementById('realityResult');
+
+            if (!query) {
+                resultBox.style.display = 'block';
+                resultBox.style.borderLeftColor = '#ff4d4d';
+                resultBox.innerHTML = '⚠️ Please enter a health claim to analyze.';
+                return;
+            }
+
+            resultBox.style.display = 'block';
+            resultBox.style.borderLeftColor = '#1ebd74';
+            
+            // Dummy loading text mimicking AI thought process
+            resultBox.innerHTML = `<em>Neural scan initiated for: "${query}"...</em><br><br>
+            <strong>🧠 Quick Insight:</strong> While I forward this query to the Gemini 2.5 stream below, please note that many internet health trends lack clinical backing. Scroll down to ask the Live Diagnostic AI for a complete medical breakdown of this claim!`;
+        }
+    </script>
 </body>
 </html>
