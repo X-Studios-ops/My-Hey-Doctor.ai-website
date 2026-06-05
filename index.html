@@ -559,37 +559,49 @@
             resultBox.innerHTML = `Your BMI is <strong>${bmi}</strong>. <br>Category: <span style="color: ${color}; font-weight: bold;">${category}</span>`;
         }
 
-        // Tool 2: Random Medical Fact Generator Logic
-      const medicalFacts = [
-          "Your blood vessels could circle the globe. If laid out, an adult's blood vessels would be about 100,000 miles long!",
-          "The cornea is the only part of the body with no blood supply. It gets oxygen directly from the air.",
-          "Your stomach acid is strong enough to dissolve stainless steel razor blades.",
-          "Your heart pumps about 2,000 gallons of blood every day and beats around 100,000 times a day.",
-          "The human body contains enough fat to make seven bars of soap.",
-          "Fingernails grow nearly four times faster than toenails.",
-          "The masseter (jaw muscle) is the strongest muscle in the human body based on its weight.",
-          "Your liver is the only human organ that can completely regenerate itself even if 75% of it is removed.",
-          "A human sneeze can travel at a speed of up to 100 miles per hour.",
-          "Your brain generates enough electricity to power a small light bulb (about 20 watts)."
-      ];
+        <!-- AI Medical Fact Generator -->
+<div class="tool-card">
+    <h3>🧠 AI Medical Fact Generator</h3>
+    <p>Discover fascinating medical facts instantly.</p>
 
-      function generateFact() {
-          const resultBox = document.getElementById('factResult');
-          
-          // Loading effect for AI feel
-          resultBox.style.display = 'block';
-          resultBox.style.borderLeftColor = '#f6ad55'; 
-          resultBox.innerHTML = '⏳ <em>Extracting fact from neural database...</em>';
+    <button onclick="generateFact()" class="tool-btn">
+        Generate Fact
+    </button>
 
-          // Show random fact after a short delay
-          setTimeout(() => {
-              const randomIndex = Math.floor(Math.random() * medicalFacts.length);
-              const selectedFact = medicalFacts[randomIndex];
+    <div id="factResult" class="result-box" style="display:none;"></div>
+</div>
 
-              resultBox.style.borderLeftColor = '#1ebd74'; 
-              resultBox.innerHTML = `<strong>💡 Did you know?</strong><br><br>${selectedFact}`;
-          }, 600); // 0.6 seconds delay
-      }
-    </script>
-</body>
-</html>
+<script>
+const medicalFacts = [
+    "Your blood vessels could circle the Earth more than twice if laid end to end.",
+    "The human brain generates enough electricity to power a small light bulb.",
+    "Your heart beats around 100,000 times every day.",
+    "The cornea is the only part of the body with no blood supply.",
+    "Your stomach gets a new lining every few days.",
+    "The human body contains enough iron to make a small nail.",
+    "A sneeze can travel at speeds over 100 miles per hour.",
+    "Your skin is the body's largest organ.",
+    "Bones are about five times stronger than steel of the same density.",
+    "The liver can regenerate itself even after losing a large portion.",
+    "An adult body has about 206 bones.",
+    "You blink around 15–20 times per minute.",
+    "Your kidneys filter about 50 gallons of blood every day.",
+    "The human nose can detect over 1 trillion different smells.",
+    "Fingerprints are unique, even among identical twins."
+];
+
+function generateFact() {
+    const resultBox = document.getElementById("factResult");
+
+    resultBox.style.display = "block";
+    resultBox.innerHTML = "🤖 Loading medical fact...";
+
+    setTimeout(() => {
+        const randomFact =
+            medicalFacts[Math.floor(Math.random() * medicalFacts.length)];
+
+        resultBox.innerHTML =
+            `<strong>💡 Medical Fact:</strong><br>${randomFact}`;
+    }, 600);
+}
+</script>
