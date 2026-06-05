@@ -559,62 +559,37 @@
             resultBox.innerHTML = `Your BMI is <strong>${bmi}</strong>. <br>Category: <span style="color: ${color}; font-weight: bold;">${category}</span>`;
         }
 
-        // UPGRADED: Smart AI Reality Checker Logic
-        function checkReality() {
-            const originalQuery = document.getElementById('realityQuery').value.trim();
-            const query = originalQuery.toLowerCase();
-            const resultBox = document.getElementById('realityResult');
+        // Tool 2: Random Medical Fact Generator Logic
+      const medicalFacts = [
+          "Your blood vessels could circle the globe. If laid out, an adult's blood vessels would be about 100,000 miles long!",
+          "The cornea is the only part of the body with no blood supply. It gets oxygen directly from the air.",
+          "Your stomach acid is strong enough to dissolve stainless steel razor blades.",
+          "Your heart pumps about 2,000 gallons of blood every day and beats around 100,000 times a day.",
+          "The human body contains enough fat to make seven bars of soap.",
+          "Fingernails grow nearly four times faster than toenails.",
+          "The masseter (jaw muscle) is the strongest muscle in the human body based on its weight.",
+          "Your liver is the only human organ that can completely regenerate itself even if 75% of it is removed.",
+          "A human sneeze can travel at a speed of up to 100 miles per hour.",
+          "Your brain generates enough electricity to power a small light bulb (about 20 watts)."
+      ];
 
-            if (!query) {
-                resultBox.style.display = 'block';
-                resultBox.style.borderLeftColor = '#ff4d4d';
-                resultBox.innerHTML = '⚠️ Please enter a health claim to analyze.';
-                return;
-            }
+      function generateFact() {
+          const resultBox = document.getElementById('factResult');
+          
+          // Loading effect for AI feel
+          resultBox.style.display = 'block';
+          resultBox.style.borderLeftColor = '#f6ad55'; 
+          resultBox.innerHTML = '⏳ <em>Extracting fact from neural database...</em>';
 
-            // Step 1: Loading State (Feels like real AI processing)
-            resultBox.style.display = 'block';
-            resultBox.style.borderLeftColor = '#f6ad55'; 
-            resultBox.innerHTML = '⏳ <em>Scanning medical databases and neural networks... Please wait.</em>';
+          // Show random fact after a short delay
+          setTimeout(() => {
+              const randomIndex = Math.floor(Math.random() * medicalFacts.length);
+              const selectedFact = medicalFacts[randomIndex];
 
-            // Step 2: Processing Delay (2 seconds)
-            setTimeout(() => {
-                let response = "";
-                let status = "";
-                resultBox.style.borderLeftColor = '#1ebd74'; // Change to green
-
-                // Step 3: Keyword Check Logic
-                if (query.includes('lemon') && (query.includes('fat') || query.includes('weight'))) {
-                    status = "<span style='color: #f6ad55; font-weight: bold;'>🟡 PARTIALLY TRUE / MYTH</span>";
-                    response = "Lemon water is great for hydration and Vitamin C, but it <b>does not</b> burn belly fat directly. Weight loss requires a caloric deficit.";
-                } 
-                else if (query.includes('detox') || query.includes('cleanse') || query.includes('tea')) {
-                     status = "<span style='color: #ff4d4d; font-weight: bold;'>🔴 BUSTED MYTH</span>";
-                     response = "Your liver and kidneys naturally 'detox' your body 24/7. Commercial detox teas are usually just laxatives and lack clinical backing.";
-                } 
-                else if (query.includes('sugar') && (query.includes('hyper') || query.includes('energy'))) {
-                     status = "<span style='color: #ff4d4d; font-weight: bold;'>🔴 BUSTED MYTH</span>";
-                     response = "Extensive clinical trials show NO link between sugar consumption and hyperactivity in children. The 'sugar rush' is a psychological myth.";
-                } 
-                else if ((query.includes('water') && query.includes('day')) || query.includes('hydrate')) {
-                     status = "<span style='color: #1ebd74; font-weight: bold;'>🟢 GENERALLY TRUE</span>";
-                     response = "Staying hydrated is crucial. While the '8 glasses a day' rule is a good baseline, actual water needs vary based on age, climate, and physical activity.";
-                } 
-                else if (query.includes('cancer') || query.includes('cure') || query.includes('tumor')) {
-                     status = "<span style='color: #ff4d4d; font-weight: bold;'>⚠️ WARNING</span>";
-                     response = "Claims about miracle cures for cancer are dangerous and scientifically false. Always consult an oncologist for cancer treatments.";
-                }
-                else {
-                     status = "<span style='color: #0056b3; font-weight: bold;'>🔵 DEEP ANALYSIS REQUIRED</span>";
-                     response = "This claim requires deeper clinical context. <b>Please scroll down and paste this exact query into the Live Neural Diagnostic Stream (Gemini 2.5)</b> for a complete breakdown.";
-                }
-
-                // Step 4: Display Final Result
-                resultBox.innerHTML = `
-                    ${status}<br><br>
-                    <strong>Query:</strong> "${originalQuery}"<br>
-                    <strong>AI Verdict:</strong> ${response}
-                `;
-            }, 1500); // 1.5 seconds loading delay
-        }
+              resultBox.style.borderLeftColor = '#1ebd74'; 
+              resultBox.innerHTML = `<strong>💡 Did you know?</strong><br><br>${selectedFact}`;
+          }, 600); // 0.6 seconds delay
+      }
     </script>
+</body>
+</html>
