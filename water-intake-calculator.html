@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Water Intake Calculator | Heydoctor.ai</title>
+<meta name="description" content="Calculate your daily water intake based on your weight. Free Water Intake Calculator by Heydoctor.ai">
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#071a12;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.container{
+max-width:500px;
+margin:auto;
+background:#0d2b1f;
+padding:25px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,255,150,0.2);
+}
+
+h1{
+color:#20d67b;
+}
+
+input{
+width:90%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+font-size:18px;
+}
+
+button{
+background:#20d67b;
+color:white;
+border:none;
+padding:12px 25px;
+font-size:18px;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+#result{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+color:#20d67b;
+}
+
+a{
+color:#20d67b;
+text-decoration:none;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>💧 Water Intake Calculator</h1>
+
+<p>Enter your weight in kilograms.</p>
+
+<input type="number" id="weight" placeholder="Weight (kg)">
+
+<br>
+
+<button onclick="calculateWater()">Calculate</button>
+
+<div id="result"></div>
+
+<br><br>
+
+<h2>How Much Water Should You Drink?</h2>
+
+<p>
+A common guideline is to drink around 35 ml of water per kilogram of body weight each day.
+This calculator provides an estimate of your daily water needs.
+</p>
+
+<br>
+
+<a href="index.html">⬅ Back to Home</a>
+
+</div>
+
+<script>
+function calculateWater(){
+
+let weight = document.getElementById("weight").value;
+
+if(weight === ""){
+document.getElementById("result").innerHTML =
+"Please enter your weight.";
+return;
+}
+
+let water = weight * 35;
+let liters = (water / 1000).toFixed(2);
+
+document.getElementById("result").innerHTML =
+"Recommended Water Intake: " + liters + " Liters/Day";
+}
+</script>
+
+</body>
+</html>
