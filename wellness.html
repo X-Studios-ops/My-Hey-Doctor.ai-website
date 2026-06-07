@@ -5,17 +5,14 @@
     <title>Advanced Health Report - HEY DOCTOR.AI</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; padding: 20px; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; padding: 20px; }
         .card { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        h2 { color: #2c3e50; text-align: center; }
+        h2 { color: #1a73e8; text-align: center; }
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         input, select { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
         .btn-main { width: 100%; padding: 15px; background: #e74c3c; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 15px; }
-        .btn-main:hover { background: #c0392b; }
         .btn-home { width: 100%; padding: 15px; background: #34495e; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; text-align: center; text-decoration: none; display: block; }
-        .btn-home:hover { background: #2c3e50; }
-        /* Disclaimer Style */
-        .disclaimer { font-size: 11px; color: #7f8c8d; margin-top: 20px; text-align: center; line-height: 1.4; border-top: 1px solid #eee; padding-top: 10px; }
+        .disclaimer { font-size: 11px; color: #7f8c8d; margin-top: 20px; text-align: center; border-top: 1px solid #eee; padding-top: 10px; }
     </style>
 </head>
 <body>
@@ -23,16 +20,15 @@
 <div class="card">
     <h2>Medical Wellness Report</h2>
     <input type="text" id="name" placeholder="Full Name">
-    
     <div class="grid">
         <input type="number" id="age" placeholder="Age">
         <select id="bloodGroup">
             <option value="">Blood Group</option>
             <option>A+</option><option>B+</option><option>AB+</option><option>O+</option>
-            <option>A-</option><option>B-</option><option>AB-</option><option>O-</option>
         </select>
     </div>
-
+    <input type="text" id="weight" placeholder="Weight (kg)">
+    <input type="text" id="height" placeholder="Height (cm)">
     <input type="text" id="bp" placeholder="Blood Pressure (e.g. 120/80)">
     <input type="text" id="symptoms" placeholder="Current Symptoms">
     
@@ -40,11 +36,21 @@
     <a href="index.html" class="btn-home">Back to Home</a>
 
     <div class="disclaimer">
-        <strong>Disclaimer:</strong> HEY DOCTOR.AI is for informational purposes only and does not provide medical diagnosis or treatment. This report is not a substitute for professional medical advice. Always consult with a qualified healthcare provider for any health concerns.
+        <strong>Disclaimer:</strong> HEY DOCTOR.AI is for information only. Not a medical diagnosis. Consult a doctor for professional advice.
     </div>
 </div>
 
 <script>
+    function getAdvice(symptoms) {
+        symptoms = symptoms.toLowerCase();
+        if (symptoms.includes("fever") || symptoms.includes("cough")) {
+            return "Advice: Stay hydrated and rest. Remedy: Ginger-honey tea. Consult doctor if fever persists > 48hrs.";
+        } else if (symptoms.includes("headache")) {
+            return "Advice: Avoid screens, stay in dark room. Remedy: Cold compress. Consult if pain is severe.";
+        }
+        return "Advice: Maintain balanced diet, exercise daily, and sleep 7-8 hours. Consult a doctor for any persistent discomfort.";
+    }
+
     function generateReport() {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
@@ -54,22 +60,23 @@
         let blood = document.getElementById('bloodGroup').value;
         let bp = document.getElementById('bp').value;
         let symp = document.getElementById('symptoms').value;
+        let advice = getAdvice(symp);
 
         doc.setFontSize(18);
         doc.text("HEY DOCTOR.AI - Medical Report", 20, 20);
         doc.setFontSize(12);
-        doc.text(`Patient Name: ${name || 'N/A'}`, 20, 40);
-        doc.text(`Age: ${age || 'N/A'}`, 20, 50);
-        doc.text(`Blood Group: ${blood || 'N/A'}`, 20, 60);
-        doc.text(`Blood Pressure: ${bp || 'N/A'}`, 20, 70);
-        doc.text(`Symptoms: ${symp || 'N/A'}`, 20, 80);
-        doc.text("Date: " + new Date().toLocaleDateString(), 20, 100);
+        doc.text(`Patient: ${name}`, 20, 40);
+        doc.text(`Age: ${age}`, 20, 50);
+        doc.text(`Blood Group: ${blood}`, 20, 60);
+        doc.text(`Blood Pressure: ${bp}`, 20, 70);
+        doc.text(`Symptoms: ${symp}`, 20, 80);
+        doc.text("--------------------------------------------------", 20, 95);
+        doc.setFontSize(14);
+        doc.text("Professional Advice & Care:", 20, 110);
+        doc.setFontSize(11);
+        doc.text(doc.splitTextToSize(advice, 170), 20, 120);
         
-        // Add disclaimer to PDF too
-        doc.setFontSize(8);
-        doc.text("Disclaimer: This report is for information only and not a medical diagnosis.", 20, 280);
-        
-        doc.save(`${name || 'Health'}_Report.pdf`);
+        doc.save(`${name || 'Patient'}_Report.pdf`);
     }
 </script>
 
