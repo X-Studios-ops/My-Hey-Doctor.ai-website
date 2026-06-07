@@ -2,66 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Body Wellness Report - HEY DOCTOR.AI</title>
+    <title>Advanced Health Report - HEY DOCTOR.AI</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; padding: 20px; }
-        .main-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
-        h1 { color: #1a73e8; font-size: 24px; text-align: center; margin-bottom: 20px; }
-        label { font-weight: 600; display: block; margin-top: 15px; }
-        input { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
-        .btn-calc { background: #1a73e8; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; margin-top: 20px; cursor: pointer; font-size: 16px; }
-        .btn-calc:hover { background: #1557b0; }
-        #report-section { margin-top: 25px; padding: 20px; background: #e8f0fe; border-radius: 8px; display: none; text-align: center; }
-        .btn-pdf { background: #34a853; color: white; width: 100%; padding: 10px; border: none; border-radius: 8px; margin-top: 10px; cursor: pointer; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; padding: 20px; }
+        .card { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; text-align: center; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        input, select { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        .btn-main { width: 100%; padding: 15px; background: #e74c3c; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 15px; }
+        .btn-main:hover { background: #c0392b; }
+        .btn-home { width: 100%; padding: 15px; background: #34495e; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; text-align: center; text-decoration: none; display: block; }
+        .btn-home:hover { background: #2c3e50; }
+        /* Disclaimer Style */
+        .disclaimer { font-size: 11px; color: #7f8c8d; margin-top: 20px; text-align: center; line-height: 1.4; border-top: 1px solid #eee; padding-top: 10px; }
     </style>
 </head>
 <body>
 
-<div class="main-card">
-    <h1>HEY DOCTOR.AI</h1>
-    <label>Full Name</label>
-    <input type="text" id="name" placeholder="John Doe">
+<div class="card">
+    <h2>Medical Wellness Report</h2>
+    <input type="text" id="name" placeholder="Full Name">
     
-    <label>Weight (kg)</label>
-    <input type="number" id="weight" placeholder="e.g. 70">
+    <div class="grid">
+        <input type="number" id="age" placeholder="Age">
+        <select id="bloodGroup">
+            <option value="">Blood Group</option>
+            <option>A+</option><option>B+</option><option>AB+</option><option>O+</option>
+            <option>A-</option><option>B-</option><option>AB-</option><option>O-</option>
+        </select>
+    </div>
+
+    <input type="text" id="bp" placeholder="Blood Pressure (e.g. 120/80)">
+    <input type="text" id="symptoms" placeholder="Current Symptoms">
     
-    <label>Height (cm)</label>
-    <input type="number" id="height" placeholder="e.g. 175">
+    <button class="btn-main" onclick="generateReport()">Generate & Download Report</button>
+    <a href="index.html" class="btn-home">Back to Home</a>
 
-    <button class="btn-calc" onclick="calculate()">Generate Report</button>
-
-    <div id="report-section">
-        <p id="result-text"></p>
-        <button class="btn-pdf" onclick="downloadPDF()">Download PDF Report</button>
+    <div class="disclaimer">
+        <strong>Disclaimer:</strong> HEY DOCTOR.AI is for informational purposes only and does not provide medical diagnosis or treatment. This report is not a substitute for professional medical advice. Always consult with a qualified healthcare provider for any health concerns.
     </div>
 </div>
 
 <script>
-    let userData = {};
-
-    function calculate() {
-        let name = document.getElementById('name').value;
-        let w = parseFloat(document.getElementById('weight').value);
-        let h = parseFloat(document.getElementById('height').value) / 100;
-        let bmi = (w / (h * h)).toFixed(1);
-        let cat = bmi < 18.5 ? "Underweight" : bmi < 25 ? "Healthy" : "Overweight";
-        
-        userData = { name, w, bmi, cat };
-        
-        document.getElementById('report-section').style.display = "block";
-        document.getElementById('result-text').innerHTML = `<strong>${name}</strong>, your BMI is <strong>${bmi}</strong> (${cat}).`;
-    }
-
-    function downloadPDF() {
+    function generateReport() {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
-        doc.text("HEY DOCTOR.AI - Health Report", 20, 20);
-        doc.text(`Name: ${userData.name}`, 20, 40);
-        doc.text(`BMI Score: ${userData.bmi}`, 20, 50);
-        doc.text(`Category: ${userData.cat}`, 20, 60);
-        doc.save(`${userData.name}_Report.pdf`);
+        
+        let name = document.getElementById('name').value;
+        let age = document.getElementById('age').value;
+        let blood = document.getElementById('bloodGroup').value;
+        let bp = document.getElementById('bp').value;
+        let symp = document.getElementById('symptoms').value;
+
+        doc.setFontSize(18);
+        doc.text("HEY DOCTOR.AI - Medical Report", 20, 20);
+        doc.setFontSize(12);
+        doc.text(`Patient Name: ${name || 'N/A'}`, 20, 40);
+        doc.text(`Age: ${age || 'N/A'}`, 20, 50);
+        doc.text(`Blood Group: ${blood || 'N/A'}`, 20, 60);
+        doc.text(`Blood Pressure: ${bp || 'N/A'}`, 20, 70);
+        doc.text(`Symptoms: ${symp || 'N/A'}`, 20, 80);
+        doc.text("Date: " + new Date().toLocaleDateString(), 20, 100);
+        
+        // Add disclaimer to PDF too
+        doc.setFontSize(8);
+        doc.text("Disclaimer: This report is for information only and not a medical diagnosis.", 20, 280);
+        
+        doc.save(`${name || 'Health'}_Report.pdf`);
     }
 </script>
 
