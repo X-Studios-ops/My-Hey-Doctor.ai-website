@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Match Tracker (IMT) - Live Sports & Health Companion</title>
+    <style>
+        :root {
+            --primary-color: #0d1b2a;
+            --secondary-color: #1b4965;
+            --accent-color: #06d6a0;
+            --text-light: #ffffff;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+        }
+
+        /* Match Selector Dropdown */
+        .selector-box {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .selector-box select {
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 2px solid var(--secondary-color);
+            outline: none;
+            width: 100%;
+            max-width: 400px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* IMT Card Styling */
+        .imt-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .match-status {
+            background-color: #e63946;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .scoreboard-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 20px;
+            background: linear-gradient(135deg, #1b4965, #0d1b2a);
+            color: white;
+        }
+
+        .team {
+            text-align: center;
+            flex: 1;
+        }
+
+        .team h3 {
+            margin: 8px 0 4px 0;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .vs-circle {
+            background: #fff;
+            color: #333;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .live-details {
+            padding: 15px 20px;
+            background: #f1faee;
+            border-bottom: 1px solid #ddd;
+            font-size: 15px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* SEO & Promo Section */
+        .promo-box {
+            background: #e8f5e9;
+            border-left: 5px solid #2e7d32;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .promo-box p {
+            margin: 0 0 10px 0;
+            font-size: 15px;
+            color: #1b5e20;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #1b5e20;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Instant Match Tracker (IMT) - Live Centers</h1>
+    </div>
+
+    <div class="container">
+        
+        <div class="selector-box">
+            <label for="matchSelect" style="display:block; margin-bottom: 8px; font-weight: bold;">Trending लाइव मैच चुनें:</label>
+            <select id="matchSelect" onchange="updateMatchData()">
+                <option value="nep_oma">Asian Games Qualifier: Nepal vs Oman</option>
+                <option value="ind_aus">T20I Series: India vs Australia</option>
+                <option value="pak_eng">Test Series: Pakistan vs England</option>
+            </select>
+        </div>
+
+        <div class="imt-card">
+            <div id="mStatus" class="match-status">🔴 LIVE - Semifinal 1</div>
+            
+            <div class="scoreboard-flex">
+                <div class="team">
+                    <h3 id="t1Name">OMA</h3>
+                    <div id="t1Score" class="score">94/10</div>
+                    <small id="t1Overs" style="color: #ccc;">(19.4 Ov)</small>
+                </div>
+
+                <div class="vs-circle">VS</div>
+
+                <div class="team">
+                    <h3 id="t2Name">NEP</h3>
+                    <div id="t2Score" class="score">20/0</div>
+                    <small id="t2Overs" style="color: #ccc;">(1.0 Ov)</small>
+                </div>
+            </div>
+
+            <div id="mDetails" class="live-details">
+                🎯 नेपाल को जीत के लिए 19 ओवरों में 75 रनों की जरूरत है। (CRR: 20.00 | RRR: 3.95)
+            </div>
+        </div>
+
+        <h2>Live Sports Metrics & Health Analysis</h2>
+        <p>जब भी कोई बड़ा मुकाबला इंटरनेट पर ट्रेंड करता है, तो फैंस का एक्साइटमेंट और दिल की धड़कनें बढ़ जाती हैं। चाहे वह थ्रिलर रन-चेज़ हो या आखिरी ओवर का रोमांच, लाइव मैच देखते समय स्ट्रेस, एंग्जायटी और ब्लड प्रेशर में उतार-चढ़ाव होना आम बात है। हमारा <strong>Instant Match Tracker (IMT)</strong> आपको हर मैच की पल-पल की अपडेट देता है ताकि आप बिना किसी स्ट्रेस के गेम का मजा ले सकें।</p>
+
+        <div class="promo-box">
+            <p><strong>🩺 क्या मैच के रोमांच में आपका भी BP बढ़ रहा है?</strong></p>
+            <p>लाइव मैच के स्ट्रेस, थकान या किसी भी अचानक दिखने वाले शारीरिक लक्षणों की तुरंत और सटीक जांच के लिए हमारे एडवांस्ड एआई टूल का उपयोग करें।</p>
+            <a href="https://my-hey-doctor-ai-website.vercel.app" target="_blank" class="cta-btn">Check Symptoms Free on HeyDoctor.ai</a>
+        </div>
+    </div>
+
+    <script>
+        const matchData = {
+            nep_oma: {
+                status: "🔴 LIVE - Semifinal 1",
+                t1: "OMA", score1: "94/10", overs1: "(19.4 Ov)",
+                t2: "NEP", score2: "20/0", overs2: "(1.0 Ov)",
+                details: "🎯 नेपाल को जीत के लिए 19 ओवरों में 75 रनों की जरूरत है। (CRR: 20.00 | RRR: 3.95)"
+            },
+            ind_aus: {
+                status: "🔴 LIVE - 2nd T20I",
+                t1: "IND", score1: "185/4", overs1: "(20.0 Ov)",
+                t2: "AUS", score2: "42/1", overs2: "(4.2 Ov)",
+                details: "⚡ ऑस्ट्रेलिया को जीत के लिए 94 गेंदों में 144 रनों की जरूरत है। (RRR: 9.19)"
+            },
+            pak_eng: {
+                status: "🔴 LIVE - 1st Test (Day 3)",
+                t1: "PAK", score1: "340 & 112/3", overs1: "(34.0 Ov)",
+                t2: "ENG", score2: "410/10", overs2: "(First Innings)",
+                details: "🏏 पाकिस्तान इस समय इंग्लैंड से 42 रनों से आगे चल रहा है।"
+            }
+        };
+
+        function updateMatchData() {
+            const selectedMatch = document.getElementById("matchSelect").value;
+            const data = matchData[selectedMatch];
+
+            if(data) {
+                document.getElementById("mStatus").innerText = data.status;
+                document.getElementById("t1Name").innerText = data.t1;
+                document.getElementById("t1Score").innerText = data.score1;
+                document.getElementById("t1Overs").innerText = data.overs1;
+                document.getElementById("t2Name").innerText = data.t2;
+                document.getElementById("t2Score").innerText = data.score2;
+                document.getElementById("t2Overs").innerText = data.overs2;
+                document.getElementById("mDetails").innerText = data.details;
+            }
+        }
+    </script>
+</body>
+</html>
+
