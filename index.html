@@ -388,23 +388,36 @@
         }  
     </style>
 </head>  
-<body>  
-    <nav class="navbar">  
-        <div class="logo-container">  
-            <img src="logo.png" alt="Heydoctor AI Logo" class="navbar-logo-img">  
-            <div class="logo">Heydoctor<span>.ai</span></div>  
-        </div>  
-          
-        <ul class="nav-links">  
-            <li><a href="#home">Home</a></li>  
-            <li><a href="#about">About</a></li>  
-            <li><a href="#health-tools">Tools</a></li>  
-            <li><a href="#chat-section" class="btn-chat">Launch AI</a></li>  
-            <li><a href="dengue-symptoms.html">Dengue Symptoms Guide</a></li>
-            <li><a href="water-intake-calculator.html">Water Intake Calculator</a></li>
-            <li><a href="wellness.html">Check Your Wellness Score</a></li>
-        </ul>  
-    </nav>  
+<style>
+    /* Navbar Styling */
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #0a1a1a; }
+    .nav-links { display: flex; gap: 20px; }
+    
+    /* Dropdown Logic */
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-content { display: none; position: absolute; background-color: #1a2a2a; min-width: 160px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1; border-radius: 8px; }
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown-content a { color: white; padding: 12px 16px; text-decoration: none; display: block; }
+    .dropdown-content a:hover { background-color: #2c3e50; }
+    .arrow { cursor: pointer; color: white; margin-left: 5px; }
+</style>
+
+<nav class="navbar">
+    <div class="logo">Heydoctor.ai</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        
+        <div class="dropdown">
+            <span class="arrow">Tools ▼</span>
+            <div class="dropdown-content">
+                <a href="dengue.html">Dengue Symptoms</a>
+                <a href="water-intake.html">Water Intake</a>
+                <a href="wellness.html">Wellness Report</a>
+            </div>
+        </div>
+    </div>
+</nav>
 
     <header id="home" class="hero">  
         <div class="hero-content">  
