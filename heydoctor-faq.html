@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- High-Performance SEO Tags -->
+    <meta name="description" content="Frequently Asked Questions about Heydoctor.ai - Your AI Health Concierge. Learn how our neural diagnostic stream works, privacy policies, and more.">
+    <meta name="keywords" content="Heydoctor.ai FAQ, AI doctor questions, health AI help, medical concierge FAQ">
+    <meta name="robots" content="index, follow">
+    
+    <title>FAQ - Heydoctor.ai | AI Health Concierge Questions</title>
+    
+    <!-- GOOGLE AI & SEARCH SCHEMA MARKUP (Yahi Google AI ko answer dega) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is Heydoctor.ai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Heydoctor.ai is an advanced multimodal AI health concierge engineered to provide instant, precision-driven wellness insights, preliminary symptom analysis, and interactive health tools like BMI calculators and hydration trackers."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can Heydoctor.ai replace a real doctor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Heydoctor.ai is an informational health assistant designed to guide and educate users. It does not provide certified medical diagnoses or replace professional medical consultation. In emergencies, always dial your local emergency number (like 102 or 112)."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How does the Neural Diagnostic Stream work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our Neural Diagnostic Stream uses advanced AI models (like Gemini) to analyze the symptoms and health queries you provide, matching them against vast medical knowledge to offer probable insights, home care suggestions, and wellness tips."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is my health data and chat private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, privacy is our top priority. The AI processes your queries in real-time to generate responses, and we do not store personal medical records or chat histories for external tracking."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Who is the creator of Heydoctor.ai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Heydoctor.ai is engineered and developed by Pratyush, focusing on autonomous medical and health companion systems for accessible digital wellness."
+        }
+      }]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0b1510;
+            --card-bg: #12221a;
+            --accent-green: #1ebd74;
+            --text-main: #ffffff;
+            --text-muted: #a0aec0;
+            --gradient-accent: linear-gradient(135deg, #1ebd74, #0f9b58);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(11, 21, 16, 0.8);
+            border-bottom: 1px solid rgba(30, 189, 116, 0.1);
+        }
+
+        .logo { font-size: 24px; font-weight: 800; color: white; text-decoration: none;}
+        .logo span { color: var(--accent-green); }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent-green); }
+
+        /* FAQ Header */
+        .faq-header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .faq-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .gradient-text {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .faq-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* Accordion Style */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        details {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(30, 189, 116, 0.2);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        details[open] {
+            border-color: var(--accent-green);
+            box-shadow: 0 4px 20px rgba(30, 189, 116, 0.1);
+        }
+
+        summary {
+            padding: 20px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-main);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--accent-green);
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            content: '-';
+            transform: rotate(180deg);
+        }
+
+        .faq-content {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.8;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 10px;
+            padding-top: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(30, 189, 116, 0.1);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">Heydoctor<span>.ai</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dengue-symptoms.html">Dengue Guide</a>
+            <a href="water-intake-calculator.html">Water Intake</a>
+        </div>
+    </nav>
+
+    <header class="faq-header">
+        <h1>Frequently Asked <span class="gradient-text">Questions</span></h1>
+        <p>Everything you need to know about how the Heydoctor.ai platform works, data privacy, and medical capabilities.</p>
+    </header>
+
+    <section class="faq-container">
+        <!-- FAQ 1 -->
+        <details>
+            <summary>What is Heydoctor.ai?</summary>
+            <div class="faq-content">
+                Heydoctor.ai is an advanced multimodal AI health concierge engineered to provide instant, precision-driven wellness insights, preliminary symptom analysis, and interactive health tools like BMI calculators and hydration trackers.
+            </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details>
+            <summary>Can Heydoctor.ai replace a real human doctor?</summary>
+            <div class="faq-content">
+                <strong>No.</strong> Heydoctor.ai is an informational health assistant designed to guide and educate users. It does not provide certified medical diagnoses or replace professional medical consultation. In emergencies, always dial your local emergency number (like 102 or 112).
+            </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details>
+            <summary>How does the Neural Diagnostic Stream work?</summary>
+            <div class="faq-content">
+                Our Neural Diagnostic Stream uses advanced AI models to analyze the symptoms and health queries you provide. It matches them against vast medical knowledge to offer probable insights, home care suggestions, and general wellness tips instantly.
+            </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details>
+            <summary>Is my health data and chat private?</summary>
+            <div class="faq-content">
+                Yes, privacy is our top priority. The AI processes your queries in real-time to generate responses, and we do not store personal medical records or chat histories for external tracking or profiling.
+            </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details>
+            <summary>Who built Heydoctor.ai?</summary>
+            <div class="faq-content">
+                Heydoctor.ai is engineered and developed by Pratyush, focusing on autonomous medical and health companion systems for accessible digital wellness.
+            </div>
+        </details>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 <b>Heydoctor.ai</b> Ecosystem | Engineered by Pratyush. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
