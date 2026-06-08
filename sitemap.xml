@@ -3,48 +3,48 @@
   
   <!-- Main Home Page -->
   <url>
-    <loc>https://x-studios-ops.github.io/My-Hey-Doctor.ai-website/index.html</loc>
-    <lastmod>2026-06-07</lastmod>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/</loc>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- About The Creator -->
   <url>
-    <loc>https://x-studios-ops.github.io/My-Hey-Doctor.ai-website/about-pratyush.html</loc>
-    <lastmod>2026-06-07</lastmod>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/about-pratyush.html</loc>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Dengue Symptoms Tool -->
   <url>
-    <loc>https://x-studios-ops.github.io/My-Hey-Doctor.ai-website/dengue-symptoms.html</loc>
-    <lastmod>2026-06-07</lastmod>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/dengue-symptoms.html</loc>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Water Intake Calculator Tool -->
   <url>
-    <loc>https://x-studios-ops.github.io/My-Hey-Doctor.ai-website/water-intake-calculator.html</loc>
-    <lastmod>2026-06-07</lastmod>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/water-intake-calculator.html</loc>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Wellness Report -->
   <url>
-    <loc>https://x-studios-ops.github.io/My-Hey-Doctor.ai-website/wellness.html</loc>
-    <lastmod>2026-06-07</lastmod>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/wellness.html</loc>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- SEO Optimized FAQ Page -->
   <url>
-    <loc>https://x-studios-ops.github.io/My-Hey-Doctor.ai-website/heydoctor-faq.html</loc>
-    <lastmod>2026-06-07</lastmod>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/heydoctor-faq.html</loc>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
