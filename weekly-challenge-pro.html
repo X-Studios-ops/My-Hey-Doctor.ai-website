@@ -164,23 +164,104 @@
 
     // FORM SUBMISSION ENGINE (Updated with Debugging)
     document.getElementById("submitBtn").onclick = async () => {
-        const name = document.getElementById("name").value.trim();
-        const q = document.getElementById("question").value.trim();
-        
-        if (!name) { alert("Please enter a valid name!"); return; }
-        if (q.length < 15) { alert("Your question is too short! Please write at least 15 characters."); return; }
 
-        // Debugging: Check if limit is reached
-        let usage = JSON.parse(localStorage.getItem('usage')) || {count: 0, date: new Date().toDateString()};
-        if(usage.date !== new Date().toDateString()) usage = {count: 0, date: new Date().toDateString()};
-        
-        if(usage.count >= 3) { 
-            alert("Daily limit reached! Opening SmartLink...");
-            window.open(SMARTLINK, "_blank"); 
-            return; 
+    const name = document.getElementById("name").value.trim();
+    const q = document.getElementById("question").value.trim();
+
+    if (!name) {
+        alert("Please enter your name!");
+        return;
+    }
+
+    if (q.length < 15) {
+        alert("Question must be at least 15 characters long.");
+        return;
+    }
+
+    let usage = JSON.parse(localStorage.getItem("usage")) || {
+        count: 0,
+        date: new Date().toDateString()
+    };
+
+    if (usage.date !== new Date().toDateString()) {
+        usage = {
+            count: 0,
+            date: new Date().toDateString()
+        };
+    }
+
+    if (usage.count >= 3) {
+        alert("Daily limit reached! Watch ad to continue.");
+        window.open(SMARTLINK, "_blank");
+        return;
+    }
+
+    document.getElementById("status").innerText =
+        "Analyzing and Saving...";
+
+    try {
+
+        const points = getSmartPoints(q);
+
+        const snap = await getDocs(
+            query(
+                collection(db, "challenge_entries"),
+                where("name", "==", name)
+            )
+        );
+
+        if (!snap.empty) {
+
+            const oldScore =
+                snap.docs[0].data().score || 0;
+
+            await updateDoc(
+                snap.docs[0].ref,
+                {
+                    score: oldScore + points,
+                    question: q,
+                    timestamp: new Date()
+                }
+            );
+
+        } else {
+
+            await addDoc(
+                collection(db, "challenge_entries"),
+                {
+                    name: name,
+                    question: q,
+                    score: points,
+                    timestamp: new Date()
+                }
+            );
+
         }
 
-        document.getElementById("status").innerText = "Analyzing and Saving...";
+        usage.count++;
+
+        localStorage.setItem(
+            "usage",
+            JSON.stringify(usage)
+        );
+
+        document.getElementById("status").innerText =
+            "Saved Successfully!";
+
+        setTimeout(() => {
+            location.reload();
+        }, 1000);
+
+    } catch (err) {
+
+        console.error(err);
+
+        document.getElementById("status").innerText =
+            "Error saving data";
+
+        alert(err.message);
+    }
+};
 
         // Daily Limit Logic
         let usage = JSON.parse(localStorage.getItem('usage')) || {count: 0, date: new Date().toDateString()};
