@@ -167,15 +167,22 @@
         const name = document.getElementById("name").value.trim();
         const q = document.getElementById("question").value.trim();
         
-        // Validation Layer
-        if(!name || q.length < 15) { alert("Please provide a valid name and detailed question (min 15 chars)."); return; }
+        // YE RAHI WOH VALIDATION JO TUNE MANGI THI
+        if (!name) { 
+            alert("Please enter a valid name!"); 
+            return; 
+        }
+        if (q.length < 15) { 
+            alert("Your question is too short! Please write at least 15 characters."); 
+            return; 
+        }
+
+        document.getElementById("status").innerText = "Analyzing question quality...";
 
         // Daily Limit Logic
         let usage = JSON.parse(localStorage.getItem('usage')) || {count: 0, date: new Date().toDateString()};
         if(usage.date !== new Date().toDateString()) usage = {count: 0, date: new Date().toDateString()};
         if(usage.count >= 3) { window.open(SMARTLINK, "_blank"); return; }
-
-        document.getElementById("status").innerText = "Analyzing question quality...";
 
         // Update Database Logic
         const snap = await getDocs(query(collection(db, "challenge_entries"), where("name", "==", name)));
