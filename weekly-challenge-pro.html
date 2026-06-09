@@ -1,138 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>HeyDoctor Weekly Challenge Pro</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#08111f;color:#fff}
-.container{max-width:1200px;margin:auto;padding:20px}
-.hero{background:linear-gradient(135deg,#10b981,#0ea5e9);padding:35px;border-radius:24px;text-align:center}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin-top:20px}
-.card{background:#111827;padding:20px;border-radius:18px;border:1px solid #1f2937}
-.big{font-size:28px;font-weight:bold}
-input,textarea{width:100%;padding:12px;border-radius:10px;border:none;margin:8px 0}
-button{background:#10b981;color:#fff;border:none;padding:12px 18px;border-radius:10px;cursor:pointer}
-.podium{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
-.rank1,.rank2,.rank3{text-align:center}
-.rank1{transform:scale(1.05)}
-table{width:100%;border-collapse:collapse}
-th,td{padding:12px;border-bottom:1px solid #243244}
-.badge{display:inline-block;background:#10b981;padding:4px 10px;border-radius:20px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeyDoctor Weekly Challenge PRO</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #08111f; color: #fff; }
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+        .hero { background: linear-gradient(135deg, #10b981, #0ea5e9); padding: 35px; border-radius: 24px; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; }
+        .card { background: #111827; padding: 20px; border-radius: 18px; border: 1px solid #1f2937; }
+        .big { font-size: 28px; font-weight: bold; }
+        input, textarea { width: 100%; padding: 12px; border-radius: 10px; border: none; margin: 8px 0; background: #1f2937; color: white; }
+        button { background: #10b981; color: #fff; border: none; padding: 12px 18px; border-radius: 10px; cursor: pointer; width: 100%; font-weight: bold; }
+        button:disabled { background: #4b5563; cursor: not-allowed; }
+        .podium { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+        .rank1, .rank2, .rank3 { text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 12px; border-bottom: 1px solid #243244; text-align: left; }
+        .badge { display: inline-block; background: #10b981; padding: 4px 10px; border-radius: 20px; margin-top: 10px; }
+    </style>
 </head>
 <body>
 <div class="container">
 
-<div class="hero">
-<h1>🏆 HeyDoctor Weekly Challenge PRO</h1>
-<p>Ask the smartest health question. Reach the Hall of Fame.</p>
-<span class="badge">🔥 Beat The Champion</span>
-</div>
+    <div class="hero">
+        <h1>🏆 HeyDoctor Weekly Challenge PRO</h1>
+        <p>Ask the smartest health question. Reach the Hall of Fame.</p>
+        <span class="badge">🔥 Beat The Champion</span>
+    </div>
 
-<div class="grid">
-<div class="card"><div class="big" id="participants">0</div>Total Participants</div>
-<div class="card"><div class="big" id="questions">0</div>Questions Submitted</div>
-<div class="card"><div class="big" id="champScore">0</div>Champion Score</div>
-<div class="card"><div class="big">7 Days</div>Weekly Reset Cycle</div>
-</div>
+    <div class="grid">
+        <div class="card"><div class="big" id="participants">0</div>Total Participants</div>
+        <div class="card"><div class="big" id="questions">0</div>Questions Submitted</div>
+        <div class="card"><div class="big" id="champScore">0</div>Champion Score</div>
+    </div>
 
-<div class="card">
-<h2>👑 Weekly Podium</h2>
-<div class="podium">
-<div class="card rank2"><h3>🥈 Runner Up</h3><p id="p2">Loading...</p></div>
-<div class="card rank1"><h3>🥇 Champion</h3><p id="p1">Loading...</p></div>
-<div class="card rank3"><h3>🥉 Third</h3><p id="p3">Loading...</p></div>
-</div>
-</div>
+    <div class="card">
+        <h2>👑 Weekly Podium</h2>
+        <div class="podium">
+            <div class="card rank2"><h3>🥈 Runner Up</h3><p id="p2">Loading...</p></div>
+            <div class="card rank1"><h3>🥇 Champion</h3><p id="p1">Loading...</p></div>
+            <div class="card rank3"><h3>🥉 Third</h3><p id="p3">Loading...</p></div>
+        </div>
+    </div>
 
-<div class="card">
-<h2>✍️ Submit Challenge Entry</h2>
-<input id="name" placeholder="Your Name">
-<textarea id="question" rows="5" placeholder="Write your health question"></textarea>
-<button id="submitBtn">Submit Challenge</button>
-</div>
+    <div class="card">
+        <h2>✍️ Submit Challenge Entry</h2>
+        <input id="name" placeholder="Your Name">
+        <textarea id="question" rows="5" placeholder="Write your health question"></textarea>
+        <button id="submitBtn">Submit Challenge</button>
+    </div>
 
-<div class="card">
-<h2>🏅 Hall Of Fame</h2>
-<p>Top weekly champions will appear here.</p>
-</div>
-
-<div class="card">
-<h2>📈 Top 10 Leaderboard</h2>
-<table>
-<thead><tr><th>Rank</th><th>Name</th><th>Score</th></tr></thead>
-<tbody id="leaderboard"></tbody>
-</table>
-</div>
+    <div class="card">
+        <h2>📈 Top 10 Leaderboard</h2>
+        <table>
+            <thead><tr><th>Rank</th><th>Name</th><th>Score</th></tr></thead>
+            <tbody id="leaderboard"></tbody>
+        </table>
+    </div>
 
 </div>
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-const firebaseConfig={
-apiKey:"AIzaSyDbLNHC559dram--QmrsfWVQdlw8J2Q6XY",
-authDomain:"question-of-the-week-challenge.firebaseapp.com",
-projectId:"question-of-the-week-challenge",
-storageBucket:"question-of-the-week-challenge.firebasestorage.app",
-messagingSenderId:"513283085826",
-appId:"1:513283085826:web:8b47b50a02a1b514f9b91b"
-};
+    const firebaseConfig = {
+        apiKey: "AIzaSyDbLNHC559dram--QmrsfWVQdlw8J2Q6XY",
+        authDomain: "question-of-the-week-challenge.firebaseapp.com",
+        projectId: "question-of-the-week-challenge",
+        storageBucket: "question-of-the-week-challenge.firebasestorage.app",
+        messagingSenderId: "513283085826",
+        appId: "1:513283085826:web:8b47b50a02a1b514f9b91b"
+    };
 
-const app=initializeApp(firebaseConfig);
-const db=getFirestore(app);
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const SMARTLINK = "https://www.effectivecpmnetwork.com/t8mtixvjhy?key=2b2d18117f937f69e3bd00eb2ab41f12";
 
-async function loadLeaderboard(){
-const tbody=document.getElementById("leaderboard");
-tbody.innerHTML="";
-const q=query(collection(db,"challenge_entries"),orderBy("score","desc"),limit(10));
-const snap=await getDocs(q);
+    function getUsageData() {
+        let data = JSON.parse(localStorage.getItem('userUsage')) || { date: new Date().toDateString(), count: 0 };
+        if (data.date !== new Date().toDateString()) {
+            data = { date: new Date().toDateString(), count: 0 };
+        }
+        return data;
+    }
 
-let rank=1;
-let first=null,second=null,third=null;
-let count=0;
+    async function loadLeaderboard() {
+        const tbody = document.getElementById("leaderboard");
+        tbody.innerHTML = "";
+        const q = query(collection(db, "challenge_entries"), orderBy("score", "desc"), limit(10));
+        const snap = await getDocs(q);
 
-snap.forEach(doc=>{
-const d=doc.data();
-count++;
-if(rank===1) first=d;
-if(rank===2) second=d;
-if(rank===3) third=d;
+        let rank = 1;
+        let snapArray = [];
+        snap.forEach(doc => { snapArray.push(doc.data()); });
 
-tbody.innerHTML+=`<tr><td>${rank}</td><td>${d.name}</td><td>${d.score}</td></tr>`;
-rank++;
-});
+        snapArray.forEach((d, index) => {
+            if(index === 0) { document.getElementById("p1").innerText = d.name + " (" + d.score + ")"; document.getElementById("champScore").innerText = d.score; }
+            if(index === 1) document.getElementById("p2").innerText = d.name + " (" + d.score + ")";
+            if(index === 2) document.getElementById("p3").innerText = d.name + " (" + d.score + ")";
+            tbody.innerHTML += `<tr><td>${rank++}</td><td>${d.name}</td><td>${d.score}</td></tr>`;
+        });
+        document.getElementById("participants").innerText = snapArray.length;
+        document.getElementById("questions").innerText = snapArray.length;
+    }
 
-document.getElementById("participants").innerText=count;
-document.getElementById("questions").innerText=count;
+    document.getElementById("submitBtn").addEventListener("click", async () => {
+        let usage = getUsageData();
+        
+        if (usage.count >= 3) {
+            alert("Daily limit reached! Click on the smartlink to unlock three more chances.");
+            window.open(SMARTLINK, "_blank");
+            return;
+        }
 
-if(first){
-document.getElementById("p1").innerText=first.name+" ("+first.score+")";
-document.getElementById("champScore").innerText=first.score;
-}
-if(second) document.getElementById("p2").innerText=second.name+" ("+second.score+")";
-if(third) document.getElementById("p3").innerText=third.name+" ("+third.score+")";
-}
+        const name = document.getElementById("name").value.trim();
+        const question = document.getElementById("question").value.trim();
+        if (!name || !question) { alert("Fill all fields"); return; }
 
-document.getElementById("submitBtn").addEventListener("click",async()=>{
-const name=document.getElementById("name").value.trim();
-const question=document.getElementById("question").value.trim();
-if(!name||!question){alert("Fill all fields");return;}
+        const score = Math.floor(Math.random() * 41) + 60;
+        await addDoc(collection(db, "challenge_entries"), { name, question, score, timestamp: new Date() });
 
-const score=Math.floor(Math.random()*41)+60;
+        usage.count += 1;
+        localStorage.setItem('userUsage', JSON.stringify(usage));
+        alert("Submitted! Aaj ke " + usage.count + "/3 questions ho gaye.");
+        loadLeaderboard();
+    });
 
-await addDoc(collection(db,"challenge_entries"),{
-name,question,score,timestamp:new Date()
-});
-
-alert("Submitted! Score: "+score);
-loadLeaderboard();
-});
-
-loadLeaderboard();
+    loadLeaderboard();
 </script>
 </body>
 </html>
