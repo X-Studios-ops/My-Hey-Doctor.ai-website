@@ -162,22 +162,25 @@
         } catch(e) { console.error("Error loading data:", e); }
     }
 
-    // FORM SUBMISSION ENGINE
+    // FORM SUBMISSION ENGINE (Updated with Debugging)
     document.getElementById("submitBtn").onclick = async () => {
         const name = document.getElementById("name").value.trim();
         const q = document.getElementById("question").value.trim();
         
-        // YE RAHI WOH VALIDATION JO TUNE MANGI THI
-        if (!name) { 
-            alert("Please enter a valid name!"); 
-            return; 
-        }
-        if (q.length < 15) { 
-            alert("Your question is too short! Please write at least 15 characters."); 
+        if (!name) { alert("Please enter a valid name!"); return; }
+        if (q.length < 15) { alert("Your question is too short! Please write at least 15 characters."); return; }
+
+        // Debugging: Check if limit is reached
+        let usage = JSON.parse(localStorage.getItem('usage')) || {count: 0, date: new Date().toDateString()};
+        if(usage.date !== new Date().toDateString()) usage = {count: 0, date: new Date().toDateString()};
+        
+        if(usage.count >= 3) { 
+            alert("Daily limit reached! Opening SmartLink...");
+            window.open(SMARTLINK, "_blank"); 
             return; 
         }
 
-        document.getElementById("status").innerText = "Analyzing question quality...";
+        document.getElementById("status").innerText = "Analyzing and Saving...";
 
         // Daily Limit Logic
         let usage = JSON.parse(localStorage.getItem('usage')) || {count: 0, date: new Date().toDateString()};
