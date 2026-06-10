@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey Doctor | Premium AI Health Analyzer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Advanced AI-powered Nail Health and Vitamin Deficiency Analysis. Get instant health insights and structural scores with Hey Doctor.">
+    <meta name="keywords" content="AI Health, Nail Analysis, Vitamin Deficiency, Hey Doctor, Health Scores, AI Diagnostics">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Hey Doctor | Premium AI Health Analyzer">
+    <meta property="og:description" content="Get instant AI structural insights into your nail health and vitamin levels.">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        /* Smooth Animation Transitions */
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Circular Progress Dashoffset Transition */
+        .circle-progress {
+            transition: stroke-dashoffset 1.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        /* Shimmer effect for loading */
+        .shimmer {
+            background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+            background-size: 200% 100%;
+            animation: loading-shimmer 1.5s infinite;
+        }
+        
+        @keyframes loading-shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+                    🤍 Hey Doctor
+                </span>
+                <span class="bg-indigo-50 text-indigo-600 text-xs font-semibold px-2 py-0.5 rounded-full border border-indigo-100">
+                    Premium AI
+                </span>
+            </div>
+            <div class="text-xs text-slate-400 font-medium hidden sm:block">
+                Secure Server Side Integration Ready
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        
+        <!-- Hero Section -->
+        <div class="text-center max-w-2xl mx-auto mb-16 fade-in-up">
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mb-4 sm:leading-tight">
+                Advanced Structural Health Analysis
+            </h1>
+            <p class="text-base text-slate-500 leading-relaxed">
+                Experience instant, medical-grade diagnostic modeling. Deep-scan specialized biomarkers separately with comprehensive performance metrics.
+            </p>
+        </div>
+
+        <!-- Master Analytics Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            
+            <!-- SECTION 1: NAIL HEALTH ANALYSIS -->
+            <section class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center text-rose-500 font-bold text-lg shadow-sm border border-rose-100">
+                        💅
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900">Nail Health Analysis</h2>
+                        <p class="text-xs text-slate-400">Scans vertical ridges, color variations, and lunula structure</p>
+                    </div>
+                </div>
+
+                <!-- Input Fields -->
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Upload Visual Sample or Describe Symptoms</label>
+                        <textarea id="nailInput" rows="3" placeholder="Describe discoloration, brittleness, horizontal lines, or upload data context..." 
+                                  class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:bg-white focus:border-rose-500 transition-all duration-200 placeholder:text-slate-400 resize-none"></textarea>
+                    </div>
+                    <button onclick="analyzeNailHealth()" id="nailBtn"
+                            class="w-full bg-slate-900 hover:bg-rose-600 text-white font-semibold text-sm py-3 px-4 rounded-xl transition-all duration-300 shadow-md shadow-slate-900/10 hover:shadow-rose-600/20 active:scale-[0.99]">
+                        Run Nail Diagnostics ✨
+                    </button>
+                </div>
+
+                <!-- Loader Block (Hidden by default) -->
+                <div id="nailLoader" class="hidden space-y-3 py-6">
+                    <div class="shimmer h-4 w-3/4 rounded-md"></div>
+                    <div class="shimmer h-3 w-1/2 rounded-md"></div>
+                    <div class="shimmer h-3 w-5/6 rounded-md"></div>
+                </div>
+
+                <!-- Output Area (Hidden by default) -->
+                <div id="nailOutput" class="hidden border-t border-slate-100 pt-6 space-y-6">
+                    <!-- Score Meter Row -->
+                    <div class="flex items-center gap-6 bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
+                        <!-- Animated Circular SVG -->
+                        <div class="relative w-20 h-20 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40" class="stroke-slate-100" stroke-width="8" fill="transparent" />
+                                <circle id="nailCircle" cx="50" cy="50" r="40" class="circle-progress stroke-rose-500" stroke-width="8" fill="transparent" 
+                                        stroke-dasharray="251.2" stroke-dashoffset="251.2" stroke-linecap="round" />
+                            </svg>
+                            <span id="nailScoreText" class="absolute text-base font-bold text-slate-800">0%</span>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase font-bold tracking-widest text-rose-500 mb-0.5">Nail Integrity Score</div>
+                            <h4 id="nailStatus" class="text-base font-bold text-slate-800">Calculating...</h4>
+                            <p class="text-xs text-slate-400">Based on primary structural assessment matrix.</p>
+                        </div>
+                    </div>
+
+                    <!-- Detailed AI Analysis Content -->
+                    <div class="space-y-4 text-sm text-slate-600 leading-relaxed">
+                        <div class="bg-rose-50/30 border border-rose-100/50 p-4 rounded-xl">
+                            <strong class="text-rose-700 block mb-1">📋 Detected Biomarkers:</strong>
+                            <p id="nailAnalysisText"></p>
+                        </div>
+                        <div>
+                            <strong class="text-slate-800 block mb-1">💡 Recommendations:</strong>
+                            <p id="nailRecText" class="text-xs text-slate-500"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- SECTION 2: VITAMIN DEFICIENCY ANALYSIS -->
+            <section class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-500 font-bold text-lg shadow-sm border border-indigo-100">
+                        💊
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900">Vitamin Deficiency Analysis</h2>
+                        <p class="text-xs text-slate-400">Evaluates metabolic sync, fatigue triggers, and skin/hair markers</p>
+                    </div>
+                </div>
+
+                <!-- Input Fields -->
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Input Primary Micro-symptoms</label>
+                        <textarea id="vitaminInput" rows="3" placeholder="Enter symptoms like constant fatigue, muscle cramps, hairfall, or specific skin conditions..." 
+                                  class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:bg-white focus:border-indigo-500 transition-all duration-200 placeholder:text-slate-400 resize-none"></textarea>
+                    </div>
+                    <button onclick="analyzeVitaminDeficiency()" id="vitaminBtn"
+                            class="w-full bg-slate-900 hover:bg-indigo-600 text-white font-semibold text-sm py-3 px-4 rounded-xl transition-all duration-300 shadow-md shadow-slate-900/10 hover:shadow-indigo-600/20 active:scale-[0.99]">
+                        Run Metabolic Diagnostics ✨
+                    </button>
+                </div>
+
+                <!-- Loader Block (Hidden by default) -->
+                <div id="vitaminLoader" class="hidden space-y-3 py-6">
+                    <div class="shimmer h-4 w-3/4 rounded-md"></div>
+                    <div class="shimmer h-3 w-1/2 rounded-md"></div>
+                    <div class="shimmer h-3 w-5/6 rounded-md"></div>
+                </div>
+
+                <!-- Output Area (Hidden by default) -->
+                <div id="vitaminOutput" class="hidden border-t border-slate-100 pt-6 space-y-6">
+                    <!-- Score Meter Row -->
+                    <div class="flex items-center gap-6 bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
+                        <!-- Animated Circular SVG -->
+                        <div class="relative w-20 h-20 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40" class="stroke-slate-100" stroke-width="8" fill="transparent" />
+                                <circle id="vitaminCircle" cx="50" cy="50" r="40" class="circle-progress stroke-indigo-500" stroke-width="8" fill="transparent" 
+                                        stroke-dasharray="251.2" stroke-dashoffset="251.2" stroke-linecap="round" />
+                            </svg>
+                            <span id="vitaminScoreText" class="absolute text-base font-bold text-slate-800">0%</span>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase font-bold tracking-widest text-indigo-500 mb-0.5">Vitamin Balance Score</div>
+                            <h4 id="vitaminStatus" class="text-base font-bold text-slate-800">Calculating...</h4>
+                            <p class="text-xs text-slate-400">Aggregated tracking of core essential elements.</p>
+                        </div>
+                    </div>
+
+                    <!-- Detailed AI Analysis Content -->
+                    <div class="space-y-4 text-sm text-slate-600 leading-relaxed">
+                        <div class="bg-indigo-50/30 border border-indigo-100/50 p-4 rounded-xl">
+                            <strong class="text-indigo-700 block mb-1">📊 Deficit Profile Matrix:</strong>
+                            <p id="vitaminAnalysisText"></p>
+                        </div>
+                        <div>
+                            <strong class="text-slate-800 block mb-1">💡 Suggested Nutritional Action:</strong>
+                            <p id="vitaminRecText" class="text-xs text-slate-500"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer Core -->
+    <footer class="max-w-6xl mx-auto px-6 py-12 mt-12 border-t border-slate-100 text-center text-xs text-slate-400">
+        &copy; 2026 Hey Doctor Advanced Diagnostic Engines. All rights secured. Developed for lightweight responsive multi-page deployment.
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT ANIMATIONS LOGIC -->
+    <script>
+        // Total Circumference of Circle r=40 is 2 * PI * 40 = 251.2
+        const CIRCUMFERENCE = 251.2;
+
+        function animateScoreGauge(targetScore, circleElement, textElement) {
+            circleElement.style.strokeDashoffset = CIRCUMFERENCE; // reset initial
+            
+            let currentScore = 0;
+            const duration = 1800; // Match CSS transition timing
+            const intervalTime = 20;
+            const step = targetScore / (duration / intervalTime);
+
+            // Dynamically apply the offset to kick off GPU-accelerated transition
+            setTimeout(() => {
+                const offset = CIRCUMFERENCE - (CIRCUMFERENCE * targetScore) / 100;
+                circleElement.style.strokeDashoffset = offset;
+            }, 50);
+
+            // Interval to animate the numeric text smoothly alongside the stroke mapping
+            const counterInterval = setInterval(() => {
+                currentScore += step;
+                if (currentScore >= targetScore) {
+                    currentScore = targetScore;
+                    clearInterval(counterInterval);
+                }
+                textElement.innerText = `${Math.floor(currentScore)}%`;
+            }, intervalTime);
+        }
+
+        // NAIL DIAGNOSTICS EXECUTION TRIGGER
+        function analyzeNailHealth() {
+            const inputVal = document.getElementById('nailInput').value.trim();
+            if (!inputVal) {
+                alert("Bhai, pehle inputs fill up kro! 😅");
+                return;
+            }
+
+            // Interface Control States
+            document.getElementById('nailLoader').classList.remove('hidden');
+            document.getElementById('nailOutput').classList.add('hidden');
+            document.getElementById('nailBtn').disabled = true;
+
+            // Simulating API Fetch Latency (Connect your Streamlit route here)
+            setTimeout(() => {
+                document.getElementById('nailLoader').classList.add('hidden');
+                document.getElementById('nailOutput').classList.remove('hidden');
+                document.getElementById('nailBtn').disabled = false;
+
+                // Independent target evaluation
+                const mockScore = 78; 
+                document.getElementById('nailStatus').innerText = "Optimal (Mild Ridges)";
+                document.getElementById('nailAnalysisText').innerText = "Structural inspection indicates slight longitudinal ridging. No severe leukonychia or clubbing markers detected. Cell growth matrix functions normally.";
+                document.getElementById('nailRecText').innerText = "Optimize biotin synthesis. Ensure local keratin matrix moisture levels are maintained via appropriate hydration cycles.";
+
+                // Trigger smooth circular animation mechanics
+                const circle = document.getElementById('nailCircle');
+                const scoreText = document.getElementById('nailScoreText');
+                animateScoreGauge(mockScore, circle, scoreText);
+
+            }, 1200);
+        }
+
+        // VITAMIN DEFICIENCY DIAGNOSTICS EXECUTION TRIGGER
+        function analyzeVitaminDeficiency() {
+            const inputVal = document.getElementById('vitaminInput').value.trim();
+            if (!inputVal) {
+                alert("Bhai, requirements describe krna mat bhoolo! 😅");
+                return;
+            }
+
+            // Interface Control States
+            document.getElementById('vitaminLoader').classList.remove('hidden');
+            document.getElementById('vitaminOutput').classList.add('hidden');
+            document.getElementById('vitaminBtn').disabled = true;
+
+            // Simulating API Fetch Latency (Connect your Streamlit route here)
+            setTimeout(() => {
+                document.getElementById('vitaminLoader').classList.add('hidden');
+                document.getElementById('vitaminOutput').classList.remove('hidden');
+                document.getElementById('vitaminBtn').disabled = false;
+
+                // Completely Independent Metric calculation 
+                const mockScore = 62; 
+                document.getElementById('vitaminStatus').innerText = "Moderate Depletion Found";
+                document.getElementById('vitaminAnalysisText').innerText = "Context indicates highly tracking correlations towards Vitamin D3 and B12 insufficiency patterns. Erythrocyte synthesis pathways matching fatigue clusters.";
+                document.getElementById('vitaminRecText').innerText = "Incorporate direct whole food variants, sunlight window alignment, or high absorption cholecalciferol compounds as guided.";
+
+                // Trigger distinct structural animation engine
+                const circle = document.getElementById('vitaminCircle');
+                const scoreText = document.getElementById('vitaminScoreText');
+                animateScoreGauge(mockScore, circle, scoreText);
+
+            }, 1400);
+        }
+    </script>
+</body>
+</html>
