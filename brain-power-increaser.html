@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1ebd74">
+    
+    <title>🧠 Brain Speed Analyzer - Decode Your Learning Efficiency</title>
+    <meta name="description" content="Analyze your focus, memory, learning speed, and study efficiency through our interactive AI-powered student assessment. Developed by Pratyush Ranjan Roul for HeyDoctor AI.">
+    <meta name="keywords" content="brain speed analyzer, study efficiency, focus tracker, memory test, student productivity, learning optimization, Pomodoro technique">
+    <meta name="author" content="Pratyush Ranjan Roul">
+    <link rel="canonical" href="https://heydoctor.ai/tools/brain-speed-analyzer">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://heydoctor.ai/tools/brain-speed-analyzer">
+    <meta property="og:title" content="🧠 Brain Speed Analyzer - How Fast Is Your Brain?">
+    <meta property="og:description" content="Analyze your focus, memory, learning speed, and study efficiency through our interactive student assessment tool.">
+    <meta property="og:image" content="https://heydoctor.ai/assets/brain-analyzer-og.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🧠 Brain Speed Analyzer - How Fast Is Your Brain?">
+    <meta name="twitter:description" content="Analyze your focus, memory, learning speed, and study efficiency through our interactive student assessment tool.">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "url": "https://heydoctor.ai/tools/brain-speed-analyzer",
+          "name": "Brain Speed Analyzer",
+          "description": "An interactive educational assessment tool designed to help students optimize focus, memory, and study efficiency.",
+          "author": {
+            "@type": "Person",
+            "name": "Pratyush Ranjan Roul"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "HeyDoctor AI"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How can I improve memory?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Improving memory involves consistent habits like 8 hours of sleep, using Spaced Repetition systems, Active Recall testing, and maintaining proper hydration."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I focus better while studying?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To focus better, eliminate digital distractions, use the Pomodoro Method (25 mins focus, 5 mins break), and study in a clean, well-lit environment."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much sleep do students need?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most students and adolescents require between 8 to 10 hours of high-quality sleep per night for optimal cognitive function and memory consolidation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I learn faster?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Learn faster by applying the Feynman Technique (teaching the concept to someone else), maintaining high focus levels, and associating new information with existing knowledge."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does screen time affect concentration?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, excessive unmanaged screen time, especially before bed or right before studying, can cause dopamine fatigue and significantly lower your sustained concentration span."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I improve revision efficiency?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Shift from passive reading to active revision. Create mind maps, utilize flashcards, and review material at increasing intervals to move data into long-term memory."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* CSS Variables - Premium Luxury Educational Theme */
+        :root {
+            --primary: #1ebd74;
+            --primary-dark: #169e61;
+            --primary-light: #45d693;
+            --bg-body: #fbfcfd;
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.04);
+            --shadow-lg: 0 20px 40px rgba(30, 189, 116, 0.08);
+            --radius-xl: 24px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+            --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Resets & Global */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating Background Animations */
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+        .shape-1 { top: -5%; left: -5%; width: 40vw; height: 40vw; background: #bbf7d0; }
+        .shape-2 { top: 40%; right: -10%; width: 50vw; height: 50vw; background: #ccfbf1; animation-delay: -5s; }
+        .shape-3 { bottom: -10%; left: 10%; width: 45vw; height: 45vw; background: #dcfce7; animation-delay: -10s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(5%, 5%) scale(1.05); }
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 20px; background: linear-gradient(135deg, #0f172a, #334155); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 16px; }
+        p { font-size: 1.1rem; color: var(--text-muted); }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 80px 24px; }
+        .text-center { text-align: center; }
+        .section-header { margin-bottom: 50px; }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .glass-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-5px); }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 18px 40px; font-size: 1.1rem; font-weight: 600;
+            color: white; background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border: none; border-radius: var(--radius-full);
+            cursor: pointer; text-decoration: none;
+            box-shadow: 0 10px 25px rgba(30, 189, 116, 0.3);
+            transition: var(--transition);
+        }
+        .btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 30px rgba(30, 189, 116, 0.4); }
+
+        /* Section 1: Hero */
+        .hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 40px; }
+        .hero p { max-width: 600px; margin: 0 auto 40px auto; font-size: 1.25rem; }
+        .hero-badge { display: inline-block; padding: 8px 16px; background: #fff; border-radius: 50px; font-weight: 600; color: var(--primary-dark); box-shadow: var(--shadow-sm); margin-bottom: 24px; }
+
+        /* Section 2: Assessment Grid */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        
+        .input-group { margin-bottom: 24px; }
+        .input-group label { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 12px; color: var(--text-main); }
+        .slider-val { color: var(--primary); font-weight: 700; }
+        
+        /* Custom Range Sliders */
+        input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none; height: 24px; width: 24px;
+            border-radius: 50%; background: var(--primary);
+            cursor: pointer; margin-top: -8px; box-shadow: 0 4px 10px rgba(30,189,116,0.3); border: 3px solid #fff;
+        }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 8px; cursor: pointer; background: #e2e8f0; border-radius: 10px; }
+
+        /* Custom Radio/Selectable Cards */
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+        .option-btn {
+            padding: 12px 10px; text-align: center; background: #f1f5f9; border: 2px solid transparent;
+            border-radius: var(--radius-lg); cursor: pointer; font-weight: 600; font-size: 0.95rem;
+            transition: var(--transition); color: var(--text-muted); user-select: none;
+        }
+        .option-btn.active { background: #fff; border-color: var(--primary); color: var(--primary-dark); box-shadow: 0 4px 15px rgba(30,189,116,0.15); }
+
+        /* Section 3: Analysis Engine (Hidden initially) */
+        #results-dashboard { display: none; }
+        
+        .scores-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        .score-card { display: flex; flex-direction: column; align-items: center; text-align: center; }
+        
+        /* SVG Circular Meters */
+        .circular-meter { position: relative; width: 130px; height: 130px; margin-bottom: 16px; }
+        .meter-svg { width: 130px; height: 130px; transform: rotate(-90deg); }
+        .meter-bg { fill: none; stroke: #e2e8f0; stroke-width: 10; }
+        .meter-path { fill: none; stroke: var(--primary); stroke-width: 10; stroke-linecap: round; transition: stroke-dashoffset 1.5s ease-out; }
+        .meter-value { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.6rem; font-weight: 700; color: var(--text-main); }
+        
+        /* Linear Progress */
+        .linear-meter { width: 100%; height: 8px; background: #e2e8f0; border-radius: 10px; overflow: hidden; margin-top: 10px; }
+        .linear-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary-light), var(--primary)); border-radius: 10px; transition: width 1.5s ease-out; }
+
+        /* Section 4 & 5: Insights & Plans */
+        .insight-box { border-left: 4px solid var(--primary); padding: 20px; background: #fff; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin-bottom: 16px; box-shadow: var(--shadow-sm); }
+        .insight-box.warning { border-left-color: #f59e0b; }
+        .insight-box h4 { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        
+        .plan-list { list-style: none; }
+        .plan-list li { padding: 16px; background: #fff; border-radius: var(--radius-lg); margin-bottom: 12px; display: flex; gap: 16px; box-shadow: var(--shadow-sm); align-items: flex-start; }
+        .plan-num { width: 30px; height: 30px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+
+        /* Section 7: Study Hacks */
+        .hack-icon { font-size: 2.5rem; margin-bottom: 16px; display: inline-block; background: #fff; padding: 16px; border-radius: 50%; box-shadow: var(--shadow-sm); }
+
+        /* Section 8: Share Card */
+        .share-container { max-width: 500px; margin: 60px auto 0; }
+        .share-card { background: #0f172a; color: #fff; border-radius: var(--radius-xl); padding: 40px; position: relative; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+        .share-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(30,189,116,0.15) 0%, transparent 60%); pointer-events: none; }
+        .share-title { font-size: 1.8rem; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
+        .share-row { display: flex; justify-content: space-between; margin-bottom: 16px; font-size: 1.1rem; }
+        .share-val { font-weight: 700; color: var(--primary-light); }
+        .share-footer { margin-top: 30px; text-align: center; font-size: 0.85rem; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Section 9: FAQ */
+        .faq-item { background: #fff; border-radius: var(--radius-lg); margin-bottom: 16px; overflow: hidden; box-shadow: var(--shadow-sm); }
+        .faq-btn { width: 100%; text-align: left; padding: 24px; background: none; border: none; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; color: var(--text-main); }
+        .faq-content { max-height: 0; overflow: hidden; transition: all 0.4s ease; padding: 0 24px; color: var(--text-muted); }
+        .faq-item.active .faq-content { padding-bottom: 24px; max-height: 300px; }
+        .faq-icon { transition: transform 0.3s; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); color: var(--primary); }
+
+        /* Section 10 & 11: Creator & Footer */
+        .creator-section { text-align: center; max-width: 700px; margin: 0 auto; padding: 40px; }
+        .creator-section h2 { font-size: 2rem; margin-bottom: 16px; }
+        
+        footer { border-top: 1px solid rgba(0,0,0,0.05); padding: 40px 20px; text-align: center; background: #fff; }
+        footer p { font-size: 0.95rem; margin-bottom: 8px; font-weight: 500; }
+        footer .brand { font-weight: 700; color: var(--text-main); }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .d-1 { transition-delay: 0.1s; } .d-2 { transition-delay: 0.2s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .options-grid { grid-template-columns: 1fr; }
+            .container { padding: 60px 20px; }
+            .share-card { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <section class="hero container reveal">
+        <div>
+            <div class="hero-badge">⚡ Interactive Assessment</div>
+            <h1>How Fast Is<br>Your Brain?</h1>
+            <p>Analyze your focus, memory, learning efficiency and study habits in under 60 seconds with our advanced biometric profiling engine.</p>
+            <a href="#assessment" class="btn">Analyze My Brain</a>
+        </div>
+    </section>
+
+    <section id="assessment" class="container reveal">
+        <div class="section-header text-center">
+            <h2>Student Assessment Framework</h2>
+            <p>Answer truthfully to generate your accurate cognitive profile.</p>
+        </div>
+
+        <div class="glass-card grid-2">
+            <div>
+                <h3 style="margin-bottom: 24px;">📊 Quantitative Metrics</h3>
+                
+                <div class="input-group">
+                    <label>📚 Daily Study Hours <span class="slider-val" id="val-study">4 hrs</span></label>
+                    <input type="range" id="inp-study" min="0" max="14" step="0.5" value="4">
+                </div>
+                
+                <div class="input-group">
+                    <label>😴 Average Sleep <span class="slider-val" id="val-sleep">7 hrs</span></label>
+                    <input type="range" id="inp-sleep" min="3" max="12" step="0.5" value="7">
+                </div>
+
+                <div class="input-group">
+                    <label>💧 Daily Water Intake <span class="slider-val" id="val-water">2.0 L</span></label>
+                    <input type="range" id="inp-water" min="0" max="5" step="0.5" value="2.0">
+                </div>
+
+                <div class="input-group">
+                    <label>📱 Daily Screen Time <span class="slider-val" id="val-screen">5 hrs</span></label>
+                    <input type="range" id="inp-screen" min="1" max="16" step="0.5" value="5">
+                </div>
+            </div>
+
+            <div>
+                <h3 style="margin-bottom: 24px;">🎯 Qualitative Habits</h3>
+
+                <div class="input-group">
+                    <label>🏃 Exercise Frequency</label>
+                    <div class="options-grid" id="opt-exercise">
+                        <div class="option-btn active" data-val="low">Rarely</div>
+                        <div class="option-btn" data-val="med">Sometimes</div>
+                        <div class="option-btn" data-val="high">Daily</div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>🧠 Natural Focus Level</label>
+                    <div class="options-grid" id="opt-focus">
+                        <div class="option-btn" data-val="low">Easily Distracted</div>
+                        <div class="option-btn active" data-val="med">Moderate</div>
+                        <div class="option-btn" data-val="high">Laser Focus</div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>🔄 Revision Frequency</label>
+                    <div class="options-grid" id="opt-revision">
+                        <div class="option-btn" data-val="low">Before Exams</div>
+                        <div class="option-btn active" data-val="med">Weekly</div>
+                        <div class="option-btn" data-val="high">Daily Spaced</div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>✍ Note Making Habit</label>
+                    <div class="options-grid" id="opt-notes">
+                        <div class="option-btn" data-val="low">Highlighting</div>
+                        <div class="option-btn active" data-val="med">Copying text</div>
+                        <div class="option-btn" data-val="high">Mind Maps/Active</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 40px;">
+            <button class="btn" onclick="generateBrainAnalysis()">Run AI Analysis ⚡</button>
+        </div>
+    </section>
+
+    <section id="results-dashboard" class="container">
+        
+        <div class="section-header text-center reveal">
+            <h2>Your Cognitive Profile</h2>
+            <p>Calculated based on neurological load, circadian habits, and study mechanics.</p>
+        </div>
+
+        <div class="glass-card scores-panel reveal">
+            <div class="score-card">
+                <div class="circular-meter">
+                    <svg class="meter-svg"><circle class="meter-bg" cx="65" cy="65" r="55"></circle><circle class="meter-path" id="svg-brain" cx="65" cy="65" r="55" stroke-dasharray="345" stroke-dashoffset="345"></circle></svg>
+                    <div class="meter-value" id="res-brain">0</div>
+                </div>
+                <h4>Brain Speed Index</h4>
+            </div>
+            <div class="score-card">
+                <div class="circular-meter">
+                    <svg class="meter-svg"><circle class="meter-bg" cx="65" cy="65" r="55"></circle><circle class="meter-path" id="svg-focus" cx="65" cy="65" r="55" stroke-dasharray="345" stroke-dashoffset="345"></circle></svg>
+                    <div class="meter-value" id="res-focus">0</div>
+                </div>
+                <h4>Focus Score</h4>
+            </div>
+            <div class="score-card">
+                <div class="circular-meter">
+                    <svg class="meter-svg"><circle class="meter-bg" cx="65" cy="65" r="55"></circle><circle class="meter-path" id="svg-memory" cx="65" cy="65" r="55" stroke-dasharray="345" stroke-dashoffset="345"></circle></svg>
+                    <div class="meter-value" id="res-memory">0</div>
+                </div>
+                <h4>Memory Retention</h4>
+            </div>
+            <div class="score-card">
+                <div class="circular-meter">
+                    <svg class="meter-svg"><circle class="meter-bg" cx="65" cy="65" r="55"></circle><circle class="meter-path" id="svg-learning" cx="65" cy="65" r="55" stroke-dasharray="345" stroke-dashoffset="345"></circle></svg>
+                    <div class="meter-value" id="res-learning">0</div>
+                </div>
+                <h4>Learning Efficiency</h4>
+            </div>
+        </div>
+
+        <div class="glass-card reveal" style="margin-bottom: 50px;">
+            <h3>📈 Study Discipline Dashboard</h3>
+            <div style="margin-top: 20px;">
+                <p style="margin-bottom: 5px; font-weight: 600; color: var(--text-main);">Discipline Level (<span id="txt-disc">0</span>%)</p>
+                <div class="linear-meter"><div class="linear-fill" id="bar-disc"></div></div>
+            </div>
+            <div style="margin-top: 20px;">
+                <p style="margin-bottom: 5px; font-weight: 600; color: var(--text-main);">Performance Potential (<span id="txt-perf">0</span>%)</p>
+                <div class="linear-meter"><div class="linear-fill" id="bar-perf"></div></div>
+            </div>
+        </div>
+
+        <div class="grid-2 reveal">
+            <div>
+                <h3 style="margin-bottom: 24px;">🧠 Personalized AI Insights</h3>
+                <div id="dynamic-insights">
+                    </div>
+            </div>
+
+            <div>
+                <h3 style="margin-bottom: 24px;">⚡ 7-Day Brain Boost Plan</h3>
+                <ul class="plan-list" id="dynamic-plan">
+                    </ul>
+            </div>
+        </div>
+
+        <div class="share-container reveal">
+            <div class="share-card" id="share-capture">
+                <div class="share-title">My Brain Speed Profile 🚀</div>
+                
+                <div class="share-row"><span>Overall Brain Rating</span><span class="share-val" id="sh-overall">--</span></div>
+                <div class="share-row"><span>Learning Efficiency</span><span class="share-val" id="sh-learn">--</span></div>
+                <div class="share-row"><span>Memory Consolidation</span><span class="share-val" id="sh-mem">--</span></div>
+                <div class="share-row"><span>Focus Capacity</span><span class="share-val" id="sh-foc">--</span></div>
+                
+                <div class="share-footer">
+                    Powered by HeyDoctor AI
+                </div>
+            </div>
+            <p class="text-center" style="margin-top: 16px; font-size: 0.9rem;">Take a screenshot to share your brain metrics!</p>
+        </div>
+    </section>
+
+    <section class="container reveal">
+        <div class="section-header text-center">
+            <h2>Ultimate Study Hacks</h2>
+            <p>Scientifically proven methods to hack your learning curve.</p>
+        </div>
+        <div class="grid-3">
+            <div class="glass-card reveal">
+                <div class="hack-icon">🍅</div>
+                <h3>Pomodoro Method</h3>
+                <p>Study for 25 minutes, then take a 5-minute break. This prevents cognitive burnout and maintains high dopamine levels.</p>
+            </div>
+            <div class="glass-card reveal d-1">
+                <div class="hack-icon">🔁</div>
+                <h3>Spaced Repetition</h3>
+                <p>Review material at increasing intervals (Day 1, Day 3, Day 7). This forces the brain to lock data into long-term memory.</p>
+            </div>
+            <div class="glass-card reveal d-2">
+                <div class="hack-icon">🗣️</div>
+                <h3>Feynman Technique</h3>
+                <p>Explain a complex concept in simple terms as if teaching a 10-year-old. Identifies and fixes gaps in your understanding.</p>
+            </div>
+            <div class="glass-card reveal">
+                <div class="hack-icon">🧠</div>
+                <h3>Active Recall</h3>
+                <p>Instead of re-reading notes, test yourself frequently. Forcing the brain to retrieve information strengthens neural pathways.</p>
+            </div>
+            <div class="glass-card reveal d-1">
+                <div class="hack-icon">🗺️</div>
+                <h3>Mind Mapping</h3>
+                <p>Connect core concepts visually using branches. Great for visual learners to understand massive frameworks instantly.</p>
+            </div>
+            <div class="glass-card reveal d-2">
+                <div class="hack-icon">🎧</div>
+                <h3>Deep Work Method</h3>
+                <p>Lock away your phone and study in a distraction-free zone for 90-minute intense blocks. Maximizes cognitive flow states.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container reveal">
+        <div class="section-header text-center">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item">
+                <button class="faq-btn">How can I improve memory? <span class="faq-icon">+</span></button>
+                <div class="faq-content"><br>Improving memory requires 8 hours of sleep for consolidation, using Active Recall instead of passive reading, staying hydrated, and implementing Spaced Repetition frameworks.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">How can I focus better while studying? <span class="faq-icon">+</span></button>
+                <div class="faq-content"><br>Remove all digital devices from the room. Use the Pomodoro technique to break study time into manageable chunks, and ensure your study environment is clean and well-lit.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">How much sleep do students need? <span class="faq-icon">+</span></button>
+                <div class="faq-content"><br>Students generally require 8 to 10 hours of high-quality sleep. During REM sleep, short-term memories are transferred to the long-term cortex.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">How can I learn faster? <span class="faq-icon">+</span></button>
+                <div class="faq-content"><br>Apply the Feynman Technique. Try explaining the topic in your own words immediately after reading. If you stumble, you know exactly what part you need to re-read.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">Does screen time affect concentration? <span class="faq-icon">+</span></button>
+                <div class="faq-content"><br>Yes. High screen time, especially short-form content, rewires the brain's dopamine receptors, severely reducing your ability to sustain attention on slow, complex tasks like reading textbooks.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">How can I improve revision efficiency? <span class="faq-icon">+</span></button>
+                <div class="faq-content"><br>Stop re-reading highlights. Use flashcards, create practice quizzes, and summarize chapters from memory. Active engagement builds stronger neural networks.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container reveal">
+        <div class="glass-card creator-section">
+            <h2>About The Creator</h2>
+            <p>This educational tool was created and designed by Pratyush Ranjan Roul to help students understand and improve their study performance, focus and learning efficiency.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Made with dedication by Pratyush Ranjan Roul</p>
+        <p class="brand">Powered by HeyDoctor AI</p>
+    </footer>
+
+    <script>
+        // 1. Scroll Reveal Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 2. Input Listeners for Sliders
+        const updateSliderVal = (inputId, valId, suffix) => {
+            const input = document.getElementById(inputId);
+            const valDisplay = document.getElementById(valId);
+            input.addEventListener('input', (e) => {
+                valDisplay.innerText = e.target.value + suffix;
+            });
+        };
+        updateSliderVal('inp-study', 'val-study', ' hrs');
+        updateSliderVal('inp-sleep', 'val-sleep', ' hrs');
+        updateSliderVal('inp-water', 'val-water', ' L');
+        updateSliderVal('inp-screen', 'val-screen', ' hrs');
+
+        // 3. Option Selectors Logic
+        const setupOptions = (groupId) => {
+            const container = document.getElementById(groupId);
+            const buttons = container.querySelectorAll('.option-btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+            });
+        };
+        setupOptions('opt-exercise');
+        setupOptions('opt-focus');
+        setupOptions('opt-revision');
+        setupOptions('opt-notes');
+
+        function getActiveVal(groupId) {
+            return document.querySelector(`#${groupId} .option-btn.active`).getAttribute('data-val');
+        }
+
+        // 4. Main AI Engine Logic
+        function generateBrainAnalysis() {
+            // Unhide Dashboard and Scroll
+            const dash = document.getElementById('results-dashboard');
+            dash.style.display = 'block';
+            setTimeout(() => {
+                dash.scrollIntoView({ behavior: 'smooth' });
+                dash.classList.add('visible');
+            }, 100);
+
+            // Fetch Inputs
+            const study = parseFloat(document.getElementById('inp-study').value);
+            const sleep = parseFloat(document.getElementById('inp-sleep').value);
+            const water = parseFloat(document.getElementById('inp-water').value);
+            const screen = parseFloat(document.getElementById('inp-screen').value);
+            
+            const exercise = getActiveVal('opt-exercise');
+            const focus = getActiveVal('opt-focus');
+            const revision = getActiveVal('opt-revision');
+            const notes = getActiveVal('opt-notes');
+
+            // Calculate Base Scores (Max 100)
+            let scBrain = 70; // Baseline
+            let scFocus = 60;
+            let scMem = 60;
+            let scLearn = 50;
+
+            // Algorithm - Sleep Impact
+            if(sleep >= 7 && sleep <= 9) { scBrain += 15; scMem += 20; }
+            else if(sleep < 6) { scBrain -= 20; scMem -= 25; scFocus -= 15; }
+
+            // Algorithm - Water Impact
+            if(water >= 2.5) { scBrain += 10; scFocus += 5; }
+            else if(water < 1.5) { scBrain -= 10; }
+
+            // Algorithm - Screen Time Inverse Impact
+            if(screen > 6) { scFocus -= 20; scBrain -= 15; }
+            else if(screen < 4) { scFocus += 15; scBrain += 10; }
+
+            // Algorithm - Exercise
+            if(exercise === 'high') { scBrain += 10; scMem += 10; }
+            if(exercise === 'low') { scBrain -= 5; }
+
+            // Algorithm - Focus/Study
+            if(focus === 'high') scFocus += 20;
+            if(focus === 'low') scFocus -= 15;
+            
+            scLearn += (study > 6 ? 10 : (study * 2)); 
+            
+            // Algorithm - Revision & Notes
+            if(revision === 'high') scMem += 20;
+            if(revision === 'low') scMem -= 15;
+            if(notes === 'high') scLearn += 25;
+            if(notes === 'low') scLearn -= 10;
+
+            // Clamp scores between 20 and 99 (Realistic bounds)
+            const clamp = (val) => Math.max(20, Math.min(99, Math.round(val)));
+            scBrain = clamp(scBrain);
+            scFocus = clamp(scFocus);
+            scMem = clamp(scMem);
+            scLearn = clamp(scLearn);
+            
+            let scDisc = clamp((scBrain + scFocus + scLearn) / 3);
+            let scPerf = clamp((scLearn * 0.6) + (scMem * 0.4) + (study > 4 ? 10 : 0));
+
+            // Render Animations
+            animateSVG('svg-brain', 'res-brain', scBrain);
+            animateSVG('svg-focus', 'res-focus', scFocus);
+            animateSVG('svg-memory', 'res-memory', scMem);
+            animateSVG('svg-learning', 'res-learning', scLearn);
+            
+            animateBar('bar-disc', 'txt-disc', scDisc);
+            animateBar('bar-perf', 'txt-perf', scPerf);
+
+            // Populate Share Card
+            const overallRating = clamp((scBrain + scFocus + scMem + scLearn)/4);
+            let ratingGrade = "Average";
+            if(overallRating >= 90) ratingGrade = "Genius Level 🧠";
+            else if(overallRating >= 80) ratingGrade = "Elite Scholar ⭐";
+            else if(overallRating >= 70) ratingGrade = "High Performer 🚀";
+            else if(overallRating < 50) ratingGrade = "Needs Optimization 🔧";
+
+            document.getElementById('sh-overall').innerText = `${overallRating}% - ${ratingGrade}`;
+            document.getElementById('sh-learn').innerText = `${scLearn}%`;
+            document.getElementById('sh-mem').innerText = `${scMem}%`;
+            document.getElementById('sh-foc').innerText = `${scFocus}%`;
+
+            // Generate Smart Insights
+            generateInsights(sleep, screen, water, notes, revision);
+        }
+
+        function animateSVG(svgId, txtId, target) {
+            const circle = document.getElementById(svgId);
+            const txt = document.getElementById(txtId);
+            const circumference = 345; // 2 * PI * 55
+            const offset = circumference - (target / 100) * circumference;
+            
+            circle.style.strokeDashoffset = offset;
+            
+            let curr = 0;
+            const timer = setInterval(() => {
+                curr += 2;
+                if(curr >= target) { curr = target; clearInterval(timer); }
+                txt.innerText = curr;
+            }, 20);
+        }
+
+        function animateBar(barId, txtId, target) {
+            const bar = document.getElementById(barId);
+            const txt = document.getElementById(txtId);
+            bar.style.width = target + '%';
+            
+            let curr = 0;
+            const timer = setInterval(() => {
+                curr += 2;
+                if(curr >= target) { curr = target; clearInterval(timer); }
+                txt.innerText = curr;
+            }, 20);
+        }
+
+        function generateInsights(sleep, screen, water, notes, revision) {
+            const insightsBox = document.getElementById('dynamic-insights');
+            const planBox = document.getElementById('dynamic-plan');
+            insightsBox.innerHTML = ''; planBox.innerHTML = '';
+
+            // Dynamic Insights Logic
+            if(sleep < 7) {
+                insightsBox.innerHTML += `<div class="insight-box warning"><h4>⚠️ Sleep Deficiency Impact</h4><p>Less than 7 hours of sleep blocks the brain from transferring data into long-term memory. Your hard study hours are leaking away.</p></div>`;
+            } else {
+                insightsBox.innerHTML += `<div class="insight-box"><h4>✅ Strong Brain Recovery</h4><p>Your sleep hours indicate excellent cognitive recovery, setting a strong foundation for neuroplasticity.</p></div>`;
+            }
+
+            if(screen > 5) {
+                insightsBox.innerHTML += `<div class="insight-box warning"><h4>📱 Screen Overload</h4><p>High screen time is drastically lowering your baseline dopamine levels, making studying feel incredibly boring and difficult to focus on.</p></div>`;
+            }
+
+            if(revision !== 'high') {
+                insightsBox.innerHTML += `<div class="insight-box"><h4>🧠 Memory Improvement Opportunity</h4><p>You are heavily relying on short-term memory. Switch to Spaced Repetition (Daily/Weekly reviews) to permanentize your knowledge.</p></div>`;
+            }
+
+            if(insightsBox.innerHTML === '') {
+                insightsBox.innerHTML = `<div class="insight-box"><h4>🌟 Peak Cognitive Profile</h4><p>Your habits are highly optimized. Maintain this routine to ensure sustained academic excellence.</p></div>`;
+            }
+
+            // Dynamic Plan
+            planBox.innerHTML += `<li><div class="plan-num">1</div><div><strong>Hydration Target</strong><br>Drink 500ml of water 30 minutes before your first study session to boost brain electricity.</div></li>`;
+            
+            if(notes === 'low' || notes === 'med') {
+                planBox.innerHTML += `<li><div class="plan-num">2</div><div><strong>Active Recall Shift</strong><br>Stop highlighting. For today's session, read a page, close the book, and write down exactly what you remember.</div></li>`;
+            } else {
+                planBox.innerHTML += `<li><div class="plan-num">2</div><div><strong>Deep Work Focus</strong><br>Set a timer for 50 minutes. Put your phone in another room and achieve absolute focus on one subject.</div></li>`;
+            }
+
+            if(screen > 4) {
+                planBox.innerHTML += `<li><div class="plan-num">3</div><div><strong>Digital Detox Window</strong><br>Implement a strict 'No-Screens' policy 60 minutes before bed to protect your melatonin production.</div></li>`;
+            } else {
+                planBox.innerHTML += `<li><div class="plan-num">3</div><div><strong>Review Protocol</strong><br>Spend the last 15 minutes of your day mentally reviewing the most important concepts you learned.</div></li>`;
+            }
+        }
+
+        // 5. FAQ Accordion Logic
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const parent = btn.parentElement;
+                const isActive = parent.classList.contains('active');
+                
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+                
+                // Open clicked if it wasn't active
+                if(!isActive) parent.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
