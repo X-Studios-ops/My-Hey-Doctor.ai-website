@@ -114,8 +114,27 @@
             --radius-full: 9999px;
             --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+        }   
 
+            .back-home{
+    position:fixed;
+    top:20px;
+    left:20px;
+    z-index:9999;
+    padding:12px 18px;
+    background:#1ebd74;
+    color:#fff;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:600;
+    box-shadow:0 8px 20px rgba(30,189,116,.3);
+    transition:.3s;
+}
+
+.back-home:hover{
+    transform:translateY(-3px) scale(1.05);
+}
+        
         /* Resets & Global */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -280,7 +299,10 @@
     </style>
 </head>
 <body>
-
+   
+<a href="index.html" class="back-home">
+🏠 Back to Home
+</a>
     <div class="bg-shape shape-1"></div>
     <div class="bg-shape shape-2"></div>
     <div class="bg-shape shape-3"></div>
