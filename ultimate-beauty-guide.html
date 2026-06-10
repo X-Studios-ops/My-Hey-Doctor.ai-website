@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>How To Maintain Beauty - Ultimate Beauty Guide | HeyDoctor AI</title>
+    <meta name="description" content="Discover simple, natural habits to improve your skin, nails, hair, and overall appearance. The ultimate daily beauty guide naturally powered by HeyDoctor AI.">
+    <meta name="keywords" content="beauty tips, natural beauty, skin care, hair care, nail care, healthy habits">
+    <meta name="author" content="HeyDoctor AI">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="How To Maintain Beauty - Ultimate Beauty Guide">
+    <meta property="og:description" content="Discover simple, natural habits to improve your skin, nails, hair, and overall appearance.">
+    <meta property="og:image" content="https://example.com/beauty-banner.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How To Maintain Beauty - Ultimate Beauty Guide">
+    <meta name="twitter:description" content="Discover simple, natural habits to improve your skin, nails, hair, and overall appearance.">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can I improve my skin naturally?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Improving skin naturally involves staying hydrated, getting 8 hours of sleep, eating a balanced diet rich in antioxidants, and maintaining a consistent cleansing and moisturizing routine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much water should I drink daily?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is generally recommended to drink at least 8 glasses (about 2 liters) of water daily, though individual needs may vary based on activity level and climate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I strengthen weak nails?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Strengthen weak nails by keeping them clean, avoiding biting, moisturizing the cuticles, eating a diet rich in biotin and protein, and trimming them properly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I get healthy hair naturally?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Healthy hair can be achieved through regular scalp care, using natural hair oils, ensuring adequate protein intake, avoiding overwashing, and protecting hair from excessive heat."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* CSS Variables for Premium Luxury Theme */
+        :root {
+            --primary: #1ebd74;
+            --primary-light: #45d693;
+            --bg-color: #fafbfc;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --card-bg: rgba(255, 255, 255, 0.65);
+            --border-color: rgba(255, 255, 255, 0.8);
+            --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.04);
+            --shadow-hover: 0 20px 40px rgba(30, 189, 116, 0.1);
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating Background Shapes */
+        .bg-shape {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: float 20s infinite alternate;
+        }
+        .shape-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, var(--primary-light) 0%, rgba(255,255,255,0) 70%); }
+        .shape-2 { top: 40%; right: -20%; width: 60vw; height: 60vw; background: radial-gradient(circle, #e0f8eb 0%, rgba(255,255,255,0) 70%); animation-delay: -5s; }
+        .shape-3 { bottom: -10%; left: 10%; width: 40vw; height: 40vw; background: radial-gradient(circle, #baf1d8 0%, rgba(255,255,255,0) 70%); animation-delay: -10s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5%, 10%) scale(1.05); }
+            100% { transform: translate(-5%, -5%) scale(0.95); }
+        }
+
+        /* Typography */
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
+        h1 { font-size: clamp(3rem, 5vw, 5rem); line-height: 1.1; margin-bottom: 24px; background: linear-gradient(135deg, #111, #555); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 40px; }
+        h3 { font-size: 1.25rem; margin-bottom: 12px; }
+        p { color: var(--text-muted); font-size: 1.1rem; }
+
+        /* Container Layouts */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .section-header { text-align: center; margin-bottom: 60px; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* Glassmorphism Cards */
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 40px 30px;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(30, 189, 116, 0.3);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, #f0f0f0);
+            width: 70px; height: 70px;
+            display: flex; justify-content: center; align-items: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(30, 189, 116, 0.3);
+            transition: var(--transition);
+        }
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 25px rgba(30, 189, 116, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            font-size: 1.25rem;
+        }
+
+        /* Interactive Tracker Section */
+        .tracker-wrapper {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-lg);
+            padding: 50px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        .tracker-controls { margin-bottom: 50px; }
+        .slider-group { margin-bottom: 30px; }
+        .slider-group label { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 10px; }
+        
+        input[type=range] {
+            -webkit-appearance: none; width: 100%; background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none; height: 24px; width: 24px;
+            border-radius: 50%; background: var(--primary);
+            cursor: pointer; margin-top: -8px; box-shadow: 0 4px 10px rgba(30,189,116,0.4);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%; height: 8px; cursor: pointer;
+            background: #e0e0e0; border-radius: 10px;
+        }
+
+        .scores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .score-item { display: flex; flex-direction: column; align-items: center; }
+        
+        .circular-progress {
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            background: conic-gradient(var(--primary) 0%, #e0e0e0 0%);
+            position: relative;
+            margin-bottom: 20px;
+            transition: background 0.5s ease-out;
+        }
+        .circular-progress::before {
+            content: ""; position: absolute;
+            width: 100px; height: 100px;
+            background-color: white; border-radius: 50%;
+        }
+        .progress-value { position: relative; font-size: 1.5rem; font-weight: 700; color: var(--text-main); }
+
+        /* Carousel Section */
+        .carousel-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            padding: 20px 0;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .carousel-slide p {
+            font-size: 1.5rem; font-style: italic; color: var(--primary); font-weight: 500;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: white; border-radius: var(--radius-md);
+            margin-bottom: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%; text-align: left; padding: 24px;
+            background: none; border: none;
+            font-size: 1.2rem; font-weight: 600; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-answer { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.4s ease; }
+        .faq-item.active .faq-answer { padding: 0 24px 24px 24px; max-height: 500px; }
+        .chevron { transition: transform 0.3s; }
+        .faq-item.active .chevron { transform: rotate(180deg); }
+
+        /* Footer */
+        footer {
+            text-align: center; padding: 60px 20px; margin-top: 50px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        footer p { font-weight: 500; }
+        .heart { color: var(--primary); }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .tracker-wrapper { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <section class="hero container reveal">
+        <div>
+            <h1>How To Maintain<br>Beauty Naturally ✨</h1>
+            <p>Simple, science-backed habits that elevate your skin, nails, hair, and overall wellness. Uncover your radiant self.</p>
+            <a href="#habits" class="btn">Begin Your Journey</a>
+        </div>
+    </section>
+
+    <section id="habits" class="container">
+        <div class="section-header reveal">
+            <h2>Daily Beauty Habits 🌿</h2>
+            <p>The foundation of lasting beauty starts with your daily routine.</p>
+        </div>
+        <div class="grid">
+            <div class="card reveal">
+                <div class="card-icon">💧</div>
+                <h3>Drink Water</h3>
+                <p>Hydration is the secret to a glowing complexion. Aim for at least 2 liters a day.</p>
+            </div>
+            <div class="card reveal delay-1">
+                <div class="card-icon">😴</div>
+                <h3>Sleep 8 Hours</h3>
+                <p>Cellular repair happens overnight. Quality sleep prevents dark circles and dull skin.</p>
+            </div>
+            <div class="card reveal delay-2">
+                <div class="card-icon">🥗</div>
+                <h3>Eat Healthy</h3>
+                <p>Nourish from within with antioxidants, vitamins, and healthy fats.</p>
+            </div>
+            <div class="card reveal delay-3">
+                <div class="card-icon">🏃‍♀️</div>
+                <h3>Exercise Daily</h3>
+                <p>Boost circulation to deliver oxygen and nutrients to your skin.</p>
+            </div>
+            <div class="card reveal">
+                <div class="card-icon">☀️</div>
+                <h3>Protect Skin</h3>
+                <p>UV damage accelerates aging. Never skip your broad-spectrum sunscreen.</p>
+            </div>
+            <div class="card reveal delay-1">
+                <div class="card-icon">🚫</div>
+                <h3>Avoid Excess Sugar</h3>
+                <p>Sugar causes glycation, which damages collagen and elastin over time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="section-header reveal">
+            <h2>Skin Care Mastery 🧴</h2>
+        </div>
+        <div class="grid">
+            <div class="card reveal">
+                <div class="card-icon">🧼</div>
+                <h3>Cleansing</h3>
+                <p>Wash away impurities twice daily without stripping natural oils.</p>
+            </div>
+            <div class="card reveal delay-1">
+                <div class="card-icon">🌸</div>
+                <h3>Moisturizing</h3>
+                <p>Lock in hydration to maintain a resilient skin barrier.</p>
+            </div>
+            <div class="card reveal delay-2">
+                <div class="card-icon">🛡️</div>
+                <h3>Sunscreen</h3>
+                <p>The ultimate anti-aging tool. Reapply every two hours when outdoors.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="section-header reveal">
+            <h2>Luminous Hair Care 💇‍♀️</h2>
+        </div>
+        <div class="grid">
+            <div class="card reveal">
+                <div class="card-icon">💆‍♀️</div>
+                <h3>Scalp Care</h3>
+                <p>A healthy scalp equals healthy hair growth. Exfoliate and massage regularly.</p>
+            </div>
+            <div class="card reveal delay-1">
+                <div class="card-icon">🥥</div>
+                <h3>Hair Oil</h3>
+                <p>Use argan or rosemary oil to nourish ends and stimulate follicles.</p>
+            </div>
+            <div class="card reveal delay-2">
+                <div class="card-icon">🍳</div>
+                <h3>Protein Intake</h3>
+                <p>Hair is made of keratin. Ensure enough dietary protein for strength.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="section-header reveal">
+            <h2>Flawless Nail Care 💅</h2>
+        </div>
+        <div class="grid">
+            <div class="card reveal">
+                <div class="card-icon">✂️</div>
+                <h3>Proper Trimming</h3>
+                <p>Trim straight across and file edges gently to prevent splitting.</p>
+            </div>
+            <div class="card reveal delay-1">
+                <div class="card-icon">🥑</div>
+                <h3>Moisturize Nails</h3>
+                <p>Apply cuticle oil daily to prevent brittle nails and hangnails.</p>
+            </div>
+            <div class="card reveal delay-2">
+                <div class="card-icon">🚫</div>
+                <h3>Avoid Biting</h3>
+                <p>Keep nails clean and break the habit to avoid infections.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container reveal">
+        <div class="section-header">
+            <h2>Beauty Progress Tracker 📊</h2>
+            <p>Adjust your daily habits to see your predicted beauty scores.</p>
+        </div>
+        <div class="tracker-wrapper">
+            <div class="tracker-controls">
+                <div class="slider-group">
+                    <label>Water Intake (Liters) <span id="waterVal">2.0 L</span></label>
+                    <input type="range" id="waterInput" min="0" max="4" step="0.5" value="2">
+                </div>
+                <div class="slider-group">
+                    <label>Sleep (Hours) <span id="sleepVal">7 hrs</span></label>
+                    <input type="range" id="sleepInput" min="0" max="12" step="1" value="7">
+                </div>
+                <div class="slider-group">
+                    <label>Exercise (Minutes) <span id="exerciseVal">30 mins</span></label>
+                    <input type="range" id="exerciseInput" min="0" max="120" step="10" value="30">
+                </div>
+            </div>
+
+            <div class="scores-grid">
+                <div class="score-item">
+                    <div class="circular-progress" id="beautyMeter" style="background: conic-gradient(var(--primary) 70%, #e0e0e0 0%);">
+                        <span class="progress-value" id="beautyScore">70%</span>
+                    </div>
+                    <h3>Overall Beauty</h3>
+                </div>
+                <div class="score-item">
+                    <div class="circular-progress" id="skinMeter" style="background: conic-gradient(var(--primary) 80%, #e0e0e0 0%);">
+                        <span class="progress-value" id="skinScore">80%</span>
+                    </div>
+                    <h3>Skin Radiance</h3>
+                </div>
+                <div class="score-item">
+                    <div class="circular-progress" id="hairMeter" style="background: conic-gradient(var(--primary) 65%, #e0e0e0 0%);">
+                        <span class="progress-value" id="hairScore">65%</span>
+                    </div>
+                    <h3>Hair Vitality</h3>
+                </div>
+                <div class="score-item">
+                    <div class="circular-progress" id="nailMeter" style="background: conic-gradient(var(--primary) 75%, #e0e0e0 0%);">
+                        <span class="progress-value" id="nailScore">75%</span>
+                    </div>
+                    <h3>Nail Strength</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container reveal">
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide"><p>"Consistency is the true secret to glowing skin." 🌟</p></div>
+                <div class="carousel-slide"><p>"Your diet reflects on your face. Eat the rainbow!" 🍓</p></div>
+                <div class="carousel-slide"><p>"Silk pillowcases reduce hair friction and skin wrinkles." 🛌</p></div>
+                <div class="carousel-slide"><p>"Stress management is just as important as your skincare routine." 🧘‍♀️</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container reveal">
+        <div class="section-header">
+            <h2>Frequently Asked Questions ❓</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">How can I improve my skin naturally? <span class="chevron">▼</span></button>
+                <div class="faq-answer">
+                    <p><br>Improving skin naturally involves staying hydrated, getting 8 hours of sleep, eating a balanced diet rich in antioxidants, and maintaining a consistent cleansing and moisturizing routine. Don't forget daily sunscreen!</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How much water should I drink daily? <span class="chevron">▼</span></button>
+                <div class="faq-answer">
+                    <p><br>It is generally recommended to drink at least 8 glasses (about 2 liters) of water daily. However, if you exercise frequently or live in a hot climate, you may need more.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How can I strengthen weak nails? <span class="chevron">▼</span></button>
+                <div class="faq-answer">
+                    <p><br>Keep them clean, avoid biting or using them as tools, moisturize the cuticles daily with oil, ensure your diet has enough protein and biotin, and trim them straight across.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How can I get healthy hair naturally? <span class="chevron">▼</span></button>
+                <div class="faq-answer">
+                    <p><br>Focus on scalp care, use natural hair oils like argan or jojoba, ensure adequate protein intake in your diet, avoid overwashing, and protect your hair from excessive heat styling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Powered by <span style="font-weight: 700;">HeyDoctor AI</span> <span class="heart">❤️</span></p>
+    </footer>
+
+    <script>
+        // 1. Scroll Reveal Animations
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        window.addEventListener('scroll', reveal);
+        reveal(); // Trigger on load
+
+        // 2. Interactive Tracker Logic
+        const waterInput = document.getElementById('waterInput');
+        const sleepInput = document.getElementById('sleepInput');
+        const exerciseInput = document.getElementById('exerciseInput');
+
+        const waterVal = document.getElementById('waterVal');
+        const sleepVal = document.getElementById('sleepVal');
+        const exerciseVal = document.getElementById('exerciseVal');
+
+        function updateScores() {
+            const water = parseFloat(waterInput.value);
+            const sleep = parseFloat(sleepInput.value);
+            const exercise = parseFloat(exerciseInput.value);
+
+            // Update UI Labels
+            waterVal.innerText = water + ' L';
+            sleepVal.innerText = sleep + ' hrs';
+            exerciseVal.innerText = exercise + ' mins';
+
+            // Calculate Base Percentages (0 to 100)
+            let waterPct = Math.min((water / 3) * 100, 100); 
+            let sleepPct = Math.min((sleep / 8) * 100, 100);
+            let exercisePct = Math.min((exercise / 60) * 100, 100);
+
+            // Formulas for distinct scores
+            let skin = Math.round((waterPct * 0.5) + (sleepPct * 0.4) + (exercisePct * 0.1));
+            let hair = Math.round((waterPct * 0.3) + (sleepPct * 0.5) + (exercisePct * 0.2));
+            let nail = Math.round((waterPct * 0.6) + (sleepPct * 0.3) + (exercisePct * 0.1));
+            let overall = Math.round((skin + hair + nail) / 3);
+
+            // Update Meters UI
+            updateMeter('beautyMeter', 'beautyScore', overall);
+            updateMeter('skinMeter', 'skinScore', skin);
+            updateMeter('hairMeter', 'hairScore', hair);
+            updateMeter('nailMeter', 'nailScore', nail);
+        }
+
+        function updateMeter(meterId, scoreId, value) {
+            const meter = document.getElementById(meterId);
+            const scoreText = document.getElementById(scoreId);
+            
+            // Animation via CSS variable/conic gradient update
+            meter.style.background = `conic-gradient(var(--primary) ${value}%, #e0e0e0 0%)`;
+            
+            // Counter Animation
+            let current = parseInt(scoreText.innerText);
+            if(isNaN(current)) current = 0;
+            
+            // Simple animated counter
+            const diff = value - current;
+            const steps = 10;
+            const stepVal = diff / steps;
+            let stepCount = 0;
+            
+            const interval = setInterval(() => {
+                stepCount++;
+                current += stepVal;
+                scoreText.innerText = Math.round(current) + '%';
+                if(stepCount >= steps) {
+                    clearInterval(interval);
+                    scoreText.innerText = value + '%';
+                }
+            }, 30);
+        }
+
+        // Event Listeners for Sliders
+        waterInput.addEventListener('input', updateScores);
+        sleepInput.addEventListener('input', updateScores);
+        exerciseInput.addEventListener('input', updateScores);
+        
+        // Init scores on load
+        updateScores();
+
+        // 3. Carousel Logic
+        const track = document.getElementById('carouselTrack');
+        let slideIndex = 0;
+        const totalSlides = document.querySelectorAll('.carousel-slide').length;
+
+        setInterval(() => {
+            slideIndex++;
+            if (slideIndex >= totalSlides) slideIndex = 0;
+            track.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }, 4000);
+
+        // 4. FAQ Accordion Logic
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const parent = question.parentElement;
+                
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if(item !== parent) item.classList.remove('active');
+                });
+
+                // Toggle current
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
