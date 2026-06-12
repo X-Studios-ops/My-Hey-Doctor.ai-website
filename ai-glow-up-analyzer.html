@@ -1,1 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover what's affecting your skin, hair, nails and self-care routine with our free AI Glow-Up Analyzer. Get personalized beauty recommendations instantly.">
+    <title>AI Glow-Up Analyzer | Free Beauty Assessment & Personalized Tips</title>
+    
+    <link rel="canonical" href="https://yourwebsite.com/ai-glow-up-analyzer" />
 
+    <meta property="og:title" content="AI Glow-Up Analyzer | Free Beauty Assessment">
+    <meta property="og:description" content="Discover what's secretly ruining your glow and get personalized beauty recommendations instantly.">
+    <meta property="og:image" content="https://yourwebsite.com/images/glow-up-og.jpg">
+    <meta property="og:url" content="https://yourwebsite.com/ai-glow-up-analyzer">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Glow-Up Analyzer | Free Beauty Assessment">
+    <meta name="twitter:description" content="Take this free AI-powered beauty assessment and discover personalized recommendations.">
+    <meta name="twitter:image" content="https://yourwebsite.com/images/glow-up-twitter.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Is the AI Glow-Up Analyzer free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our AI-powered beauty assessment is completely free to use."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What does the beauty assessment cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The analyzer evaluates your skin type, sleep habits, hydration, sun protection, and hair/nail care routines to provide personalized recommendations."
+        }
+      }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://yourwebsite.com"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI Glow-Up Analyzer"
+      }]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #FAF3F0; /* Soft beige/pink */
+            --white: #FFFFFF;
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --accent-pink: #F4C2C2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+        }
+
+        /* Glassmorphism Classes */
+        .glass {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            border-radius: 0;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-home {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        .back-home:hover {
+            color: var(--gold);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold) 0%, #B8962E 100%);
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Floating Animation */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(circle at top right, var(--accent-pink) 0%, transparent 40%),
+                        radial-gradient(circle at bottom left, var(--gold-light) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 50px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            display: none;
+            min-height: 100vh;
+            padding: 120px 20px 100px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quiz-card {
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gold);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .question-container {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .question-container.active {
+            display: block;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .quiz-option {
+            padding: 15px;
+            border: 2px solid transparent;
+            background: var(--white);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Results Section */
+        .results-section {
+            display: none;
+            padding: 120px 20px 100px;
+        }
+
+        .score-container {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            border: 10px solid var(--gold);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .advice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .advice-card {
+            padding: 30px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .advice-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .advice-card i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        /* Promo Section */
+        .promo-section {
+            padding: 100px 0;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .promo-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .benefits-list li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .benefits-list i {
+            color: var(--gold);
+            margin-right: 10px;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            padding: 80px 0;
+            background: var(--primary);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .trust-item h3 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin: 15px 0 5px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--white);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .trust-grid { grid-template-columns: 1fr; }
+            .hero-content { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="/" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <div class="logo">AI Glow-Up</div>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-content glass floating" data-aos="zoom-in" data-aos-duration="1000">
+            <h1>What's Secretly Ruining Your Glow?</h1>
+            <p>Take this free AI-powered beauty assessment and discover personalized recommendations tailored perfectly to your unique biology.</p>
+            <button class="btn btn-gold" onclick="startQuiz()">Start Analysis</button>
+        </div>
+    </section>
+
+    <section class="quiz-section" id="quiz-section">
+        <div class="container">
+            <div class="quiz-card glass mx-auto">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress"></div>
+                </div>
+                
+                <div id="questions-container">
+                    <div class="question-container active" data-step="1">
+                        <h3>What is your primary skin type?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="nextQuestion(15)">Oily / Acne Prone</div>
+                            <div class="quiz-option" onclick="nextQuestion(15)">Dry / Flaky</div>
+                            <div class="quiz-option" onclick="nextQuestion(20)">Combination</div>
+                            <div class="quiz-option" onclick="nextQuestion(20)">Normal / Balanced</div>
+                        </div>
+                    </div>
+
+                    <div class="question-container" data-step="2">
+                        <h3>How many hours of sleep do you average?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="nextQuestion(5)">Under 5 hours</div>
+                            <div class="quiz-option" onclick="nextQuestion(10)">5 - 6 hours</div>
+                            <div class="quiz-option" onclick="nextQuestion(15)">7 - 8 hours</div>
+                            <div class="quiz-option" onclick="nextQuestion(20)">8+ hours (Beauty sleep!)</div>
+                        </div>
+                    </div>
+
+                    <div class="question-container" data-step="3">
+                        <h3>Daily Water Intake?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="nextQuestion(5)">Barely any</div>
+                            <div class="quiz-option" onclick="nextQuestion(10)">1-3 Glasses</div>
+                            <div class="quiz-option" onclick="nextQuestion(15)">4-6 Glasses</div>
+                            <div class="quiz-option" onclick="nextQuestion(20)">8+ Glasses (Hydrated!)</div>
+                        </div>
+                    </div>
+
+                    <div class="question-container" data-step="4">
+                        <h3>Sunscreen Usage?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="nextQuestion(0)">Never</div>
+                            <div class="quiz-option" onclick="nextQuestion(5)">Only at the beach</div>
+                            <div class="quiz-option" onclick="nextQuestion(10)">Sometimes</div>
+                            <div class="quiz-option" onclick="nextQuestion(20)">Every single day</div>
+                        </div>
+                    </div>
+
+                    <div class="question-container" data-step="5">
+                        <h3>Nail & Hair Care Routine?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="nextQuestion(5)">Wash and go</div>
+                            <div class="quiz-option" onclick="nextQuestion(10)">Basic shampoo + lotion</div>
+                            <div class="quiz-option" onclick="nextQuestion(15)">Regular masks & oils</div>
+                            <div class="quiz-option" onclick="nextQuestion(20)">Extensive salon treatments</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="results-section" id="results-section">
+        <div class="container">
+            <div class="score-container" data-aos="fade-up">
+                <h2>Your AI Beauty Score</h2>
+                <p>Based on your habits, here is your current glow rating:</p>
+                <div class="score-circle mt-4">
+                    <span class="score-number" id="final-score">0</span>
+                </div>
+            </div>
+
+            <h2 class="text-center mb-5" data-aos="fade-up">Your Personalized Routine</h2>
+            
+            <div class="advice-grid">
+                <div class="advice-card glass" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-sparkles"></i>
+                    <h3>Skin Advice</h3>
+                    <p>Incorporate a Vitamin C serum in the morning and double-cleanse at night. Don't skip the hyaluronic acid on damp skin.</p>
+                </div>
+                <div class="advice-card glass" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h3>Nail Advice</h3>
+                    <p>Apply cuticle oil nightly to prevent hangnails and promote growth. Opt for strengthening base coats.</p>
+                </div>
+                <div class="advice-card glass" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-magic"></i>
+                    <h3>Hair Advice</h3>
+                    <p>Use a silk pillowcase to prevent breakage and apply a lightweight hair oil to your ends daily.</p>
+                </div>
+                <div class="advice-card glass" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Self-Care Advice</h3>
+                    <p>Prioritize cortisol management through 10 minutes of morning stretching and protecting your circadian rhythm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="promo-section" data-aos="fade-up">
+        <div class="container">
+            <div class="promo-content glass p-5">
+                <h2>Unlock The Ultimate Beauty Guide</h2>
+                <p>Take your glow to the next level with our premium download.</p>
+                
+                <ul class="benefits-list">
+                    <li><i class="fas fa-check-circle"></i> Personalized beauty recommendations</li>
+                    <li><i class="fas fa-check-circle"></i> AI beauty consultation transcript</li>
+                    <li><i class="fas fa-check-circle"></i> Downloadable PDF guide</li>
+                    <li><i class="fas fa-check-circle"></i> Step-by-step self-care routines</li>
+                </ul>
+                <br>
+                <a href="#" class="btn btn-gold">Download Guide Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-users fa-3x" style="color: var(--gold);"></i>
+                    <h3 class="counter" data-target="50000">0</h3>
+                    <p>Analyses Completed</p>
+                </div>
+                <div class="trust-item" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-star fa-3x" style="color: var(--gold);"></i>
+                    <h3 class="counter" data-target="4.9">0</h3>
+                    <p>Average User Rating</p>
+                </div>
+                <div class="trust-item" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-heart fa-3x" style="color: var(--gold);"></i>
+                    <h3 class="counter" data-target="98">0</h3>
+                    <p>% Glow Improvement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AI Glow-Up Analyzer. All rights reserved.</p>
+        <p style="margin-top: 10px; font-weight: bold; color: var(--gold);">developed by Pratyush Ranjan Roul</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            once: true,
+            offset: 100
+        });
+
+        // Quiz Logic Variables
+        let currentStep = 1;
+        const totalSteps = 5;
+        let totalScore = 0;
+
+        function startQuiz() {
+            document.getElementById('hero').style.display = 'none';
+            const quizSection = document.getElementById('quiz-section');
+            quizSection.style.display = 'flex';
+            updateProgress();
+        }
+
+        function nextQuestion(scoreValue) {
+            totalScore += scoreValue;
+            
+            const currentContainer = document.querySelector(`.question-container[data-step="${currentStep}"]`);
+            currentContainer.classList.remove('active');
+            
+            currentStep++;
+
+            if (currentStep <= totalSteps) {
+                const nextContainer = document.querySelector(`.question-container[data-step="${currentStep}"]`);
+                nextContainer.classList.add('active');
+                updateProgress();
+            } else {
+                showResults();
+            }
+        }
+
+        function updateProgress() {
+            const percentage = ((currentStep - 1) / totalSteps) * 100;
+            document.getElementById('progress').style.width = percentage + '%';
+        }
+
+        function showResults() {
+            document.getElementById('quiz-section').style.display = 'none';
+            document.getElementById('results-section').style.display = 'block';
+            
+            // Ensure Score doesn't exceed 100 or fall below a realistic baseline
+            let finalScore = totalScore;
+            if (finalScore < 40) finalScore = 40 + Math.floor(Math.random() * 15);
+            if (finalScore > 98) finalScore = 98;
+
+            animateScoreReveal(finalScore);
+            animateTrustCounters();
+        }
+
+        function animateScoreReveal(targetScore) {
+            const scoreElement = document.getElementById('final-score');
+            let current = 0;
+            const increment = targetScore / 50; 
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= targetScore) {
+                    clearInterval(timer);
+                    scoreElement.innerText = Math.round(targetScore);
+                } else {
+                    scoreElement.innerText = Math.round(current);
+                }
+            }, 30);
+        }
+
+        // Trust Counter Animations
+        function animateTrustCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        // Check if it's a decimal (like the 4.9 rating)
+                        if(target % 1 !== 0) {
+                            counter.innerText = (count + 0.1).toFixed(1);
+                        } else {
+                            counter.innerText = Math.ceil(count + inc);
+                        }
+                        setTimeout(updateCount, 15);
+                    } else {
+                        // Add plus sign or percentage for styling
+                        if(target === 50000) counter.innerText = "50,000+";
+                        else if (target === 98) counter.innerText = "98%";
+                        else counter.innerText = target;
+                    }
+                };
+                
+                // trigger when scrolled into view using IntersectionObserver
+                const observer = new IntersectionObserver((entries) => {
+                    if(entries[0].isIntersecting) {
+                        updateCount();
+                        observer.disconnect();
+                    }
+                });
+                observer.observe(counter);
+            });
+        }
+    </script>
+</body>
+</html>
