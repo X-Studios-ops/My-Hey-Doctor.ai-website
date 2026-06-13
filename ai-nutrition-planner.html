@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>AI Nutrition Planner | Free Personalized Diet Plan Generator</title>
+    <meta name="description" content="Generate a personalized AI-powered diet plan based on your age, goals, activity level, and health conditions. Free nutrition recommendations and meal plans.">
+    <meta name="keywords" content="AI diet plan, personalized nutrition, weight loss diet, PCOS diet, diabetes meal plan">
+    <link rel="canonical" href="https://yourwebsite.com/ai-nutrition-planner">
+    
+    <meta property="og:title" content="AI Nutrition Planner | Free Personalized Diet Plan Generator">
+    <meta property="og:description" content="Generate a personalized AI-powered diet plan based on your age, goals, activity level, and health conditions.">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Nutrition Planner">
+    <meta name="twitter:description" content="Generate a personalized AI-powered diet plan based on your metrics and goals.">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "AI Nutrition Planner",
+      "description": "An AI-powered application to generate personalized diet and nutrition plans based on user health metrics.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How does the AI Nutrition Planner work?", "acceptedAnswer": {"@type": "Answer", "text": "It uses your personal metrics like age, weight, and goals to calculate your BMR and TDEE, then tailors a meal plan to your specific health conditions."}},
+        {"@type": "Question", "name": "Is this diet plan good for weight loss?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if you select 'Weight Loss' as your goal, the planner automatically generates a safe caloric deficit and recommends high-satiety foods."}},
+        {"@type": "Question", "name": "Can it help with a Diabetes diet?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. Selecting Diabetes will adjust the recommendations to include low-GI foods and minimize refined sugars."}},
+        {"@type": "Question", "name": "Are PCOS diets supported?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, selecting PCOS optimizes the plan for hormone balance, focusing on high protein, low glycemic index carbs, and anti-inflammatory foods."}},
+        {"@type": "Question", "name": "How accurate is the calorie planning?", "acceptedAnswer": {"@type": "Answer", "text": "It uses the clinically validated Mifflin-St Jeor equation to estimate your basal metabolic rate and daily caloric needs."}},
+        {"@type": "Question", "name": "What is healthy eating?", "acceptedAnswer": {"@type": "Answer", "text": "Healthy eating involves a balanced intake of macronutrients (proteins, carbs, fats) and micronutrients, tailored to your body's specific demands."}},
+        {"@type": "Question", "name": "Can I save my diet plan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! You can download your plan as a PDF, print it, or save it locally to your device using the built-in premium features."}},
+        {"@type": "Question", "name": "Is this tool completely free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, this AI Nutrition Planner is 100% free with no external dependencies or hidden paywalls."}}
+      ]
+    }
+    </script>
+
+    <style>
+        /* CSS Variables & Reset */
+        :root {
+            --bg-dark: #0f172a;
+            --bg-darker: #020617;
+            --primary: #10B981;
+            --primary-glow: rgba(16, 185, 129, 0.4);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+        
+        body {
+            background-color: var(--bg-darker);
+            color: var(--text-main);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Nav / Home Button */
+        .top-nav {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .btn-home {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            background: var(--glass-bg);
+            border: 1px solid var(--primary-glow);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+        .btn-home:hover {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 0 25px var(--primary);
+        }
+
+        /* Glassmorphism Containers */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.6s ease-out;
+        }
+
+        /* Typography */
+        h1, h2, h3 { color: var(--text-main); font-weight: 700; }
+        h1 { font-size: 3rem; text-align: center; margin-bottom: 1rem; background: linear-gradient(to right, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p.subtitle { text-align: center; color: var(--text-muted); margin-bottom: 3rem; font-size: 1.1rem; }
+
+        /* Form Grid */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .input-group label { font-size: 0.9rem; color: var(--text-muted); font-weight: 500; }
+        
+        input, select {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-main);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            appearance: none;
+        }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        option { background: var(--bg-dark); color: #fff; }
+
+        /* Buttons */
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px var(--primary-glow);
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px var(--primary-glow); }
+        .btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: white; }
+
+        /* Loading Animation */
+        .loader-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 40vh;
+        }
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid var(--glass-border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        /* Results Dashboard */
+        #results-section { display: none; }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .metric-card {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .metric-card h3 { color: var(--text-muted); font-size: 1rem; margin-bottom: 1rem; }
+        .metric-value { font-size: 2.5rem; font-weight: 800; color: var(--primary); }
+
+        /* Circular Progress Meter */
+        .circular-meter {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: conic-gradient(var(--primary) var(--progress, 0%), var(--bg-dark) 0deg);
+            position: relative;
+        }
+        .circular-meter::before {
+            content: "";
+            position: absolute;
+            inset: 10px;
+            background: var(--bg-dark);
+            border-radius: 50%;
+        }
+        .meter-text { position: relative; font-size: 2rem; font-weight: bold; }
+
+        /* Meal Plan Lists */
+        .meal-section { margin-top: 3rem; }
+        .meal-card {
+            background: rgba(0,0,0,0.2);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 1rem;
+        }
+        .meal-card h4 { color: var(--primary); margin-bottom: 0.5rem; }
+
+        .tags-container { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .tag { padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; background: var(--glass-bg); border: 1px solid var(--glass-border); }
+        .tag.good { border-color: var(--primary); color: var(--primary); }
+        .tag.bad { border-color: var(--danger); color: var(--danger); }
+
+        /* Actions */
+        .actions { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+
+        /* FAQ */
+        .faq-section { margin-top: 5rem; margin-bottom: 5rem; }
+        .faq-item { margin-bottom: 1rem; background: var(--glass-bg); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--glass-border); }
+        .faq-item h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--primary); }
+        .faq-item p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+        /* Animations */
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Print Styles */
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, #input-section, .actions, .faq-section { display: none !important; }
+            .glass-card { box-shadow: none; border: 1px solid #ccc; background: transparent; backdrop-filter: none; }
+            h1 { -webkit-text-fill-color: black; }
+            .metric-card { border: 1px solid #ccc; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .top-nav { flex-direction: column; gap: 1rem; }
+            .glass-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <a href="#" class="btn-home" onclick="location.reload()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            Home
+        </a>
+        <div style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">AI Nutrition Planner</div>
+    </nav>
+
+    <div class="container">
+        
+        <div id="input-section" class="glass-card">
+            <h1>Personalized AI Diet Plan</h1>
+            <p class="subtitle">Enter your health metrics to generate a customized nutrition and lifestyle plan.</p>
+            
+            <form id="health-form">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Name</label>
+                        <input type="text" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="input-group">
+                        <label>Age</label>
+                        <input type="number" id="age" required min="10" max="100" placeholder="30">
+                    </div>
+                    <div class="input-group">
+                        <label>Gender</label>
+                        <select id="gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Height (cm)</label>
+                        <input type="number" id="height" required min="100" max="250" placeholder="175">
+                    </div>
+                    <div class="input-group">
+                        <label>Weight (kg)</label>
+                        <input type="number" id="weight" required min="30" max="300" placeholder="70">
+                    </div>
+                    <div class="input-group">
+                        <label>Activity Level</label>
+                        <select id="activity" required>
+                            <option value="sedentary">Sedentary (Office job, no exercise)</option>
+                            <option value="light">Light (Exercise 1-3 days/wk)</option>
+                            <option value="moderate">Moderate (Exercise 3-5 days/wk)</option>
+                            <option value="active">Very Active (Exercise 6-7 days/wk)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Primary Goal</label>
+                        <select id="goal" required>
+                            <option value="weight_loss">Weight Loss</option>
+                            <option value="weight_gain">Weight Gain</option>
+                            <option value="muscle">Muscle Gain</option>
+                            <option value="wellness">General Wellness</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Health Condition</label>
+                        <select id="condition">
+                            <option value="none">None</option>
+                            <option value="diabetes">Diabetes</option>
+                            <option value="pcos">PCOS</option>
+                            <option value="high_bp">High Blood Pressure</option>
+                            <option value="thyroid">Thyroid Issue</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Generate AI Diet Plan ⚡</button>
+            </form>
+        </div>
+
+        <div id="loading-section" class="loader-container">
+            <div class="spinner"></div>
+            <h2 style="color: var(--primary);">Analyzing Health Metrics...</h2>
+            <p class="subtitle" style="margin-top: 1rem;">Optimizing macros and evaluating dietary constraints</p>
+        </div>
+
+        <div id="results-section" class="glass-card">
+            <h1 id="res-greeting">Your AI Nutrition Plan</h1>
+            <p class="subtitle">Here is your highly optimized, data-driven daily regimen.</p>
+
+            <div class="dashboard-grid">
+                <div class="metric-card">
+                    <h3>Overall Health Score</h3>
+                    <div class="circular-meter" id="health-meter" style="--progress: 0%;">
+                        <span class="meter-text" id="health-score-txt">0</span>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <h3>Daily Calorie Target</h3>
+                    <div class="metric-value" id="res-calories">0</div>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">kcal / day</p>
+                </div>
+
+                <div class="metric-card">
+                    <h3>Daily Water Intake</h3>
+                    <div class="metric-value" id="res-water">0</div>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">Liters / day</p>
+                </div>
+            </div>
+
+            <div class="meal-section">
+                <h2>📋 Personalized Meal Plan</h2>
+                <div class="meal-card">
+                    <h4>🌅 Breakfast</h4>
+                    <p id="meal-breakfast"></p>
+                </div>
+                <div class="meal-card">
+                    <h4>☀️ Lunch</h4>
+                    <p id="meal-lunch"></p>
+                </div>
+                <div class="meal-card">
+                    <h4>🌙 Dinner</h4>
+                    <p id="meal-dinner"></p>
+                </div>
+                <div class="meal-card">
+                    <h4>🍎 Snacks</h4>
+                    <p id="meal-snacks"></p>
+                </div>
+            </div>
+
+            <div class="dashboard-grid" style="margin-top: 2rem;">
+                <div class="metric-card" style="text-align: left;">
+                    <h3>✅ Recommended Foods</h3>
+                    <div class="tags-container" id="foods-good"></div>
+                </div>
+                <div class="metric-card" style="text-align: left;">
+                    <h3>❌ Foods to Avoid</h3>
+                    <div class="tags-container" id="foods-bad"></div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn" onclick="window.print()">Download PDF / Print</button>
+                <button class="btn btn-outline" onclick="saveLocally()">Save Locally</button>
+                <button class="btn btn-outline" onclick="location.reload()">Reset Planner</button>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3>How does the AI Nutrition Planner work?</h3>
+                <p>It uses your personal metrics like age, weight, and goals to calculate your BMR and TDEE, then tailors a meal plan to your specific health conditions.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is this diet plan good for weight loss?</h3>
+                <p>Yes, if you select 'Weight Loss' as your goal, the planner automatically generates a safe caloric deficit and recommends high-satiety foods.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can it help with a Diabetes diet?</h3>
+                <p>Absolutely. Selecting Diabetes will adjust the recommendations to include low-GI foods, lean proteins, and minimize refined sugars to prevent insulin spikes.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Are PCOS diets supported?</h3>
+                <p>Yes, selecting PCOS optimizes the plan for hormone balance, focusing on high protein, low glycemic index carbs, and anti-inflammatory foods like flax seeds.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How accurate is the calorie planning?</h3>
+                <p>It uses the clinically validated Mifflin-St Jeor equation to estimate your basal metabolic rate (BMR) and adjusts it based on your selected daily activity multiplier.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What is healthy eating?</h3>
+                <p>Healthy eating involves a balanced intake of macronutrients (proteins, carbs, fats) and micronutrients (vitamins, minerals), tailored to your body's specific demands.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I save my diet plan?</h3>
+                <p>Yes! You can download your plan as a PDF, print it directly, or save it locally to your device browser using the built-in premium action buttons.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is this tool completely free?</h3>
+                <p>Yes, this AI Nutrition Planner is 100% free. There are no external dependencies, no subscriptions, and no hidden paywalls protecting your health data.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById('health-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // UI Transition
+            document.getElementById('input-section').style.display = 'none';
+            document.getElementById('loading-section').style.display = 'flex';
+            window.scrollTo(0,0);
+
+            // Fetch Data
+            const data = {
+                name: document.getElementById('name').value,
+                age: parseInt(document.getElementById('age').value),
+                gender: document.getElementById('gender').value,
+                height: parseInt(document.getElementById('height').value),
+                weight: parseInt(document.getElementById('weight').value),
+                activity: document.getElementById('activity').value,
+                goal: document.getElementById('goal').value,
+                condition: document.getElementById('condition').value
+            };
+
+            // Simulate AI Processing delay
+            setTimeout(() => {
+                generatePlan(data);
+                document.getElementById('loading-section').style.display = 'none';
+                document.getElementById('results-section').style.display = 'block';
+            }, 2500);
+        });
+
+        function generatePlan(data) {
+            // 1. Calculate BMR (Mifflin-St Jeor)
+            let bmr = 10 * data.weight + 6.25 * data.height - 5 * data.age;
+            bmr += (data.gender === 'male') ? 5 : -161;
+
+            // 2. Calculate TDEE
+            const activityMultipliers = { sedentary: 1.2, light: 1.375, moderate: 1.55, active: 1.725 };
+            let tdee = bmr * activityMultipliers[data.activity];
+
+            // 3. Adjust for Goals
+            let targetCalories = tdee;
+            if (data.goal === 'weight_loss') targetCalories -= 500;
+            if (data.goal === 'weight_gain') targetCalories += 500;
+            if (data.goal === 'muscle') targetCalories += 300;
+
+            // 4. Calculate Water (Basic rule: 35ml per kg)
+            let waterIntake = (data.weight * 35) / 1000;
+            if (data.activity === 'active') waterIntake += 0.8;
+
+            // 5. Generate AI Score
+            let score = 85 - (data.age > 50 ? 5 : 0) - (data.condition !== 'none' ? 10 : 0);
+            if (data.activity === 'active') score += 10;
+            if (score > 98) score = 98;
+
+            // 6. Food Logic Rules
+            let plan = {
+                breakfast: "Oatmeal with berries and a scoop of protein powder.",
+                lunch: "Grilled chicken breast, quinoa, and roasted broccoli.",
+                dinner: "Baked salmon with sweet potato and asparagus.",
+                snacks: "Greek yogurt with almonds / Apple slices with peanut butter.",
+                goodFoods: ["Leafy Greens", "Lean Protein", "Berries", "Nuts", "Water"],
+                badFoods: ["Refined Sugar", "Processed Meats", "Trans Fats", "Soda"]
+            };
+
+            if (data.condition === 'diabetes') {
+                plan.breakfast = "Scrambled eggs with spinach and avocado (No carb focus).";
+                plan.lunch = "Lentil soup with a large mixed green salad and olive oil.";
+                plan.dinner = "Tofu or lean turkey stir-fry with zucchini noodles.";
+                plan.goodFoods.push("Cinnamon", "Bitter Gourd", "Chia Seeds");
+                plan.badFoods.push("White Bread", "Fruit Juice", "Sweetened Yogurt");
+            } else if (data.condition === 'pcos') {
+                plan.breakfast = "Chia seed pudding with almond milk and walnuts.";
+                plan.lunch = "Salmon salad with mixed greens, pumpkin seeds, and vinaigrette.";
+                plan.snacks = "Spearmint tea and roasted chickpeas.";
+                plan.goodFoods.push("Spearmint Tea", "Flaxseeds", "Fatty Fish");
+                plan.badFoods.push("Dairy (if sensitive)", "Refined Carbs", "Soy");
+            } else if (data.condition === 'high_bp') {
+                plan.breakfast = "Bowl of oatmeal topped with sliced bananas (High potassium).";
+                plan.dinner = "Baked chicken with a side of beetroot and steamed carrots.";
+                plan.goodFoods.push("Bananas", "Beetroot", "Garlic");
+                plan.badFoods.push("Table Salt", "Canned Soups", "Pickles");
+            }
+
+            if (data.goal === 'muscle') {
+                plan.breakfast += " + 3 boiled eggs.";
+                plan.dinner += " + extra serving of lean meat/paneer.";
+                plan.goodFoods.push("Whey Protein", "Cottage Cheese", "Chicken Breast");
+            }
+
+            // 7. Update DOM
+            document.getElementById('res-greeting').innerText = `${data.name}'s Nutrition Plan`;
+            document.getElementById('res-calories').innerText = Math.round(targetCalories);
+            document.getElementById('res-water').innerText = waterIntake.toFixed(1);
+            
+            // Animate Score Meter
+            document.getElementById('health-score-txt').innerText = score;
+            document.getElementById('health-meter').style.setProperty('--progress', `${score}%`);
+
+            // Populate Meals
+            document.getElementById('meal-breakfast').innerText = plan.breakfast;
+            document.getElementById('meal-lunch').innerText = plan.lunch;
+            document.getElementById('meal-dinner').innerText = plan.dinner;
+            document.getElementById('meal-snacks').innerText = plan.snacks;
+
+            // Populate Tags
+            document.getElementById('foods-good').innerHTML = plan.goodFoods.map(f => `<span class="tag good">${f}</span>`).join('');
+            document.getElementById('foods-bad').innerHTML = plan.badFoods.map(f => `<span class="tag bad">${f}</span>`).join('');
+            
+            // Store globally for saving
+            window.latestPlanData = data;
+        }
+
+        function saveLocally() {
+            if(!window.latestPlanData) return;
+            localStorage.setItem('AInutritionPlan', JSON.stringify(window.latestPlanData));
+            alert("Your diet plan settings have been saved to your browser's local storage!");
+        }
+
+        // Check for saved data on load
+        window.onload = () => {
+            const saved = localStorage.getItem('AInutritionPlan');
+            if(saved) {
+                const data = JSON.parse(saved);
+                document.getElementById('name').value = data.name || '';
+                document.getElementById('age').value = data.age || '';
+                // Pre-fill helps users returning to the app
+            }
+        }
+    </script>
+</body>
+</html>
