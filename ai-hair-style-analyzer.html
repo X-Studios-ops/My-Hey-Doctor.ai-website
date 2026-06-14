@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AI Hair Style Analyzer | Find the Perfect Haircut for Your Face Shape</title>
+    <meta name="description" content="Discover your perfect hairstyle with our AI Hair Style & Face Shape Analyzer. Get personalized haircut, hair color, and beauty recommendations instantly.">
+    <meta name="keywords" content="AI Hair Style Analyzer, Face Shape Analyzer, Best Hairstyle For Face Shape, Hair Color Recommendations, 90s Blowout Hair, Beauty AI Tool, Haircut Recommendations, Glow Up Guide, Hair Trends 2026">
+    <link rel="canonical" href="https://heydoctor.ai/hair-analyzer" />
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="AI Hair Style & Face Shape Analyzer | Free Personalized Hair Recommendations">
+    <meta property="og:description" content="Discover your perfect hairstyle with our AI Hair Style & Face Shape Analyzer. Get personalized haircut, hair color, and beauty recommendations instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://heydoctor.ai/hair-analyzer">
+    <meta property="og:image" content="https://heydoctor.ai/assets/beauty-og.jpg">
+
+    <!-- Twitter Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Hair Style & Face Shape Analyzer">
+    <meta name="twitter:description" content="Discover your perfect hairstyle with our AI Hair Style & Face Shape Analyzer. Get personalized haircut, hair color, and beauty recommendations instantly.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "AI Hair Style & Face Shape Analyzer",
+      "url": "https://heydoctor.ai/hair-analyzer",
+      "description": "Discover your perfect hairstyle with our AI Hair Style & Face Shape Analyzer. Get personalized haircut, hair color, and beauty recommendations instantly.",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "All",
+      "provider": {
+        "@type": "Organization",
+        "name": "HeyDoctor.ai",
+        "url": "https://heydoctor.ai"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an AI Hair Style Analyzer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An AI Hair Style Analyzer is an advanced beauty AI tool that evaluates your unique facial geometry, hair texture, and styling preferences to recommend the most flattering haircuts and styles. It acts as a virtual stylist, taking the guesswork out of your next salon visit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find the best hairstyle for my face shape?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Finding the best hairstyle for your face shape involves balancing your natural proportions. For example, round faces benefit from lengthening styles like long layers, while square faces look great with softening, wispy bangs. Our analyzer automates this process."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #FAF9F6;
+            --text-main: #2D2A26;
+            --text-light: #5C4E43;
+            --accent-gold: #D4AF37;
+            --accent-rose: #E6D3C8;
+            --white-glass: rgba(255, 255, 255, 0.7);
+            --white-glass-hover: rgba(255, 255, 255, 0.85);
+            --border-glass: rgba(255, 255, 255, 0.5);
+            --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.05);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Gradients */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            width: 80vw;
+            height: 80vh;
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(80px);
+            animation: floatBG 20s infinite alternate;
+            opacity: 0.6;
+        }
+        body::before {
+            top: -20%; left: -10%;
+            background: radial-gradient(circle, var(--accent-rose) 0%, transparent 70%);
+        }
+        body::after {
+            bottom: -20%; right: -10%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            animation-delay: -10s;
+        }
+
+        @keyframes floatBG {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(5%, 10%) scale(1.1); }
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; color: var(--text-main); }
+        h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.02em; }
+        h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        h3 { font-size: 1.75rem; margin-bottom: 1rem; }
+        p { color: var(--text-light); margin-bottom: 1rem; font-size: 1.1rem; }
+        a { text-decoration: none; color: inherit; }
+
+        /* Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background: rgba(250, 249, 246, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--text-main); }
+        .logo span { color: var(--accent-gold); font-style: italic; }
+        .tagline { display: none; font-size: 0.85rem; color: var(--text-light); margin-left: 1rem; letter-spacing: 0.05em; text-transform: uppercase;}
+        
+        @media (min-width: 768px) { .tagline { display: inline-block; } }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.8rem 1.8rem; border-radius: 50px;
+            font-weight: 500; font-size: 1rem;
+            transition: var(--transition); cursor: pointer; border: none;
+        }
+        .btn-primary {
+            background: var(--text-main); color: #fff;
+            box-shadow: 0 4px 15px rgba(45, 42, 38, 0.2);
+        }
+        .btn-primary:hover {
+            background: var(--accent-gold); transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+        .btn-outline {
+            background: transparent; border: 1px solid var(--text-main); color: var(--text-main);
+        }
+        .btn-outline:hover {
+            background: var(--text-main); color: #fff;
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: var(--white-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            box-shadow: var(--shadow-glass);
+            padding: 2.5rem;
+            transition: var(--transition);
+        }
+        .glass-card:hover { transform: translateY(-5px); background: var(--white-glass-hover); }
+
+        /* Section Spacing */
+        section { padding: 6rem 0; position: relative; }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; padding-top: 8rem;
+        }
+        .hero-content { max-width: 800px; margin: 0 auto; z-index: 2; }
+        .hero-subtitle {
+            font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--accent-gold); font-weight: 600; margin-bottom: 1rem; display: block;
+        }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;}
+
+        /* Pinterest Masonry (Trending) */
+        .masonry-grid {
+            column-count: 1; column-gap: 1.5rem;
+        }
+        @media (min-width: 600px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 900px) { .masonry-grid { column-count: 3; } }
+        
+        .masonry-item {
+            break-inside: avoid; margin-bottom: 1.5rem;
+            border-radius: 16px; overflow: hidden; position: relative;
+            background: #eee;
+        }
+        .masonry-item img { width: 100%; display: block; transition: var(--transition); }
+        .masonry-item:hover img { transform: scale(1.05); }
+        .masonry-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            padding: 2rem 1rem 1rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: #fff;
+            opacity: 0; transition: var(--transition);
+        }
+        .masonry-item:hover .masonry-overlay { opacity: 1; }
+        .masonry-overlay h4 { color: #fff; margin-bottom: 0.2rem; font-family: var(--font-body); font-size: 1.1rem;}
+        .masonry-overlay p { color: rgba(255,255,255,0.8); font-size: 0.9rem; margin:0;}
+
+        /* Analyzer Form Section */
+        .analyzer-wrapper {
+            display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start;
+        }
+        @media (min-width: 900px) { .analyzer-wrapper { grid-template-columns: 1fr 1.2fr; } }
+        
+        .form-group { margin-bottom: 1.5rem; text-align: left;}
+        .form-label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.95rem; }
+        .form-select {
+            width: 100%; padding: 1rem 1.5rem; border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.1); background: rgba(255,255,255,0.8);
+            font-family: var(--font-body); font-size: 1rem; color: var(--text-main);
+            appearance: none; outline: none; transition: var(--transition);
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232D2A26%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat; background-position: right 1.5rem top 50%; background-size: 0.65rem auto;
+        }
+        .form-select:focus { border-color: var(--accent-gold); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1); }
+
+        /* Processing Overlay */
+        #processing {
+            display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(250, 249, 246, 0.9); backdrop-filter: blur(5px);
+            border-radius: 24px; flex-direction: column; align-items: center; justify-content: center;
+            z-index: 10; text-align: center;
+        }
+        .spinner {
+            width: 50px; height: 50px; border: 3px solid rgba(212, 175, 55, 0.3);
+            border-top-color: var(--accent-gold); border-radius: 50%;
+            animation: spin 1s linear infinite; margin-bottom: 1rem;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Dashboard Results */
+        #results-dashboard { display: none; opacity: 0; transition: opacity 0.5s ease; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;}
+        .stat-card { text-align: center; padding: 1.5rem; }
+        .circular-chart {
+            display: block; margin: 0 auto 1rem; max-width: 120px; max-height: 120px;
+        }
+        .circle-bg { fill: none; stroke: rgba(0,0,0,0.05); stroke-width: 3.8; }
+        .circle { 
+            fill: none; stroke-width: 2.8; stroke-linecap: round;
+            animation: progress 1s ease-out forwards;
+        }
+        @keyframes progress { 0% { stroke-dasharray: 0 100; } }
+        .percentage { fill: var(--text-main); font-family: var(--font-heading); font-size: 0.5rem; text-anchor: middle; font-weight: bold;}
+        .stat-title { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light);}
+
+        .recommendation-box {
+            margin-top: 2rem; background: rgba(212, 175, 55, 0.05); border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem; border-radius: 0 12px 12px 0;
+        }
+
+        /* Content Sections (SEO Rich) */
+        .content-block { margin-bottom: 3rem; }
+        .content-block h3 { color: var(--accent-gold); font-family: var(--font-body); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+        .content-block h4 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;}
+        .rich-text p { margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8; color: var(--text-light); }
+        .rich-text ul { margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-light); }
+        .rich-text li { margin-bottom: 0.5rem; }
+
+        /* FAQ Accordion */
+        .faq-item { border-bottom: 1px solid rgba(0,0,0,0.1); padding: 1.5rem 0; }
+        .faq-question { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; color: var(--text-light); margin-top: 0; }
+        .faq-item.active .faq-answer { max-height: 500px; margin-top: 1rem; }
+        .faq-icon { transition: transform 0.3s ease; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+        /* Footer */
+        footer {
+            background: var(--text-main); color: #fff; padding: 4rem 0 2rem;
+            text-align: center; border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-logo { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem; }
+        .footer-links a { color: rgba(255,255,255,0.7); margin: 0 1rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--accent-gold); }
+        .footer-copy { margin-top: 3rem; color: rgba(255,255,255,0.4); font-size: 0.9rem; }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s all cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .hero-buttons { flex-direction: column; }
+            .glass-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="https://heydoctor.ai" class="logo">
+                HeyDoctor<span>.ai</span>
+                <span class="tagline">Your Health. Your Beauty. Your Confidence.</span>
+            </a>
+            <a href="https://heydoctor.ai" class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content reveal active">
+                <span class="hero-subtitle">Premium AI Beauty Technology</span>
+                <h1>Discover Your Signature Look with AI.</h1>
+                <p>Upload your features in your mind. Our highly advanced AI Hair Style & Face Shape Analyzer decodes your facial geometry to curate personalized haircuts, hair colors, and styling techniques that elevate your natural beauty.</p>
+                <div class="hero-buttons">
+                    <a href="#analyzer" class="btn btn-primary">Start Free Analysis</a>
+                    <a href="#90s-blowout" class="btn btn-outline">Explore 2026 Trends</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Analyzer Section -->
+    <section id="analyzer" style="background: rgba(255,255,255,0.3);">
+        <div class="container">
+            <div class="text-center" style="text-align: center; margin-bottom: 4rem;">
+                <h2 class="reveal">AI Hair Style Analyzer</h2>
+                <p class="reveal" style="max-width: 600px; margin: 0 auto;">Input your unique attributes below. Our intelligent Face Shape Analyzer will calculate your ideal aesthetic profile and generate a bespoke Glow-Up Guide.</p>
+            </div>
+
+            <div class="analyzer-wrapper reveal">
+                <!-- Form Configuration -->
+                <div class="glass-card" style="position: relative;">
+                    <div id="processing">
+                        <div class="spinner"></div>
+                        <h3 style="font-family: var(--font-body); font-size: 1.1rem; color: var(--text-main);">Analyzing Facial Geometry...</h3>
+                        <p style="font-size: 0.9rem;">Mapping trends to your profile</p>
+                    </div>
+
+                    <form id="analyzer-form">
+                        <div class="form-group">
+                            <label class="form-label">Primary Face Shape</label>
+                            <select class="form-select" id="faceShape" required>
+                                <option value="" disabled selected>Select your face shape...</option>
+                                <option value="Oval">Oval</option>
+                                <option value="Round">Round</option>
+                                <option value="Square">Square</option>
+                                <option value="Heart">Heart</option>
+                                <option value="Diamond">Diamond</option>
+                                <option value="Oblong">Oblong</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Current Hair Length</label>
+                            <select class="form-select" id="hairLength" required>
+                                <option value="" disabled selected>Select your hair length...</option>
+                                <option value="Pixie/Short">Pixie / Very Short</option>
+                                <option value="Bob/Lob">Bob / Shoulder Length</option>
+                                <option value="Medium">Medium (Mid-back)</option>
+                                <option value="Long">Long (Waist or longer)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Natural Hair Texture</label>
+                            <select class="form-select" id="hairTexture" required>
+                                <option value="" disabled selected>Select your hair texture...</option>
+                                <option value="Straight">Straight (Type 1)</option>
+                                <option value="Wavy">Wavy (Type 2)</option>
+                                <option value="Curly">Curly (Type 3)</option>
+                                <option value="Coily">Coily (Type 4)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Aesthetic Preference</label>
+                            <select class="form-select" id="genderPref" required>
+                                <option value="" disabled selected>Select aesthetic...</option>
+                                <option value="Feminine">Feminine / Soft</option>
+                                <option value="Masculine">Masculine / Structured</option>
+                                <option value="Androgynous">Androgynous / Neutral</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; padding: 1rem;">Generate Beauty Plan</button>
+                    </form>
+                </div>
+
+                <!-- Results Dashboard -->
+                <div class="glass-card" id="results-container">
+                    <div id="results-placeholder" style="text-align: center; padding: 4rem 0; color: var(--text-light);">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; color: var(--accent-gold);">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                        </svg>
+                        <h3>Awaiting Profile Data</h3>
+                        <p>Complete the form to view your personalized beauty score dashboard.</p>
+                    </div>
+
+                    <div id="results-dashboard">
+                        <h3 style="margin-bottom: 0.5rem;">Your Beauty Score Dashboard</h3>
+                        <p style="font-size: 0.9rem;">Powered by HeyDoctor.ai Analytics</p>
+                        
+                        <div class="dashboard-grid">
+                            <div class="stat-card glass-card">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle" stroke="#D4AF37" stroke-dasharray="92, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <text x="18" y="20.35" class="percentage">92%</text>
+                                </svg>
+                                <div class="stat-title">Face Shape Confidence</div>
+                            </div>
+                            <div class="stat-card glass-card">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle" stroke="#E6D3C8" stroke-dasharray="88, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <text x="18" y="20.35" class="percentage">88%</text>
+                                </svg>
+                                <div class="stat-title">Style Compatibility</div>
+                            </div>
+                            <div class="stat-card glass-card">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle" stroke="#2D2A26" stroke-dasharray="95, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <text x="18" y="20.35" class="percentage">95%</text>
+                                </svg>
+                                <div class="stat-title">Glow-Up Potential</div>
+                            </div>
+                        </div>
+
+                        <div class="recommendation-box" id="dynamic-recommendation">
+                            <!-- Injected by JS -->
+                        </div>
+                        
+                        <div style="margin-top: 2rem; text-align: center;">
+                            <a href="https://heydoctor.ai" class="btn btn-primary">Get Personalized Beauty Plan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Pinterest Style Section -->
+    <section id="trending">
+        <div class="container">
+            <h2 class="reveal text-center" style="text-align: center;">Trending on Pinterest: 2026 Hair Trends</h2>
+            <p class="reveal text-center" style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">Visual inspiration directly correlated with our algorithm's highest-ranking styles. Discover the aesthetics dominating the beauty world right now.</p>
+            
+            <div class="masonry-grid reveal">
+                <!-- Fallback images using high quality unsplash links simulating beauty/hair -->
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1605980776566-0486c3ac7617?w=500&q=80" alt="90s Blowout Hair Trend">
+                    <div class="masonry-overlay">
+                        <h4>The 90s Blowout</h4>
+                        <p>Voluminous, bouncy layers</p>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80" alt="Warm Balayage Tone">
+                    <div class="masonry-overlay">
+                        <h4>Caramel Balayage</h4>
+                        <p>Warm tones for neutral skin</p>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?w=500&q=80" alt="French Bob Cut">
+                    <div class="masonry-overlay">
+                        <h4>The French Bob</h4>
+                        <p>Jaw-grazing chic for Oval faces</p>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=500&q=80" alt="Curtain Bangs Style">
+                    <div class="masonry-overlay">
+                        <h4>Curtain Bangs</h4>
+                        <p>Face framing perfection</p>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80" alt="Icy Blonde Cool Tone">
+                    <div class="masonry-overlay">
+                        <h4>Icy Platinum</h4>
+                        <p>Cool tones for pink undertones</p>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80" alt="Natural Curls">
+                    <div class="masonry-overlay">
+                        <h4>Embracing Texture</h4>
+                        <p>Hydrated, defined coils</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive SEO Content Sections -->
+    <section id="expert-tips" style="background: var(--white-glass); border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass);">
+        <div class="container rich-text">
+            
+            <div class="content-block reveal" id="90s-blowout">
+                <h3>Trend Forecast</h3>
+                <h2>The 90s Blowout Hair: Why It’s Taking Over 2026</h2>
+                <p>If you've spent any time on Pinterest or TikTok lately, you've likely noticed a massive resurgence of the <strong>90s Blowout Hair</strong> trend. Moving away from the completely sleek, flat-ironed looks of the 2010s, this beauty movement is all about embracing maximum volume, bouncy layers, and effortless glamour.</p>
+                <p><strong>What is a 90s Blowout?</strong> Characterized by dramatic, swooping layers, extreme root volume, and ends that flip inward or outward, the 90s blowout mimics the iconic looks of supermodels from three decades ago. Achieved using a round brush, hot rollers, or modern air-wrap styling tools, it’s a style that breathes life and movement into the hair.</p>
+                <p><strong>Why is it trending?</strong> In 2026, the beauty paradigm has shifted towards "high-maintenance to be low-maintenance." A fantastic blowout can last for days, looking slightly more lived-in and beautiful as the week progresses. Furthermore, it adds a touch of accessible luxury to any aesthetic, elevating simple outfits with a crown of healthy, vibrant hair.</p>
+                <p><strong>Best Face Shapes for this Trend:</strong></p>
+                <ul>
+                    <li><strong>Round Faces:</strong> The vertical volume at the crown elongates the face perfectly.</li>
+                    <li><strong>Square Faces:</strong> The soft, sweeping curves of the blowout soften strong, angular jawlines beautifully.</li>
+                    <li><strong>Oval Faces:</strong> As the universal face shape, an oval structure carries the volume of a 90s blowout without being overwhelmed.</li>
+                </ul>
+                <p><strong>Expert Styling Tips:</strong> Always start with a volumizing mousse on damp hair. Focus on over-directing the roots upward while drying, and use velcro rollers while the hair is still hot to set the volume. Lock it in with a flexible hold hairspray to maintain that bouncy movement.</p>
+            </div>
+
+            <div class="content-block reveal">
+                <h3>The Ultimate Glow Up Guide</h3>
+                <h2>Best Hairstyle For Face Shape: The Breakdown</h2>
+                <p>Your face shape is the foundational architectural blueprint for your overall aesthetic. Utilizing a <strong>Face Shape Analyzer</strong> isn't just about following rules; it's about understanding geometry to highlight your best features. Here is our expert breakdown of haircut recommendations based on your specific profile:</p>
+
+                <h4>1. The Oval Face Shape</h4>
+                <p>Often considered the most versatile canvas, oval faces possess balanced proportions—slightly wider at the cheekbones and tapering gently toward the chin. Because the proportions are already perfectly symmetrical, you can pull off nearly any style. <strong>Recommendation:</strong> A blunt bob or long, beachy waves. Avoid styles that cover up your face too much; let your natural symmetry shine.</p>
+
+                <h4>2. The Round Face Shape</h4>
+                <p>Round faces feature soft curves with the width and length being roughly equal. The goal here is to create the illusion of length and angles. <strong>Recommendation:</strong> Long layers that begin below the chin, or an asymmetrical lob (long bob). Avoid blunt bangs or tight, voluminous curls right at the cheeks, which can add unwanted width.</p>
+
+                <h4>3. The Square Face Shape</h4>
+                <p>Defined by a strong, prominent jawline and a broad forehead, square faces exude power and structure. The styling objective is to soften those sharp angles. <strong>Recommendation:</strong> Wispy, curtain bangs, soft romantic layers, or a side-swept parting. Textured, wavy hair works wonders to diffuse the sharpness of the jawline.</p>
+
+                <h4>4. The Heart Face Shape</h4>
+                <p>Heart-shaped faces are wider at the forehead and gently narrow down to a delicate, pointed chin. <strong>Recommendation:</strong> Bobs and lobs that end right at the jawline are incredibly flattering, as they add volume exactly where the face is narrowest. Deep side parts and sweeping bangs also help minimize forehead width.</p>
+
+                <h4>5. The Diamond Face Shape</h4>
+                <p>Characterized by high, striking cheekbones with a narrow forehead and jawline. <strong>Recommendation:</strong> Face-framing layers that hit around the chin to add width to the lower face. A sleek ponytail that pulls hair back tightly will beautifully showcase your phenomenal cheekbones.</p>
+
+                <h4>6. The Oblong (Long) Face Shape</h4>
+                <p>Oblong faces are similar to oval but noticeably longer and slightly narrower. The goal is to add width rather than length. <strong>Recommendation:</strong> Classic blunt bangs are a game-changer here, as they visually shorten the face. Shoulder-length cuts with plenty of lateral volume (like the 90s blowout) are ideal.</p>
+            </div>
+
+            <div class="content-block reveal">
+                <h3>Color Theory</h3>
+                <h2>Hair Color Recommendations: Finding Your Tone</h2>
+                <p>Our AI Hair Style Analyzer doesn't just look at geometry; it factors in the crucial element of color theory. Choosing the right hair color can drastically improve your complexion, making your skin look brighter and your eyes pop. It all comes down to your skin's undertones.</p>
+                <p><strong>Warm Tones:</strong> If your skin has yellow, peachy, or golden undertones (veins appear greenish), you thrive in warm, rich colors. <strong>Recommendations:</strong> Honey blonde, copper red, rich caramel, and golden chestnut. These shades will make your skin glow and look inherently sun-kissed.</p>
+                <p><strong>Cool Tones:</strong> If your skin has pink, red, or bluish undertones (veins appear blue/purple), you need colors that offer contrast without clashing. <strong>Recommendations:</strong> Icy platinum blonde, ash brown, cool raven black, or even trendy silver and pastel tones. These shades neutralize redness in the skin.</p>
+                <p><strong>Neutral Tones:</strong> If you can't quite tell if your veins are green or blue, you likely have neutral undertones. You hit the genetic lottery in color theory. <strong>Recommendations:</strong> You can pull off almost anything, but muted, multi-dimensional colors like "bronde" (brown-blonde), soft mocha, and strawberry blonde look exceptionally natural and luxurious.</p>
+                <p><strong>Trending Pinterest Colors for 2026:</strong> We are seeing a massive surge in "expensive brunettes" (high-shine, deeply conditioned brown with subtle micro-highlights) and "cherry cola red" (a deep, vivid burgundy that works beautifully across many skin tones).</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://heydoctor.ai" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Try HeyDoctor.ai Premium</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <h2 class="reveal text-center" style="text-align: center; margin-bottom: 3rem;">Frequently Asked Questions</h2>
+            
+            <div class="glass-card reveal">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is an AI Hair Style Analyzer?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>An AI Hair Style Analyzer is an advanced beauty AI tool that evaluates your unique facial geometry, hair texture, and styling preferences to recommend the most flattering haircuts and styles. It acts as a virtual stylist, taking the guesswork out of your next salon visit by analyzing data points that determine aesthetic balance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How accurate is the Face Shape Analyzer?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our proprietary algorithms are based on established cosmetology principles and geometric ratios. While a digital tool provides excellent guidelines and highly accurate stylistic matches, we always recommend using the generated Glow-Up Guide as a collaborative reference point with your professional hair stylist.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can the tool recommend hair colors as well?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. Along with haircut recommendations, our guide provides deep insights into color theory. By understanding whether you lean towards warm, cool, or neutral undertones, our Hair Color Recommendations section guides you toward shades that enhance your natural complexion.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Why is the 90s blowout still trending in 2026?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The 90s Blowout Hair remains a dominant trend because it is universally flattering and highly versatile. It offers a perfect balance of glamour and effortlessness, adding volume to fine hair and managing the weight of thick hair through strategic, bouncy layers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">HeyDoctor.ai</div>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">Your Health. Your Beauty. Your Confidence.</p>
+            <div class="footer-links">
+                <a href="https://heydoctor.ai">Home</a>
+                <a href="#analyzer">AI Analyzer</a>
+                <a href="#trending">Pinterest Trends</a>
+                <a href="#expert-tips">Glow Up Guide</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 HeyDoctor.ai. All rights reserved. World-class beauty tech.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.05)';
+                    navbar.style.background = 'rgba(250, 249, 246, 0.95)';
+                } else {
+                    navbar.style.boxShadow = 'none';
+                    navbar.style.background = 'rgba(250, 249, 246, 0.8)';
+                }
+            });
+
+            // Scroll Reveal Animation
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+                reveals.forEach(reveal => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger on load
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close others
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-icon').textContent = '+';
+                        }
+                    });
+                    // Toggle current
+                    item.classList.toggle('active');
+                    const icon = item.querySelector('.faq-icon');
+                    icon.textContent = item.classList.contains('active') ? '−' : '+';
+                });
+            });
+
+            // Form Submission Simulation
+            const form = document.getElementById('analyzer-form');
+            const processing = document.getElementById('processing');
+            const placeholder = document.getElementById('results-placeholder');
+            const dashboard = document.getElementById('results-dashboard');
+            const recommendationBox = document.getElementById('dynamic-recommendation');
+            const circles = document.querySelectorAll('.circle');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Get values
+                const shape = document.getElementById('faceShape').value;
+                const length = document.getElementById('hairLength').value;
+                const texture = document.getElementById('hairTexture').value;
+                const pref = document.getElementById('genderPref').value;
+
+                // Show processing
+                processing.style.display = 'flex';
+                
+                setTimeout(() => {
+                    // Hide processing & form, show results
+                    processing.style.display = 'none';
+                    placeholder.style.display = 'none';
+                    dashboard.style.display = 'block';
+                    
+                    // Trigger reflow for fade in
+                    dashboard.offsetHeight; 
+                    dashboard.style.opacity = '1';
+
+                    // Re-trigger circle animations
+                    circles.forEach(circle => {
+                        circle.style.animation = 'none';
+                        circle.offsetHeight; // trigger reflow
+                        circle.style.animation = 'progress 1.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards';
+                    });
+
+                    // Generate Dynamic Content based on inputs
+                    let recHTML = `<h4 style="margin-top:0; font-family:var(--font-heading); color:var(--accent-gold);">Your Signature ${shape} Plan</h4>`;
+                    recHTML += `<p style="margin-bottom:0.5rem;">Based on your <strong>${shape}</strong> face shape, <strong>${texture}</strong> texture, and preference for a <strong>${pref}</strong> aesthetic:</p>`;
+                    
+                    if (shape === 'Oval') {
+                        recHTML += `<p><strong>Cut:</strong> You have perfect symmetry. Try a classic blunt cut or a soft 90s blowout layer to emphasize your bone structure.</p>`;
+                    } else if (shape === 'Round') {
+                        recHTML += `<p><strong>Cut:</strong> Opt for elongating styles. Long, vertical layers or a deep side part will add angles to your beautifully soft features.</p>`;
+                    } else if (shape === 'Square') {
+                        recHTML += `<p><strong>Cut:</strong> Soften your strong, regal jawline with face-framing curtain bangs or soft, textured waves.</p>`;
+                    } else if (shape === 'Heart') {
+                        recHTML += `<p><strong>Cut:</strong> Balance your wider forehead with a lob (long bob) that adds volume right at the jawline.</p>`;
+                    } else {
+                        recHTML += `<p><strong>Cut:</strong> Focus on adding width to the sides of your face with textured layers and plenty of lateral volume.</p>`;
+                    }
+
+                    recHTML += `<p style="margin-bottom:0;"><strong>Styling your ${texture} Hair:</strong> Hydration is key. Use a lightweight serum to protect your ${length.toLowerCase()} length while maintaining natural movement.</p>`;
+
+                    recommendationBox.innerHTML = recHTML;
+
+                    // Scroll to results smoothly
+                    document.getElementById('results-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                }, 2000); // 2 second simulated processing time
+            });
+        });
+    </script>
+</body>
+</html>
