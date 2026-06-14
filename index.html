@@ -422,6 +422,8 @@
         <div class="dropdown">
     <span class="arrow">Tools ▼</span>
     <div class="dropdown-content">
+        <input type="text" id="toolSearch" placeholder="🔍 Search Tools..."
+style="width:95%;margin:8px;padding:10px;border:none;border-radius:8px;background:#0f1f1f;color:white;">
         <a href="dengue-symptoms.html">Dengue Symptoms</a>
         <a href="water-intake-calculator.html">Water Intake</a>
         <a href="wellness.html">Wellness Report</a>
@@ -635,5 +637,23 @@
             }, 600);  
         }  
     </script>  
+
+    <script>
+document.getElementById("toolSearch").addEventListener("keyup", function() {
+    let filter = this.value.toLowerCase();
+    let links = document.querySelectorAll(".dropdown-content a");
+
+    links.forEach(link => {
+        let text = link.textContent.toLowerCase();
+
+        if (text.includes(filter)) {
+            link.style.display = "block";
+        } else {
+            link.style.display = "none";
+        }
+    });
+});
+</script>
+    
 </body>  
 </html>
