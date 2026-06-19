@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>AI Lab Report Analyzer – Free Blood Report Analysis | HeyDoctor.ai</title>
+    <meta name="description" content="Upload your blood test or lab report and get instant AI-powered explanations, insights, diet suggestions, and health recommendations with HeyDoctor.ai.">
+    <meta name="keywords" content="AI Lab Report Analyzer, Blood Report Analysis, CBC Report Analyzer, Health Report AI, Medical Report Analyzer, Lab Test Interpretation, Blood Test AI">
+    <link rel="canonical" href="https://my-hey-doctor-ai-website.vercel.app/ai-lab-report-analyzer.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://my-hey-doctor-ai-website.vercel.app/ai-lab-report-analyzer.html">
+    <meta property="og:title" content="AI Lab Report Analyzer – Free Blood Report Analysis | HeyDoctor.ai">
+    <meta property="og:description" content="Upload your blood test or lab report and get instant AI-powered explanations, insights, diet suggestions, and health recommendations with HeyDoctor.ai.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://my-hey-doctor-ai-website.vercel.app/ai-lab-report-analyzer.html">
+    <meta property="twitter:title" content="AI Lab Report Analyzer – Free Blood Report Analysis | HeyDoctor.ai">
+    <meta property="twitter:description" content="Upload your blood test or lab report and get instant AI-powered explanations, insights, diet suggestions, and health recommendations with HeyDoctor.ai.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        },
+                        brand: {
+                            50: '#f0f9ff',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "AI Lab Report Analyzer",
+      "url": "https://my-hey-doctor-ai-website.vercel.app/ai-lab-report-analyzer.html",
+      "description": "An AI-powered tool to decode and analyze medical lab reports, blood tests, CBC, cholesterol, and diabetes profiles instantly.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the AI Lab Report Analyzer work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The AI scans uploaded files (PDF/Images) or pasted text from your lab results, flags values outside typical reference ranges, translates complex medical jargon into easy terms, and delivers holistic wellness trends."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my medical data kept safe and secure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, privacy is our top priority. Uploaded documents are processed safely and are never stored permanently or shared with third parties without permission."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this AI replace a real medical doctor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely not. This tool is purely for educational guidance to help you understand your metrics. Always review your findings directly with a certified physician."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 flex flex-col min-h-screen">
+
+    <div class="bg-amber-500 text-white text-xs md:text-sm font-medium py-2 px-4 text-center shadow-inner">
+        <i class="fas fa-exclamation-triangle mr-2"></i> <strong>Disclaimer:</strong> This tool is for educational purposes only and does not replace professional medical advice.
+    </div>
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="https://my-hey-doctor-ai-website.vercel.app" class="flex items-center space-x-2">
+                <span class="bg-gradient-to-r from-brand-600 to-medical-600 text-white p-2 rounded-xl shadow-md">
+                    <i class="fas fa-microscope text-xl"></i>
+                </span>
+                <span class="text-xl font-black tracking-tight text-brand-900">HeyDoctor<span class="text-medical-600">.ai</span></span>
+            </a>
+            
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+                <a href="https://my-hey-doctor-ai-website.vercel.app" class="hover:text-brand-600 transition">Home</a>
+                <a href="#analyzer" class="text-brand-600 transition">Lab Analyzer</a>
+                <a href="#" class="hover:text-brand-600 transition">Symptom Checker</a>
+                <a href="#" class="hover:text-brand-600 transition">Diet Planner AI</a>
+                <a href="#faq" class="hover:text-brand-600 transition">FAQs</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="https://my-hey-doctor-ai-website.vercel.app" class="hidden sm:inline-flex border border-slate-300 hover:border-slate-400 text-slate-700 font-semibold px-4 py-2 rounded-lg text-sm transition">
+                    Visit Homepage
+                </a>
+                <a href="#analyzer" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-lg text-sm shadow-md transition">
+                    Analyze Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-gradient-to-b from-brand-50 to-white pt-12 pb-16 border-b border-slate-100">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-medical-100 text-medical-700 mb-4">
+                <i class="fas fa-bolt"></i> Free Instant AI Analysis
+            </span>
+            <h1 class="text-3xl md:text-5xl font-black tracking-tight text-brand-900 mb-4 leading-tight">
+                Understand Your Blood & Lab Reports in <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-medical-600">Plain English</span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                Upload your CBC, Cholesterol, Diabetes, Thyroid, Kidney, or Liver panels. Get clear explanations, critical risk indicators, and actionable lifestyle recommendations instantly.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3 text-xs md:text-sm font-medium text-slate-500">
+                <span class="bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm flex items-center gap-2"><i class="fas fa-check-circle text-medical-600"></i> CBC Reports</span>
+                <span class="bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm flex items-center gap-2"><i class="fas fa-check-circle text-medical-600"></i> Cholesterol / Lipid</span>
+                <span class="bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm flex items-center gap-2"><i class="fas fa-check-circle text-medical-600"></i> Thyroid (TSH)</span>
+                <span class="bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm flex items-center gap-2"><i class="fas fa-check-circle text-medical-600"></i> Diabetes (HbA1c)</span>
+                <span class="bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm flex items-center gap-2"><i class="fas fa-check-circle text-medical-600"></i> Liver & Kidney</span>
+            </div>
+        </div>
+    </section>
+
+    <main id="analyzer" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <div class="lg:col-span-5 bg-white p-6 rounded-2xl shadow-xl border border-slate-200">
+                <h2 class="text-xl font-bold text-brand-900 mb-4 flex items-center gap-2">
+                    <i class="fas fa-cloud-upload-alt text-brand-600"></i> 1. Submit Your Lab Report
+                </h2>
+
+                <div class="flex border-b border-slate-200 mb-4 text-sm font-medium">
+                    <button id="tabFileBtn" onclick="switchTab('file')" class="flex-1 pb-2 border-b-2 border-brand-600 text-brand-600 transition">
+                        <i class="fas fa-file-invoice-dollar mr-1"></i> Upload File
+                    </button>
+                    <button id="tabTextBtn" onclick="switchTab('text')" class="flex-1 pb-2 border-b-2 border-transparent text-slate-500 hover:text-slate-700 transition">
+                        <i class="fas fa-keyboard mr-1"></i> Paste Text
+                    </button>
+                </div>
+
+                <div id="fileArea" class="block">
+                    <div id="dropZone" class="border-2 border-dashed border-slate-300 hover:border-brand-500 rounded-xl p-8 text-center bg-slate-50 hover:bg-brand-50/30 cursor-pointer transition flex flex-col items-center justify-center min-h-[220px]">
+                        <i class="fas fa-file-medical text-4xl text-slate-400 mb-3" id="uploadIcon"></i>
+                        <p class="text-sm font-medium text-slate-700" id="uploadStatusText">Drag & drop your PDF or Image (JPG, PNG)</p>
+                        <p class="text-xs text-slate-400 mt-1 mb-4">Maximum file size: 10MB</p>
+                        <button type="button" onclick="document.getElementById('fileInput').click()" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-semibold px-4 py-2 rounded-lg text-xs shadow-sm transition">
+                            Browse Files
+                        </button>
+                        <input type="file" id="fileInput" class="hidden" accept=".pdf, .jpg, .jpeg, .png" onchange="handleFileSelect(event)">
+                    </div>
+                </div>
+
+                <div id="textArea" class="hidden">
+                    <label for="pastedText" class="sr-only">Paste Lab Results</label>
+                    <textarea id="pastedText" rows="9" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 placeholder-slate-400 custom-scrollbar" placeholder="Paste your metrics here manually. Example:&#10;Hemoglobin: 11.2 g/dL&#10;Total Cholesterol: 245 mg/dL&#10;TSH: 5.2 mIU/L"></textarea>
+                </div>
+
+                <button type="button" id="analyzeBtn" onclick="triggerMockAnalysis()" class="w-full mt-6 bg-gradient-to-r from-brand-600 to-medical-600 hover:from-brand-700 hover:to-medical-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2">
+                    <i class="fas fa-wand-magic-sparkles"></i> Run AI Diagnosis Analysis
+                </button>
+            </div>
+
+            <div class="lg:col-span-7 bg-white p-6 rounded-2xl shadow-xl border border-slate-200 min-h-[500px] flex flex-col justify-between" id="dashboardPlaceholder">
+                <div class="my-auto text-center py-12 px-4 flex flex-col items-center">
+                    <div class="w-20 h-20 bg-brand-50 text-brand-600 rounded-full flex items-center justify-center text-3xl mb-4 animate-pulse">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-900 mb-2">Ready for Report Interpretation</h3>
+                    <p class="text-sm text-slate-500 max-w-md mx-auto mb-6">
+                        Upload a file or enter test data on the left to review your personalized wellness scoring, tracked metric graphs, risks, and healthy meal optimizations.
+                    </p>
+                    <div class="grid grid-cols-2 gap-3 max-w-sm w-full text-left text-xs bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <span class="text-slate-600 flex items-center gap-1.5"><i class="fas fa-shield-halved text-medical-600"></i> Privacy Secured</span>
+                        <span class="text-slate-600 flex items-center gap-1.5"><i class="fas fa-clock text-medical-600"></i> Takes 3 Seconds</span>
+                        <span class="text-slate-600 flex items-center gap-1.5"><i class="fas fa-language text-medical-600"></i> Plain Expressions</span>
+                        <span class="text-slate-600 flex items-center gap-1.5"><i class="fas fa-heartbeat text-medical-600"></i> Health Scores</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden lg:col-span-7 bg-white p-6 rounded-2xl shadow-xl border border-slate-200 space-y-6 animate-pulse" id="loadingSkeleton">
+                <div class="flex items-center justify-between border-b pb-4">
+                    <div class="h-6 bg-slate-200 rounded w-1/3"></div>
+                    <div class="h-4 bg-slate-200 rounded w-1/4"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="h-28 bg-slate-200 rounded-xl"></div>
+                    <div class="h-28 bg-slate-200 rounded-xl col-span-2"></div>
+                </div>
+                <div class="space-y-3">
+                    <div class="h-4 bg-slate-200 rounded w-full"></div>
+                    <div class="h-4 bg-slate-200 rounded w-5/6"></div>
+                    <div class="h-4 bg-slate-200 rounded w-2/3"></div>
+                </div>
+                <div class="h-32 bg-slate-200 rounded-xl"></div>
+            </div>
+
+            <div class="hidden lg:col-span-7 space-y-6" id="analysisResultArea">
+                
+                <div class="bg-white p-6 rounded-2xl shadow-xl border border-slate-200">
+                    <div class="flex flex-wrap items-center justify-between border-b border-slate-100 pb-4 mb-6 gap-2">
+                        <div>
+                            <h2 class="text-xl font-black text-brand-900 tracking-tight flex items-center gap-2">
+                                <i class="fas fa-clipboard-check text-medical-600"></i> AI Generated Analysis Report
+                            </h2>
+                            <p class="text-xs text-slate-400 mt-0.5">Processed via HeyDoctor.ai Core v4.2</p>
+                        </div>
+                        <button onclick="shareReport()" class="text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition">
+                            <i class="fas fa-share-alt"></i> Share Results
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
+                        <div class="sm:col-span-4 bg-gradient-to-br from-brand-50 to-slate-50 border border-slate-200 rounded-2xl p-4 text-center shadow-sm">
+                            <h3 class="text-xs font-bold text-slate-500 tracking-wide uppercase mb-1">Wellness Score</h3>
+                            <div class="relative inline-flex items-center justify-center mb-1">
+                                <span class="text-4xl font-black text-brand-600">74<span class="text-sm font-normal text-slate-400">/100</span></span>
+                            </div>
+                            <p class="text-xs font-bold text-amber-600 bg-amber-50 rounded-full py-0.5 px-2 inline-block">Moderate Action Advised</p>
+                        </div>
+
+                        <div class="sm:col-span-8">
+                            <h3 class="text-sm font-bold text-brand-900 mb-1">Executive Health Summary</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Your submitted lab panel demonstrates standard biological outputs with two notable exceptions. Your <strong>Hemoglobin</strong> displays mild drops under common thresholds alongside elevated <strong>LDL Cholesterol</strong> settings. Other profiles including kidney filtration indices and blood sugars show optimum compliance metrics.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-xl border border-slate-200">
+                    <h3 class="text-base font-bold text-brand-900 mb-4 flex items-center gap-2">
+                        <i class="fas fa-heart-crack text-red-500"></i> Flagged Abnormal Biomarkers
+                    </h3>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-red-50/60 border border-red-100 p-4 rounded-xl flex flex-col sm:flex-row justify-between sm:items-center gap-3">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-sm font-bold text-slate-900">Total LDL Cholesterol</h4>
+                                    <span class="text-[10px] font-extrabold bg-red-100 text-red-700 px-2 py-0.5 rounded-full uppercase tracking-wider">High</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    <strong class="text-slate-700">Simple Term:</strong> The "bad cholesterol" that can build up in arterial walls.
+                                </p>
+                            </div>
+                            <div class="text-left sm:text-right shrink-0">
+                                <span class="text-sm font-black text-red-600 block">162 mg/dL</span>
+                                <span class="text-[11px] text-slate-400 block">Optimal Reference: &lt; 100</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-50/60 border border-amber-100 p-4 rounded-xl flex flex-col sm:flex-row justify-between sm:items-center gap-3">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-sm font-bold text-slate-900">Hemoglobin (CBC Panel)</h4>
+                                    <span class="text-[10px] font-extrabold bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full uppercase tracking-wider">Low</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    <strong class="text-slate-700">Simple Term:</strong> The protein in red blood cells that circulates active oxygen around the body.
+                                </p>
+                            </div>
+                            <div class="text-left sm:text-right shrink-0">
+                                <span class="text-sm font-black text-amber-600 block">11.4 g/dL</span>
+                                <span class="text-[11px] text-slate-400 block">Optimal Reference: 12.0 – 15.5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-2xl shadow-xl border border-slate-200">
+                        <h4 class="text-sm font-bold text-brand-900 mb-3 flex items-center gap-2">
+                            <i class="fas fa-apple-whole text-medical-600"></i> Targeted Diet Changes
+                        </h4>
+                        <ul class="text-xs text-slate-600 space-y-2.5">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-plus text-medical-600 mt-0.5"></i>
+                                <span><strong>Boost Iron Intake:</strong> Combine lean greens, lentils, or lean poultry with Vitamin C sources (citrus fruits) to elevate hemoglobin synthesis.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-minus text-red-500 mt-0.5"></i>
+                                <span><strong>Limit Soluble Fats:</strong> Avoid deep-fried fast foods, hydrogenated oils, and excess high-fat dairy items to assist in downscaling serum LDL levels.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl shadow-xl border border-slate-200">
+                        <h4 class="text-sm font-bold text-brand-900 mb-3 flex items-center gap-2">
+                            <i class="fas fa-person-running text-brand-600"></i> Lifestyle Adjustments
+                        </h4>
+                        <ul class="text-xs text-slate-600 space-y-2.5">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-brand-600 mt-0.5"></i>
+                                <span><strong>Aerobic Conditioning:</strong> Achieve 30 minutes of daily fast-paced walking or cycling to help naturally raise protective HDL profiles.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-brand-600 mt-0.5"></i>
+                                <span><strong>Hydration Cycles:</strong> Ensure a baseline of 2.5–3 liters of water intake daily to secure optimum metabolic kidney clearings.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-slate-900 to-brand-950 text-white p-5 rounded-2xl shadow-xl">
+                    <h3 class="text-sm font-bold tracking-wide text-brand-50 uppercase mb-2">Recommended Next Actions</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                        Consider arranging a standard wellness consultation within the next 3 to 4 weeks to rerun a baseline Lipid and Serum Ferritin panel to evaluate ongoing metrics.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://my-hey-doctor-ai-website.vercel.app" class="bg-medical-600 hover:bg-medical-700 text-white font-bold text-xs py-2 px-4 rounded-lg shadow transition">
+                            Consult Virtual Doctor AI
+                        </a>
+                        <button onclick="window.print()" class="bg-white/10 hover:bg-white/20 text-white text-xs font-semibold py-2 px-3 rounded-lg transition">
+                            <i class="fas fa-print mr-1"></i> Print Summary
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <section class="bg-slate-100 py-12 border-t border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h2 class="text-2xl font-bold text-brand-900">Explore More Free HeyDoctor.ai Tools</h2>
+                <p class="text-xs md:text-sm text-slate-500 mt-1">Deploy our secondary computational suites to easily configure everyday wellness protocols.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <a href="https://my-hey-doctor-ai-website.vercel.app" class="bg-white p-4 rounded-xl border border-slate-200 hover:border-brand-500 shadow-sm transition block group">
+                    <div class="w-8 h-8 bg-brand-50 text-brand-600 rounded-lg flex items-center justify-center text-sm font-bold mb-3 group-hover:bg-brand-600 group-hover:text-white transition">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-900 mb-1">AI Symptom Evaluator</h3>
+                    <p class="text-xs text-slate-500">Cross-reference unexpected bodily discomforts with dynamic assessments.</p>
+                </a>
+
+                <a href="https://my-hey-doctor-ai-website.vercel.app" class="bg-white p-4 rounded-xl border border-slate-200 hover:border-brand-500 shadow-sm transition block group">
+                    <div class="w-8 h-8 bg-brand-50 text-brand-600 rounded-lg flex items-center justify-center text-sm font-bold mb-3 group-hover:bg-brand-600 group-hover:text-white transition">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-900 mb-1">Diet Planner Engine</h3>
+                    <p class="text-xs text-slate-500">Auto-generate customized macronutrient menus centered on your conditions.</p>
+                </a>
+
+                <a href="https://my-hey-doctor-ai-website.vercel.app" class="bg-white p-4 rounded-xl border border-slate-200 hover:border-brand-500 shadow-sm transition block group">
+                    <div class="w-8 h-8 bg-brand-50 text-brand-600 rounded-lg flex items-center justify-center text-sm font-bold mb-3 group-hover:bg-brand-600 group-hover:text-white transition">
+                        <i class="fas fa-capsules"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-900 mb-1">Pill Reminder & Guide</h3>
+                    <p class="text-xs text-slate-500">Look up drug reactions and streamline critical prescription runtimes.</p>
+                </a>
+
+                <a href="https://my-hey-doctor-ai-website.vercel.app" class="bg-white p-4 rounded-xl border border-slate-200 hover:border-brand-500 shadow-sm transition block group">
+                    <div class="w-8 h-8 bg-brand-50 text-brand-600 rounded-lg flex items-center justify-center text-sm font-bold mb-3 group-hover:bg-brand-600 group-hover:text-white transition">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-900 mb-1">Pediatric Advisor AI</h3>
+                    <p class="text-xs text-slate-500">Immediate diagnostic and nutritional charting specialized for children.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-12">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-brand-900 text-center mb-8">What Our Users Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                    <p class="text-xs text-slate-600 italic mb-3">
+                        "I uploaded my yearly metabolic panel panel, and the explanation cleared up all my confusion before my doctor follow-up. It accurately highlighted my rising blood sugar flags instantly!"
+                    </p>
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 bg-brand-600 text-white rounded-full flex items-center justify-center text-[10px] font-bold">SM</div>
+                        <span class="text-xs font-bold text-slate-800">Sarah M., Los Angeles</span>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                    <p class="text-xs text-slate-600 italic mb-3">
+                        "The way it isolates metrics like high cholesterol and explains what food to prioritize or scale down is incredibly helpful. Super responsive layout on my phone too."
+                    </p>
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 bg-medical-600 text-white rounded-full flex items-center justify-center text-[10px] font-bold">DB</div>
+                        <span class="text-xs font-bold text-slate-800">David B., Austin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="bg-slate-50 py-12 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-brand-900 text-center mb-8">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-4 rounded-xl border border-slate-200">
+                    <h3 class="text-sm font-bold text-slate-900 mb-1">How does the AI Lab Report Analyzer work?</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">The AI parses unstructured textual components or images using advanced computer vision models to catalog markers against optimal demographic boundaries, converting technical diagnostics into human-readable logs.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200">
+                    <h3 class="text-sm font-bold text-slate-900 mb-1">Is my medical data kept safe and secure?</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Security is embedded fundamentally into our logic. All interactions occur transiently over HTTPS channels; parsed text parameters evaporate out of server cycles immediately following structural presentation rendering.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200">
+                    <h3 class="text-sm font-bold text-slate-900 mb-1">Can this AI replace a real medical doctor?</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">No, this engine serves an exclusively instructional roadmap purpose. It does not replace live check-ins with medical practitioners, formal diagnostic writing, or treatment setups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-900 text-slate-400 text-xs py-12 border-t border-brand-950 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+            <div class="md:col-span-4 space-y-3">
+                <a href="https://my-hey-doctor-ai-website.vercel.app" class="flex items-center space-x-2 text-white">
+                    <span class="bg-medical-600 text-white p-1.5 rounded-lg"><i class="fas fa-microscope text-sm"></i></span>
+                    <span class="text-lg font-black tracking-tight">HeyDoctor<span class="text-medical-600">.ai</span></span>
+                </a>
+                <p class="text-slate-400 pr-4 leading-relaxed">
+                    Pioneering everyday diagnostic clarity through intuitive, secure, and precise AI medical report translation layers.
+                </p>
+            </div>
+            <div class="md:col-span-3">
+                <h4 class="text-slate-200 font-bold mb-3 uppercase tracking-wider text-[11px]">Our Services</h4>
+                <ul class="space-y-2">
+                    <li><a href="#analyzer" class="hover:text-white transition">Lab Analysis Engine</a></li>
+                    <li><a href="https://my-hey-doctor-ai-website.vercel.app" class="hover:text-white transition">AI Symptom Triage</a></li>
+                    <li><a href="https://my-hey-doctor-ai-website.vercel.app" class="hover:text-white transition">Personalized Food Blueprints</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-3">
+                <h4 class="text-slate-200 font-bold mb-3 uppercase tracking-wider text-[11px]">Company & Trust</h4>
+                <ul class="space-y-2">
+                    <li><a href="https://my-hey-doctor-ai-website.vercel.app" class="hover:text-white transition">About HeyDoctor</a></li>
+                    <li><a href="https://my-hey-doctor-ai-website.vercel.app" class="hover:text-white transition">Privacy Guidelines</a></li>
+                    <li><a href="https://my-hey-doctor-ai-website.vercel.app" class="hover:text-white transition">Terms of Platform Use</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-2">
+                <h4 class="text-slate-200 font-bold mb-3 uppercase tracking-wider text-[11px]">Connect With Us</h4>
+                <div class="flex space-x-3 text-base">
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800 pt-6 text-center text-slate-500">
+            <p class="mb-2">© 2026 HeyDoctor.ai. All rights reserved.</p>
+            <p class="max-w-3xl mx-auto text-[10px] leading-relaxed">
+                Legal Disclaimer: The automated analytics provided by HeyDoctor.ai are meant strictly to enhance contextual comprehension for healthcare consumers. This environment does not manage formal clinical evaluations, treatments, recipes, or medical care pathways.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let currentTab = 'file';
+
+        function switchTab(type) {
+            currentTab = type;
+            const fileBtn = document.getElementById('tabFileBtn');
+            const textBtn = document.getElementById('tabTextBtn');
+            const fileArea = document.getElementById('fileArea');
+            const textArea = document.getElementById('textArea');
+
+            if (type === 'file') {
+                fileBtn.className = "flex-1 pb-2 border-b-2 border-brand-600 text-brand-600 transition font-medium";
+                textBtn.className = "flex-1 pb-2 border-b-2 border-transparent text-slate-500 hover:text-slate-700 transition font-medium";
+                fileArea.classList.remove('hidden');
+                textArea.classList.add('hidden');
+            } else {
+                textBtn.className = "flex-1 pb-2 border-b-2 border-brand-600 text-brand-600 transition font-medium";
+                fileBtn.className = "flex-1 pb-2 border-b-2 border-transparent text-slate-500 hover:text-slate-700 transition font-medium";
+                textArea.classList.remove('hidden');
+                fileArea.classList.add('hidden');
+            }
+        }
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                document.getElementById('uploadIcon').className = "fas fa-file-circle-check text-4xl text-medical-600 mb-3";
+                document.getElementById('uploadStatusText').innerHTML = `Selected: <span class="text-brand-900 font-bold">${file.name}</span>`;
+            }
+        }
+
+        function triggerMockAnalysis() {
+            const placeholder = document.getElementById('dashboardPlaceholder');
+            const skeleton = document.getElementById('loadingSkeleton');
+            const resultArea = document.getElementById('analysisResultArea');
+
+            // Form validation check
+            if (currentTab === 'text' && !document.getElementById('pastedText').value.trim()) {
+                alert('Please paste some text metrics first to process results.');
+                return;
+            }
+
+            // Hide normal view, turn on skeleton simulation loading state
+            placeholder.classList.add('hidden');
+            resultArea.classList.add('hidden');
+            skeleton.classList.remove('hidden');
+
+            // Scroll cleanly into workspace view
+            document.getElementById('analyzer').scrollIntoView({ behavior: 'smooth' });
+
+            // Mocking asynchronous LLM AI output latency processing loops
+            setTimeout(() => {
+                skeleton.classList.add('hidden');
+                resultArea.classList.remove('hidden');
+            }, 1800);
+        }
+
+        function shareReport() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'My AI Lab Analysis Report',
+                    text: 'Check out my instant lab report processing overview from HeyDoctor.ai',
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                alert('Link copied safely to clipboard to share!');
+            }
+        }
+
+        // Setup Drag and drop listening mechanisms
+        const dropZone = document.getElementById('dropZone');
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropZone.classList.add('bg-brand-50');
+            }, false);
+        });
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('bg-brand-50');
+            }, false);
+        });
+        dropZone.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            if (files.length) {
+                document.getElementById('fileInput').files = files;
+                handleFileSelect({ target: { files } });
+            }
+        }, false);
+    </script>
+</body>
+</html>
