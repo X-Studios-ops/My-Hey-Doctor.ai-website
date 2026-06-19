@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Lab Report Analyzer | Hey-Doctor.ai</title>
-    <meta name="description" content="Upload your blood tests or medical lab reports for immediate, highly accurate AI-powered insights, biomarker tracking, and personalized wellness breakdowns.">
+    <meta name="description" content="Input your blood test parameters for an immediate, approximate AI wellness evaluation and discover deeper clinical tracking insights with Hey-Doctor.ai.">
     
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://my-hey-doctor-ai-website.vercel.app/ai-lab-report-analyzer.html">
@@ -16,7 +16,7 @@
       "url": "https://my-hey-doctor-ai-website.vercel.app/ai-lab-report-analyzer.html",
       "applicationCategory": "HealthApplication",
       "operatingSystem": "All",
-      "abstract": "Advanced AI engine to extract, analyze, and map biomarkers from medical lab reports.",
+      "abstract": "Advanced interactive telemetry analyzer mapping raw biomarker data into structured insights.",
       "offers": {
         "@type": "Offer",
         "price": "0.00",
@@ -107,7 +107,7 @@
 <body class="relative min-h-screen antialiased selection:bg-cyan-500 selection:text-slate-900">
 
     <div class="bg-glow top-10 left-[-10%]"></div>
-    <div class="bg-glow bottom-20 right-[-10%] animation-delay-2000"></div>
+    <div class="bg-glow bottom-20 right-[-10%] animate-floatGlow"></div>
 
     <header class="sticky top-0 z-50 w-full border-b border-white/5 bg-slate-950/70 backdrop-blur-md">
         <div class="mx-auto flex max-w-7xl h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -135,66 +135,59 @@
         <section class="text-center max-w-3xl mx-auto mb-14" aria-labelledby="main-heading">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-card border-cyan-500/20 text-cyan-400 text-xs font-medium mb-5 shadow-sm">
                 <span class="flex h-2 w-2 rounded-full bg-cyan-400 animate-ping"></span>
-                Next-Gen Clinical Intelligence v3.4 Active
+                Next-Gen Simulation Module Active
             </div>
             <h1 id="main-heading" class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">
-                Advanced AI Lab <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">Report Analyzer</span>
+                AI Biomarker <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">Telemetry Analyzer</span>
             </h1>
             <p class="mt-4 text-base sm:text-lg text-slate-400 leading-relaxed">
-                Unlock immediate, evidence-based diagnostic clarity. Our compliance-secured AI extracts complex physiological metrics from medical records, converting raw health markers into a beautifully structured telemetry dashboard.
+                No files or API keys required. Input your core metrics to immediately render an approximate visual baseline trajectory, sandbox tracking ranges, and structural evaluations.
             </p>
         </section>
 
-        <section id="analyzer" class="max-w-4xl mx-auto" aria-label="Lab Analyzer Tool">
+        <section id="analyzer" class="max-w-4xl mx-auto" aria-label="Biomarker Analyzer Form">
             <div class="glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl transition-all duration-500">
                 
-                <div id="uploadContainer">
-                    <label for="reportFile" class="group relative flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-slate-700 hover:border-cyan-500/50 rounded-2xl cursor-pointer bg-slate-900/40 hover:bg-slate-900/70 transition-all duration-300 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-b from-cyan-500/0 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-                        
-                        <div class="flex flex-col items-center justify-center pt-5 pb-6 text-center px-4">
-                            <div class="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center mb-4 border border-white/5 shadow-inner transition-transform group-hover:-translate-y-1 group-hover:border-cyan-500/30">
-                                <i class="fa-solid fa-cloud-arrow-up text-2xl text-cyan-400"></i>
-                            </div>
-                            <p class="mb-2 text-sm text-slate-200 font-semibold"><span class="text-cyan-400">Click to upload</span> or drag and drop</p>
-                            <p class="text-xs text-slate-400">Supported Formats: PDF, PNG, JPEG, HEIC (Max 15MB)</p>
+                <div id="inputFormContainer">
+                    <h3 class="text-base font-bold text-slate-200 mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-cyan-400"></i> Enter Key Biomarker Variables
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <label for="glucoseInput" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Fasting Glucose (mg/dL)</label>
+                            <input id="glucoseInput" type="number" placeholder="e.g. 95" class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 font-medium transition-colors">
                         </div>
-                        <input id="reportFile" type="file" class="hidden" accept=".pdf,.png,.jpg,.jpeg,.heic" onchange="handleFileSelected(this)">
-                    </label>
-
-                    <div id="fileInfoPanel" class="hidden mt-4 p-4 rounded-xl glass-card flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <i id="fileIcon" class="fa-solid fa-file-pdf text-xl text-red-400"></i>
-                            <div>
-                                <p id="fileName" class="text-sm font-medium text-slate-200 truncate max-w-[200px] sm:max-w-sm">report.pdf</p>
-                                <p id="fileSize" class="text-xs text-slate-400">0 KB</p>
-                            </div>
+                        <div>
+                            <label for="ldlInput" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">LDL Cholesterol (mg/dL)</label>
+                            <input id="ldlInput" type="number" placeholder="e.g. 120" class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 font-medium transition-colors">
                         </div>
-                        <button onclick="clearSelectedFile()" class="text-xs text-slate-400 hover:text-rose-400 transition-colors p-1" aria-label="Remove File">
-                            <i class="fa-solid fa-trash-can text-base"></i>
-                        </button>
+                        <div>
+                            <label for="hbInput" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Hemoglobin (g/dL)</label>
+                            <input id="hbInput" type="number" step="0.1" placeholder="e.g. 14.2" class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 font-medium transition-colors">
+                        </div>
                     </div>
 
-                    <div id="validationError" class="hidden mt-4 p-4 bg-rose-950/40 border border-rose-500/30 rounded-xl flex items-center gap-3 text-rose-300 text-sm">
+                    <div id="validationError" class="hidden mt-6 p-4 bg-rose-950/40 border border-rose-500/30 rounded-xl flex items-center gap-3 text-rose-300 text-sm">
                         <i class="fa-solid fa-circle-exclamation text-rose-400 text-lg flex-shrink-0"></i>
-                        <span id="errorMessage">No medical report detected. Please upload a valid blood report.</span>
+                        <span id="errorMessage">Please complete all fields to establish a calculation array.</span>
                     </div>
 
-                    <button id="analyzeBtn" onclick="startAIAnalysis()" class="w-full mt-6 py-4 px-6 rounded-xl font-bold text-sm tracking-wide bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 shadow-[0_4px_20px_-2px_rgba(6,182,212,0.4)] hover:shadow-[0_4px_25px_0px_rgba(6,182,212,0.6)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group cursor-pointer">
+                    <button id="analyzeBtn" onclick="startAIAnalysis()" class="w-full mt-8 py-4 px-6 rounded-xl font-bold text-sm tracking-wide bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 shadow-[0_4px_20px_-2px_rgba(6,182,212,0.4)] hover:shadow-[0_4px_25px_0px_rgba(6,182,212,0.6)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group cursor-pointer">
                         <i class="fa-solid fa-wand-magic-sparkles text-slate-950 group-hover:rotate-12 transition-transform"></i>
-                        Initialize AI Medical Analysis
+                        Generate Approximate Lab Analytics
                     </button>
                 </div>
 
                 <div id="aiLoadingContainer" class="hidden py-8">
-                    <h3 class="text-lg font-bold text-slate-200 text-center mb-8 tracking-wide">Processing Pipeline Logs</h3>
+                    <h3 class="text-lg font-bold text-slate-200 text-center mb-8 tracking-wide">Processing Sandbox Telemetry</h3>
                     <div class="max-w-md mx-auto space-y-5">
                         <div id="step-0" class="flex items-center justify-between text-slate-400 transition-all duration-300">
-                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-notch fa-spin text-cyan-400"></i> <span>Uploading Report</span></div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-notch fa-spin text-cyan-400"></i> <span>Parsing Metrics</span></div>
                             <span class="text-xs font-mono text-slate-500 tracking-wider">PENDING</span>
                         </div>
                         <div id="step-1" class="flex items-center justify-between text-slate-400 transition-all duration-300">
-                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle text-slate-700 text-xs"></i> <span>Extracting Medical Data</span></div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle text-slate-700 text-xs"></i> <span>Mapping Reference Intervals</span></div>
                             <span class="text-xs font-mono text-slate-500 tracking-wider">PENDING</span>
                         </div>
                         <div id="step-2" class="flex items-center justify-between text-slate-400 transition-all duration-300">
@@ -202,15 +195,11 @@
                             <span class="text-xs font-mono text-slate-500 tracking-wider">PENDING</span>
                         </div>
                         <div id="step-3" class="flex items-center justify-between text-slate-400 transition-all duration-300">
-                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle text-slate-700 text-xs"></i> <span>Identifying Abnormal Values</span></div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle text-slate-700 text-xs"></i> <span>Identifying Deviations</span></div>
                             <span class="text-xs font-mono text-slate-500 tracking-wider">PENDING</span>
                         </div>
                         <div id="step-4" class="flex items-center justify-between text-slate-400 transition-all duration-300">
-                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle text-slate-700 text-xs"></i> <span>Generating Health Insights</span></div>
-                            <span class="text-xs font-mono text-slate-500 tracking-wider">PENDING</span>
-                        </div>
-                        <div id="step-5" class="flex items-center justify-between text-slate-400 transition-all duration-300">
-                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle text-slate-700 text-xs"></i> <span>Preparing Recommendations</span></div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle text-slate-700 text-xs"></i> <span>Formulating Approximations</span></div>
                             <span class="text-xs font-mono text-slate-500 tracking-wider">PENDING</span>
                         </div>
                     </div>
@@ -222,15 +211,27 @@
 
                 <div id="dashboardContainer" class="hidden space-y-10 animate-fadeIn">
                     
+                    <div class="p-4 rounded-xl bg-gradient-to-r from-amber-500/20 via-indigo-500/10 to-transparent border border-amber-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-400 text-xl flex-shrink-0 mt-0.5"></i>
+                            <div>
+                                <h4 class="text-sm font-bold text-amber-300">Approximate Analysis Mode Active</h4>
+                                <p class="text-xs text-slate-400">Running without an enterprise API credential key block. Insights are baseline estimations.</p>
+                            </div>
+                        </div>
+                        <a href="https://my-hey-doctor-ai-website.vercel.app" class="w-full sm:w-auto px-4 py-2 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-md whitespace-nowrap">
+                            Ask Hey-Doctor.ai For Complete Answer <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
                         
                         <div class="md:col-span-4 glass-card rounded-2xl p-6 flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                            <div class="absolute inset-0 bg-cyan-500/5 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-                            <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">Wellness Quotient</h4>
+                            <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">Approximate Wellness Index</h4>
                             <div class="relative flex items-center justify-center h-36 w-36">
                                 <svg class="absolute transform -rotate-90 w-32 h-32">
                                     <circle cx="64" cy="64" r="54" stroke="rgba(255,255,255,0.05)" stroke-width="8" fill="transparent"/>
-                                    <circle cx="64" cy="64" r="54" stroke="url(#cyanGrad)" stroke-width="10" fill="transparent" stroke-dasharray="339.2" stroke-dashoffset="67.8" stroke-linecap="round"/>
+                                    <circle cx="64" cy="64" r="54" stroke="url(#cyanGrad)" stroke-width="10" fill="transparent" stroke-dasharray="339.2" stroke-dashoffset="84.8" stroke-linecap="round"/>
                                     <defs>
                                         <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                                             <stop offset="0%" stop-color="#06b6d4" />
@@ -239,59 +240,50 @@
                                     </defs>
                                 </svg>
                                 <div class="text-center">
-                                    <span id="wellnessScoreVal" class="text-4xl font-extrabold text-white">82</span>
+                                    <span class="text-4xl font-extrabold text-white">75</span>
                                     <span class="text-slate-500 text-sm block">/ 100</span>
                                 </div>
                             </div>
-                            <p class="text-xs text-emerald-400 font-semibold mt-3"><i class="fa-solid fa-circle-check mr-1"></i> Optimally Managed</p>
+                            <p class="text-xs text-amber-400 font-semibold mt-3"><i class="fa-solid fa-circle-exclamation mr-1"></i> Baseline Variance Detected</p>
                         </div>
 
                         <div class="md:col-span-4 glass-card rounded-2xl p-6 flex flex-col justify-between">
                             <div>
-                                <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Systemic Risk Registry</h4>
+                                <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Approx Risk Registry</h4>
                                 <div class="space-y-4 mt-2">
                                     <div>
                                         <div class="flex justify-between text-xs mb-1">
-                                            <span class="text-slate-300">Cardiovascular Strain</span>
-                                            <span class="text-amber-400 font-semibold">Moderate</span>
+                                            <span class="text-slate-300">Glycemic Load</span>
+                                            <span id="riskLabelGlucose" class="text-slate-400 font-semibold">Calculating</span>
                                         </div>
                                         <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                                            <div class="bg-amber-400 h-full w-[55%]"></div>
+                                            <div id="riskBarGlucose" class="bg-cyan-400 h-full w-[0%] transition-all duration-1000"></div>
                                         </div>
                                     </div>
                                     <div>
                                         <div class="flex justify-between text-xs mb-1">
-                                            <span class="text-slate-300">Glycemic Deviation</span>
-                                            <span class="text-emerald-400 font-semibold">Optimal</span>
+                                            <span class="text-slate-300">Lipid Accumulation</span>
+                                            <span id="riskLabelLdl" class="text-slate-400 font-semibold">Calculating</span>
                                         </div>
                                         <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                                            <div class="bg-emerald-400 h-full w-[28%]"></div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="flex justify-between text-xs mb-1">
-                                            <span class="text-slate-300">Hepatic Clearance</span>
-                                            <span class="text-emerald-400 font-semibold">Optimal</span>
-                                        </div>
-                                        <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                                            <div class="bg-emerald-400 h-full w-[15%]"></div>
+                                            <div id="riskBarLdl" class="bg-cyan-400 h-full w-[0%] transition-all duration-1000"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-[11px] text-slate-500 mt-4 leading-tight">Risk matrices represent synthetic AI observations. Cross-reference clinical charts.</p>
+                            <p class="text-[11px] text-slate-500 mt-4 leading-tight">Values are structural parsing approximations based exclusively on standard datasets.</p>
                         </div>
 
                         <div class="md:col-span-4 glass-card rounded-2xl p-6 flex flex-col justify-between">
                             <div>
                                 <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2.5">AI Engine Observations</h4>
-                                <p class="text-sm text-slate-300 leading-relaxed">
-                                    Metrics isolate elevated levels of <span class="text-cyan-400 font-semibold">LDL Cholesterol</span> alongside a minor trend toward dehydration or vitamin <span class="text-indigo-400 font-semibold">Vitamin D3 insufficiency</span>. Cellular profiles appear baseline normal.
+                                <p id="dynamicObservationText" class="text-sm text-slate-300 leading-relaxed">
+                                    Metrics analyzed. For an exhaustive breakdown mapping systemic factors, ask Hey-Doctor.ai to secure complete clinical parsing arrays.
                                 </p>
                             </div>
                             <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
-                                <span>Biomarkers Mapped: <strong class="text-white">18</strong></span>
-                                <span>Status: <strong class="text-amber-400">1 Alert</strong></span>
+                                <span>Parameters: <strong class="text-white">3 Mapped</strong></span>
+                                <a href="https://my-hey-doctor-ai-website.vercel.app" class="text-cyan-400 hover:underline">Get Full Report &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -299,10 +291,9 @@
                     <div class="glass-card rounded-2xl p-6">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
                             <div>
-                                <h4 class="text-base font-bold text-slate-200">Critical Biomarker Tracking Velocity</h4>
-                                <p class="text-xs text-slate-400">Historical performance data compared against current AI parsing index metrics</p>
+                                <h4 class="text-base font-bold text-slate-200">Approximate Biomarker Reference Spread</h4>
+                                <p class="text-xs text-slate-400">Your custom input parameters mapped against normal statistical cohorts</p>
                             </div>
-                            <span class="text-xs bg-slate-800 px-2.5 py-1 rounded-md text-slate-400 border border-white/5 self-start">Normalized Variance</span>
                         </div>
                         <div class="h-64 w-full">
                             <canvas id="biomarkerChart"></canvas>
@@ -311,64 +302,55 @@
 
                     <div>
                         <h4 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-heart-pulse text-cyan-400"></i> Isolated Target Parameters
+                            <i class="fa-solid fa-heart-pulse text-cyan-400"></i> Evaluation Metrics
                         </h4>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                            <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5 hover:border-cyan-500/30 transition-all">
+                            <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5">
                                 <div class="flex justify-between items-start mb-2">
-                                    <span class="text-xs text-slate-400 font-medium">Fasting Blood Sugar</span>
-                                    <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-medium">Optimal</span>
+                                    <span class="text-xs text-slate-400 font-medium">Fasting Blood Glucose</span>
+                                    <span id="badgeGlucose" class="text-xs px-2 py-0.5 rounded font-medium">--</span>
                                 </div>
-                                <div class="text-xl font-bold text-white">92 <span class="text-xs font-normal text-slate-400">mg/dL</span></div>
+                                <div class="text-xl font-bold text-white"><span id="valGlucose">0</span> <span class="text-xs font-normal text-slate-400">mg/dL</span></div>
                                 <p class="text-[11px] text-slate-500 mt-1">Reference Array: 70 - 100 mg/dL</p>
                             </div>
-                            <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5 hover:border-amber-500/30 transition-all">
+                            <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5">
                                 <div class="flex justify-between items-start mb-2">
                                     <span class="text-xs text-slate-400 font-medium">LDL Cholesterol</span>
-                                    <span class="text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-medium">Elevated</span>
+                                    <span id="badgeLdl" class="text-xs px-2 py-0.5 rounded font-medium">--</span>
                                 </div>
-                                <div class="text-xl font-bold text-white">134 <span class="text-xs font-normal text-slate-400">mg/dL</span></div>
+                                <div class="text-xl font-bold text-white"><span id="valLdl">0</span> <span class="text-xs font-normal text-slate-400">mg/dL</span></div>
                                 <p class="text-[11px] text-slate-500 mt-1">Reference Array: &lt; 100 mg/dL</p>
                             </div>
-                            <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5 hover:border-cyan-500/30 transition-all">
+                            <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5">
                                 <div class="flex justify-between items-start mb-2">
                                     <span class="text-xs text-slate-400 font-medium">Hemoglobin (Hb)</span>
-                                    <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-medium">Optimal</span>
+                                    <span id="badgeHb" class="text-xs px-2 py-0.5 rounded font-medium">--</span>
                                 </div>
-                                <div class="text-xl font-bold text-white">14.8 <span class="text-xs font-normal text-slate-400">g/dL</span></div>
+                                <div class="text-xl font-bold text-white"><span id="valHb">0</span> <span class="text-xs font-normal text-slate-400">g/dL</span></div>
                                 <p class="text-[11px] text-slate-500 mt-1">Reference Array: 13.8 - 17.2 g/dL</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5">
-                        <h4 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
-                            <i class="fa-solid fa-list-check text-indigo-400"></i> Strategic Recommendations Timeline
-                        </h4>
-                        <div class="space-y-6 relative before:absolute before:left-3.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-800">
-                            <div class="flex gap-4 relative">
-                                <div class="h-7 w-7 rounded-full bg-slate-800 border border-cyan-400/40 flex items-center justify-center text-xs text-cyan-400 font-bold z-10">1</div>
-                                <div>
-                                    <h5 class="text-sm font-bold text-white">Cardiovascular Dietary Focus</h5>
-                                    <p class="text-xs text-slate-400 mt-0.5">Integrate Soluble fibers and Omega-3 rich sources to stabilize baseline LDL profiles.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4 relative">
-                                <div class="h-7 w-7 rounded-full bg-slate-800 border border-indigo-400/40 flex items-center justify-center text-xs text-indigo-400 font-bold z-10">2</div>
-                                <div>
-                                    <h5 class="text-sm font-bold text-white">Targeted Serum Micro-Monitoring</h5>
-                                    <p class="text-xs text-slate-400 mt-0.5">Re-evaluate lipids, Vitamin D status, and fluid hydration profiles via target panels in 60 days.</p>
-                                </div>
-                            </div>
+                    <div class="p-6 rounded-2xl bg-gradient-to-br from-indigo-950/40 via-slate-900/60 to-cyan-950/20 border border-cyan-500/20 text-center space-y-4">
+                        <i class="fa-solid fa-circle-nodes text-3xl text-cyan-400 block animate-pulse"></i>
+                        <h4 class="text-base font-bold text-white">Unlock Deep Complete Analytical Engine</h4>
+                        <p class="text-xs text-slate-400 max-w-lg mx-auto">
+                            Get fully accurate diagnostic checks, actionable health optimization timelines, and systemic metabolic tracking matrices.
+                        </p>
+                        <div class="pt-2">
+                            <a href="https://my-hey-doctor-ai-website.vercel.app" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs tracking-wider bg-gradient-to-r from-cyan-400 to-indigo-500 hover:from-cyan-300 hover:to-indigo-400 text-slate-950 shadow-lg transition-transform hover:-translate-y-0.5">
+                                Ask Hey-Doctor.ai for the Complete Answer <i class="fa-solid fa-arrow-trend-up"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
+                    <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
                         <button onclick="shareAnalysisReport()" class="w-full sm:w-auto px-5 py-3 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white border border-white/10 transition-colors flex items-center justify-center gap-2 cursor-pointer">
-                            <i class="fa-solid fa-share-nodes"></i> Share Result Insights
+                            <i class="fa-solid fa-share-nodes"></i> Share Result Summary
                         </button>
                         <button onclick="resetAnalyzer()" class="w-full sm:w-auto px-5 py-3 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-dashed border-slate-700 transition-colors flex items-center justify-center gap-2 cursor-pointer">
-                            <i class="fa-solid fa-arrow-rotate-left"></i> Analyze Another Report
+                            <i class="fa-solid fa-arrow-rotate-left"></i> Clear & Recalculate
                         </button>
                     </div>
 
@@ -424,111 +406,59 @@
     </footer>
 
     <div class="fixed bottom-4 left-4 right-4 z-50 md:hidden animate-slideUp">
-        <a href="#analyzer" class="w-full py-3 px-4 rounded-xl text-center font-bold text-xs tracking-wider bg-gradient-to-r from-cyan-500 to-indigo-600 text-slate-950 shadow-lg flex items-center justify-center gap-2 backdrop-blur-md">
-            <i class="fa-solid fa-flask-vial"></i> Open Lab Analyzer
+        <a href="https://my-hey-doctor-ai-website.vercel.app" class="w-full py-3 px-4 rounded-xl text-center font-bold text-xs tracking-wider bg-gradient-to-r from-cyan-500 to-indigo-600 text-slate-950 shadow-lg flex items-center justify-center gap-2 backdrop-blur-md">
+            <i class="fa-solid fa-flask-vial"></i> Get Full Analysis at Hey-Doctor.ai
         </a>
     </div>
 
     <script>
-        let selectedFileRef = null;
         let chartInstanceRef = null;
-
-        /**
-         * Triggers dynamically when input tracks file choice changes
-         */
-        function handleFileSelected(inputElement) {
-            const fileErrorPanel = document.getElementById('validationError');
-            fileErrorPanel.classList.add('hidden');
-            
-            if (!inputElement.files || inputElement.files.length === 0) return;
-            const file = inputElement.files[0];
-            
-            // UI Update Elements
-            document.getElementById('fileName').textContent = file.name;
-            document.getElementById('fileSize').textContent = (file.size / 1024).toFixed(1) + ' KB';
-            
-            // Track Icon Representation Type
-            const fileIcon = document.getElementById('fileIcon');
-            if(file.type.includes('pdf')) {
-                fileIcon.className = "fa-solid fa-file-pdf text-xl text-red-400";
-            } else {
-                fileIcon.className = "fa-solid fa-file-image text-xl text-cyan-400";
-            }
-
-            document.getElementById('fileInfoPanel').classList.remove('hidden');
-            selectedFileRef = file;
-        }
-
-        /**
-         * Clears choice buffers
-         */
-        function clearSelectedFile() {
-            document.getElementById('reportFile').value = "";
-            document.getElementById('fileInfoPanel').classList.add('hidden');
-            document.getElementById('validationError').classList.add('hidden');
-            selectedFileRef = null;
-        }
 
         /**
          * Structural AI Execution Pipeline Sequencing Logic
          */
         function startAIAnalysis() {
             const errorPanel = document.getElementById('validationError');
-            const errorText = document.getElementById('errorMessage');
+            
+            const glucose = parseFloat(document.getElementById('glucoseInput').value);
+            const ldl = parseFloat(document.getElementById('ldlInput').value);
+            const hb = parseFloat(document.getElementById('hbInput').value);
 
-            // 1. Structural File Safety Validations
-            if (!selectedFileRef) {
-                errorText.textContent = "No medical report detected. Please upload a valid blood report.";
+            // 1. Precise Manual Value Validation Rules
+            if (isNaN(glucose) || isNaN(ldl) || isNaN(hb)) {
                 errorPanel.classList.remove('hidden');
                 return;
             }
-
-            // Client Validation Simulation logic for non-medical assets / empty uploads
-            if (selectedFileRef.size < 1000) { 
-                errorText.textContent = "Image quality too low. Text pattern unreadable.";
-                errorPanel.classList.remove('hidden');
-                return;
-            }
-
-            if (selectedFileRef.name.toLowerCase().includes('screenshot') && !selectedFileRef.name.toLowerCase().includes('medical')) {
-                errorText.textContent = "Non-medical screenshot detected. Analysis rejected.";
-                errorPanel.classList.remove('hidden');
-                return;
-            }
+            errorPanel.classList.add('hidden');
 
             // 2. Interface Pipeline Sequence Activation
-            document.getElementById('uploadContainer').classList.add('hidden');
+            document.getElementById('inputFormContainer').classList.add('hidden');
             document.getElementById('aiLoadingContainer').classList.remove('hidden');
             
             const animationSteps = [
-                { id: 'step-0', text: 'Uploading Report' },
-                { id: 'step-1', text: 'Extracting Medical Data' },
-                { id: 'step-2', text: 'Checking Biomarkers' },
-                { id: 'step-3', text: 'Identifying Abnormal Values' },
-                { id: 'step-4', text: 'Generating Health Insights' },
-                { id: 'step-5', text: 'Preparing Recommendations' }
+                { id: 'step-0' },
+                { id: 'step-1' },
+                { id: 'step-2' },
+                { id: 'step-3' },
+                { id: 'step-4' }
             ];
 
             let cumulativeDelay = 0;
             const progressFillBar = document.getElementById('analysisProgressBar');
 
             animationSteps.forEach((step, index) => {
-                // Active State Update
                 setTimeout(() => {
                     const el = document.getElementById(step.id);
                     el.className = "flex items-center justify-between text-cyan-400 font-medium step-pulse transition-all duration-300";
                     el.querySelector('i').className = "fa-solid fa-circle-notch fa-spin text-cyan-400";
                     el.querySelector('span + span').textContent = "IN PROGRESS";
                     
-                    // Increment overall progress percentage line logically
                     const percentComplete = Math.floor(((index + 0.5) / animationSteps.length) * 100);
-                    progressFillBar.style.w = `${percentComplete}%`;
                     progressFillBar.style.width = `${percentComplete}%`;
                 }, cumulativeDelay);
 
-                cumulativeDelay += 1200; // Step speed timing
+                cumulativeDelay += 900; 
 
-                // Finished State Mark
                 setTimeout(() => {
                     const el = document.getElementById(step.id);
                     el.className = "flex items-center justify-between text-slate-300 transition-all duration-300 opacity-80";
@@ -538,21 +468,90 @@
                 }, cumulativeDelay - 100);
             });
 
-            // 3. Render Final Interactive Medical Dashboard View
+            // 3. Populate and Render Dashboard Values Dynamically
             setTimeout(() => {
                 progressFillBar.style.width = `100%`;
                 setTimeout(() => {
                     document.getElementById('aiLoadingContainer').classList.add('hidden');
                     document.getElementById('dashboardContainer').classList.remove('hidden');
-                    initializeAnalyticsChart();
-                }, 400);
+                    
+                    // Inject Input values to Metrics Cards
+                    document.getElementById('valGlucose').textContent = glucose;
+                    document.getElementById('valLdl').textContent = ldl;
+                    document.getElementById('valHb').textContent = hb;
+
+                    // Evaluate Metrics Approximations to modify dashboard components
+                    evaluateBiomarkersText(glucose, ldl, hb);
+                    initializeAnalyticsChart(glucose, ldl, hb);
+                }, 300);
             }, cumulativeDelay);
         }
 
         /**
-         * Chart.js Matrix Rendering Framework Ecosystem Setup
+         * Conditional text interpretation engine based on standard metric boundaries
          */
-        function initializeAnalyticsChart() {
+        function evaluateBiomarkersText(glucose, ldl, hb) {
+            let notes = [];
+            
+            // Glucose Evaluation
+            const glucoseBar = document.getElementById('riskBarGlucose');
+            const glucoseLabel = document.getElementById('riskLabelGlucose');
+            const gBadge = document.getElementById('badgeGlucose');
+            if (glucose > 100) {
+                glucoseBar.className = "bg-amber-400 h-full w-[80%]";
+                glucoseLabel.className = "text-amber-400 font-semibold";
+                glucoseLabel.textContent = "Elevated";
+                gBadge.className = "text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-medium";
+                gBadge.textContent = "High";
+                notes.push("Glucose tracks outside reference baseline.");
+            } else {
+                glucoseBar.className = "bg-emerald-400 h-full w-[35%]";
+                glucoseLabel.className = "text-emerald-400 font-semibold";
+                glucoseLabel.textContent = "Optimal";
+                gBadge.className = "text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-medium";
+                gBadge.textContent = "Optimal";
+            }
+
+            // LDL Evaluation
+            const ldlBar = document.getElementById('riskBarLdl');
+            const ldlLabel = document.getElementById('riskLabelLdl');
+            const lBadge = document.getElementById('badgeLdl');
+            if (ldl > 100) {
+                ldlBar.className = "bg-amber-400 h-full w-[75%]";
+                ldlLabel.className = "text-amber-400 font-semibold";
+                ldlLabel.textContent = "Elevated Strain";
+                lBadge.className = "text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-medium";
+                lBadge.textContent = "High";
+                notes.push("LDL profile suggests potential dietary shifting constraints.");
+            } else {
+                ldlBar.className = "bg-emerald-400 h-full w-[25%]";
+                ldlLabel.className = "text-emerald-400 font-semibold";
+                ldlLabel.textContent = "Optimal";
+                lBadge.className = "text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-medium";
+                lBadge.textContent = "Optimal";
+            }
+
+            // Hemoglobin Evaluation
+            const hBadge = document.getElementById('badgeHb');
+            if (hb < 13.5) {
+                hBadge.className = "text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-medium";
+                hBadge.textContent = "Low Baseline";
+            } else {
+                hBadge.className = "text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-medium";
+                hBadge.textContent = "Optimal";
+            }
+
+            if(notes.length === 0) {
+                document.getElementById('dynamicObservationText').textContent = "Input metrics mirror structured baseline cohorts accurately. For an exhaustive check up on remaining hidden biomarkers, ask Hey-Doctor.ai.";
+            } else {
+                document.getElementById('dynamicObservationText').textContent = notes.join(" ") + " To process complete metabolic dependencies fully, ask Hey-Doctor.ai for the complete answer.";
+            }
+        }
+
+        /**
+         * Chart.js Configuration mapping custom entries
+         */
+        function initializeAnalyticsChart(glucose, ldl, hb) {
             const chartContext = document.getElementById('biomarkerChart').getContext('2d');
             
             if (chartInstanceRef) {
@@ -560,39 +559,21 @@
             }
 
             chartInstanceRef = new Chart(chartContext, {
-                type: 'line',
+                type: 'bar',
                 data: {
-                    labels: ['Baseline T-1', 'Baseline T-2', 'Baseline T-3', 'Current Analysis'],
-                    datasets: [
-                        {
-                            label: 'Fasting Blood Glucose Index',
-                            data: [98, 95, 89, 92],
-                            borderColor: '#06b6d4',
-                            backgroundColor: 'rgba(6, 182, 212, 0.05)',
-                            tension: 0.3,
-                            fill: true,
-                            borderWidth: 2.5
-                        },
-                        {
-                            label: 'LDL Serum Baseline',
-                            data: [120, 126, 130, 134],
-                            borderColor: '#f59e0b',
-                            backgroundColor: 'transparent',
-                            tension: 0.3,
-                            borderDash: [4, 4],
-                            borderWidth: 2
-                        }
-                    ]
+                    labels: ['Your Glucose', 'Normal Max', 'Your LDL', 'Normal Max'],
+                    datasets: [{
+                        label: 'Value Reference Comparison',
+                        data: [glucose, 100, ldl, 100],
+                        backgroundColor: ['#06b6d4', 'rgba(255,255,255,0.1)', '#f59e0b', 'rgba(255,255,255,0.1)'],
+                        borderRadius: 8,
+                        borderWidth: 0
+                    }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            labels: { color: '#94a3b8', font: { family: 'Plus Jakarta Sans', size: 11 } },
-                            position: 'top'
-                        }
-                    },
+                    plugins: { legend: { display: false } },
                     scales: {
                         y: {
                             grid: { color: 'rgba(255, 255, 255, 0.04)' },
@@ -607,30 +588,24 @@
             });
         }
 
-        /**
-         * Native Share Interface Actions
-         */
         function shareAnalysisReport() {
             if (navigator.share) {
                 navigator.share({
-                    title: 'Hey-Doctor.ai Labs Insights',
-                    text: 'My lab biomarker dashboard analysis results on Hey-Doctor.ai',
+                    title: 'Hey-Doctor.ai Approximate Labs Sandbox',
+                    text: 'Viewed quick baseline estimation analysis logs on Hey-Doctor.ai.',
                     url: window.location.href
                 }).catch(() => {});
             } else {
-                alert("Report insights tracking URL copied to storage clipboard!");
+                alert("Approximate report tracking URL copied to storage clipboard!");
             }
         }
 
-        /**
-         * Reset state machine parameters cleanly
-         */
         function resetAnalyzer() {
             document.getElementById('dashboardContainer').classList.add('hidden');
-            document.getElementById('uploadContainer').classList.remove('hidden');
+            document.getElementById('inputFormContainer').classList.remove('hidden');
             
-            // Restore standard pending labels array states
-            const animationSteps = ['step-0', 'step-1', 'step-2', 'step-3', 'step-4', 'step-5'];
+            // Restore structural pending logs array states
+            const animationSteps = ['step-0', 'step-1', 'step-2', 'step-3', 'step-4'];
             animationSteps.forEach(stepId => {
                 const el = document.getElementById(stepId);
                 el.className = "flex items-center justify-between text-slate-400 transition-all duration-300";
@@ -639,7 +614,9 @@
                 el.querySelector('span + span').textContent = "PENDING";
             });
             document.getElementById('analysisProgressBar').style.width = "0%";
-            clearSelectedFile();
+            document.getElementById('glucoseInput').value = "";
+            document.getElementById('ldlInput').value = "";
+            document.getElementById('hbInput').value = "";
         }
     </script>
 </body>
