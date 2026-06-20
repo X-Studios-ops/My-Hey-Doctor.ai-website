@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -273,8 +273,7 @@
                             <h3 class="text-xl font-bold text-yogaGreen-600">🧘 Complete Structural Asana Portfolio</h3>
                             <p class="text-xs text-slate-500 mt-1">Calibrated sequence directives for master posture mechanics.</p>
                         </div>
-                        <div id="asanas-injection-container" class="space-y-4">
-                            </div>
+                        <div id="asanas-injection-container" class="space-y-4"></div>
                     </div>
 
                     <div id="strategy-card" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 print-card border-t-4 border-t-yogaGold-500">
@@ -286,8 +285,7 @@
                             </div>
                             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
                                 <h4 id="strat-skin-title" class="font-bold text-slate-800 text-sm uppercase tracking-wider flex items-center gap-1.5">✨ Radiance & Cleanse Matrix</h4>
-                                <ul id="strat-skin-list" class="text-sm text-slate-600 mt-2 space-y-1.5 list-disc pl-4">
-                                    </ul>
+                                <ul id="strat-skin-list" class="text-sm text-slate-600 mt-2 space-y-1.5 list-disc pl-4"></ul>
                             </div>
                         </div>
                     </div>
@@ -304,8 +302,7 @@
                                         <th class="px-4 py-3">Macro Targeting Directives</th>
                                     </tr>
                                 </thead>
-                                <tbody id="diet-tbody" class="divide-y divide-slate-100">
-                                    </tbody>
+                                <tbody id="diet-tbody" class="divide-y divide-slate-100"></tbody>
                             </table>
                         </div>
                     </div>
@@ -324,8 +321,7 @@
                     <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 print-card">
                         <h3 class="text-xl font-bold text-yogaGreen-600 mb-2">📅 Micro-Cycle Adaptive 7-Day Plan</h3>
                         <p class="text-xs text-slate-500 mb-6">Systematic tracking architecture mapped out sequentially for target validation.</p>
-                        <div id="weekly-matrix-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-7 gap-3">
-                            </div>
+                        <div id="weekly-matrix-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-7 gap-3"></div>
                     </div>
 
                     <div class="bg-gradient-to-br from-yogaGreen-600 to-yogaGreen-800 text-white p-6 sm:p-8 rounded-2xl text-center shadow-lg relative overflow-hidden">
@@ -357,93 +353,20 @@
     </main>
 
     <script>
-        // MASTER STRUCTURAL ASANA DATABASE POOL
         const MASTER_ASANA_DATABASE = [
-            {
-                id: "tadasana",
-                name: "Tadasana (Mountain Pose)",
-                difficulty: "Beginner",
-                duration: "1-2 Minutes",
-                benefits: "Realigns joint stack points, anchors base core tension, calibrates center-of-gravity balances.",
-                precaution: "Maintain standard regular gaze pattern if feeling sudden positional vertigo."
-            },
-            {
-                id: "bhujangasana",
-                name: "Bhujangasana (Cobra Pose)",
-                difficulty: "Beginner-Intermediate",
-                duration: "30-60 Seconds",
-                benefits: "Decompresses dynamic thoracic vertebrae rows, elongates lung tissue bands, activates posterior kinetic paths.",
-                precaution: "Avoid aggressive spinal arching if acute umbilical or lower abdominal tissue strain exists."
-            },
-            {
-                id: "vajrasana",
-                name: "Vajrasana (Thunderbolt Pose)",
-                difficulty: "Beginner",
-                duration: "5-10 Minutes Post Meals",
-                benefits: "Alters general pelvic arterial paths toward visceral digestion beds, targets quad-tendon extensions.",
-                precaution: "Do not stress if you have advanced lateral collateral ligament inflammation."
-            },
-            {
-                id: "suryanamaskar",
-                name: "Surya Namaskar (Sun Salutations)",
-                difficulty: "Intermediate",
-                duration: "5-12 Structural Rounds",
-                benefits: "Complete metabolic ignite, optimizes circulatory velocity across skin cells, dynamic cardiovascular conditioning.",
-                precaution: "Modify transitions or switch to slower cycles if you have acute wrist-carpal loading sensitivities."
-            },
-            {
-                id: "adhomukha",
-                name: "Adho Mukha Svanasana (Downward Dog)",
-                difficulty: "Beginner-Intermediate",
-                duration: "1-2 Minutes",
-                benefits: "Extends entire kinetic spine line, improves blood flow to the head and scalp tissue layers.",
-                precaution: "Drop down to knees safely if you have high blood pressure or retinal pressure concerns."
-            },
-            {
-                id: "balasana",
-                name: "Balasana (Child's Pose)",
-                difficulty: "Beginner",
-                duration: "2-5 Minutes",
-                benefits: "Activates deep vagal nerve calm, releases compressed lumbar muscle fibers, decreases sensory overload.",
-                precaution: "Support lower abdomen or shins with a soft wedge if pelvic flexion feels tight."
-            },
-            {
-                id: "trikonasana",
-                name: "Trikonasana (Triangle Pose)",
-                difficulty: "Intermediate",
-                duration: "45 Secs Per Lateral Track",
-                benefits: "Opens up lower hip mobility, stretches side core lines, improves balance stability.",
-                precaution: "Keep gaze level instead of facing up if cervical disks feel stiff or uncomfortable."
-            },
-            {
-                id: "setubandhasana",
-                name: "Setu Bandhasana (Bridge Pose)",
-                difficulty: "Beginner",
-                duration: "60 Seconds Static Hold",
-                benefits: "Activates glutes to correct anterior pelvic tilt, increases chest expansion capacity.",
-                precaution: "Do not rotate your head sideways while your shoulders are loaded in the bridge position."
-            },
-            {
-                id: "pavanmuktasana",
-                name: "Pavanmuktasana (Wind-Relieving Pose)",
-                difficulty: "Beginner",
-                duration: "1-2 Minutes Balanced",
-                benefits: "Massage visceral track paths, helps relieve lower back tension and gastrointestinal trapping.",
-                precaution: "Pull knees gently based on your natural hip flexor and lower abdomen comfort."
-            },
-            {
-                id: "shavasana",
-                name: "Shavasana (Corpse Pose)",
-                difficulty: "Beginner",
-                duration: "5-12 Minutes Absolute",
-                benefits: "Deep physiological reset, triggers systemic relaxation responses, controls active cortisol spikes.",
-                precaution: "Place a rolled blanket or cushion beneath your knees if your lower back feels tender lying flat."
-            }
+            { id: "tadasana", name: "Tadasana (Mountain Pose)", difficulty: "Beginner", duration: "1-2 Minutes", benefits: "Realigns joint stack points, anchors base core tension, calibrates center-of-gravity balances.", precaution: "Maintain standard regular gaze pattern if feeling sudden positional vertigo." },
+            { id: "bhujangasana", name: "Bhujangasana (Cobra Pose)", difficulty: "Beginner-Intermediate", duration: "30-60 Seconds", benefits: "Decompresses dynamic thoracic vertebrae rows, elongates lung tissue bands, activates posterior kinetic paths.", precaution: "Avoid aggressive spinal arching if acute umbilical or lower abdominal tissue strain exists." },
+            { id: "vajrasana", name: "Vajrasana (Thunderbolt Pose)", difficulty: "Beginner", duration: "5-10 Minutes Post Meals", benefits: "Alters general pelvic arterial paths toward visceral digestion beds, targets quad-tendon extensions.", precaution: "Do not stress if you have advanced lateral collateral ligament inflammation." },
+            { id: "suryanamaskar", name: "Surya Namaskar (Sun Salutations)", difficulty: "Intermediate", duration: "5-12 Structural Rounds", benefits: "Complete metabolic ignite, optimizes circulatory velocity across skin cells, dynamic cardiovascular conditioning.", precaution: "Modify transitions or switch to slower cycles if you have acute wrist-carpal loading sensitivities." },
+            { id: "adhomukha", name: "Adho Mukha Svanasana (Downward Dog)", difficulty: "Beginner-Intermediate", duration: "1-2 Minutes", benefits: "Extends entire kinetic spine line, improves blood flow to the head and scalp tissue layers.", precaution: "Drop down to knees safely if you have high blood pressure or retinal pressure concerns." },
+            { id: "balasana", name: "Balasana (Child's Pose)", difficulty: "Beginner", duration: "2-5 Minutes", benefits: "Activates deep vagal nerve calm, releases compressed lumbar muscle fibers, decreases sensory overload.", precaution: "Support lower abdomen or shins with a soft wedge if pelvic flexion feels tight." },
+            { id: "trikonasana", name: "Trikonasana (Triangle Pose)", difficulty: "Intermediate", duration: "45 Secs Per Lateral Track", benefits: "Opens up lower hip mobility, stretches side core lines, improves balance stability.", precaution: "Keep gaze level instead of facing up if cervical disks feel stiff or uncomfortable." },
+            { id: "setubandhasana", name: "Setu Bandhasana (Bridge Pose)", difficulty: "Beginner", duration: "60 Seconds Static Hold", benefits: "Activates glutes to correct anterior pelvic tilt, increases chest expansion capacity.", precaution: "Do not rotate your head sideways while your shoulders are loaded in the bridge position." },
+            { id: "pavanmuktasana", name: "Pavanmuktasana (Wind-Relieving Pose)", difficulty: "Beginner", duration: "1-2 Minutes Balanced", benefits: "Massage visceral track paths, helps relieve lower back tension and gastrointestinal trapping.", precaution: "Pull knees gently based on your natural hip flexor and lower abdomen comfort." },
+            { id: "shavasana", name: "Shavasana (Corpse Pose)", difficulty: "Beginner", duration: "5-12 Minutes Absolute", benefits: "Deep physiological reset, triggers systemic relaxation responses, controls active cortisol spikes.", precaution: "Place a rolled blanket or cushion beneath your knees if your lower back feels tender lying flat." }
         ];
 
-        // ENGINE COMPUTATION CONTROLLER
         function calculateAdvancedSystemReport() {
-            // Raw Inputs Gathering
             const age = parseInt(document.getElementById("age").value);
             const gender = document.getElementById("gender").value;
             const height = parseFloat(document.getElementById("height").value);
@@ -457,13 +380,11 @@
             const workoutTime = parseInt(document.getElementById("workoutTime").value);
             const experienceLevel = document.getElementById("experienceLevel").value;
 
-            // Form Fields Basic Guards
             if (!age || !height || !weight || isNaN(age) || isNaN(height) || isNaN(weight)) {
                 alert("Please ensure your Age, Height, and Weight input matrices are populated accurately.");
                 return;
             }
 
-            // 1. BMI Calculation
             const bmi = (weight / ((height / 100) * (height / 100))).toFixed(1);
             let category = "";
             let categoryClass = "";
@@ -482,7 +403,6 @@
                 categoryClass = "bg-red-100 text-red-800 border-red-200";
             }
 
-            // 2. Wellness Score Processing Engine (Deductions Model)
             let wellnessScore = 90;
             if (stressLevel === "high") wellnessScore -= 15;
             if (stressLevel === "medium") wellnessScore -= 5;
@@ -493,7 +413,6 @@
             if (bmi > 29.9 || bmi < 18.5) wellnessScore -= 7;
             wellnessScore = Math.max(20, Math.min(100, wellnessScore));
 
-            // 3. Flexibility Score Estimation
             let flexScore = 55;
             if (experienceLevel === "intermediate") flexScore += 20;
             if (healthCondition === "back" || healthCondition === "knee") flexScore -= 15;
@@ -504,13 +423,11 @@
             if (flexScore > 70) flexBadge = "Competent Dynamic Range";
             if (flexScore < 45) flexBadge = "Restricted Fascia Elasticity";
 
-            // 4. Activity Text Mapping
             let activityText = "Balanced Active";
             if (activityLevel === "sedentary") activityText = "Low Baseline";
             if (activityLevel === "active") activityText = "High Intensity Track";
 
-            // 5. System Output Summary Content Generator Engine
-            let summaryText = `Patient/User data model tracks a ${age}-year-old ${gender.toLowerCase()} matching a Calculated BMI of ${bmi} (${category}). `;
+            let summaryText = "Patient/User data model tracks a " + age + "-year-old " + gender.toLowerCase() + " matching a Calculated BMI of " + bmi + " (" + category + "). ";
             
             if (fitnessGoal === "weightloss") {
                 summaryText += "The main goal requires active caloric adaptation and continuous core training. Our system recommends prioritizing full-body movement sequences to optimize overall metabolic rate. ";
@@ -526,7 +443,6 @@
                 summaryText += "Important lifestyle notice: High stress or short sleep windows can raise everyday baseline cortisol, which directly causes fluid retention and impacts recovery. We recommend prioritizing our evening breathing and mindfulness practices.";
             }
 
-            // 6. Dynamic Routine Distribution Engine based on Window selection
             let mornDuration = "5 Mins", noonDuration = "5 Mins", evenDuration = "5 Mins";
             if (workoutTime === 30) { mornDuration = "15 Mins"; noonDuration = "5 Mins"; evenDuration = "10 Mins"; }
             if (workoutTime === 60) { mornDuration = "30 Mins"; noonDuration = "10 Mins"; evenDuration = "20 Mins"; }
@@ -559,12 +475,10 @@
                 mBen = "Gently wakes up nervous system pathways and establishes balanced energy for the entire morning.";
                 nName = "Vajrasana & Centered Alternate Nostril Breathing";
                 nBen = "Lowers mid-day stress, resets concentration, and balances left/right brain hemisphere focus.";
-                eName = "Deep Child’s Pose Reset & Extended Shavasana Integration";
+                eName = "Deep Child's Pose Reset & Extended Shavasana Integration";
                 eBen = "Helps lower active physical stress, downregulates racing thoughts, and helps prepare the body for deep sleep.";
             }
 
-            // 7. Dynamic Strategy Cards Mapping
-            let weightTitle = "⚖️ Weight Management Directive";
             let weightDesc = "";
             if (bmi >= 25.0) {
                 weightDesc = "Your current BMI indicates an opportunity for metabolic optimization. We recommend integrating <strong>Surya Namaskar</strong>, abdominal <strong>Planks</strong>, consistent daily steps (8k+), and light functional bodyweight moves to help shape and lean out core tissues.";
@@ -574,26 +488,15 @@
                 weightDesc = "Your body weight is in a very healthy, optimal normal balance. Continue with standard weekly conditioning and mindful movement to protect your active metabolic baseline.";
             }
 
-            // Skin / Hair List Builders
             let skinListHTML = "";
             if (skinGoal === "glow") {
-                skinListHTML = `
-                    <li><strong>Postural Inversion:</strong> Use positions like Downward-Facing Dog to increase nutrient-dense blood flow to the head and face.</li>
-                    <li><strong>Hydration Benchmark:</strong> Keep consistent baseline fluid intake (2.5 - 3 Liters daily) to assist normal cell waste processing.</li>
-                    <li><strong>Face Yoga Integration:</strong> Practice light 2-minute jawline and cheek movements to maintain healthy local facial muscle tone.</li>`;
+                skinListHTML = "li class='py-1'><strong>Postural Inversion:</strong> Use positions like Downward-Facing Dog to increase nutrient-dense blood flow to the head and face.</li><li class='py-1'><strong>Hydration Benchmark:</strong> Keep consistent baseline fluid intake (2.5 - 3 Liters daily) to assist normal cell waste processing.</li><li class='py-1'><strong>Face Yoga Integration:</strong> Practice light 2-minute jawline and cheek movements to maintain healthy local facial muscle tone.</li>";
             } else if (skinGoal === "acne") {
-                skinListHTML = `
-                    <li><strong>Inflammation Regulation:</strong> Emphasize cooling breathing methods like Sheetali or slow breathing to calm the nervous system.</li>
-                    <li><strong>Dietary Adjustments:</strong> Try minimizing highly processed foods and refined sugars to avoid sudden insulin and skin flare-ups.</li>
-                    <li><strong>Nervous System Balance:</strong> Use grounding postures to help manage stress-induced hormone fluctuations.</li>`;
+                skinListHTML = "<li class='py-1'><strong>Inflammation Regulation:</strong> Emphasize cooling breathing methods like Sheetali or slow breathing to calm the nervous system.</li><li class='py-1'><strong>Dietary Adjustments:</strong> Try minimizing highly processed foods and refined sugars to avoid sudden insulin and skin flare-ups.</li><li class='py-1'><strong>Nervous System Balance:</strong> Use grounding postures to help manage stress-induced hormone fluctuations.</li>";
             } else {
-                skinListHTML = `
-                    <li><strong>Scalp Tissue Blood Flow:</strong> Prioritize forward folds and inverted postures to deliver rich circulation to hair follicles.</li>
-                    <li><strong>Targeted Micronutrients:</strong> Ensure your diet provides adequate zinc, iron, and biotin to protect structural hair density.</li>
-                    <li><strong>Stress-Induced Control:</strong> Regular practice of Yoga Nidra helps prevent stress-triggered hair thinning or shedding cycles.</li>`;
+                skinListHTML = "<li class='py-1'><strong>Scalp Tissue Blood Flow:</strong> Prioritize forward folds and inverted postures to deliver rich circulation to hair follicles.</li><li class='py-1'><strong>Targeted Micronutrients:</strong> Ensure your diet provides adequate zinc, iron, and biotin to protect structural hair density.</li><li class='py-1'><strong>Stress-Induced Control:</strong> Regular practice of Yoga Nidra helps prevent stress-triggered hair thinning or shedding cycles.</li>";
             }
 
-            // 8. Dynamic Nutritional Table Data Injection
             let dBreak = "", dLunch = "", dSnack = "", dDinner = "";
             if (fitnessGoal === "weightloss") {
                 dBreak = "Sprouted mung bean salad or plain oats with a light side of plant-based protein or egg whites.";
@@ -620,7 +523,6 @@
                 <tr class="hover:bg-slate-50/50"><td class="px-4 py-3 font-bold text-slate-700">🌙 Dinner Window</td><td class="px-4 py-3 text-slate-600">${dDinner}</td></tr>
             `;
 
-            // 9. Lifestyle Stress & Sleep Text Modifiers
             let lifestyleStress = "Keep your stress in check by taking 5-10 minutes each afternoon for quiet alternate-nostril breathing. This helps balance the autonomic nervous system and keeps sudden daily anxiety levels managed.";
             if (stressLevel === "high") {
                 lifestyleStress = "Your stress levels are currently flagged as high. We strongly recommend making a 15-minute <strong>Yoga Nidra</strong> or body-scan meditation a non-negotiable part of your evening routine to help clear accumulated mental fatigue.";
@@ -631,15 +533,13 @@
                 lifestyleSleep = "Your nightly sleep window is low, which can slow down normal muscle recovery. Try incorporating deep, rhythmic abdominal breathing just before sleeping to help encourage deeper, more restful sleep cycles.";
             }
 
-            // 10. Asana Library Custom Injection with Safety Modifiers
             const asanaContainer = document.getElementById("asanas-injection-container");
-            asanaContainer.innerHTML = ""; // Clear existing template elements
+            asanaContainer.innerHTML = "";
             
             MASTER_ASANA_DATABASE.forEach(asana => {
                 let badgeColor = "bg-emerald-50 text-emerald-700 border-emerald-200";
                 if (asana.difficulty === "Intermediate") badgeColor = "bg-orange-50 text-orange-700 border-orange-200";
                 
-                // Realtime health hazard safety precaution override injector
                 let criticalPrecaution = asana.precaution;
                 if (healthCondition === "knee" && (asana.id === "vajrasana" || asana.id === "suryanamaskar")) {
                     criticalPrecaution = "<span class='text-rose-600 font-bold'>⚠️ KNEE PAIN ALERT:</span> Avoid forcing deep knee bends. Use a thick supportive mat or a cushion modification to reduce joint strain.";
@@ -667,7 +567,6 @@
                 asanaContainer.insertAdjacentHTML("beforeend", poseHTML);
             });
 
-            // 11. 7 Day Matrix Generator Mapping
             const weeklyContainer = document.getElementById("weekly-matrix-container");
             weeklyContainer.innerHTML = "";
             
@@ -688,22 +587,20 @@
                 weeklyContainer.insertAdjacentHTML("beforeend", dayHTML);
             }
 
-            // RENDERING OUTPUT ELEMENTS TO DOM INTERFACE LAYER
             document.getElementById("out-bmi").innerText = bmi;
             
             const outCategory = document.getElementById("out-category");
             outCategory.innerText = category;
-            outCategory.className = `inline-block mt-1 text-xs font-bold px-2 py-0.5 rounded border ${categoryClass}`;
+            outCategory.className = "inline-block mt-1 text-xs font-bold px-2 py-0.5 rounded border " + categoryClass;
 
-            document.getElementById("out-wellness").innerText = `${wellnessScore}/100`;
-            document.getElementById("bar-wellness").style.width = `${wellnessScore}%`;
+            document.getElementById("out-wellness").innerText = wellnessScore + "/100";
+            document.getElementById("bar-wellness").style.width = wellnessScore + "%";
             
-            document.getElementById("out-flex").innerText = `${flexScore}/100`;
+            document.getElementById("out-flex").innerText = flexScore + "/100";
             document.getElementById("badge-flex").innerText = flexBadge;
             document.getElementById("out-activity").innerText = activityText;
             document.getElementById("out-summary").innerHTML = summaryText;
 
-            // Routines
             document.getElementById("routine-morn-name").innerText = mName;
             document.getElementById("routine-morn-time").innerText = mornDuration;
             document.getElementById("routine-morn-benefits").innerText = mBen;
@@ -716,20 +613,16 @@
             document.getElementById("routine-even-time").innerText = evenDuration;
             document.getElementById("routine-even-benefits").innerText = eBen;
 
-            // Strategy Cards
             document.getElementById("strat-weight-desc").innerHTML = weightDesc;
             document.getElementById("strat-skin-list").innerHTML = skinListHTML;
 
-            // Lifestyle
             document.getElementById("lifestyle-stress-desc").innerHTML = lifestyleStress;
             document.getElementById("lifestyle-sleep-desc").innerHTML = lifestyleSleep;
 
-            // Show Dashboard Control
             document.getElementById("welcome-placeholder").classList.add("hidden");
             const dashboard = document.getElementById("dynamic-dashboard");
             dashboard.classList.remove("hidden");
             
-            // Smooth Scroll Execution
             dashboard.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     </script>
