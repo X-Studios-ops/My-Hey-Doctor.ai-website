@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Yoga Guru | Hey Doctor AI</title>
+    <link rel="canonical" href="https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html" />
+    <style>
+        :root {
+            --primary: #2C5E43;
+            --primary-light: #E8F0EC;
+            --secondary: #D4A373;
+            --text: #2B2D42;
+            --bg: #FAFAFA;
+            --card-bg: #FFFFFF;
+            --border: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.9;
+        }
+
+        header a {
+            color: white;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h3 {
+            color: var(--primary);
+            margin-top: 1.5rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .metric-card {
+            background: var(--primary-light);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .metric-card .min-title {
+            font-weight: bold;
+            display: block;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+
+        .metric-value {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .pose-card {
+            background: #FFF;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .pose-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background: var(--secondary);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .badge-info {
+            background: var(--primary);
+        }
+
+        .routine-time {
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .diet-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .diet-table th, .diet-table td {
+            border: 1px solid var(--border);
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .diet-table th {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .day-plan {
+            background: #FFF;
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .disclaimer {
+            background-color: #FFF3CD;
+            border-left: 4px solid #FFC107;
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🧘 Personalized Wellness Report</h1>
+        <p>Your Comprehensive Yoga & Lifestyle Plan | Powered by <a href="https://my-hey-doctor-ai-website.vercel.app">Hey Doctor AI</a></p>
+    </header>
+
+    <div class="container">
+
+        <div class="section">
+            <h2>👤 User Profile & Diagnostics</h2>
+            <p>Below is the analysis based on your foundational physical metrics and current lifestyle markers.</p>
+            <div class="grid-2">
+                <div class="metric-card">
+                    <span class="min-title">Age / Gender</span>
+                    <span class="metric-value">30 Years / General Evaluation</span>
+                </div>
+                <div class="metric-card">
+                    <span class="min-title">Height / Weight</span>
+                    <span class="metric-value">170 cm / 72 kg</span>
+                </div>
+                <div class="metric-card">
+                    <span class="min-title">Calculated BMI & Category</span>
+                    <span class="metric-value">24.9 kg/m² (<span style="color: #2a9d8f;">Normal / High-Normal</span>)</span>
+                </div>
+                <div class="metric-card">
+                    <span class="min-title">Primary Focus Goals</span>
+                    <span class="metric-value">Holistic Fitness, Skin Glow & Stress Reduction</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 1.5rem;">Scores Breakdown</h3>
+            <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div style="text-align: center; padding: 1rem; border: 1px solid var(--border); border-radius: 8px;">
+                    <strong>Wellness Score</strong><br><span style="font-size: 1.5rem; color: var(--primary);">72/100</span>
+                </div>
+                <div style="text-align: center; padding: 1rem; border: 1px solid var(--border); border-radius: 8px;">
+                    <strong>Flexibility Score</strong><br><span style="font-size: 1.5rem; color: var(--secondary);">65/100</span>
+                </div>
+                <div style="text-align: center; padding: 1rem; border: 1px solid var(--border); border-radius: 8px;">
+                    <strong>Activity Score</strong><br><span style="font-size: 1.5rem; color: var(--primary);">Moderate</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📋 Wellness Summary</h2>
+            <p>Your current profile indicates a highly balanced foundation with room to optimize metabolic efficiency, joint mobility, and skin radiance. Keeping your BMI stably aligned while introducing target physical practices will support healthy cellular turnover and significantly improve your daily stress management markers.</p>
+        </div>
+
+        <div class="section">
+            <h2>🌅 Recommended Yoga Plan (Daily Micro-Routines)</h2>
+            
+            <div class="pose-card" style="border-left: 4px solid #FFB703;">
+                <div class="routine-time">🌅 Morning Routine (Awaken & Energize)</div>
+                <p><strong>Exercise Name:</strong> Dynamic Surya Namaskar & Tadasana Flow<br>
+                <strong>Duration:</strong> 15 Minutes<br>
+                <strong>Benefits:</strong> Ignites metabolic rate, improves blood circulation across all organ systems, and aligns spinal posture for the day ahead.</p>
+            </div>
+
+            <div class="pose-card" style="border-left: 4px solid #219EBC;">
+                <div class="routine-time">☀️ Afternoon Routine (Desk Reset & Decompress)</div>
+                <p><strong>Exercise Name:</strong> Seated Vajrasana & Chest Openers<br>
+                <strong>Duration:</strong> 5-10 Minutes<br>
+                <strong>Benefits:</strong> Alleviates post-lunch digestive sluggishness, realigns rounded shoulders, and sharpens mental clarity.</p>
+            </div>
+
+            <div class="pose-card" style="border-left: 4px solid #023E8A;">
+                <div class="routine-time">🌌 Evening Routine (Restoration & Deep Sleep Prep)</div>
+                <p><strong>Exercise Name:</strong> Balasana, Pavanmuktasana & Extended Shavasana<br>
+                <strong>Duration:</strong> 15-20 Minutes<br>
+                <strong>Benefits:</strong> Activates the parasympathetic nervous system, releases built-up physical tension in the lumbar spine, and calms cortisol production.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🧘 Structural Master Library: Recommended Yoga Poses</h2>
+            <p>Incorporate these essential poses into your practice. Ensure focus on stable, continuous breathing.</p>
+
+            <div class="pose-card">
+                <h3>1. Tadasana (Mountain Pose)</h3>
+                <span class="badge">Difficulty: Beginner</span> <span class="badge badge-info">Duration: 1-2 Mins</span>
+                <p><strong>Benefits:</strong> Stabilizes posture, strengthens thighs and core, stabilizes daily balance patterns.<br>
+                <strong>Precautions:</strong> Avoid holding breath if experiencing acute headaches or low blood pressure flareups.</p>
+            </div>
+
+            <div class="pose-card">
+                <h3>2. Bhujangasana (Cobra Pose)</h3>
+                <span class="badge">Difficulty: Beginner-Intermediate</span> <span class="badge badge-info">Duration: 30-60 Secs</span>
+                <p><strong>Benefits:</strong> Opens up front lung tissue, tones deep abdominal muscles, improves lumbar flexibility.<br>
+                <strong>Precautions:</strong> Avoid during pregnancy or if suffering from severe recent abdominal surgeries.</p>
+            </div>
+
+            <div class="pose-card">
+                <h3>3. Vajrasana (Thunderbolt Pose)</h3>
+                <span class="badge">Difficulty: Beginner</span> <span class="badge badge-info">Duration: 5-10 Mins post-meal</span>
+                <p><strong>Benefits:</strong> Alters blood flow patterns to optimize digestive tract assimilation; strengthens ankles.<br>
+                <strong>Precautions:</strong> Avoid if experiencing severe knee joint injuries or advanced osteoarthritis.</p>
+            </div>
+
+            <div class="pose-card">
+                <h3>4. Surya Namaskar (Sun Salutations)</h3>
+                <span class="badge">Difficulty: Intermediate</span> <span class="badge badge-info">Duration: 5-12 Rounds</span>
+                <p><strong>Benefits:</strong> Superior cardiovascular conditioning, extensive dynamic flexibility enhancement, complete full-body engagement.<br>
+                <strong>Precautions:</strong> Perform gently if you experience high blood pressure; modify transitions if wrists are weak.</p>
+            </div>
+
+            <div class="pose-card">
+                <h3>5. Adho Mukha Svanasana (Downward-Facing Dog)</h3>
+                <span class="badge">Difficulty: Beginner-Intermediate</span> <span class="badge badge-info">Duration: 1-2 Mins</span>
+                <p><strong>Benefits:</strong> Lengthens the entire posterior chain (hamstrings, calves, spine); increases blood flow to the head and scalp.<br>
+                <strong>Precautions:</strong> Modify using blocks if struggling with severe carpal tunnel syndrome.</p>
+            </div>
+
+            <div class="pose-card">
+                <h3>6. Balasana (Child's Pose)</h3>
+                <span class="badge">Difficulty: Beginner</span> <span class="badge badge-info">Duration: 2-5 Mins</span>
+                <p><strong>Benefits:</strong> Deep mental grounding, releases tension within hips and shoulders, downregulates nervous system stimulation.<br>
+                <strong>Precautions:</strong> Place a blanket under knees if experiencing patellar discomfort.</p>
+            </div>
+
+            <div class="pose-card">
+                <h3>7. Trikonasana (Triangle Pose)</h3>
+                <span class="badge">Difficulty: Beginner-Intermediate</span> <span class="badge badge-info">Duration: 30 Secs each side</span>
+                <p><strong>Benefits:</strong> Stretches lateral torso, expands thoracic capacity, stimulates oblique core stability.<br>
+                <strong>Precautions:</strong> Keep gaze forward rather than upward if experiencing cervical spine irritation or vertigo.</p>
+            </div>
+
+            <div class="pose-card">
+                <h3>8. Setu Bandhasana (Bridge Pose)</h3>
+                <span class="badge">Difficulty: Beginner</span> <span class="badge badge-info">Duration: 45-60 Secs</span>
+                <p><strong>Benefits:</strong> Strengthens gluteal complex, mitigates anterior pelvic tilt, improves chest extension capability.<br>
+                <strong>Precautions:</strong> Do not turn your neck sideways while maintaining this active backbend position.</p>
+            </div>
+
+            <div class="pose-card">
+                <h3>9. Pavanmuktasana (Wind-Relieving Pose)</h3>
+                <span class="badge">Difficulty: Beginner</span> <span class="badge badge-info">Duration: 1 Min</span>
+                <p><strong>Benefits:</strong> Relieves gastrointestinal entrapment, gently stretches lower lumbar vertebrae.<br>
+                <strong>Precautions:</strong> Avoid pulling knees too forcefully if experiencing acute hip joint inflammation.</p>
+            </div>
+
+            <div class="pose-card">
+                <h3>10. Shavasana (Corpse Pose)</h3>
+                <span class="badge">Difficulty: Beginner</span> <span class="badge badge-info">Duration: 5-10 Mins</span>
+                <p><strong>Benefits:</strong> Completely integrates physical benefits of active practice, helps normalize pulse rate and cortisol levels.<br>
+                <strong>Precautions:</strong> Place a small bolster underneath knees if you experience mild discomfort lying flat on your back.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Targeted Fitness Strategies</h2>
+            <h3>⚖️ Weight Management (Adapt based on your current physical trajectory)</h3>
+            <p><strong>If your primary direction is Weight Optimization / Fat Management:</strong> Integrate high-efficiency moves including systematic <em>Surya Namaskar</em> sequences, static abdominal <em>Planks</em>, daily brisk <em>Walking (8k-10k steps)</em>, fundamental air <em>Squats</em>, and explosive <em>Mountain Climbers</em> to trigger an adaptive calorie-burning stimulus.</p>
+            <p><strong>If your primary direction is Lean Mass Acquisition:</strong> Shift priority directly toward dedicated <em>Strength Yoga</em> holds, a rigorous <em>Protein-Focused</em> nutrition plan, and functional <em>Resistance Exercises</em> to progressively overload and develop underlying structural muscle tissues.</p>
+        </div>
+
+        <div class="section">
+            <h2>✨ Holistic Radiance Programs</h2>
+            <h3>🌟 Skin Glow Program</h3>
+            <ul>
+                <li><strong>Hydration Matrix:</strong> Consistently maintain baseline fluids (2.5–3L daily) to ensure systemic cellular waste removal.</li>
+                <li><strong>Circulation Boosters:</strong> Utilize downward inversion postures (like <em>Adho Mukha Svanasana</em>) to deliberately increase nutrient-dense blood flow towards facial skin tissues.</li>
+                <li><strong>Face Yoga Techniques:</strong> Incorporate daily 2-minute cheek lifts and jawline definitions to support local muscle tone.</li>
+                <li><strong>Pranayama (Breathing):</strong> Practice <em>Anulom Vilom</em> for 5 minutes daily to improve oxygen saturation.</li>
+            </ul>
+
+            <h3>🛡️ Acne Reduction Strategy</h3>
+            <p>Prioritize underlying stress regulation frameworks and reduce systemic refined sugars. Focus on gentle, non-stripping topical care while incorporating calming yoga techniques to keep systemic physiological inflammation low.</p>
+            
+            <h3>🌱 Hair Health Protocol</h3>
+            <p>Support optimal follicular growth by ensuring proper micronutrient intake (iron, zinc, biotin) alongside focused scalp stimulation. Inversions and stress reduction routines directly minimize stress-induced shedding patterns.</p>
+        </div>
+
+        <div class="section">
+            <h2>🥗 Daily Diet Guidance (General Wellness Principles)</h2>
+            <p>Focus on whole, nutrient-dense foods that offer balanced macronutrient distributions and steady, sustainable cellular energy profiles.</p>
+            <table class="diet-table">
+                <thead>
+                    <tr>
+                        <th>Meal Window</th>
+                        <th>Recommended General Concept Components</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Breakfast</strong></td>
+                        <td>Complex slow-burning carbohydrates (oatmeal, ragi) paired with a clean lean protein source (sprouted legumes, eggs, or plant protein).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lunch</strong></td>
+                        <td>A large colorful fiber bowl, whole grains (brown rice or multi-grain flatbread), and clean lentils or lean proteins.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Snacks</strong></td>
+                        <td>A handful of raw almonds/walnuts, chia seed pudding, or seasonal whole low-glycemic fruits.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dinner</strong></td>
+                        <td>Light, easy-to-digest steamed/grilled vegetables with clean light proteins; ideally consumed 2-3 hours before your bedtime window.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🌙 Lifestyle Architecture: Stress & Sleep</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>🧠 Stress Management</h3>
+                    <p>Dedicate 10 minutes to structured daily mindfulness. Use <strong>Deep Abdominal Breathing</strong> and systematic <strong>Yoga Nidra</strong> practices to downregulate over-stimulated mental pathways.</p>
+                </div>
+                <div>
+                    <h3>💤 Sleep Optimization</h3>
+                    <p>Build a non-negotiable winding-down sequence: completely cut off emissive screens 60 minutes before sleep, dim room lights, and introduce mild, relaxing evening stretches to optimize overnight deep sleep recovery phases.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📅 Weekly Progress Matrix</h2>
+            <div class="day-plan"><strong>Day 1:</strong> Full-body flexibility check + 3 rounds of gentle Sun Salutations + 5 mins breathing focus.</div>
+            <div class="day-plan"><strong>Day 2:</strong> Core focus & posture stabilization (Tadasana, Plank, Setu Bandhasana adjustments).</div>
+            <div class="day-plan"><strong>Day 3:</strong> Metabolic endurance day (Dynamic flow + brisk walk tracking + active skin circulation inversion).</div>
+            <div class="day-plan"><strong>Day 4:</strong> Mid-week restorative reset (Extended Balasana, Shavasana, and 15 mins dedicated Yoga Nidra).</div>
+            <div class="day-plan"><strong>Day 5:</strong> Lower body foundation and mobility expansion (Trikonasana focus + deep lunges).</div>
+            <div class="day-plan"><strong>Day 6:</strong> Integrated full routine (Morning sequence execution + comprehensive Face Yoga session).</div>
+            <div class="day-plan"><strong>Day 7:</strong> Reflection, low-intensity recovery walking, and progressive weekly scheduling adjustment.</div>
+        </div>
+
+        <div class="section" style="background-color: var(--primary-light); border: none; text-align: center;">
+            <h2>✨ Your Wellness Journey Ahead</h2>
+            <p style="font-size: 1.1rem; font-style: italic; color: var(--primary);">"True wellness is not a temporary destination, but an ongoing daily practice of alignment, patience, and intentional habits. Small, consistent steps build permanent transformations. Respect your boundaries, progress daily, and trust your personal evolution."</p>
+        </div>
+
+        <div class="disclaimer">
+            <strong>⚠️ Core Safety Reminder & Professional Medical Disclaimer:</strong><br>
+            The material provided in this wellness report is strictly intended for educational, lifestyle improvement, and general wellness guidance purposes only. It does not constitute formal medical diagnosis, clinical prescription, or definitive treatment protocols. Please do not modify existing medical regimens without consulting your primary care physician. Always seek the advice of a qualified healthcare provider regarding any specific physical symptoms or underlying medical conditions before starting any novel exercise or dietary framework.
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Hey Doctor AI. All rights wellness-reserved. Visit our portal at <a href="https://my-hey-doctor-ai-website.vercel.app">Hey Doctor AI Website</a>.</p>
+    </div>
+
+</body>
+</html>
+
