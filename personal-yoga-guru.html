@@ -1,630 +1,1486 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Yoga Guru | Hey Doctor AI Ecosystem</title>
-    <link rel="canonical" href="https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html" />
+    <title>Personal Yoga Guru AI | Hey Doctor AI</title>
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        yogaGreen: {
-                            50: '#F2F7F4',
-                            100: '#E6EFEA',
-                            600: '#2C5E43',
-                            700: '#234B35',
-                            800: '#1A3727',
-                        },
-                        yogaGold: {
-                            500: '#D4A373',
-                            600: '#C39262',
-                        }
-                    }
-                }
+    <meta name="description" content="Experience Personal Yoga Guru AI - Apple Premium Edition by Hey Doctor AI. A luxury health-tech platform providing AI-powered yoga planning, comprehensive health metrics, skin glow analysis, hair vitality mapping, and tailored lifestyle blueprints.">
+    <meta name="keywords" content="Yoga AI, Personal Yoga Guru, Hey Doctor AI, Apple Vision Pro Design, Premium Health Tech, Yoga Planner, Wellness Analytics, Skin Glow Engine, Hair Health AI, Luxury Wellness">
+    <meta name="author" content="Pratyush Ranjan Roul">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html">
+    <meta property="og:title" content="Personal Yoga Guru AI | Hey Doctor AI">
+    <meta property="og:description" content="Experience Personal Yoga Guru AI - Apple Premium Edition by Hey Doctor AI. A luxury health-tech platform providing AI-powered yoga planning and wellness analytics.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html">
+    <meta property="twitter:title" content="Personal Yoga Guru AI | Hey Doctor AI">
+    <meta property="twitter:description" content="Experience Personal Yoga Guru AI - Apple Premium Edition by Hey Doctor AI. A luxury health-tech platform providing AI-powered yoga planning and wellness analytics.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=SF+Pro+Text:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://my-hey-doctor-ai-website.vercel.app/#website",
+          "url": "https://my-hey-doctor-ai-website.vercel.app",
+          "name": "Hey Doctor AI",
+          "author": {
+            "@type": "Person",
+            "name": "Pratyush Ranjan Roul"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html#webpage",
+          "url": "https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html",
+          "name": "Personal Yoga Guru AI | Hey Doctor AI",
+          "isPartOf": { "@id": "https://my-hey-doctor-ai-website.vercel.app/#website" },
+          "breadcrumb": { "@id": "https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html#breadcrumb" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://my-hey-doctor-ai-website.vercel.app"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Personal Yoga Guru AI",
+              "item": "https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Personal Yoga Guru AI?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It is an ultra-premium, AI-driven wellness ecosystem developed by Hey Doctor AI that generates customized yoga, dietary, and holistic health routines based on biometric and biochemical indicators."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is my data secure within this application?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all data processing occurs directly in your local environment using secure LocalStorage. No user telemetry or health metrics are submitted to remote servers."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #000000;
+            --accent-color: #d4af37; /* Premium Gold Tint */
+            --accent-rgb: 212, 175, 55;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.65);
+            --text-tertiary: rgba(255, 255, 255, 0.45);
+            --glass-bg: rgba(20, 20, 25, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-glow: rgba(212, 175, 55, 0.03);
+            --card-radius: 24px;
+            --font-display: 'SF Pro Display', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            --font-text: 'SF Pro Text', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            --transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-text);
+            overflow-x: hidden;
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(138, 43, 226, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(10, 10, 12, 1) 100%);
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism Components */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px) saturate(210%);
+            -webkit-backdrop-filter: blur(30px) saturate(210%);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--card-radius);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+            padding: 35px;
+            transition: var(--transition-premium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at top right, var(--glass-glow), transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glass-panel:hover {
+            border-color: rgba(212, 175, 55, 0.25);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.05);
+            transform: translateY(-4px);
+        }
+
+        /* Typography & Layout */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        header {
+            padding: 60px 40px 40px;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .brand-pill {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-color);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.05);
+        }
+
+        h1 {
+            font-size: clamp(32px, 5vw, 64px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 30%, rgba(255,255,255,0.7) 70%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .main-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 40px 100px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 1100px) {
+            .main-container {
+                grid-template-columns: 380px 1fr;
+            }
+            .sidebar-sticky {
+                position: sticky;
+                top: 40px;
+                height: calc(100vh - 80px);
+                overflow-y: auto;
+                padding-right: 10px;
+            }
+            .sidebar-sticky::-webkit-scrollbar {
+                width: 4px;
+            }
+            .sidebar-sticky::-webkit-scrollbar-thumb {
+                background: rgba(255,255,255,0.1);
+                border-radius: 4px;
             }
         }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #F8FAFC;
+
+        /* Form Inputs Custom Styling */
+        .input-group {
+            margin-bottom: 24px;
+            position: relative;
         }
-        .gradient-header {
-            background: linear-gradient(135deg, #1A3727 0%, #2C5E43 100%);
+
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            font-weight: 500;
         }
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
+
+        .input-control {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 16px;
+            color: var(--text-primary);
+            font-family: var(--font-text);
+            font-size: 16px;
+            transition: var(--transition-premium);
+            outline: none;
         }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f1f1f1;
+
+        .input-control:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
         }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #2C5E43;
-            border-radius: 4px;
+
+        select.input-control {
+            appearance: none;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 18px;
+            padding-right: 45px;
         }
+
+        .btn-premium {
+            width: 100%;
+            background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
+            color: #000000;
+            border: none;
+            border-radius: 14px;
+            padding: 18px;
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-premium);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 10px 25px rgba(255,255,255,0.05);
+            letter-spacing: -0.01em;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+            background: linear-gradient(135deg, var(--accent-color) 0%, #b89528 100%);
+            color: #ffffff;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Apple Rings & Rings Dashboard Layout */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .ring-card {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .ring-svg-container {
+            position: relative;
+            width: 90px;
+            height: 90px;
+        }
+
+        .ring-svg-container svg {
+            width: 90px;
+            height: 90px;
+            transform: rotate(-90deg);
+        }
+
+        .ring-track {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.05);
+            stroke-width: 8;
+        }
+
+        .ring-fill {
+            fill: none;
+            stroke: var(--accent-color);
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .ring-percentage {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .ring-info h4 {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .ring-info .ring-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            font-family: var(--font-display);
+        }
+
+        /* Analytics Sub-Grids */
+        .metrics-subgrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .metric-mini-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 20px;
+            transition: var(--transition-premium);
+        }
+
+        .metric-mini-card:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .mini-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-tertiary);
+            margin-bottom: 6px;
+        }
+
+        .mini-value {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-family: var(--font-display);
+        }
+
+        .mini-status {
+            font-size: 12px;
+            margin-top: 4px;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        /* Module Sections */
+        .dashboard-section {
+            margin-bottom: 40px;
+            display: none; /* Controlled by engine validation trigger */
+        }
+
+        .section-title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title span.icon {
+            color: var(--accent-color);
+        }
+
+        /* Progress Bars */
+        .progress-bar-wrapper {
+            margin-top: 12px;
+        }
+        .progress-bar-track {
+            background: rgba(255, 255, 255, 0.06);
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-color), #f3e5ab);
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 3px;
+        }
+
+        /* Yoga Pose Cards Layout */
+        .yoga-poses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .pose-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-premium);
+        }
+
+        .pose-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .pose-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .pose-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .pose-badge {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .badge-beginner { background: rgba(52, 199, 89, 0.15); color: #34c759; }
+        .badge-intermediate { background: rgba(255, 149, 0, 0.15); color: #ff9500; }
+        .badge-advanced { background: rgba(255, 59, 48, 0.15); color: #ff3b30; }
+
+        .pose-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .pose-meta {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 14px;
+            margin-top: auto;
+        }
+
+        .pose-meta-item {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .pose-meta-item strong {
+            color: var(--text-secondary);
+        }
+
+        /* 7-Day & Planner Tabs */
+        .adaptive-plan-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        @media (max-width: 1024px) {
+            .adaptive-plan-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .adaptive-plan-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        .day-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition-premium);
+        }
+
+        .day-card.active, .day-card:hover {
+            background: rgba(212, 175, 55, 0.08);
+            border-color: var(--accent-color);
+        }
+
+        .day-title {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .day-focus {
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        .routine-block-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .routine-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 4px solid var(--accent-color);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-right: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-radius: 0 16px 16px 0;
+            padding: 20px;
+        }
+
+        .routine-time-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Blueprint Cards */
+        .blueprint-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .blueprint-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .blueprint-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 6px;
+            letter-spacing: 0.05em;
+        }
+
+        /* History Log Table */
+        .history-wrapper {
+            margin-top: 30px;
+            overflow-x: auto;
+        }
+
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .history-table th {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 16px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .history-table td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 14px 16px;
+            color: var(--text-primary);
+        }
+
+        /* App States and Initial State Notification */
+        .empty-state-notice {
+            text-align: center;
+            padding: 80px 40px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-notice p {
+            max-width: 500px;
+            margin: 15px auto 0;
+            font-size: 15px;
+        }
+
+        /* Sticky Footer & Disclaimer Details */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-premium);
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+        }
+
+        .disclaimer-box {
+            background: rgba(255, 59, 48, 0.03);
+            border: 1px solid rgba(255, 59, 48, 0.15);
+            border-radius: 14px;
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto 40px;
+            font-size: 12px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.5;
+        }
+
+        /* Utilities */
+        .text-accent { color: var(--accent-color); }
+        .hidden-element { display: none !important; }
+
+        /* Print Media queries optimization */
         @media print {
-            .no-print { display: none; }
-            .print-card { border: 1px solid #ccc; box-shadow: none; }
+            body { background: #ffffff !important; color: #000000 !important; }
+            .glass-panel { background: #ffffff !important; border: 1px solid #000000 !important; color: #000000 !important; box-shadow: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+            .sidebar-sticky { position: relative !important; top: 0 !important; height: auto !important; overflow-y: visible !important; }
+            .btn-premium, .no-print { display: none !important; }
+            .dashboard-section { display: block !important; }
+            .ring-track { stroke: #eeeeee !important; }
+            .ring-fill { stroke: #000000 !important; }
+            h1, h2, h3, h4, .brand-pill, .mini-value, .ring-value { color: #000000 !important; -webkit-text-fill-color: initial !important; background: none !important; }
         }
     </style>
 </head>
-<body class="text-slate-800 antialiased custom-scrollbar">
+<body>
 
-    <header class="gradient-header text-white py-12 px-4 shadow-xl relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-6xl mx-auto text-center relative z-10">
-            <span class="bg-yogaGold-500/20 text-yogaGold-500 border border-yogaGold-500/30 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
-                ✨ Advanced AI Lifestyle Diagnostics
-            </span>
-            <h1 class="text-4xl md:text-5xl font-extrabold mt-4 tracking-tight">Personal Yoga Guru</h1>
-            <p class="text-yogaGreen-100 mt-3 text-lg max-w-2xl mx-auto font-light">
-                Hyper-personalized health matrices, physiological algorithms, and corrective yogic routines engineered by 
-                <a href="https://my-hey-doctor-ai-website.vercel.app" class="underline font-medium hover:text-white transition">Hey Doctor AI</a>.
-            </p>
-        </div>
+    <header>
+        <div class="brand-pill" aria-label="Brand Ecosystem">Hey Doctor AI • Premium Tier</div>
+        <h1>Personal Yoga Guru AI</h1>
+        <p>Apple Premium Edition Ecosystem designed by Pratyush Ranjan Roul. Experience an immersive intelligence platform adjusting bio-kinetic alignment, dermatological health variables, and neurological recovery markers.</p>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <main class="main-container">
         
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
-            <section class="lg:col-span-5 bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 sm:p-8 no-print sticky top-6">
-                <div class="border-b border-slate-100 pb-4 mb-6">
-                    <h2 class="text-xl font-bold text-yogaGreen-600 flex items-center gap-2">
-                        <span>📝</span> Diagnostics Input Engine
-                    </h2>
-                    <p class="text-xs text-slate-500 mt-1">Provide precise physiological and lifestyle metrics to calibrate your engine models.</p>
-                </div>
-
-                <div class="space-y-5">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Age (Years)</label>
-                            <input type="number" id="age" value="28" min="12" max="100" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:ring-2 focus:ring-yogaGreen-600 focus:bg-white outline-none transition text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Gender</label>
-                            <select id="gender" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:ring-2 focus:ring-yogaGreen-600 focus:bg-white outline-none transition text-sm">
-                                <option value="Female">Female</option>
-                                <option value="Male">Male</option>
-                                <option value="Non-Binary">Non-Binary</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Height (cm)</label>
-                            <input type="number" id="height" value="168" min="100" max="250" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:ring-2 focus:ring-yogaGreen-600 focus:bg-white outline-none transition text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Weight (kg)</label>
-                            <input type="number" id="weight" value="64" min="30" max="200" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:ring-2 focus:ring-yogaGreen-600 focus:bg-white outline-none transition text-sm">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Primary Fitness Objective</label>
-                        <select id="fitnessGoal" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:ring-2 focus:ring-yogaGreen-600 focus:bg-white outline-none transition text-sm">
-                            <option value="weightloss">Belly Fat Reduction & Weight Loss</option>
-                            <option value="gain">Muscle Strength & Weight Gain</option>
-                            <option value="flexibility">Posture Correction & Extreme Flexibility</option>
-                            <option value="wellness">Daily Wellness & Energy Improvement</option>
-                        </select>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Skin / Hair Target</label>
-                            <select id="skinGoal" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:ring-2 focus:ring-yogaGreen-600 focus:bg-white outline-none transition text-sm">
-                                <option value="glow">Maximum Skin Glow</option>
-                                <option value="acne">Acne & Inflammation Reduction</option>
-                                <option value="hair">Hair Health & Scalp Circulation</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Activity Profile</label>
-                            <select id="activityLevel" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:ring-2 focus:ring-yogaGreen-600 focus:bg-white outline-none transition text-sm">
-                                <option value="sedentary">Sedentary (Desk Job, No Exercise)</option>
-                                <option value="moderate" selected>Moderate (Light Active/Walks)</option>
-                                <option value="active">High Active (Daily Intensive Training)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Existing Health Modalities / Restrictions</label>
-                        <select id="healthCondition" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:ring-2 focus:ring-yogaGreen-600 focus:bg-white outline-none transition text-sm">
-                            <option value="none">None - Fully Healthy</option>
-                            <option value="knee">Knee Pain / Joint Sensitivity</option>
-                            <option value="back">Lower Back Pain / Lumbar Strain</option>
-                            <option value="hypertension">Hypertension / High Blood Pressure</option>
-                        </select>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Ambient Stress Markers</label>
-                            <select id="stressLevel" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:ring-2 focus:ring-yogaGreen-600 focus:bg-white outline-none transition text-sm">
-                                <option value="low">Low / Managed</option>
-                                <option value="medium" selected>Moderate / Periodic</option>
-                                <option value="high">Critical / High Stress</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Nightly Sleep (Hours)</label>
-                            <input type="number" id="sleepHours" value="7" min="4" max="12" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:ring-2 focus:ring-yogaGreen-600 focus:bg-white outline-none transition text-sm">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Available Time Window</label>
-                            <select id="workoutTime" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:ring-2 focus:ring-yogaGreen-600 focus:bg-white outline-none transition text-sm">
-                                <option value="15">15 Minutes / Micro Sessions</option>
-                                <option value="30" selected>30 Minutes / Standard</option>
-                                <option value="60">60 Minutes / Immersive Complete</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Yoga Experience Profile</label>
-                            <select id="experienceLevel" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 focus:ring-2 focus:ring-yogaGreen-600 focus:bg-white outline-none transition text-sm">
-                                <option value="beginner" selected>Beginner / Fresh Start</option>
-                                <option value="intermediate">Intermediate / Competent</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <button onclick="calculateAdvancedSystemReport()" class="w-full bg-yogaGreen-600 hover:bg-yogaGreen-700 text-white font-bold p-3.5 rounded-xl shadow-md transition duration-200 ease-in-out transform active:scale-[0.99] flex items-center justify-center gap-2 mt-2">
-                        ⚡ Compute System Clinical Architecture
-                    </button>
-                </div>
-            </section>
-
-            <section class="lg:col-span-7 space-y-8">
+        <section class="sidebar-sticky" aria-label="Biometric Engine Profiles Configuration">
+            <div class="glass-panel">
+                <h3 style="margin-bottom: 24px; font-size: 20px; display: flex; align-items: center; gap: 10px;">
+                    <span>⚙️</span> Diagnostics Core
+                </h3>
                 
-                <div id="welcome-placeholder" class="bg-white rounded-2xl border border-slate-200 p-8 text-center shadow-sm py-16">
-                    <div class="w-20 h-20 bg-yogaGreen-50 text-yogaGreen-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 animate-bounce">🧘</div>
-                    <h3 class="text-2xl font-bold text-slate-800">Engine Initialized & Ready</h3>
-                    <p class="text-sm text-slate-500 max-w-md mx-auto mt-2">Configure your custom metrics parameters on the diagnostic panel on the left and click calculate to execute your real-time wellness ledger compilation.</p>
-                </div>
+                <form id="biometricCoreForm" onsubmit="event.preventDefault(); triggerEcosystemComputation();">
+                    <div class="input-group">
+                        <label for="userName">Full Profile Name</label>
+                        <input type="text" id="userName" class="input-control" required placeholder="e.g. Alexander Vance" aria-required="true">
+                    </div>
 
-                <div id="dynamic-dashboard" class="hidden space-y-8">
+                    <div class="input-group">
+                        <label for="userAge">Chronological Age (Years)</label>
+                        <input type="number" id="userAge" class="input-control" required min="12" max="110" placeholder="e.g. 34" aria-required="true">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="userGender">Biological Profile</label>
+                        <select id="userGender" class="input-control" required aria-required="true">
+                            <option value="" disabled selected>Select gender blueprint</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Non-Binary">Non-Binary / Intersex Baseline</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="userHeight">Stature Height (cm)</label>
+                        <input type="number" id="userHeight" class="input-control" required min="100" max="250" placeholder="e.g. 178" aria-required="true">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="userWeight">Mass Weight (kg)</label>
+                        <input type="number" id="userWeight" class="input-control" required min="30" max="250" placeholder="e.g. 74" aria-required="true">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="userStress">Neurological Stress Metric</label>
+                        <select id="userStress" class="input-control" required aria-required="true">
+                            <option value="Low">Low Gradient (Relaxed Homeostasis)</option>
+                            <option value="Moderate" selected>Moderate Ambient Loading</option>
+                            <option value="High">High Systemic Hyper-Cortisolemia</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="userSleep">Circadian Sleep Duration (Hours)</label>
+                        <input type="number" step="0.5" id="userSleep" class="input-control" required min="3" max="16" value="7" aria-required="true">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="wellnessTarget">Ecosystem Target Architecture</label>
+                        <select id="wellnessTarget" class="input-control" required aria-required="true">
+                            <option value="weight_loss">Aggressive Adipose Loss & Kinetic Toning</option>
+                            <option value="weight_gain">Hypertrophic Adaptation & Mass Density Balance</option>
+                            <option value="flexibility" selected>Myofascial Plasticity & Deep Articular Flexibility</option>
+                            <option value="wellness">Optimum Homeostasis & Longevity Optimization</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-premium" style="margin-top: 10px;">
+                        <span>✨</span> Execute Engine Framework
+                    </button>
                     
-                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 print-card">
-                        <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-100 pb-4 mb-6">
-                            <div>
-                                <span class="text-xs uppercase font-extrabold tracking-widest text-yogaGold-500">System Output</span>
-                                <h2 class="text-2xl font-extrabold text-yogaGreen-600 tracking-tight">Personalized Wellness Analytics</h2>
-                            </div>
-                            <button onclick="window.print()" class="no-print bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-xs font-bold transition flex items-center gap-2">
-                                🖨️ Export Portfolio
-                            </button>
-                        </div>
+                    <button type="button" class="btn-premium btn-secondary no-print" style="margin-top: 12px;" onclick="exportWellnessPDFReport()">
+                        <span>📥</span> Export Immutable PDF Document
+                    </button>
+                </form>
+            </div>
+        </section>
 
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                            <div class="bg-slate-50 border border-slate-100 rounded-xl p-4">
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">Calculated BMI</span>
-                                <span id="out-bmi" class="block text-2xl font-black text-slate-800 mt-1">--</span>
-                                <span id="out-category" class="inline-block mt-1 text-xs font-bold px-2 py-0.5 rounded">--</span>
-                            </div>
-                            <div class="bg-slate-50 border border-slate-100 rounded-xl p-4">
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">Wellness Score</span>
-                                <span id="out-wellness" class="block text-2xl font-black text-yogaGreen-600 mt-1">--</span>
-                                <div class="w-full bg-slate-200 h-1.5 rounded-full mt-2 overflow-hidden">
-                                    <div id="bar-wellness" class="bg-yogaGreen-600 h-full transition-all duration-500" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <div class="bg-slate-50 border border-slate-100 rounded-xl p-4">
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">Flexibility Rating</span>
-                                <span id="out-flex" class="block text-2xl font-black text-slate-800 mt-1">--</span>
-                                <span id="badge-flex" class="inline-block mt-1 text-xs font-medium text-slate-500">--</span>
-                            </div>
-                            <div class="bg-slate-50 border border-slate-100 rounded-xl p-4">
-                                <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">Activity Score</span>
-                                <span id="out-activity" class="block text-2xl font-black text-yogaGold-600 mt-1">--</span>
-                                <span class="inline-block mt-1 text-xs font-medium text-slate-500">Profile Tier</span>
-                            </div>
-                        </div>
+        <section aria-label="Ecosystem Orchestration Screen">
+            
+            <div id="initializationPlaceholder" class="glass-panel empty-state-notice">
+                <div style="font-size: 50px;">🧘‍♂️</div>
+                <h3 style="margin-top: 20px; font-size: 22px;">Ecosystem Engine Awaiting Configuration</h3>
+                <p>Input your biological parameters within the Diagnostics Core panel. Personal Yoga Guru AI will process macro-kinetic formulas, metabolic computations, and somatic vectors to synthesize your premium customized framework.</p>
+            </div>
 
-                        <div class="mt-6 p-4 bg-yogaGreen-50/50 border border-yogaGreen-100 rounded-xl">
-                            <h4 class="text-xs font-bold text-yogaGreen-700 uppercase tracking-wider">🔬 AI Comprehensive Wellness Summary</h4>
-                            <p id="out-summary" class="text-sm text-slate-600 mt-1.5 leading-relaxed">--</p>
+            <div id="aiEcosystemOutputContainer" class="hidden-element">
+                
+                <div class="dashboard-grid">
+                    
+                    <div class="glass-panel ring-card">
+                        <div class="ring-svg-container">
+                            <svg>
+                                <circle class="ring-track" cx="45" cy="45" r="38"></circle>
+                                <circle id="ringWellnessFill" class="ring-fill" cx="45" cy="45" r="38" stroke-dasharray="238.76" stroke-dashoffset="238.76"></circle>
+                            </svg>
+                            <div id="ringWellnessText" class="ring-percentage">--</div>
+                        </div>
+                        <div class="ring-info">
+                            <h4>Wellness Score</h4>
+                            <div id="valWellnessScore" class="ring-value">0</div>
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 print-card">
-                        <h3 class="text-xl font-bold text-yogaGreen-600 mb-2 flex items-center gap-2">
-                            ☀️ Custom Micro-Routine Allocation Plan
-                        </h3>
-                        <p class="text-xs text-slate-500 mb-6">Your adaptive time window is distributed sequentially into functional blocks below.</p>
-                        
-                        <div class="space-y-4">
-                            <div class="border border-slate-100 rounded-xl p-5 bg-gradient-to-r from-amber-50/40 via-white to-white border-l-4 border-l-amber-500">
-                                <span class="text-xs font-bold text-amber-600 uppercase tracking-wider block mb-1">🌅 Session Block 01: Sunrise Routine</span>
-                                <h4 id="routine-morn-name" class="font-bold text-slate-800 text-base">--</h4>
-                                <p class="text-xs text-slate-500 mt-1">⏱️ Allocation Window: <span id="routine-morn-time" class="font-bold">--</span></p>
-                                <p id="routine-morn-benefits" class="text-sm text-slate-600 mt-2">--</p>
-                            </div>
-
-                            <div class="border border-slate-100 rounded-xl p-5 bg-gradient-to-r from-sky-50/40 via-white to-white border-l-4 border-l-sky-500">
-                                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider block mb-1">☀️ Session Block 02: Mid-Day Functional Triggers</span>
-                                <h4 id="routine-noon-name" class="font-bold text-slate-800 text-base">--</h4>
-                                <p class="text-xs text-slate-500 mt-1">⏱️ Allocation Window: <span id="routine-noon-time" class="font-bold">--</span></p>
-                                <p id="routine-noon-benefits" class="text-sm text-slate-600 mt-2">--</p>
-                            </div>
-
-                            <div class="border border-slate-100 rounded-xl p-5 bg-gradient-to-r from-indigo-50/40 via-white to-white border-l-4 border-l-indigo-600">
-                                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block mb-1">🌌 Session Block 03: Twilight Rejuvenation</span>
-                                <h4 id="routine-even-name" class="font-bold text-slate-800 text-base">--</h4>
-                                <p class="text-xs text-slate-500 mt-1">⏱️ Allocation Window: <span id="routine-even-time" class="font-bold">--</span></p>
-                                <p id="routine-even-benefits" class="text-sm text-slate-600 mt-2">--</p>
-                            </div>
+                    <div class="glass-panel ring-card">
+                        <div class="ring-svg-container">
+                            <svg>
+                                <circle class="ring-track" cx="45" cy="45" r="38"></circle>
+                                <circle id="ringRecoveryFill" class="ring-fill" cx="45" cy="45" r="38" stroke-dasharray="238.76" stroke-dashoffset="238.76" style="stroke: #34c759;"></circle>
+                            </svg>
+                            <div id="ringRecoveryText" class="ring-percentage">--</div>
+                        </div>
+                        <div class="ring-info">
+                            <h4>Recovery Score</h4>
+                            <div id="valRecoveryScore" class="ring-value">0</div>
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 print-card">
-                        <div class="mb-6">
-                            <h3 class="text-xl font-bold text-yogaGreen-600">🧘 Complete Structural Asana Portfolio</h3>
-                            <p class="text-xs text-slate-500 mt-1">Calibrated sequence directives for master posture mechanics.</p>
+                    <div class="glass-panel ring-card">
+                        <div class="ring-svg-container">
+                            <svg>
+                                <circle class="ring-track" cx="45" cy="45" r="38"></circle>
+                                <circle id="ringFitnessFill" class="ring-fill" cx="45" cy="45" r="38" stroke-dasharray="238.76" stroke-dashoffset="238.76" style="stroke: #ff9500;"></circle>
+                            </svg>
+                            <div id="ringFitnessText" class="ring-percentage">--</div>
                         </div>
-                        <div id="asanas-injection-container" class="space-y-4"></div>
-                    </div>
-
-                    <div id="strategy-card" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 print-card border-t-4 border-t-yogaGold-500">
-                        <h3 class="text-xl font-bold text-yogaGreen-600 mb-2">🎯 Objective System Targeting Tracks</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                                <h4 id="strat-weight-title" class="font-bold text-slate-800 text-sm uppercase tracking-wider flex items-center gap-1.5">⚖️ Weight Framework</h4>
-                                <p id="strat-weight-desc" class="text-sm text-slate-600 mt-2 leading-relaxed">--</p>
-                            </div>
-                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                                <h4 id="strat-skin-title" class="font-bold text-slate-800 text-sm uppercase tracking-wider flex items-center gap-1.5">✨ Radiance & Cleanse Matrix</h4>
-                                <ul id="strat-skin-list" class="text-sm text-slate-600 mt-2 space-y-1.5 list-disc pl-4"></ul>
-                            </div>
+                        <div class="ring-info">
+                            <h4>Fitness Score</h4>
+                            <div id="valFitnessScore" class="ring-value">0</div>
                         </div>
-                    </div>
-
-                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 print-card">
-                        <h3 class="text-xl font-bold text-yogaGreen-600 mb-2">🥗 Daily Diet Blueprint Matrix</h3>
-                        <p class="text-xs text-slate-500 mb-4">General balance blueprints adjusted for metabolic goals. Only general fitness advisory guidelines applied.</p>
-                        
-                        <div class="overflow-x-auto border border-slate-100 rounded-xl">
-                            <table class="w-full text-sm text-left text-slate-600">
-                                <thead class="text-xs uppercase bg-yogaGreen-50 text-yogaGreen-700 font-bold border-b border-slate-200">
-                                    <tr>
-                                        <th class="px-4 py-3">Meal Tier</th>
-                                        <th class="px-4 py-3">Macro Targeting Directives</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="diet-tbody" class="divide-y divide-slate-100"></tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm print-card">
-                            <h4 class="font-bold text-lg text-yogaGreen-600 mb-2 flex items-center gap-2">🧠 Ambient Stress Control Protocol</h4>
-                            <p id="lifestyle-stress-desc" class="text-sm text-slate-600 leading-relaxed">--</p>
-                        </div>
-                        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm print-card">
-                            <h4 class="font-bold text-lg text-yogaGreen-600 mb-2 flex items-center gap-2">💤 Advanced Sleep Optimization Framework</h4>
-                            <p id="lifestyle-sleep-desc" class="text-sm text-slate-600 leading-relaxed">--</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 print-card">
-                        <h3 class="text-xl font-bold text-yogaGreen-600 mb-2">📅 Micro-Cycle Adaptive 7-Day Plan</h3>
-                        <p class="text-xs text-slate-500 mb-6">Systematic tracking architecture mapped out sequentially for target validation.</p>
-                        <div id="weekly-matrix-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-7 gap-3"></div>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-yogaGreen-600 to-yogaGreen-800 text-white p-6 sm:p-8 rounded-2xl text-center shadow-lg relative overflow-hidden">
-                        <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
-                        <h3 class="text-2xl font-black tracking-tight mb-2 relative z-10">🚀 Master Manifestation Standard</h3>
-                        <p class="text-sm text-yogaGreen-100 max-w-xl mx-auto font-light leading-relaxed relative z-10">
-                            "Physical alignment is the foundation of mental clarity. True changes don't come from intense, occasional workouts, but from subtle, daily habits practiced with awareness. Commit to your routine, respect your limits, and look at your health as a lifelong asset."
-                        </p>
                     </div>
 
                 </div>
 
-            </section>
-        </div>
+                <div class="glass-panel dashboard-section" style="display: block;">
+                    <div class="section-title-wrapper">
+                        <div class="section-title"><span>📊</span> Metabolic & Composition Matrix</div>
+                        <div style="font-size: 12px; color: var(--text-tertiary);">HARRISE-BENEDICT FORMULA v2.4</div>
+                    </div>
+                    
+                    <div class="metrics-subgrid">
+                        <div class="metric-mini-card">
+                            <div class="mini-label">Body Mass Index (BMI)</div>
+                            <div id="metricBMI" class="mini-value">22.4</div>
+                            <div id="statusBMI" class="mini-status">Normative</div>
+                        </div>
+                        <div class="metric-mini-card">
+                            <div class="mini-label">Basal Metabolic Rate (BMR)</div>
+                            <div id="metricBMR" class="mini-value">1680 kcal</div>
+                            <div class="mini-status">Resting State Baseline</div>
+                        </div>
+                        <div class="metric-mini-card">
+                            <div class="mini-label">Daily Energetic Threshold</div>
+                            <div id="metricCalories" class="mini-value">2150 TDEE</div>
+                            <div class="mini-status">Activity Calibrated</div>
+                        </div>
+                        <div class="metric-mini-card">
+                            <div class="mini-label">Estimated Body Fat</div>
+                            <div id="metricBodyFat" class="mini-value">18.4%</div>
+                            <div class="mini-status">Lipid Index Approximation</div>
+                        </div>
+                        <div class="metric-mini-card">
+                            <div class="mini-label">Ideal Biological Mass</div>
+                            <div id="metricIdealWeight" class="mini-value">68 - 74 kg</div>
+                            <div class="mini-status">Optimized Structural Load</div>
+                        </div>
+                    </div>
+                </div>
 
-        <footer class="mt-16 border-t border-slate-200 pt-8 max-w-6xl mx-auto">
-            <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 text-xs text-amber-900/80 leading-relaxed space-y-2">
-                <p class="font-bold uppercase tracking-wider text-amber-800 flex items-center gap-1">⚠️ System Safe Operations & Diagnostic Legal Boundary Protocols:</p>
-                <p>The system diagnostics, predictive metrics algorithms, caloric distributions, and yogic pose portfolios compiled inside this interface are generated solely for non-clinical educational modeling, general core conditioning, athletic mobility adjustments, and lifestyle optimization mapping templates. <strong>This engine does not generate actionable medical decisions, diagnose pathogenic states, prescribe pharmaceuticals, or dictate therapy frameworks.</strong></p>
-                <p>The calculations (including BMI metrics and dynamic health score evaluations) are reference markers and should not be used as a substitute for clinical diagnostics. Please consult a physical therapy professional or a certified physician before performing strenuous exercises if you have pre-existing medical conditions, cardiorespiratory conditions, or physical trauma histories.</p>
-            </div>
-            
-            <div class="text-center text-xs text-slate-400 mt-8 mb-4">
-                <p>&copy; 2026 Hey Doctor AI Ecosystem. Structural Architecture Validated. All rights reserved.</p>
-                <p class="mt-1">Main System Node: <a href="https://my-hey-doctor-ai-website.vercel.app" class="text-yogaGreen-600 font-semibold underline hover:text-yogaGreen-700">my-hey-doctor-ai-website.vercel.app</a></p>
-            </div>
-        </footer>
+                <div class="dashboard-grid">
+                    <div class="glass-panel">
+                        <div class="section-title-wrapper">
+                            <div class="section-title"><span>✨</span> Skin Glow Core</div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--text-secondary);">
+                                <span>Epidermal Glow Gradient</span>
+                                <span id="lblGlowScore" class="text-accent" style="font-weight:600;">85%</span>
+                            </div>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar-track"><div id="barGlowScore" class="progress-bar-fill"></div></div>
+                            </div>
+                        </div>
+                        <div style="font-size: 13px; color: var(--text-secondary);">
+                            <p style="margin-bottom: 8px;"><strong>Hydration Integrity:</strong> <span id="lblHydrationStatus" class="text-accent">Optimal Cellular Saturation</span></p>
+                            <p><strong>Epidermal Index:</strong> Microcirculation response index calculated via local metabolic output vectors.</p>
+                        </div>
+                    </div>
 
+                    <div class="glass-panel">
+                        <div class="section-title-wrapper">
+                            <div class="section-title"><span>🧬</span> Hair & Scalp Vitality</div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--text-secondary);">
+                                <span>Follicular Vitality Coefficient</span>
+                                <span id="lblHairScore" class="text-accent" style="font-weight:600;">79%</span>
+                            </div>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar-track"><div id="barHairScore" class="progress-bar-fill" style="background: linear-gradient(90deg, #34c759, #a3e635);"></div></div>
+                            </div>
+                        </div>
+                        <div style="font-size: 13px; color: var(--text-secondary);">
+                            <p style="margin-bottom: 8px;"><strong>Scalp Hyperemia Level:</strong> <span id="lblScalpCirculation" class="text-accent">Excellent Vascular Shunt</span></p>
+                            <p><strong>Cortisol Foil Impact:</strong> <span id="lblStressImpact" style="color:#ff9500;">Minimal Follicular Suppression</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel dashboard-section" style="display: block;">
+                    <div class="section-title-wrapper">
+                        <div class="section-title"><span>🌙</span> Homeostatic & Neurological Regenerative Metrics</div>
+                    </div>
+                    <div class="metrics-subgrid">
+                        <div class="metric-mini-card">
+                            <div class="mini-label">Target Fluid Titration</div>
+                            <div id="metricWaterIntake" class="mini-value">3.2 Liters</div>
+                            <div class="mini-status">Recommended Intake</div>
+                        </div>
+                        <div class="metric-mini-card">
+                            <div class="mini-label">Sleep Architecture Quality</div>
+                            <div id="metricSleepQuality" class="mini-value">84%</div>
+                            <div id="lblSleepRecoveryAnalysis" class="mini-status">REM Sleep Optimized</div>
+                        </div>
+                        <div class="metric-mini-card">
+                            <div class="mini-label">Systemic Cortisol Level</div>
+                            <div id="metricStressScore" class="mini-value">38 / 100</div>
+                            <div id="lblBreathingRoutine" class="mini-status">Pranayama Box Breath</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel dashboard-section" style="display: block;">
+                    <div class="section-title-wrapper">
+                        <div class="section-title"><span>📅</span> 7-Day Adaptive Yoga Progression</div>
+                        <div style="font-size:12px; color: var(--text-secondary); font-weight:500;">DYNAMIC AI SCHEDULING</div>
+                    </div>
+                    <div class="adaptive-plan-grid" id="adaptivePlanDaysContainer">
+                        </div>
+                    <div id="dayPlanDetailsDisplay" style="margin-top: 24px; padding: 20px; background: rgba(255,255,255,0.02); border-radius:14px; border: 1px dashed rgba(255,255,255,0.1);">
+                        <h4 id="selectedDayTitle" class="text-accent" style="margin-bottom:8px; font-size:16px;">Day 1 Core Focal Matrix</h4>
+                        <p id="selectedDayDescription" style="font-size:14px; color: var(--text-secondary);">Select an individual operational day timeline from the adaptive grid to monitor structural pose progression sequences mapped by the engine core parameters.</p>
+                    </div>
+                </div>
+
+                <div class="glass-panel dashboard-section" style="display: block;">
+                    <div class="section-title-wrapper">
+                        <div class="section-title"><span>⏳</span> Circadian Yoga Routine Blueprint</div>
+                    </div>
+                    <div class="routine-block-grid">
+                        <div class="routine-card">
+                            <div class="routine-time-title">🌅 Matutinal Sequence (Morning)</div>
+                            <div id="routineMorningBody" style="font-size:13px; color: var(--text-secondary);">Loading customized optimization parameters...</div>
+                        </div>
+                        <div class="routine-card" style="border-color: #ff9500;">
+                            <div class="routine-time-title">☀️ Meridian Balance (Afternoon)</div>
+                            <div id="routineAfternoonBody" style="font-size:13px; color: var(--text-secondary);">Loading customized optimization parameters...</div>
+                        </div>
+                        <div class="routine-card" style="border-color: #8a2be2;">
+                            <div class="routine-time-title">🌌 Nocturnal Restoration (Evening)</div>
+                            <div id="routineEveningBody" style="font-size:13px; color: var(--text-secondary);">Loading customized optimization parameters...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel dashboard-section" style="display: block;">
+                    <div class="section-title-wrapper">
+                        <div class="section-title"><span>🥗</span> Precision Macro Nutritional Blueprint</div>
+                        <div id="lblNutritionalStrategyTag" style="font-size:12px; font-weight:600; text-transform:uppercase; background:rgba(212,175,55,0.1); padding: 4px 10px; border-radius:10px; color:var(--accent-color);">Target Adaptability Mode</div>
+                    </div>
+                    <div class="blueprint-grid" id="nutritionalDietBlueprintGrid">
+                        <div class="blueprint-card">
+                            <div class="blueprint-tag">Breakfast Core</div>
+                            <p id="dietBreakfast" style="font-size:14px; color:var(--text-secondary);">Amylase optimization matrix data pending computational synthesis loop instantiation...</p>
+                        </div>
+                        <div class="blueprint-card">
+                            <div class="blueprint-tag">Lunch Matrix</div>
+                            <p id="dietLunch" style="font-size:14px; color:var(--text-secondary);">Amylase optimization matrix data pending computational synthesis loop instantiation...</p>
+                        </div>
+                        <div class="blueprint-card">
+                            <div class="blueprint-tag">Snacks Shunt</div>
+                            <p id="dietSnacks" style="font-size:14px; color:var(--text-secondary);">Amylase optimization matrix data pending computational synthesis loop instantiation...</p>
+                        </div>
+                        <div class="blueprint-card">
+                            <div class="blueprint-tag">Nocturnal Dinner</div>
+                            <p id="dietDinner" style="font-size:14px; color:var(--text-secondary);">Amylase optimization matrix data pending computational synthesis loop instantiation...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel dashboard-section" style="display: block;">
+                    <div class="section-title-wrapper">
+                        <div class="section-title"><span>🧘‍♂️</span> AI Yoga Pose Recommendation Directory</div>
+                        <div style="font-size: 12px; color: var(--text-secondary);">25 SPECIFIC SOMATIC SCHEMAS LOADED</div>
+                    </div>
+                    <div class="yoga-poses-grid" id="yogaDirectoryMasterGrid">
+                        </div>
+                </div>
+
+                <div class="glass-panel dashboard-section" style="display: block;">
+                    <div class="section-title-wrapper">
+                        <div class="section-title"><span>⏳</span> Local System Historical Tracking Log</div>
+                        <button type="button" class="btn-premium no-print" style="padding: 8px 16px; font-size:12px; border-radius:8px; width:auto;" onclick="purgeEcosystemStorageLog()">Clear History Cache</button>
+                    </div>
+                    <p style="font-size:13px; color:var(--text-secondary);">The historical database logs every algorithmic calculation pass execution sequence locally within your personal user device instance.</p>
+                    <div class="history-wrapper">
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Timestamp Trace</th>
+                                    <th>Profile Identifier</th>
+                                    <th>BMI Index</th>
+                                    <th>Wellness Score</th>
+                                    <th>Primary Objective Target</th>
+                                </tr>
+                            </thead>
+                            <tbody id="storageLogHistoryTableBody">
+                                <tr>
+                                    <td colspan="5" style="text-align:center; color:var(--text-tertiary); padding: 20px;">No historical telemetry records detected in browser allocation vector.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     </main>
 
+    <div class="disclaimer-box">
+        <strong>MEDICAL PRACTICE AND REGULATORY DISCLAIMER:</strong> The information generated by this ultra-premium application platform is synthesized solely for structural fitness orchestration and educational context mapping. It does not map clinical recommendations or healthcare architecture. Users should verify physiological adjustments with qualified healthcare practitioners prior to enacting functional kinetic changes.
+    </div>
+
+    <footer>
+        <p>Hey Doctor AI Premium Web Framework Ecosystem Ecosystem Suite • All Rights Reserved.</p>
+        <p style="margin-top: 8px; font-weight: 500;">Main Ecosystem: <a href="https://my-hey-doctor-ai-website.vercel.app" target="_blank" rel="noopener">https://my-hey-doctor-ai-website.vercel.app</a></p>
+        <p style="margin-top: 6px; font-size:12px;">Architecture Designed and Constructed by Master Engineer: <strong>Pratyush Ranjan Roul</strong></p>
+    </footer>
+
     <script>
-        const MASTER_ASANA_DATABASE = [
-            { id: "tadasana", name: "Tadasana (Mountain Pose)", difficulty: "Beginner", duration: "1-2 Minutes", benefits: "Realigns joint stack points, anchors base core tension, calibrates center-of-gravity balances.", precaution: "Maintain standard regular gaze pattern if feeling sudden positional vertigo." },
-            { id: "bhujangasana", name: "Bhujangasana (Cobra Pose)", difficulty: "Beginner-Intermediate", duration: "30-60 Seconds", benefits: "Decompresses dynamic thoracic vertebrae rows, elongates lung tissue bands, activates posterior kinetic paths.", precaution: "Avoid aggressive spinal arching if acute umbilical or lower abdominal tissue strain exists." },
-            { id: "vajrasana", name: "Vajrasana (Thunderbolt Pose)", difficulty: "Beginner", duration: "5-10 Minutes Post Meals", benefits: "Alters general pelvic arterial paths toward visceral digestion beds, targets quad-tendon extensions.", precaution: "Do not stress if you have advanced lateral collateral ligament inflammation." },
-            { id: "suryanamaskar", name: "Surya Namaskar (Sun Salutations)", difficulty: "Intermediate", duration: "5-12 Structural Rounds", benefits: "Complete metabolic ignite, optimizes circulatory velocity across skin cells, dynamic cardiovascular conditioning.", precaution: "Modify transitions or switch to slower cycles if you have acute wrist-carpal loading sensitivities." },
-            { id: "adhomukha", name: "Adho Mukha Svanasana (Downward Dog)", difficulty: "Beginner-Intermediate", duration: "1-2 Minutes", benefits: "Extends entire kinetic spine line, improves blood flow to the head and scalp tissue layers.", precaution: "Drop down to knees safely if you have high blood pressure or retinal pressure concerns." },
-            { id: "balasana", name: "Balasana (Child's Pose)", difficulty: "Beginner", duration: "2-5 Minutes", benefits: "Activates deep vagal nerve calm, releases compressed lumbar muscle fibers, decreases sensory overload.", precaution: "Support lower abdomen or shins with a soft wedge if pelvic flexion feels tight." },
-            { id: "trikonasana", name: "Trikonasana (Triangle Pose)", difficulty: "Intermediate", duration: "45 Secs Per Lateral Track", benefits: "Opens up lower hip mobility, stretches side core lines, improves balance stability.", precaution: "Keep gaze level instead of facing up if cervical disks feel stiff or uncomfortable." },
-            { id: "setubandhasana", name: "Setu Bandhasana (Bridge Pose)", difficulty: "Beginner", duration: "60 Seconds Static Hold", benefits: "Activates glutes to correct anterior pelvic tilt, increases chest expansion capacity.", precaution: "Do not rotate your head sideways while your shoulders are loaded in the bridge position." },
-            { id: "pavanmuktasana", name: "Pavanmuktasana (Wind-Relieving Pose)", difficulty: "Beginner", duration: "1-2 Minutes Balanced", benefits: "Massage visceral track paths, helps relieve lower back tension and gastrointestinal trapping.", precaution: "Pull knees gently based on your natural hip flexor and lower abdomen comfort." },
-            { id: "shavasana", name: "Shavasana (Corpse Pose)", difficulty: "Beginner", duration: "5-12 Minutes Absolute", benefits: "Deep physiological reset, triggers systemic relaxation responses, controls active cortisol spikes.", precaution: "Place a rolled blanket or cushion beneath your knees if your lower back feels tender lying flat." }
+        // Global Static Yoga Master Database Repository containing 25 fully customized pose payloads
+        const MASTER_YOGA_CATALOG = [
+            { id: 1, name: "Tadasana", nativeName: "Mountain Pose", benefits: "Corrects alignment biomechanics, enhances absolute vertical column integrity.", difficulty: "Beginner", duration: "60s", precautions: "Vertigo vulnerabilities.", desc: "A fundamental foundational posture that realigns structural vertical lines across skeletal vectors." },
+            { id: 2, name: "Vrikshasana", nativeName: "Tree Pose", benefits: "Amplifies unilateral motor coordination balance matrix.", difficulty: "Beginner", duration: "45s each side", precautions: "Acute inner ear imbalances.", desc: "Balances neuro-vestibular metrics by centering absolute force transmission through one lower extremity kinetic chain." },
+            { id: 3, name: "Adho Mukha Svanasana", nativeName: "Downward-Facing Dog", benefits: "Lengthens total posterior chain fascia.", difficulty: "Beginner", duration: "90s", precautions: "Advanced carpal tunnel syndrome.", desc: "Inverts structural alignment vectors, promoting dynamic fluid relocation and hamstring stretching." },
+            { id: 4, name: "Utthita Trikonasana", nativeName: "Extended Triangle Pose", benefits: "Expands lateral rib cage mobility.", difficulty: "Beginner", duration: "45s each side", precautions: "Acute structural low-back lesions.", desc: "Lateral expansion posture stretching subcostal systems while stabilizing pelvis control mechanisms." },
+            { id: 5, name: "Virabhadrasana I", nativeName: "Warrior I", benefits: "Strengthens concentric quadriceps loading.", difficulty: "Beginner", duration: "60s", precautions: "Unstable hypertensive baseline.", desc: "A powerful dynamic lunging sequence creating significant hip flexor fascial elongation parameters." },
+            { id: 6, name: "Virabhadrasana II", nativeName: "Warrior II", benefits: "Expands coxofemoral rotation limits.", difficulty: "Beginner", duration: "60s", precautions: "Subacromial shoulder impingement.", desc: "Horizontal alignment gaze framework optimizing spatial awareness and gluteus medius activation vectors." },
+            { id: 7, name: "Virabhadrasana III", nativeName: "Warrior III", benefits: "Maximizes deep core and hip stabilizer endurance.", difficulty: "Advanced", duration: "30s each side", precautions: "Severe dynamic vestibular issues.", desc: "A pure unilateral horizontal leverage plane balancing system requiring exceptional neuromuscular focus." },
+            { id: 8, name: "Paschimottanasana", nativeName: "Seated Forward Bend", benefits: "Deep decompression of lumbar paravertebral muscles.", difficulty: "Intermediate", duration: "120s", precautions: "Herniated intervertebral disc pathology.", desc: "Full structural forward kinetic line stretching sequence that targets sacrolumbar complexes." },
+            { id: 9, name: "Bhujangasana", nativeName: "Cobra Pose", benefits: "Promotes targeted extension mechanics of the upper torso spine.", difficulty: "Beginner", duration: "45s", precautions: "Acute spondylolisthesis.", desc: "Lying prone back extension vector targeting strengthening of thoracic erector spinae clusters." },
+            { id: 10, name: "Urdhva Mukha Svanasana", nativeName: "Upward-Facing Dog", benefits: "Reverses anterior slouch postures, activates gluteal control.", difficulty: "Intermediate", duration: "30s", precautions: "Late term pregnancy timelines.", desc: "Suspended spine hyperextension load that engages wrist structural stability matrices completely." },
+            { id: 11, name: "Dhanurasana", nativeName: "Bow Pose", benefits: "Opens whole visceral anterior container anatomy.", difficulty: "Intermediate", duration: "40s", precautions: "Abdominal hernia markers.", desc: "High extension sagittal traction model anchoring through anterior pelvic frame nodes." },
+            { id: 12, name: "Setu Bandha Sarvangasana", nativeName: "Bridge Pose", benefits: "Re-educates weak gluteus maximus patterns.", difficulty: "Beginner", duration: "60s", precautions: "Cervical spine disk protrusions.", desc: "Supine bridging design targeting neuromuscular reactivation of the deep posterior kinetic hip chain." },
+            { id: 13, name: "Sarvangasana", nativeName: "Shoulder Stand", benefits: "Forces systemic hydrostatic veno-lymphatic return.", difficulty: "Advanced", duration: "90s", precautions: "Intraocular pressure spikes, glaucoma.", desc: "Inverted biomechanical column shifting mechanical blood fluid load away from lower extremities." },
+            { id: 14, name: "Halasana", nativeName: "Plow Pose", benefits: "Intense stretching of superficial back fascia track.", difficulty: "Advanced", duration: "60s", precautions: "Severe cervical spine restrictions.", desc: "Hyperflexion spinal geometry flipping kinetic gravity loads onto posterior shoulders." },
+            { id: 15, name: "Matsyasana", nativeName: "Fish Pose", benefits: "Counters internal shoulder rotation habits.", difficulty: "Intermediate", duration: "45s", precautions: "Vascular carotid artery stenoses.", desc: "Supine thoracic vault hyperextension combined with passive throat tracking elongation mechanics." },
+            { id: 16, name: "Bidalasana / Marjariasana", nativeName: "Cat-Cow Flow", benefits: "Mobilizes fluid viscosity across multi-segmental vertebra.", difficulty: "Beginner", duration: "90s fluid loop", precautions: "Wrist localized inflammation.", desc: "Rhythmic alternating spinal flexion and extension loop optimizing synovial fluid propagation." },
+            { id: 17, name: "Balasana", nativeName: "Child's Pose", benefits: "Downregulates sympathetic nervous overdrive safely.", difficulty: "Beginner", duration: "180s", precautions: "Acute meniscus knee degradation.", desc: "Quiet reflective flexion posture maximizing hip dispersion and profound parasympathetic dominance." },
+            { id: 18, name: "Uttanasana", nativeName: "Standing Forward Fold", benefits: "Decompresses full cervical-to-lumbar trajectory.", difficulty: "Beginner", duration: "60s", precautions: "Unmanaged severe orthostatic drops.", desc: "Passive vertical suspension forward fold relying on gravitational loading vectors to distract the column." },
+            { id: 19, name: "Ardha Matsyendrasana", nativeName: "Half Lord of the Fishes", benefits: "Improves transverse rotational range of motion vectors.", difficulty: "Intermediate", duration: "45s each side", precautions: "Sacroiliac joint dysfunction spikes.", desc: "Complex axial rotation routing the pelvis along fixed linear axes while twisting the thoracic column." },
+            { id: 20, name: "Baddha Konasana", nativeName: "Bound Angle Pose", benefits: "Targeted elongation of adductor muscle systems.", difficulty: "Beginner", duration: "90s", precautions: "Severe inner collateral knee lesions.", desc: "Seated open pelvis geometry creating long duration microvascular perfusion inside the urogenital layout." },
+            { id: 21, name: "Navasana", nativeName: "Boat Pose", benefits: "Recruits primary deep iliopsoas and rectus abdominis layers.", difficulty: "Intermediate", duration: "45s", precautions: "Acute coccygeal focal pain syndromics.", desc: "Isometric balance layout utilizing the ischial tuberosities as a biomechanical fulcrum point." },
+            { id: 22, name: "Bakasana", nativeName: "Crow Pose", benefits: "Drastically elevates arm girdle scapular power.", difficulty: "Advanced", duration: "20s", precautions: "Carpal articulation microfractures.", desc: "A profound balance layout shifting total mass alignment over forward hand structural foundations." },
+            { id: 23, name: "Sirsasana", nativeName: "Headstand", benefits: "Maximal neurological activation, spatial reprogramming.", difficulty: "Advanced", duration: "60s", precautions: "Cervical degeneration, high blood pressure.", desc: "The supreme inversion geometry balancing full body weight across the forearm-scalp triad matrix." },
+            { id: 24, name: "Shavasana", nativeName: "Corpse Pose", benefits: "Complete neural resetting, processes metabolic waste.", difficulty: "Beginner", duration: "300s", precautions: "Clinical sleep apnea discomfort.", desc: "Neutral flat supine immobilization allowing integration of neural modifications post training loop." },
+            { id: 25, name: "Kapotasana", nativeName: "Pigeon Pose", benefits: "Deep myofascial release of deep hip external rotators.", difficulty: "Intermediate", duration: "90s each side", precautions: "Hip labral tear configurations.", desc: "Asymmetric transverse pelvis load targeting deep piriformis stretch mechanics and high local oxygenation." }
         ];
 
-        function calculateAdvancedSystemReport() {
-            const age = parseInt(document.getElementById("age").value);
-            const gender = document.getElementById("gender").value;
-            const height = parseFloat(document.getElementById("height").value);
-            const weight = parseFloat(document.getElementById("weight").value);
-            const fitnessGoal = document.getElementById("fitnessGoal").value;
-            const skinGoal = document.getElementById("skinGoal").value;
-            const activityLevel = document.getElementById("activityLevel").value;
-            const healthCondition = document.getElementById("healthCondition").value;
-            const stressLevel = document.getElementById("stressLevel").value;
-            const sleepHours = parseFloat(document.getElementById("sleepHours").value);
-            const workoutTime = parseInt(document.getElementById("workoutTime").value);
-            const experienceLevel = document.getElementById("experienceLevel").value;
+        // 7-Day Macro Programming Schema Matrix Data Configuration definitions
+        const SYSTEMIC_7DAY_SCHEMA = {
+            weight_loss: [
+                { day: "Day 1", focus: "Metabolic Ignition", summary: "High density flow tracking transitions designed to elevate oxygen demand." },
+                { day: "Day 2", focus: "Core Integration", summary: "Focuses on deep core stability and rotational twists to optimize digestion." },
+                { day: "Day 3", focus: "Posterior Power", summary: "Targeting large muscle groups to maximize calorie utilization profiles." },
+                { day: "Day 4", focus: "Active Deload", summary: "Low-intensity restorative movements tracking parasympathetic recovery." },
+                { day: "Day 5", focus: "Kinetic Velocity", summary: "Linked flows emphasizing dynamic cardiorespiratory endurance." },
+                { day: "Day 6", focus: "Structural Stamina", summary: "Extended holding times to increase metabolic workload within tissues." },
+                { day: "Day 7", focus: "Systemic Integration", summary: "Full body alignment audit consolidating metabolic output markers." }
+            ],
+            weight_gain: [
+                { day: "Day 1", focus: "Hypertrophic Synergy", summary: "Heavy eccentric posture loading focusing on major structural foundations." },
+                { day: "Day 2", focus: "Anabolic Baseline", summary: "Sustained isometric holds to activate type II muscle fibers." },
+                { day: "Day 3", focus: "Myofascial Alignment", summary: "Maximizing length tension relationships across long muscle groups." },
+                { day: "Day 4", focus: "Neural Reset", summary: "Decompressing neural pathways to minimize nervous system exhaustion." },
+                { day: "Day 5", focus: "Stature Density", summary: "Grounding sequences designed to optimize joint compression metrics." },
+                { day: "Day 6", focus: "Endocrine Support", summary: "Relaxing inversions to normalize metabolic and anabolic tracking." },
+                { day: "Day 7", focus: "Tissue Restoration", summary: "Deep rest protocols encouraging systemic recovery and growth." }
+            ],
+            flexibility: [
+                { day: "Day 1", focus: "Myofascial Plasticity", summary: "Targeted long duration holds aimed at structural collagen transformation." },
+                { day: "Day 2", focus: "Pelvic Girdle Release", summary: "Deep opening of hip flexors, adductors, and external rotators." },
+                { day: "Day 3", focus: "Axial Decompression", summary: "Creating space between vertebral bodies via directional traction." },
+                { day: "Day 4", focus: "Shoulder Matrix Flow", summary: "Restoring functional range of motion inside the shoulder capsule." },
+                { day: "Day 5", focus: "Posterior Chain Release", summary: "Systemic lengthening from plantar fascia up to suboccipital tracks." },
+                { day: "Day 6", focus: "Transverse Elasticity", summary: "Rotational sequencing aimed at cross-directional myofascial sheets." },
+                { day: "Day 7", focus: "Total Body Plasticity", summary: "Gentle fluid transitions tracking overall kinetic freedom." }
+            ],
+            wellness: [
+                { day: "Day 1", focus: "Homeostatic Reset", summary: "Balanced sequence targeting the endocrine system and stress reduction." },
+                { day: "Day 2", focus: "Vascular Oxygenation", summary: "Pranayama-heavy flows to maximize blood oxygenation profiles." },
+                { day: "Day 3", focus: "Immune Architecture", summary: "Inversions and twists designed to stimulate lymphatic flow patterns." },
+                { day: "Day 4", focus: "Circadian Synchronization", summary: "Calming sequence to normalize sleep cycles and melatonin levels." },
+                { day: "Day 5", focus: "Somatic Attunement", summary: "Slow mindful tracking to build body awareness and proprioception." },
+                { day: "Day 6", focus: "Neuro-Vagal Toning", summary: "Deep restorative setups focused on heart rate variability optimization." },
+                { day: "Day 7", focus: "Holistic Longevity", summary: "Integration of balance, breathwork, and structural maintenance." }
+            ]
+        };
 
-            if (!age || !height || !weight || isNaN(age) || isNaN(height) || isNaN(weight)) {
-                alert("Please ensure your Age, Height, and Weight input matrices are populated accurately.");
+        // Complete Application Initialization Event Listeners
+        document.addEventListener("DOMContentLoaded", () => {
+            renderMasterYogaDirectory();
+            loadLocalStorageTelemetryLog();
+        });
+
+        // Lazy Rendering Architecture for the Yoga Directory Database Layer
+        function renderMasterYogaDirectory() {
+            const container = document.getElementById("yogaDirectoryMasterGrid");
+            if(!container) return;
+            
+            container.innerHTML = MASTER_YOGA_CATALOG.map(pose => `
+                <div class="pose-card">
+                    <div>
+                        <div class="pose-header">
+                            <div class="pose-title">${pose.name}</div>
+                            <span class="pose-badge badge-${pose.difficulty.toLowerCase()}">${pose.difficulty}</span>
+                        </div>
+                        <div style="font-size:12px; color:var(--accent-color); margin-bottom:8px; font-style:italic;">${pose.nativeName}</div>
+                        <p class="pose-desc">${pose.desc}</p>
+                    </div>
+                    <div class="pose-meta">
+                        <div class="pose-meta-item"><strong>Duration:</strong> <span>${pose.duration}</span></div>
+                        <div class="pose-meta-item"><strong>Benefits:</strong> <span style="text-align:right; max-width:70%;">${pose.benefits}</span></div>
+                        <div class="pose-meta-item"><strong style="color:#ff3b30;">Precaution:</strong> <span style="color:rgba(255,255,255,0.7); text-align:right; max-width:70%;">${pose.precautions}</span></div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Primary Core Computation Controller Logic Engine
+        function triggerEcosystemComputation() {
+            // Read UI Document State Fields
+            const name = document.getElementById("userName").value.trim();
+            const age = parseInt(document.getElementById("userAge").value);
+            const gender = document.getElementById("userGender").value;
+            const height = parseFloat(document.getElementById("userHeight").value);
+            const weight = parseFloat(document.getElementById("userWeight").value);
+            const stress = document.getElementById("userStress").value;
+            const sleep = parseFloat(document.getElementById("userSleep").value);
+            const target = document.getElementById("wellnessTarget").value;
+
+            if(!name || isNaN(age) || isNaN(height) || isNaN(weight) || isNaN(sleep)) {
+                alert("Please fully resolve the input schema properties vector.");
                 return;
             }
 
-            const bmi = (weight / ((height / 100) * (height / 100))).toFixed(1);
-            let category = "";
-            let categoryClass = "";
-            
-            if (bmi < 18.5) {
-                category = "Underweight Range";
-                categoryClass = "bg-amber-100 text-amber-800 border-amber-200";
-            } else if (bmi < 25.0) {
-                category = "Optimal Normal Weight";
-                categoryClass = "bg-emerald-100 text-emerald-800 border-emerald-200";
-            } else if (bmi < 30.0) {
-                category = "Overweight Matrix";
-                categoryClass = "bg-orange-100 text-orange-800 border-orange-200";
+            // Calculations Block 1: BMI Composition Engineering
+            const bmi = weight / ((height / 100) ** 2);
+            let bmiStatus = "Normative Homogeneity";
+            if(bmi < 18.5) bmiStatus = "Ectomorphic Underload";
+            else if(bmi >= 25 && bmi < 30) bmiStatus = "Hypertrophic Overload";
+            else if(bmi >= 30) bmiStatus = "Adipose Hyper-accumulation";
+
+            // Calculations Block 2: BMR & Energy Threshold via Revised Harris-Benedict Formulas
+            let bmr = 0;
+            if(gender === "Male") {
+                bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+            } else if(gender === "Female") {
+                bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
             } else {
-                category = "Obese Range Profile";
-                categoryClass = "bg-red-100 text-red-800 border-red-200";
+                bmr = 267.9 + (11.32 * weight) + (3.94 * height) - (5.0 * age);
             }
+            const tdee = bmr * 1.375; // Active calibration profile factor constant
 
-            let wellnessScore = 90;
-            if (stressLevel === "high") wellnessScore -= 15;
-            if (stressLevel === "medium") wellnessScore -= 5;
-            if (sleepHours < 6) wellnessScore -= 12;
-            if (sleepHours > 9) wellnessScore -= 3;
-            if (activityLevel === "sedentary") wellnessScore -= 10;
-            if (healthCondition !== "none") wellnessScore -= 8;
-            if (bmi > 29.9 || bmi < 18.5) wellnessScore -= 7;
-            wellnessScore = Math.max(20, Math.min(100, wellnessScore));
-
-            let flexScore = 55;
-            if (experienceLevel === "intermediate") flexScore += 20;
-            if (healthCondition === "back" || healthCondition === "knee") flexScore -= 15;
-            if (age > 45) flexScore -= 8;
-            flexScore = Math.max(30, Math.min(95, flexScore));
-            
-            let flexBadge = "Initial Mobility Tier";
-            if (flexScore > 70) flexBadge = "Competent Dynamic Range";
-            if (flexScore < 45) flexBadge = "Restricted Fascia Elasticity";
-
-            let activityText = "Balanced Active";
-            if (activityLevel === "sedentary") activityText = "Low Baseline";
-            if (activityLevel === "active") activityText = "High Intensity Track";
-
-            let summaryText = "Patient/User data model tracks a " + age + "-year-old " + gender.toLowerCase() + " matching a Calculated BMI of " + bmi + " (" + category + "). ";
-            
-            if (fitnessGoal === "weightloss") {
-                summaryText += "The main goal requires active caloric adaptation and continuous core training. Our system recommends prioritizing full-body movement sequences to optimize overall metabolic rate. ";
-            } else if (fitnessGoal === "gain") {
-                summaryText += "The setup targets structural muscle tone and healthy muscle mass distribution. Our core recommendation focuses on holding isometric yoga positions longer and managing energy consumption carefully. ";
-            } else if (fitnessGoal === "flexibility") {
-                summaryText += "The tracking path focuses on fixing posture issues and opening up tight joint chains. We recommend emphasizing safe spinal extension holds and deep tissue breathing to improve ranges of motion. ";
+            // Calculations Block 3: Estimated Lipid Composition Array Indexing
+            let bodyFatEst = 0;
+            if(gender === "Male") {
+                bodyFatEst = (1.20 * bmi) + (0.23 * age) - 16.2;
             } else {
-                summaryText += "The configuration targets general wellness, stable daytime energy, and lowering cortisol levels. Our system focuses on rhythmic breathing and keeping movement consistent. ";
+                bodyFatEst = (1.20 * bmi) + (0.23 * age) - 5.4;
             }
+            bodyFatEst = Math.max(4, Math.min(52, bodyFatEst)); // Constrain bounding vector values
 
-            if (stressLevel === "high" || sleepHours < 7) {
-                summaryText += "Important lifestyle notice: High stress or short sleep windows can raise everyday baseline cortisol, which directly causes fluid retention and impacts recovery. We recommend prioritizing our evening breathing and mindfulness practices.";
-            }
+            const idealMin = 18.5 * ((height / 100) ** 2);
+            const idealMax = 24.9 * ((height / 100) ** 2);
 
-            let mornDuration = "5 Mins", noonDuration = "5 Mins", evenDuration = "5 Mins";
-            if (workoutTime === 30) { mornDuration = "15 Mins"; noonDuration = "5 Mins"; evenDuration = "10 Mins"; }
-            if (workoutTime === 60) { mornDuration = "30 Mins"; noonDuration = "10 Mins"; evenDuration = "20 Mins"; }
+            // Calculations Block 4: Multi-tier Score Matrices
+            let stressScore = 35;
+            if(stress === "Moderate") stressScore = 62;
+            if(stress === "High") stressScore = 88;
 
-            let mName = "", mBen = "", nName = "", nBen = "", eName = "", eBen = "";
+            let sleepQuality = Math.min(100, Math.max(30, (sleep / 8) * 92 - (stressScore * 0.15)));
             
-            if (fitnessGoal === "weightloss") {
-                mName = "Dynamic Surya Namaskar Flow & Cardio Warm-up";
-                mBen = "Ignites metabolic burn, gets the heart rate up, and triggers clean energy usage right at the start of the day.";
-                nName = "Core Activation Planks & Standing Triangle Focus";
-                nBen = "Fires up the deep transverse abdominis muscles and prevents standard post-lunch energy slumps.";
-                eName = "Pavanmuktasana & Moderate Mountain Climbers Combo";
-                eBen = "Gently works the lower gut region to support healthy digestion while burning excess calories before bed.";
-            } else if (fitnessGoal === "gain") {
-                mName = "Isometric Warrior Holds & Balance Drills";
-                mBen = "Maintains deep muscle tension across the lower body to support healthy strength development.";
-                nName = "Seated Vajrasana Spine Realignment Cycles";
-                nBen = "Helps redirect circulation towards your core digestive organs to optimize nutrient intake after lunch.";
-                eName = "Slow Backbends & Strong Bridge Elevations";
-                eBen = "Strengthens the gluteal chain and upper back tissues while calming the central nervous system.";
-            } else if (fitnessGoal === "flexibility") {
-                mName = "Spinal Decompression & Deep Hamstring Extensions";
-                mBen = "Gently releases stiff fascia layers accumulated overnight, helping realign rounded shoulder areas.";
-                nName = "Desk Neck Openers & Lateral Torso Stretches";
-                nBen = "Relieves muscle strain caused by long hours at a desk, helping open up compressed chest areas.";
-                eName = "Passive Yin Yoga Folds & Restorative Adjustments";
-                eBen = "Lengthens tendons through calm, long-held stretches that safely wind down joint tension before sleep.";
-            } else {
-                mName = "Gentle Sun Salutations & Diaphragmatic Breath Anchor";
-                mBen = "Gently wakes up nervous system pathways and establishes balanced energy for the entire morning.";
-                nName = "Vajrasana & Centered Alternate Nostril Breathing";
-                nBen = "Lowers mid-day stress, resets concentration, and balances left/right brain hemisphere focus.";
-                eName = "Deep Child's Pose Reset & Extended Shavasana Integration";
-                eBen = "Helps lower active physical stress, downregulates racing thoughts, and helps prepare the body for deep sleep.";
-            }
+            let fitnessScore = 75;
+            if(target === "weight_loss") fitnessScore = 82;
+            if(target === "flexibility") fitnessScore = 88;
+            
+            let recoveryScore = Math.round(Math.min(100, Math.max(20, (100 - stressScore) * 0.6 + (sleepQuality * 0.4))));
+            let wellnessScore = Math.round((fitnessScore + recoveryScore + (100 - stressScore)) / 3);
 
-            let weightDesc = "";
-            if (bmi >= 25.0) {
-                weightDesc = "Your current BMI indicates an opportunity for metabolic optimization. We recommend integrating <strong>Surya Namaskar</strong>, abdominal <strong>Planks</strong>, consistent daily steps (8k+), and light functional bodyweight moves to help shape and lean out core tissues.";
-            } else if (bmi < 18.5) {
-                weightDesc = "Your biometric markers lean towards the underweight range. Focus on holding your yoga positions for steady, slow counts, and prioritize a high-protein nutrition model to help build lean structural muscle safely.";
-            } else {
-                weightDesc = "Your body weight is in a very healthy, optimal normal balance. Continue with standard weekly conditioning and mindful movement to protect your active metabolic baseline.";
-            }
+            // Calculations Block 5: Dermatological & Follicular Health Indicators
+            let glowScore = Math.round(Math.min(100, Math.max(15, 88 - (stressScore * 0.25) + (sleep * 2))));
+            let hydrationStatus = "Optimal Cellular Saturation";
+            if(sleep < 6) hydrationStatus = "Intracellular Fluid Deficit";
 
-            let skinListHTML = "";
-            if (skinGoal === "glow") {
-                skinListHTML = "li class='py-1'><strong>Postural Inversion:</strong> Use positions like Downward-Facing Dog to increase nutrient-dense blood flow to the head and face.</li><li class='py-1'><strong>Hydration Benchmark:</strong> Keep consistent baseline fluid intake (2.5 - 3 Liters daily) to assist normal cell waste processing.</li><li class='py-1'><strong>Face Yoga Integration:</strong> Practice light 2-minute jawline and cheek movements to maintain healthy local facial muscle tone.</li>";
-            } else if (skinGoal === "acne") {
-                skinListHTML = "<li class='py-1'><strong>Inflammation Regulation:</strong> Emphasize cooling breathing methods like Sheetali or slow breathing to calm the nervous system.</li><li class='py-1'><strong>Dietary Adjustments:</strong> Try minimizing highly processed foods and refined sugars to avoid sudden insulin and skin flare-ups.</li><li class='py-1'><strong>Nervous System Balance:</strong> Use grounding postures to help manage stress-induced hormone fluctuations.</li>";
-            } else {
-                skinListHTML = "<li class='py-1'><strong>Scalp Tissue Blood Flow:</strong> Prioritize forward folds and inverted postures to deliver rich circulation to hair follicles.</li><li class='py-1'><strong>Targeted Micronutrients:</strong> Ensure your diet provides adequate zinc, iron, and biotin to protect structural hair density.</li><li class='py-1'><strong>Stress-Induced Control:</strong> Regular practice of Yoga Nidra helps prevent stress-triggered hair thinning or shedding cycles.</li>";
-            }
+            let hairScore = Math.round(Math.min(100, Math.max(10, 84 - (stressScore * 0.35))));
+            let scalpCirculation = "Normal Capillary Flow Rate";
+            if(target === "flexibility") scalpCirculation = "Enhanced Microvascular Hyperemia";
+            
+            let stressImpact = "Negligible Follicular Interruption";
+            if(stressScore > 70) stressImpact = "Telogen Effluvium Proximity Alert";
 
-            let dBreak = "", dLunch = "", dSnack = "", dDinner = "";
-            if (fitnessGoal === "weightloss") {
-                dBreak = "Sprouted mung bean salad or plain oats with a light side of plant-based protein or egg whites.";
-                dLunch = "A colorful fiber salad bowl paired with whole grains (brown rice/ragi flatbread) and a bowl of lentils.";
-                dSnack = "A small handful of raw almonds or pumpkin seeds alongside green tea or fresh low-sugar fruit.";
-                dDinner = "Lightly steamed or grilled seasonal vegetables with a serving of baked tofu or lean, clean protein.";
-            } else if (fitnessGoal === "gain") {
-                dBreak = "Thick peanut butter oatmeal topped with sliced bananas, chia seeds, and mixed nuts.";
-                dLunch = "A generous serving of paneer/tofu curry or chicken breast with seasoned brown rice and dense lentils.";
-                dSnack = "A protein shake or roasted chickpea bowl alongside a handful of dates and walnuts.";
-                dDinner = "Stuffed multigrain flatbread with mixed vegetables, clear broth, and a portion of dense clean protein.";
-            } else {
-                dBreak = "Warm porridge or ancient grain preparations mixed with ground flaxseeds and fresh seasonal berries.";
-                dLunch = "A balanced plate of traditional seasonal greens, a portion of whole grains, and fresh yogurt or sprouts.";
-                dSnack = "Makhana (roasted foxnuts) or a chia seed pudding cup lightly sweetened with natural fruit pulp.";
-                dDinner = "An easy-to-digest vegetable stew or lentil soup paired with a side of steamed greens before bed.";
-            }
+            // Calculations Block 6: Water Intake Titration Formula
+            const waterIntake = (weight * 0.033) + (stress === "High" ? 0.6 : 0.2);
 
-            const dietTableBody = document.getElementById("diet-tbody");
-            dietTableBody.innerHTML = `
-                <tr class="border-b border-slate-100 hover:bg-slate-50/50"><td class="px-4 py-3 font-bold text-slate-700">🌅 Breakfast Window</td><td class="px-4 py-3 text-slate-600">${dBreak}</td></tr>
-                <tr class="border-b border-slate-100 hover:bg-slate-50/50"><td class="px-4 py-3 font-bold text-slate-700">☀️ Lunch Window</td><td class="px-4 py-3 text-slate-600">${dLunch}</td></tr>
-                <tr class="border-b border-slate-100 hover:bg-slate-50/50"><td class="px-4 py-3 font-bold text-slate-700">🥜 Mid-Day Snacks</td><td class="px-4 py-3 text-slate-600">${dSnack}</td></tr>
-                <tr class="hover:bg-slate-50/50"><td class="px-4 py-3 font-bold text-slate-700">🌙 Dinner Window</td><td class="px-4 py-3 text-slate-600">${dDinner}</td></tr>
-            `;
+            // Interface Update Sequence Execution Block
+            document.getElementById("initializationPlaceholder").classList.add("hidden-element");
+            const mainOutput = document.getElementById("aiEcosystemOutputContainer");
+            mainOutput.classList.remove("hidden-element");
 
-            let lifestyleStress = "Keep your stress in check by taking 5-10 minutes each afternoon for quiet alternate-nostril breathing. This helps balance the autonomic nervous system and keeps sudden daily anxiety levels managed.";
-            if (stressLevel === "high") {
-                lifestyleStress = "Your stress levels are currently flagged as high. We strongly recommend making a 15-minute <strong>Yoga Nidra</strong> or body-scan meditation a non-negotiable part of your evening routine to help clear accumulated mental fatigue.";
+            // Update Ring Elements
+            setCircularRingMetrics("ringWellnessFill", "ringWellnessText", wellnessScore);
+            setCircularRingMetrics("ringRecoveryFill", "ringRecoveryText", recoveryScore);
+            setCircularRingMetrics("ringFitnessFill", "ringFitnessText", fitnessScore);
+            
+            document.getElementById("valWellnessScore").innerText = wellnessScore;
+            document.getElementById("valRecoveryScore").innerText = recoveryScore;
+            document.getElementById("valFitnessScore").innerText = fitnessScore;
+
+            // Render Composition Metrics Text fields
+            document.getElementById("metricBMI").innerText = bmi.toFixed(1);
+            document.getElementById("statusBMI").innerText = bmiStatus;
+            document.getElementById("metricBMR").innerText = `${Math.round(bmr)} kcal`;
+            document.getElementById("metricCalories").innerText = `${Math.round(tdee)} TDEE`;
+            document.getElementById("metricBodyFat").innerText = `${bodyFatEst.toFixed(1)}%`;
+            document.getElementById("metricIdealWeight").innerText = `${Math.round(idealMin)} - ${Math.round(idealMax)} kg`;
+
+            // Render Skin & Hair Progression Indicators
+            document.getElementById("lblGlowScore").innerText = `${glowScore}%`;
+            document.getElementById("barGlowScore").style.width = `${glowScore}%`;
+            document.getElementById("lblHydrationStatus").innerText = hydrationStatus;
+            document.getElementById("lblHairScore").innerText = `${hairScore}%`;
+            document.getElementById("barHairScore").style.width = `${hairScore}%`;
+            document.getElementById("lblScalpCirculation").innerText = scalpCirculation;
+            document.getElementById("lblStressImpact").innerText = stressImpact;
+
+            // Render Regenerative Elements
+            document.getElementById("metricWaterIntake").innerText = `${waterIntake.toFixed(1)} Liters`;
+            document.getElementById("metricSleepQuality").innerText = `${Math.round(sleepQuality)}%`;
+            document.getElementById("lblSleepRecoveryAnalysis").innerText = sleepQuality > 75 ? "Deep REM Phase Stability" : "Interrupted Slow-Wave State";
+            document.getElementById("metricStressScore").innerText = `${stressScore} / 100`;
+            document.getElementById("lblBreathingRoutine").innerText = stressScore > 60 ? "Alternate Nostril (Nadi Shodhana)" : "Coherent Resonant Breathing";
+
+            // Generate Adaptive 7-Day Program Component Views
+            generateAdaptivePlanTimelineLayout(target);
+            
+            // Build Personalized Systemic Circadian Timelines
+            generateCircadianRoutines(target);
+
+            // Construct Macro Nutritional Food Architecture
+            generateNutritionalBlueprintLayout(target);
+
+            // Commit metrics dataset into local secure browser infrastructure storage space
+            commitTelemetryToLocalStorage(name, bmi, wellnessScore, target);
+        }
+
+        // Animated SVGRing Control Function
+        function setCircularRingMetrics(ringId, textId, scoreValue) {
+            const circle = document.getElementById(ringId);
+            const text = document.getElementById(textId);
+            if(!circle || !text) return;
+
+            const radius = circle.r.baseVal.value;
+            const circumference = 2 * Math.PI * radius;
+            
+            circle.style.strokeDasharray = `${circumference} ${circumference}`;
+            const offset = circumference - (scoreValue / 100) * circumference;
+            circle.style.strokeDashoffset = offset;
+            text.innerText = `${scoreValue}%`;
+        }
+
+        // Generator for adaptive weekly timeline structure layout panels
+        function generateAdaptivePlanTimelineLayout(targetArchitectureMode) {
+            const container = document.getElementById("adaptivePlanDaysContainer");
+            if(!container) return;
+
+            const daysArray = SYSTEMIC_7DAY_SCHEMA[targetArchitectureMode] || SYSTEMIC_7DAY_SCHEMA["wellness"];
+            
+            container.innerHTML = daysArray.map((dayObj, index) => `
+                <div class="day-card ${index === 0 ? 'active' : ''}" onclick="selectIndividualAdaptiveDayRow(this, '${dayObj.day}', '${dayObj.focus}', '${dayObj.summary}')">
+                    <div class="day-title">${dayObj.day}</div>
+                    <div class="day-focus">${dayObj.focus}</div>
+                </div>
+            `).join('');
+
+            // Automatically set default display to Day 1 configuration details
+            selectIndividualAdaptiveDayRow(null, daysArray[0].day, daysArray[0].focus, daysArray[0].summary);
+        }
+
+        // User interaction click handler for 7-Day interactive schedule cards
+        function selectIndividualAdaptiveDayRow(domElement, dayTitle, focusName, narrativeSummary) {
+            if(domElement) {
+                const siblings = domElement.parentNode.querySelectorAll('.day-card');
+                siblings.forEach(el => el.classList.remove('active'));
+                domElement.classList.add('active');
             }
             
-            let lifestyleSleep = "Keep your sleep quality stable by stepping away from digital screens 45 minutes before bed. Gentle, passive lower-back stretches on your mat can signal your brain that it's safely time to rest.";
-            if (sleepHours < 6) {
-                lifestyleSleep = "Your nightly sleep window is low, which can slow down normal muscle recovery. Try incorporating deep, rhythmic abdominal breathing just before sleeping to help encourage deeper, more restful sleep cycles.";
-            }
+            document.getElementById("selectedDayTitle").innerText = `${dayTitle} Matrix - Target Focus: ${focusName}`;
+            document.getElementById("selectedDayDescription").innerText = narrativeSummary;
+        }
 
-            const asanaContainer = document.getElementById("asanas-injection-container");
-            asanaContainer.innerHTML = "";
-            
-            MASTER_ASANA_DATABASE.forEach(asana => {
-                let badgeColor = "bg-emerald-50 text-emerald-700 border-emerald-200";
-                if (asana.difficulty === "Intermediate") badgeColor = "bg-orange-50 text-orange-700 border-orange-200";
-                
-                let criticalPrecaution = asana.precaution;
-                if (healthCondition === "knee" && (asana.id === "vajrasana" || asana.id === "suryanamaskar")) {
-                    criticalPrecaution = "<span class='text-rose-600 font-bold'>⚠️ KNEE PAIN ALERT:</span> Avoid forcing deep knee bends. Use a thick supportive mat or a cushion modification to reduce joint strain.";
+        // Generator logic handling circadian daily workflow segment generation
+        function generateCircadianRoutines(targetArchitectureMode) {
+            const morning = document.getElementById("routineMorningBody");
+            const afternoon = document.getElementById("routineAfternoonBody");
+            const evening = document.getElementById("routineEveningBody");
+
+            if(targetArchitectureMode === "flexibility") {
+                morning.innerHTML = "<strong>Pose Segment:</strong> Surya Namaskar Sequence (5 rounds) coupled with dynamic Tadasana stretches. <br><br><strong>Emphasis:</strong> Expanding neural elasticity boundaries safely via elevated core temperature profile markers.";
+                afternoon.innerHTML = "<strong>Pose Segment:</strong> Utthita Trikonasana and Ardha Matsyendrasana holding routines. <br><br><strong>Emphasis:</strong> Alleviating sustained workplace seated posture compressions inside pelvic muscles.";
+                evening.innerHTML = "<strong>Pose Segment:</strong> Paschimottanasana and Balasana deep holding phases (3-5 minutes each). <br><br><strong>Emphasis:</strong> Maximizing myofascial structural remodeling loops under parasympathetic neural status.";
+            } else if(targetArchitectureMode === "weight_loss") {
+                morning.innerHTML = "<strong>Pose Segment:</strong> High-velocity continuous Vinyasa Flow with emphasis on Navasana holds. <br><br><strong>Emphasis:</strong> Inducing high metabolic cellular demands and accelerating resting caloric expenditure cycles.";
+                afternoon.innerHTML = "<strong>Pose Segment:</strong> Virabhadrasana II and Bakasana balances. <br><br><strong>Emphasis:</strong> Multi-joint isometric muscular loading loops targeting continuous myofibrillar recruitment thresholds.";
+                evening.innerHTML = "<strong>Pose Segment:</strong> Setu Bandha Sarvangasana and long downregulating Shavasana integration. <br><br><strong>Emphasis:</strong> Clearing serum lactate accumulations while dampening secondary sympathetic spikes.";
+            } else if(targetArchitectureMode === "weight_gain") {
+                morning.innerHTML = "<strong>Pose Segment:</strong> Stable Virabhadrasana I & III ground frameworks focusing on intense muscle contractions. <br><br><strong>Emphasis:</strong> Creating mechanical tension profiles required to support anabolic skeletal transformations.";
+                afternoon.innerHTML = "<strong>Pose Segment:</strong> Navasana and dynamic plank systems targeting postural center mass vector lines. <br><br><strong>Emphasis:</strong> Stabilizing global functional core muscle architectures against physical compression loads.";
+                evening.innerHTML = "<strong>Pose Segment:</strong> Bhujangasana extensions alternating with restorative Halasana tracking. <br><br><strong>Emphasis:</strong> Downregulating structural system stresses to promote optimized protein synthesis path states.";
+            } else { // Wellness & General Longevity Focus Blueprint Base
+                morning.innerHTML = "<strong>Pose Segment:</strong> Vrikshasana stabilization mixed with slow therapeutic Cat-Cow synchronization patterns. <br><br><strong>Emphasis:</strong> Joint lubrication, vestibular recalibration, and baseline mental balancing vectors.";
+                afternoon.innerHTML = "<strong>Pose Segment:</strong> Standing Forward Folds and deep diaphragmatic breath modulations. <br><br><strong>Emphasis:</strong> Blood velocity stabilization and focus redirection loops to clear occupational fatigue loops.";
+                evening.innerHTML = "<strong>Pose Segment:</strong> Viparita Karani inversion patterns paired with extended Shavasana relaxation profiles. <br><br><strong>Emphasis:</strong> Maximizing cardiac rest intervals and promoting deep tissue cellular rebuilding cycles.";
+            }
+        }
+
+        // Macro Nutrition matrix string generation system parser
+        function generateNutritionalBlueprintLayout(targetArchitectureMode) {
+            const tag = document.getElementById("lblNutritionalStrategyTag");
+            const breakfast = document.getElementById("dietBreakfast");
+            const lunch = document.getElementById("dietLunch");
+            const snacks = document.getElementById("dietSnacks");
+            const dinner = document.getElementById("dietDinner");
+
+            if(targetArchitectureMode === "flexibility") {
+                tag.innerText = "Connective Tissue & Collagen Matrix Support";
+                breakfast.innerHTML = "Sprouted chia seed pudding fortified with plant-based protein isolates, raw crushed walnuts, and organic polyphenol-rich wild blueberries.";
+                lunch.innerHTML = "Quinoa grain base bowls topped with steamed dark leafy kale greens, firm organic tofu blocks, whole avocados, and fresh virgin olive oil dressing.";
+                snacks.innerHTML = "Freshly pressed cold vegetable green juices loaded with ginger extracts and combined with roasted pumpkin seed clusters.";
+                dinner.innerHTML = "Slow-simmered lentil broth stews accompanied by baked sweet potato wedges and a raw fermented prebiotic sauerkraut medley.";
+            } else if(targetArchitectureMode === "weight_loss") {
+                tag.innerText = "Thermogenic Energy Deficit Framework";
+                breakfast.innerHTML = "Egg white omelets whipped with fresh baby spinach and vine tomatoes, accompanied by half an avocado slice.";
+                lunch.innerHTML = "Char-broiled lean organic turkey breast cuts over a large mixed cruciferous broccoli salad matrix tossed in light lemon juice dressings.";
+                snacks.innerHTML = "Air-dried unsweetened whey isolate shakes mixed into clean coconut water bases.";
+                dinner.innerHTML = "Grilled wild-caught salmon fillets served alongside pan-seared asparagus spears and roasted cauliflower florets.";
+            } else if(targetArchitectureMode === "weight_gain") {
+                tag.innerText = "Hypertrophic Nitrogen Retention Architecture";
+                breakfast.innerHTML = "Steel-cut organic oat groats cooked in dense almond milks, topped with organic honey, almond butter spoons, and hemp heart seeds.";
+                lunch.innerHTML = "Brown rice carbohydrate bowls layered with lean shredded clean beef flanks, black bean medleys, and roasted root vegetable blocks.";
+                snacks.innerHTML = "High-density nutrient-dense trail mixes combining raw cashews, dark cacao nibs, and organic Turkish sun-dried figs.";
+                dinner.innerHTML = "Oven-baked chicken thighs accompanied by loaded baked golden potatoes and extra virgin olive oil roasted green beans.";
+            } else { // Wellness Optimum Baseline Blueprint
+                tag.innerText = "Anti-Inflammatory Longevity Baseline Setup";
+                breakfast.innerHTML = "Warm structural quinoa flakes with wild forest berries, flaxseed meal additions, and a cup of direct matcha tea leaves.";
+                lunch.innerHTML = "Mixed wild greens tossed with grilled mackerel pieces, steamed edamame pods, grated carrots, and unpasteurized apple cider vinegars.";
+                snacks.innerHTML = "Crisp organic sliced apples served alongside small artisanal single-batch almond paste dips.";
+                dinner.innerHTML = "Steamed white cod fillets paired over wild forbidden black rice beds and a side of traditional miso seaweed broth.";
+            }
+        }
+
+        // Browser local storage transaction management system pipeline
+        function commitTelemetryToLocalStorage(profileName, calculationBmi, computedWellnessScore, objectiveTarget) {
+            const dataPayload = {
+                timestamp: new Date().toLocaleString(),
+                name: profileName,
+                bmi: calculationBmi.toFixed(1),
+                wellness: computedWellnessScore,
+                target: objectiveTarget.replace('_', ' ').toUpperCase()
+            };
+
+            let logHistoryHistoryArray = [];
+            try {
+                const cachedLogString = localStorage.getItem("HEY_DOCTOR_AI_YOGA_GURU_TRACKING_LOG_CACHE");
+                if(cachedLogString) {
+                    logHistoryHistoryArray = JSON.parse(cachedLogString);
                 }
-                if (healthCondition === "back" && (asana.id === "bhujangasana" || asana.id === "trikonasana")) {
-                    criticalPrecaution = "<span class='text-rose-600 font-bold'>⚠️ BACK RISK ALERT:</span> Keep your twists or bends shallow. Do not over-extend the lumbar spine if you feel a pinch.";
-                }
-                if (healthCondition === "hypertension" && (asana.id === "adhomukha" || asana.id === "suryanamaskar")) {
-                    criticalPrecaution = "<span class='text-rose-600 font-bold'>⚠️ CARDIO RESISTANCE NOTICE:</span> Move slowly out of forward folds to avoid lightheadedness or sudden changes in blood pressure.";
-                }
-
-                const poseHTML = `
-                    <div class="p-4 border border-slate-100 rounded-xl hover:shadow-sm transition bg-white">
-                        <div class="flex flex-wrap items-center justify-between gap-2">
-                            <h4 class="font-bold text-slate-800 text-sm md:text-base">${asana.name}</h4>
-                            <div class="flex gap-2">
-                                <span class="border text-[10px] font-bold px-2 py-0.5 rounded-md ${badgeColor}">${asana.difficulty}</span>
-                                <span class="border text-[10px] font-bold px-2 py-0.5 bg-slate-50 text-slate-600 rounded-md border-slate-200">⏱️ ${asana.duration}</span>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slate-600 mt-2"><strong>Core Benefits:</strong> ${asana.benefits}</p>
-                        <p class="text-xs text-slate-500 mt-1 bg-slate-50 p-2 rounded border border-slate-100">${criticalPrecaution}</p>
-                    </div>
-                `;
-                asanaContainer.insertAdjacentHTML("beforeend", poseHTML);
-            });
-
-            const weeklyContainer = document.getElementById("weekly-matrix-container");
-            weeklyContainer.innerHTML = "";
-            
-            let focusTracks = ["Flexibility Reset", "Core Stability", "Metabolic Push", "Passive Recovery", "Posture Build", "Full Integration", "Mindful Reflection"];
-            if (fitnessGoal === "wellness") focusTracks = ["Pranayama Foundation", "Nerve Alignment", "Circulation Cleanse", "Restorative Meditation", "Spinal Decompression", "Total Flow Integration", "Calm Nature Walk"];
-            
-            for (let i = 1; i <= 7; i++) {
-                let trackName = focusTracks[i-1];
-                let bgDay = (i === 4) ? "bg-yogaGreen-50 border-yogaGreen-200" : "bg-white border-slate-100";
-                let fontColor = (i === 4) ? "text-yogaGreen-700" : "text-slate-800";
-                
-                const dayHTML = `
-                    <div class="border p-3 rounded-xl text-center shadow-2xs ${bgDay}">
-                        <span class="block text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Day 0${i}</span>
-                        <span class="block font-bold text-xs mt-1 ${fontColor}">${trackName}</span>
-                    </div>
-                `;
-                weeklyContainer.insertAdjacentHTML("beforeend", dayHTML);
+            } catch(e) {
+                logHistoryHistoryArray = [];
             }
 
-            document.getElementById("out-bmi").innerText = bmi;
-            
-            const outCategory = document.getElementById("out-category");
-            outCategory.innerText = category;
-            outCategory.className = "inline-block mt-1 text-xs font-bold px-2 py-0.5 rounded border " + categoryClass;
+            // Insert tracking entry payload at top position
+            logHistoryHistoryArray.unshift(dataPayload);
+            // Constrain local table logging array parameters to maximum history threshold size limits
+            if(logHistoryHistoryArray.length > 8) logHistoryHistoryArray.pop();
 
-            document.getElementById("out-wellness").innerText = wellnessScore + "/100";
-            document.getElementById("bar-wellness").style.width = wellnessScore + "%";
-            
-            document.getElementById("out-flex").innerText = flexScore + "/100";
-            document.getElementById("badge-flex").innerText = flexBadge;
-            document.getElementById("out-activity").innerText = activityText;
-            document.getElementById("out-summary").innerHTML = summaryText;
+            localStorage.setItem("HEY_DOCTOR_AI_YOGA_GURU_TRACKING_LOG_CACHE", JSON.stringify(logHistoryHistoryArray));
+            loadLocalStorageTelemetryLog();
+        }
 
-            document.getElementById("routine-morn-name").innerText = mName;
-            document.getElementById("routine-morn-time").innerText = mornDuration;
-            document.getElementById("routine-morn-benefits").innerText = mBen;
+        // Interface parser loading logged history matrices back into view
+        function loadLocalStorageTelemetryLog() {
+            const tableBody = document.getElementById("storageLogHistoryTableBody");
+            if(!tableBody) return;
 
-            document.getElementById("routine-noon-name").innerText = nName;
-            document.getElementById("routine-noon-time").innerText = noonDuration;
-            document.getElementById("routine-noon-benefits").innerText = nBen;
+            let logHistoryHistoryArray = [];
+            try {
+                const cachedLogString = localStorage.getItem("HEY_DOCTOR_AI_YOGA_GURU_TRACKING_LOG_CACHE");
+                if(cachedLogString) logHistoryHistoryArray = JSON.parse(cachedLogString);
+            } catch(e) {
+                logHistoryHistoryArray = [];
+            }
 
-            document.getElementById("routine-even-name").innerText = eName;
-            document.getElementById("routine-even-time").innerText = evenDuration;
-            document.getElementById("routine-even-benefits").innerText = eBen;
+            if(logHistoryHistoryArray.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--text-tertiary); padding: 20px;">No historical telemetry records detected in browser allocation vector.</td></tr>`;
+                return;
+            }
 
-            document.getElementById("strat-weight-desc").innerHTML = weightDesc;
-            document.getElementById("strat-skin-list").innerHTML = skinListHTML;
+            tableBody.innerHTML = logHistoryHistoryArray.map(item => `
+                <tr>
+                    <td>${item.timestamp}</td>
+                    <td style="font-weight:600;">${item.name}</td>
+                    <td>${item.bmi}</td>
+                    <td class="text-accent" style="font-weight:600;">${item.wellness}%</td>
+                    <td style="font-size:12px; font-weight:500;">${item.target}</td>
+                </tr>
+            `).join('');
+        }
 
-            document.getElementById("lifestyle-stress-desc").innerHTML = lifestyleStress;
-            document.getElementById("lifestyle-sleep-desc").innerHTML = lifestyleSleep;
+        // Storage flush controller action
+        function purgeEcosystemStorageLog() {
+            localStorage.removeItem("HEY_DOCTOR_AI_YOGA_GURU_TRACKING_LOG_CACHE");
+            loadLocalStorageTelemetryLog();
+        }
 
-            document.getElementById("welcome-placeholder").classList.add("hidden");
-            const dashboard = document.getElementById("dynamic-dashboard");
-            dashboard.classList.remove("hidden");
-            
-            dashboard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Standard PDF generation framework utilizing native window print abstraction layouts
+        function exportWellnessPDFReport() {
+            window.print();
         }
     </script>
 </body>
 </html>
+
