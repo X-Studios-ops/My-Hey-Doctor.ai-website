@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protein Intake Calculator | Hey Doctor AI</title>
+    <meta name="description" content="Calculate your daily protein intake based on weight, age, activity level, and fitness goals. Free AI-powered Protein Intake Calculator by Hey Doctor AI.">
+    <meta name="author" content="Hey Doctor AI">
+    <meta name="theme-color" content="#f5f5f7">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Protein Intake Calculator",
+      "url": "https://my-hey-doctor-ai-website.vercel.app",
+      "description": "Calculate your daily protein intake based on weight, age, activity level, and fitness goals.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "All",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Hey Doctor AI",
+        "url": "https://my-hey-doctor-ai-website.vercel.app"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How much protein do I need a day?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The generally recommended minimum is 0.8 grams of protein per kilogram of body weight. However, for active individuals, athletes, or those looking to build muscle, this can range from 1.2 to 2.2 grams per kilogram."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I eat too much protein?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While a high-protein diet is generally safe for healthy individuals, excessive intake (above 2.5g/kg) without matching physical activity can lead to digestive discomfort and extra calories stored as fat."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Are plant-based proteins as good as animal proteins?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but they often lack one or more essential amino acids. By eating a varied diet combining different plant proteins (like rice and beans), you can get all the essential amino acids your body needs."
+        }
+      }]
+    }
+    </script>
+
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --bg-color: #f5f5f7;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --accent-blue: #0066cc;
+            --accent-blue-hover: #0077ed;
+            --card-bg: rgba(255, 255, 255, 0.65);
+            --card-border: rgba(255, 255, 255, 0.5);
+            --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+            --success-color: #34c759;
+            --warning-color: #ff9f0a;
+            --danger-color: #ff3b30;
+            --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 2.5rem; line-height: 1.1; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        p { margin-bottom: 1rem; color: var(--text-secondary); }
+
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-blue-hover);
+        }
+
+        /* Layout & Containers */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+            padding: 40px;
+            transition: var(--transition);
+        }
+
+        .glass-card:hover {
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(245, 245, 247, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            text-align: center;
+            padding-bottom: 60px;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #1d1d1f 0%, #434345 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Calculator Grid */
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 992px) {
+            .calc-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 1rem;
+            font-family: var(--font-family);
+            background: rgba(255,255,255,0.8);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 12px;
+            outline: none;
+            transition: var(--transition);
+            color: var(--text-primary);
+            appearance: none;
+        }
+
+        input[type="number"]:focus,
+        select:focus {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+            background: #fff;
+        }
+
+        /* Custom Select Arrow */
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: "▼";
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        /* Radio Buttons */
+        .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .radio-card {
+            flex: 1;
+            position: relative;
+        }
+
+        .radio-card input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .radio-label {
+            display: block;
+            padding: 14px;
+            text-align: center;
+            background: rgba(255,255,255,0.8);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .radio-card input:checked + .radio-label {
+            background: var(--accent-blue);
+            color: #fff;
+            border-color: var(--accent-blue);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 18px 30px;
+            background: var(--accent-blue);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--accent-blue-hover);
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(0, 102, 204, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-blue);
+            color: #fff;
+        }
+
+        /* Results Dashboard */
+        #results-dashboard {
+            display: none;
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .result-highlight {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            line-height: 1;
+            margin: 20px 0;
+            text-shadow: 0 4px 12px rgba(0, 102, 204, 0.1);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 24px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .metric-card h4 {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .metric-card .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 12px;
+            background: rgba(0,0,0,0.05);
+            border-radius: 6px;
+            margin-top: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #34c759, #0066cc);
+            border-radius: 6px;
+            width: 0%;
+            transition: width 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .score-badges {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(0, 102, 204, 0.1);
+            color: var(--accent-blue);
+        }
+
+        .recommendation-box {
+            background: #fff;
+            padding: 24px;
+            border-radius: 16px;
+            border-left: 4px solid var(--accent-blue);
+            margin-top: 30px;
+            font-size: 0.95rem;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        /* Tabs System */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .tabs::-webkit-scrollbar {
+            display: none; /* Chrome */
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.5);
+            border: 1px solid var(--card-border);
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            color: var(--text-primary);
+        }
+
+        .tab-btn.active {
+            background: var(--text-primary);
+            color: #fff;
+            border-color: var(--text-primary);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 16px 24px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        th {
+            background: rgba(245, 245, 247, 0.5);
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(245, 245, 247, 0.5);
+        }
+
+        /* 7-Day Challenge & Meal Plan */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: rgba(0, 102, 204, 0.2);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Accordion / FAQ */
+        .accordion-item {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 20px 0;
+            background: transparent;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            text-align: left;
+            font-family: var(--font-family);
+        }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content p {
+            padding-bottom: 20px;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1d1d1f;
+            color: #f5f5f7;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+        }
+
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .footer h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Print Media Query */
+        @media print {
+            body { background: #fff; color: #000; }
+            .navbar, .hero, .form-section, .action-buttons, .footer, .tabs { display: none !important; }
+            .glass-card { box-shadow: none; border: 1px solid #ccc; padding: 20px; }
+            #results-dashboard { display: block !important; }
+            .result-highlight { color: #000; }
+            .metric-card { border: 1px solid #000; }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .hero { padding-top: 100px; padding-bottom: 40px; }
+            .glass-card { padding: 24px; }
+            .metrics-grid { grid-template-columns: 1fr; }
+            .action-buttons { flex-direction: column; }
+        }
+        
+        .myth-card {
+            background: #fff;
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--danger-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .myth-card h4 {
+            color: var(--danger-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .myth-card .fact {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(0,0,0,0.1);
+            color: var(--success-color);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="https://my-hey-doctor-ai-website.vercel.app" class="brand">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+                Hey Doctor AI
+            </a>
+            <div class="nav-links">
+                <a href="https://my-hey-doctor-ai-website.vercel.app">Home</a>
+                <a href="https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru">Yoga Guru</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero container">
+        <h1>Precision Protein Intake Calculator</h1>
+        <p>Discover your exact daily protein needs based on scientific formulas. Whether your goal is muscle gain, weight loss, or maintenance, get an AI-powered personalized nutritional baseline.</p>
+    </header>
+
+    <main class="container">
+        
+        <div class="calc-grid">
+            
+            <section class="form-section glass-card" id="calculator-form-container">
+                <h2>Your Details</h2>
+                <p>Fill out your physical attributes and fitness goals.</p>
+                <form id="protein-form">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="radio-group">
+                                <div class="radio-card">
+                                    <input type="radio" name="gender" value="male" checked>
+                                    <span class="radio-label">Male</span>
+                                </div>
+                                <div class="radio-card">
+                                    <input type="radio" name="gender" value="female">
+                                    <span class="radio-label">Female</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age (years)</label>
+                            <input type="number" id="age" name="age" min="15" max="100" value="25" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" name="weight" min="30" max="300" step="0.1" placeholder="e.g. 70" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" id="height" name="height" min="100" max="250" placeholder="e.g. 175" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activity">Activity Level</label>
+                        <div class="select-wrapper">
+                            <select id="activity" name="activity" required>
+                                <option value="1.2">Sedentary (Little or no exercise)</option>
+                                <option value="1.375">Lightly Active (Light exercise 1-3 days/week)</option>
+                                <option value="1.55" selected>Moderately Active (Moderate exercise 3-5 days/week)</option>
+                                <option value="1.725">Very Active (Hard exercise 6-7 days a week)</option>
+                                <option value="1.9">Athlete (Very hard exercise & physical job)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goal">Primary Fitness Goal</label>
+                        <div class="select-wrapper">
+                            <select id="goal" name="goal" required>
+                                <option value="maintenance">Maintenance (Maintain current weight)</option>
+                                <option value="loss">Weight Loss (Moderate calorie deficit)</option>
+                                <option value="fat_loss">Fat Loss (Aggressive deficit, high protein)</option>
+                                <option value="gain" selected>Muscle Gain (Calorie surplus)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="diet">Dietary Preference</label>
+                        <div class="select-wrapper">
+                            <select id="diet" name="diet" required>
+                                <option value="non_veg">Non-Vegetarian</option>
+                                <option value="veg">Vegetarian</option>
+                                <option value="vegan">Vegan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Calculate Protein Needs</button>
+                </form>
+            </section>
+
+            <section class="glass-card" id="results-dashboard">
+                <div class="dashboard-header">
+                    <h3>Your Daily Protein Target</h3>
+                    <div class="result-highlight"><span id="res-optimal">0</span><span style="font-size:1.5rem; color:var(--text-secondary);">g</span></div>
+                    <p>Based on your profile, this is the optimal amount of protein to consume daily to achieve your <strong id="res-goal-text">goal</strong>.</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h4>Intake Range</h4>
+                        <div class="value"><span id="res-min">0</span> - <span id="res-max">0</span>g</div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="res-progress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Per Meal (4 Meals)</h4>
+                        <div class="value"><span id="res-meal">0</span>g</div>
+                        <p style="font-size:0.8rem; margin:5px 0 0; color:var(--text-secondary);">Recommended distribution</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Daily Calories</h4>
+                        <div class="value"><span id="res-cals">0</span></div>
+                        <p style="font-size:0.8rem; margin:5px 0 0; color:var(--text-secondary);">Target for your goal</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Current BMI</h4>
+                        <div class="value"><span id="res-bmi">0</span></div>
+                        <p style="font-size:0.8rem; margin:5px 0 0; color:var(--text-secondary);" id="res-bmi-text">Category</p>
+                    </div>
+                </div>
+
+                <div class="score-badges">
+                    <div class="badge" id="res-muscle-score">Muscle Score: High</div>
+                    <div class="badge" id="res-diet-badge">Diet: Omnivore</div>
+                </div>
+
+                <div class="recommendation-box" id="res-recommendation">
+                    </div>
+
+                <div class="action-buttons">
+                    <button class="btn" onclick="window.print()">Print / Save PDF</button>
+                    <button class="btn btn-outline" onclick="resetCalculator()">Recalculate</button>
+                </div>
+            </section>
+
+        </div>
+
+        <section class="section">
+            <h2 style="text-align:center; margin-bottom: 40px;">Protein-Rich Food Database</h2>
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'tab-indian-veg')">Indian Vegetarian</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-indian-nonveg')">Non-Vegetarian</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-vegan')">Vegan & Plant-Based</button>
+            </div>
+
+            <div id="tab-indian-veg" class="tab-content active">
+                <div class="table-responsive glass-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Food Item</th>
+                                <th>Serving Size</th>
+                                <th>Protein (g)</th>
+                                <th>Calories</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Paneer (Cottage Cheese)</td><td>100g</td><td>18g</td><td>265 kcal</td></tr>
+                            <tr><td>Greek Yogurt / Hung Curd</td><td>1 cup (150g)</td><td>15g</td><td>100 kcal</td></tr>
+                            <tr><td>Moong Dal (Cooked)</td><td>1 cup (200g)</td><td>14g</td><td>212 kcal</td></tr>
+                            <tr><td>Chickpeas (Chole, Cooked)</td><td>1 cup (164g)</td><td>14.5g</td><td>269 kcal</td></tr>
+                            <tr><td>Soya Chunks</td><td>50g (raw)</td><td>26g</td><td>170 kcal</td></tr>
+                            <tr><td>Rajma (Kidney Beans, Cooked)</td><td>1 cup (177g)</td><td>15g</td><td>225 kcal</td></tr>
+                            <tr><td>Almonds</td><td>30g (~23 nuts)</td><td>6g</td><td>164 kcal</td></tr>
+                            <tr><td>Milk (Toned)</td><td>1 glass (250ml)</td><td>8g</td><td>150 kcal</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="tab-indian-nonveg" class="tab-content">
+                <div class="table-responsive glass-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Food Item</th>
+                                <th>Serving Size</th>
+                                <th>Protein (g)</th>
+                                <th>Calories</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Chicken Breast (Cooked)</td><td>100g</td><td>31g</td><td>165 kcal</td></tr>
+                            <tr><td>Whole Eggs</td><td>2 large (100g)</td><td>12g</td><td>140 kcal</td></tr>
+                            <tr><td>Egg Whites</td><td>4 large</td><td>14g</td><td>68 kcal</td></tr>
+                            <tr><td>Fish (Rohu / Katla)</td><td>100g</td><td>18g</td><td>105 kcal</td></tr>
+                            <tr><td>Prawns / Shrimp</td><td>100g</td><td>24g</td><td>99 kcal</td></tr>
+                            <tr><td>Mutton (Lean)</td><td>100g</td><td>25g</td><td>143 kcal</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="tab-vegan" class="tab-content">
+                <div class="table-responsive glass-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Food Item</th>
+                                <th>Serving Size</th>
+                                <th>Protein (g)</th>
+                                <th>Calories</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Tofu (Firm)</td><td>100g</td><td>16g</td><td>144 kcal</td></tr>
+                            <tr><td>Tempeh</td><td>100g</td><td>19g</td><td>192 kcal</td></tr>
+                            <tr><td>Lentils (Cooked)</td><td>1 cup (198g)</td><td>18g</td><td>230 kcal</td></tr>
+                            <tr><td>Quinoa (Cooked)</td><td>1 cup (185g)</td><td>8g</td><td>222 kcal</td></tr>
+                            <tr><td>Edamame (Cooked)</td><td>1 cup (155g)</td><td>17g</td><td>188 kcal</td></tr>
+                            <tr><td>Peanut Butter</td><td>2 tbsp (32g)</td><td>8g</td><td>188 kcal</td></tr>
+                            <tr><td>Hemp Seeds</td><td>3 tbsp (30g)</td><td>10g</td><td>166 kcal</td></tr>
+                            <tr><td>Chia Seeds</td><td>2 tbsp (28g)</td><td>5g</td><td>138 kcal</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="calc-grid">
+                <div>
+                    <h2>Sample Daily Meal Plan Structure</h2>
+                    <p>A balanced approach to hitting your daily protein targets efficiently.</p>
+                    <div class="glass-card" style="margin-top: 30px;">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-title">Breakfast (20-30g Protein)</div>
+                                <p>Kickstart muscle protein synthesis. <br><em>Example: 3 Eggs + Toast OR 1 bowl Poha with Soya + Curd.</em></p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-title">Lunch (30-40g Protein)</div>
+                                <p>Sustained energy and repair. <br><em>Example: Chicken Breast + Rice OR 1.5 cups Dal + Paneer Bhurji + Roti.</em></p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-title">Pre/Post Workout Snack (15-25g Protein)</div>
+                                <p>Fuel training and aid immediate recovery. <br><em>Example: Whey Protein Shake OR Greek Yogurt with fruit.</em></p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-title">Dinner (30-40g Protein)</div>
+                                <p>Overnight muscle repair. <br><em>Example: Grilled Fish + Veggies OR Tofu Stir-fry + Quinoa.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2>Protein Myths Busted</h2>
+                    <p>Let's separate fact from fiction regarding protein consumption.</p>
+                    <div style="margin-top: 30px;">
+                        <div class="myth-card">
+                            <h4>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                Myth: High protein damages your kidneys.
+                            </h4>
+                            <p>For healthy individuals without pre-existing kidney disease, high protein diets are perfectly safe and do not harm renal function.</p>
+                            <div class="fact">Fact: Kidneys are efficient filters designed to handle protein metabolism.</div>
+                        </div>
+                        <div class="myth-card">
+                            <h4>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                Myth: You can only absorb 30g of protein per meal.
+                            </h4>
+                            <p>The body can absorb much more than 30g at once. While muscle protein synthesis caps around 25-40g per meal, excess protein still provides calories and prevents muscle breakdown.</p>
+                            <div class="fact">Fact: Total daily intake matters more than meal frequency.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 style="text-align:center; margin-bottom: 40px;">Frequently Asked Questions</h2>
+            <div class="glass-card">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        How much protein do I actually need a day?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>The generally recommended minimum is 0.8 grams of protein per kilogram of body weight. However, this is just to prevent deficiency. For active individuals, athletes, or those looking to build muscle or lose fat, the optimal range is typically between 1.6 to 2.2 grams per kilogram of body weight.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        Are plant-based proteins as good as animal proteins?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, but they differ in amino acid profiles. Animal proteins are "complete," meaning they contain all 9 essential amino acids. Many plant proteins lack one or two. However, by eating a varied plant-based diet (e.g., combining rice and beans throughout the day), you can easily get all essential amino acids. Plant proteins also offer beneficial fiber and lower saturated fat.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        Should I drink protein shakes?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Protein shakes are a convenient supplement, not a necessity. If you struggle to reach your daily protein goal through whole foods like chicken, lentils, eggs, and tofu, a whey or plant-based protein powder can be a cost-effective and highly bioavailable way to bridge the gap.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        Will eating more protein automatically build muscle?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>No. Muscle growth (hypertrophy) requires an ongoing stimulus, which is resistance training (lifting weights or bodyweight exercises). Protein provides the building blocks (amino acids) to repair and grow the muscle tissue after it has been stimulated. Without the workout, extra protein will just be used for energy or stored as fat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                        Hey Doctor AI
+                    </div>
+                    <p style="color: var(--text-secondary); max-width: 300px;">Empowering your health journey with AI-driven insights, calculators, and personalized wellness plans.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://my-hey-doctor-ai-website.vercel.app">Home</a></li>
+                        <li><a href="#calculator-form-container">Protein Calculator</a></li>
+                        <li><a href="https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru">Personal Yoga Guru</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://my-hey-doctor-ai-website.vercel.app/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="https://my-hey-doctor-ai-website.vercel.app/terms">Terms of Service</a></li>
+                        <li><a href="https://my-hey-doctor-ai-website.vercel.app/disclaimer">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Hey Doctor AI Ecosystem. All rights reserved. Not intended as substitute for professional medical advice.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form Submission & Calculation Logic
+        document.getElementById('protein-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Gather inputs
+            const age = parseFloat(document.getElementById('age').value);
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const activityLevel = parseFloat(document.getElementById('activity').value);
+            const goal = document.getElementById('goal').value;
+            const diet = document.getElementById('diet').value;
+
+            // 1. Calculate BMR (Mifflin-St Jeor Equation)
+            let bmr = (10 * weight) + (6.25 * height) - (5 * age);
+            bmr = (gender === 'male') ? bmr + 5 : bmr - 161;
+
+            // 2. Calculate TDEE (Total Daily Energy Expenditure)
+            let tdee = bmr * activityLevel;
+
+            // 3. Goal Adjustments for Calories & Protein
+            let targetCalories = tdee;
+            let baseProteinPerKg = 0.8; // Base for sedentary
+
+            // Activity multiplier for protein
+            if (activityLevel === 1.2) baseProteinPerKg = 1.0;
+            else if (activityLevel === 1.375) baseProteinPerKg = 1.2;
+            else if (activityLevel === 1.55) baseProteinPerKg = 1.6;
+            else if (activityLevel === 1.725) baseProteinPerKg = 1.9;
+            else if (activityLevel === 1.9) baseProteinPerKg = 2.2;
+
+            let goalText = "";
+            
+            switch(goal) {
+                case 'loss':
+                    targetCalories -= 500;
+                    baseProteinPerKg += 0.2; // Increase protein to preserve muscle in deficit
+                    goalText = "Weight Loss";
+                    break;
+                case 'fat_loss':
+                    targetCalories -= 700;
+                    baseProteinPerKg += 0.4; // High protein to preserve muscle in heavy deficit
+                    goalText = "Fat Loss";
+                    break;
+                case 'gain':
+                    targetCalories += 300;
+                    baseProteinPerKg += 0.2; // Extra protein for synthesis
+                    goalText = "Muscle Gain";
+                    break;
+                case 'maintenance':
+                default:
+                    goalText = "Weight Maintenance";
+                    break;
+            }
+
+            // Diet adjustments (Plant proteins have slightly lower bioavailability)
+            let dietBadge = "Omnivore";
+            if (diet === 'veg') {
+                baseProteinPerKg *= 1.05; 
+                dietBadge = "Vegetarian";
+            }
+            if (diet === 'vegan') {
+                baseProteinPerKg *= 1.1;
+                dietBadge = "Vegan";
+            }
+
+            // 4. Final Calculations
+            let optimalProtein = Math.round(weight * baseProteinPerKg);
+            let minProtein = Math.round(weight * Math.max(0.8, baseProteinPerKg - 0.4));
+            let maxProtein = Math.round(weight * (baseProteinPerKg + 0.5));
+            
+            // Safety cap (usually around 2.5 - 3g per kg depending on individual, capping at 3)
+            maxProtein = Math.min(maxProtein, Math.round(weight * 2.8));
+
+            let mealProtein = Math.round(optimalProtein / 4);
+            targetCalories = Math.round(targetCalories);
+
+            // Calculate BMI
+            let heightInMeters = height / 100;
+            let bmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
+            let bmiCategory = "";
+            let bmiColor = "";
+
+            if (bmi < 18.5) { bmiCategory = "Underweight"; bmiColor = "var(--warning-color)"; }
+            else if (bmi >= 18.5 && bmi < 24.9) { bmiCategory = "Normal Weight"; bmiColor = "var(--success-color)"; }
+            else if (bmi >= 25 && bmi < 29.9) { bmiCategory = "Overweight"; bmiColor = "var(--warning-color)"; }
+            else { bmiCategory = "Obese"; bmiColor = "var(--danger-color)"; }
+
+            // 5. Update UI
+            document.getElementById('res-optimal').innerText = optimalProtein;
+            document.getElementById('res-goal-text').innerText = goalText.toLowerCase();
+            document.getElementById('res-min').innerText = minProtein;
+            document.getElementById('res-max').innerText = maxProtein;
+            document.getElementById('res-meal').innerText = mealProtein;
+            document.getElementById('res-cals').innerText = targetCalories + " kcal";
+            
+            document.getElementById('res-bmi').innerText = bmi;
+            document.getElementById('res-bmi').style.color = bmiColor;
+            document.getElementById('res-bmi-text').innerText = bmiCategory;
+
+            document.getElementById('res-diet-badge').innerText = "Diet: " + dietBadge;
+            
+            let muscleScore = (activityLevel >= 1.55 && (goal === 'gain' || goal === 'maintenance')) ? "High" : "Moderate";
+            document.getElementById('res-muscle-score').innerText = "Muscle Building Potential: " + muscleScore;
+
+            // Generate Recommendation Text
+            let recText = `<strong>Personalized Advice:</strong> To achieve your goal of ${goalText}, aim for <strong>${optimalProtein}g</strong> of protein daily, split into 3-4 meals containing ~${mealProtein}g each. `;
+            if (diet === 'vegan' || diet === 'veg') {
+                recText += "Since you are on a plant-based diet, ensure you mix protein sources (e.g., lentils and rice, or beans and seeds) to get a complete amino acid profile.";
+            } else {
+                recText += "Focus on lean sources like chicken breast, fish, and eggs for high-quality, bioavailable protein.";
+            }
+            document.getElementById('res-recommendation').innerHTML = recText;
+
+            // Progress Bar Animation
+            let progressPercentage = ((optimalProtein - minProtein) / (maxProtein - minProtein)) * 100;
+            document.getElementById('res-progress').style.width = Math.min(Math.max(progressPercentage, 10), 90) + "%";
+
+            // Hide Form Container (Optional, we'll just scroll down instead)
+            document.getElementById('results-dashboard').style.display = 'block';
+            
+            // Smooth Scroll to Results
+            document.getElementById('results-dashboard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        function resetCalculator() {
+            document.getElementById('results-dashboard').style.display = 'none';
+            document.getElementById('calculator-form-container').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Tab System
+        function openTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            // trigger reflow
+            void document.getElementById(tabName).offsetWidth;
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Accordion functionality
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const content = item.querySelector('.accordion-content');
+            const isActive = item.classList.contains('active');
+
+            // Close all accordions
+            document.querySelectorAll('.accordion-item').forEach(acc => {
+                acc.classList.remove('active');
+                acc.querySelector('.accordion-content').style.maxHeight = null;
+            });
+
+            // If the clicked one wasn't active, open it
+            if (!isActive) {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+    </script>
+</body>
+</html>
+
