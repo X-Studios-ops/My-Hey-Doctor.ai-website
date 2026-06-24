@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Weight Loss Calculator & Calorie Deficit Plan | Hey Doctor AI</title>
+    <meta name="description" content="Calculate your daily calorie intake for healthy weight loss. Our advanced Weight Loss Calculator helps you find your maintenance calories, weight loss plan, and estimated weekly changes.">
+    <meta name="keywords" content="Weight Loss Calculator, Calorie Deficit Calculator, Weight Loss Calories Calculator, Daily Calorie Calculator, Weight Loss Plan Calculator, How many calories should I eat to lose weight, Weight loss calorie calculator, Calories needed to lose weight, Healthy weight loss calculator, Daily calorie intake for weight loss">
+    <link rel="canonical" href="https://my-hey-doctor-ai-website.vercel.app/weight-loss-calculator.html">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Premium Weight Loss Calculator & Calorie Deficit Plan | Hey Doctor AI">
+    <meta property="og:description" content="Discover your exact daily calorie needs to lose weight safely. Use our advanced calculator for personalized health insights.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://my-hey-doctor-ai-website.vercel.app/weight-loss-calculator.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Premium Weight Loss Calculator | Hey Doctor AI">
+    <meta name="twitter:description" content="Calculate your daily calorie intake for healthy weight loss. Advanced scientific formula.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0077b6;
+            --primary-gradient: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+            --secondary-color: #03045e;
+            --accent-color: #48cae4;
+            --bg-color: #f8f9fa;
+            --text-main: #2b2d42;
+            --text-light: #6c757d;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+            --border-radius: 20px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Abstract Background Elements */
+        .bg-shape {
+            position: absolute;
+            z-index: -1;
+            filter: blur(100px);
+            opacity: 0.5;
+        }
+        .shape-1 {
+            top: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: #00b4d8;
+            border-radius: 50%;
+        }
+        .shape-2 {
+            top: 40%;
+            right: -150px;
+            width: 500px;
+            height: 500px;
+            background: #48cae4;
+            border-radius: 50%;
+        }
+
+        /* Header & Navigation */
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .btn-home {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 119, 182, 0.3);
+        }
+
+        .btn-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 119, 182, 0.4);
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            padding: 20px 5%;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        .breadcrumbs a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 5%;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* Glassmorphism Container */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* Calculator Layout */
+        .calculator-wrapper {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            animation: slideUp 0.8s ease;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-group.full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+        }
+
+        input[type="number"], select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: white;
+        }
+
+        input[type="number"]:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(0, 119, 182, 0.1);
+        }
+
+        .gender-toggle {
+            display: flex;
+            gap: 15px;
+        }
+
+        .gender-toggle label {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            background: white;
+            font-weight: 500;
+        }
+
+        .gender-toggle input[type="radio"] {
+            display: none;
+        }
+
+        .gender-toggle input[type="radio"]:checked + label {
+            border-color: var(--primary-color);
+            background: rgba(0, 119, 182, 0.05);
+            color: var(--primary-color);
+        }
+
+        .calculate-btn {
+            grid-column: span 2;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(0, 119, 182, 0.3);
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 119, 182, 0.4);
+        }
+
+        /* Results Area */
+        #results {
+            display: none;
+            margin-top: 30px;
+            border-top: 1px solid #e9ecef;
+            padding-top: 30px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .result-box {
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .result-box.highlight {
+            background: var(--primary-gradient);
+            color: white;
+            grid-column: span 2;
+        }
+
+        .result-box.highlight h3 {
+            color: white;
+        }
+
+        .result-box:not(.highlight) {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+        }
+
+        .result-box h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .result-box .value {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        
+        .result-box.highlight .value {
+            font-size: 2.5rem;
+        }
+
+        /* Internal Links Section */
+        .tools-section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            text-decoration: none;
+            color: var(--text-main);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid #f1f3f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 119, 182, 0.15);
+            border-color: var(--accent-color);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .tool-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* SEO Content Section */
+        .seo-content {
+            padding: 60px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .content-block {
+            margin-bottom: 40px;
+        }
+
+        .content-block h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+
+        .content-block h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin: 20px 0 10px;
+        }
+
+        .content-block p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #495057;
+        }
+
+        .content-block ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            list-style-type: disc;
+        }
+
+        .content-block li {
+            margin-bottom: 10px;
+            color: #495057;
+        }
+
+        .image-card {
+            width: 100%;
+            height: 400px;
+            border-radius: 16px;
+            object-fit: cover;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* FAQs */
+        .faq-item {
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+
+        .faq-item h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 80px 5%;
+            background: var(--secondary-color);
+            color: white;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-color);
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .branding {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .input-group.full-width, .calculate-btn {
+                grid-column: span 1;
+            }
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            .result-box.highlight {
+                grid-column: span 1;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+
+    <!-- Schema Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://my-hey-doctor-ai-website.vercel.app/weight-loss-calculator.html"
+      },
+      "headline": "Premium Weight Loss Calculator & Calorie Deficit Plan",
+      "description": "Calculate your daily calorie intake for healthy weight loss. Discover your maintenance calories, weight loss calories, and estimated weekly weight change.",
+      "image": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80",  
+      "author": {
+        "@type": "Person",
+        "name": "Pratyush Ranjan",
+        "url": "https://my-hey-doctor-ai-website.vercel.app/about-pratyush.html"
+      },  
+      "publisher": {
+        "@type": "Organization",
+        "name": "Hey Doctor AI",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://my-hey-doctor-ai-website.vercel.app/logo.png"
+        }
+      },
+      "datePublished": "2026-06-24",
+      "dateModified": "2026-06-24"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is a Weight Loss Calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Weight Loss Calculator uses your biological metrics (age, gender, height, weight) and activity level to estimate your Total Daily Energy Expenditure (TDEE). It then applies a safe calorie deficit to determine exactly how many calories you should eat to lose weight effectively."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How many calories should I eat to lose weight?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To lose weight safely (about 1 pound per week), you generally need a calorie deficit of 500 calories per day from your maintenance level. Our calculator determines this precise number for you based on scientific formulas."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How does a calorie deficit work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A calorie deficit occurs when you consume fewer calories from food than your body burns to maintain basic functions and daily activity. When this happens, your body taps into stored body fat for the missing energy, resulting in weight loss."
+        }
+      }]
+    }
+    </script>
+</head>
+<body>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <header>
+        <a href="https://my-hey-doctor-ai-website.vercel.app/" class="logo">
+            Hey Doctor <span>AI</span>
+        </a>
+        <a href="https://my-hey-doctor-ai-website.vercel.app/" class="btn-home">Home →</a>
+    </header>
+
+    <nav class="breadcrumbs">
+        <a href="https://my-hey-doctor-ai-website.vercel.app/">Home</a> > Weight Loss Calculator
+    </nav>
+
+    <section class="hero">
+        <h1>Weight Loss Calculator</h1>
+        <p>Discover your precise daily calorie requirements to achieve your dream physique safely and effectively. Powered by advanced scientific formulas.</p>
+    </section>
+
+    <section class="calculator-wrapper">
+        <div class="glass-card">
+            <form id="calcForm" onsubmit="calculateCalories(event)">
+                <div class="form-grid">
+                    
+                    <div class="input-group full-width">
+                        <label>Gender</label>
+                        <div class="gender-toggle">
+                            <input type="radio" id="male" name="gender" value="male" checked>
+                            <label for="male">Male</label>
+                            
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="age">Age (years)</label>
+                        <input type="number" id="age" min="15" max="100" required placeholder="e.g., 30">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" min="100" max="250" required placeholder="e.g., 175">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="weight">Current Weight (kg)</label>
+                        <input type="number" id="weight" min="30" max="300" required placeholder="e.g., 85">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="goalWeight">Goal Weight (kg)</label>
+                        <input type="number" id="goalWeight" min="30" max="300" required placeholder="e.g., 70">
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="activity">Activity Level</label>
+                        <select id="activity" required>
+                            <option value="1.2">Sedentary (Office job, little to no exercise)</option>
+                            <option value="1.375">Lightly Active (Light exercise 1-3 days/week)</option>
+                            <option value="1.55" selected>Moderately Active (Moderate exercise 3-5 days/week)</option>
+                            <option value="1.725">Very Active (Heavy exercise 6-7 days/week)</option>
+                            <option value="1.9">Extra Active (Physical job or training twice a day)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="calculate-btn">Calculate My Plan</button>
+                </div>
+            </form>
+
+            <div id="results">
+                <div class="results-grid">
+                    <div class="result-box highlight">
+                        <h3>Weight Loss Calories</h3>
+                        <div class="value" id="resLoss">0</div>
+                        <p>kcal / day</p>
+                    </div>
+                    <div class="result-box">
+                        <h3>Maintenance Calories</h3>
+                        <div class="value" id="resMaint">0</div>
+                        <p>kcal / day</p>
+                    </div>
+                    <div class="result-box">
+                        <h3>Weight Gain Calories</h3>
+                        <div class="value" id="resGain">0</div>
+                        <p>kcal / day</p>
+                    </div>
+                </div>
+                
+                <div class="result-box" style="margin-top: 20px;">
+                    <h3>Estimated Weekly Weight Change</h3>
+                    <div class="value" id="resWeekly" style="font-size: 1.5rem; color: var(--primary-color);">0 kg / week</div>
+                    <p>on the Weight Loss plan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internal Linking Section -->
+    <section class="tools-section">
+        <h2 class="section-title">Explore More Health Tools</h2>
+        <div class="cards-grid">
+            <a href="https://my-hey-doctor-ai-website.vercel.app/protein-intake-calculator.html" class="tool-card">
+                <div class="tool-icon">🥩</div>
+                <h3>Protein Intake Calculator</h3>
+                <p>Optimize your muscle growth and recovery.</p>
+            </a>
+            
+            <a href="https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html" class="tool-card">
+                <div class="tool-icon">🧘‍♀️</div>
+                <h3>Personal Yoga Guru</h3>
+                <p>Customized yoga routines for flexibility and peace.</p>
+            </a>
+            
+            <a href="https://my-hey-doctor-ai-website.vercel.app/water-intake-calculator.html" class="tool-card">
+                <div class="tool-icon">💧</div>
+                <h3>Water Intake Calculator</h3>
+                <p>Stay hydrated with precise daily water targets.</p>
+            </a>
+
+            <a href="https://my-hey-doctor-ai-website.vercel.app/wellness.html" class="tool-card">
+                <div class="tool-icon">📋</div>
+                <h3>Wellness Report</h3>
+                <p>Comprehensive analysis of your overall health.</p>
+            </a>
+
+            <a href="https://my-hey-doctor-ai-website.vercel.app/heydoctor-faq.html" class="tool-card">
+                <div class="tool-icon">❓</div>
+                <h3>FAQ</h3>
+                <p>Answers to all your health platform questions.</p>
+            </a>
+
+            <a href="https://my-hey-doctor-ai-website.vercel.app/about-pratyush.html" class="tool-card">
+                <div class="tool-icon">👨‍💻</div>
+                <h3>About Creator</h3>
+                <p>Meet Pratyush Ranjan, the creator behind Hey Doctor AI.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Comprehensive SEO Content Section -->
+    <section class="seo-content">
+        
+        <div class="content-block">
+            <h1>Comprehensive Guide: Weight Loss Calculator & Calorie Deficit Plans</h1>
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80" alt="Professional fitness transformation, healthy lifestyle, premium healthcare aesthetic" class="image-card" loading="lazy">
+            <p>Welcome to the ultimate resource for understanding how to manage your body weight through science. When trying to embark on a fitness journey, navigating the noise of diet culture can be overwhelming. The foundation of any legitimate, effective, and sustainable physique transformation stems from one unshakeable pillar: energy balance. This comprehensive guide will illuminate exactly how a <strong>Weight Loss Calculator</strong> functions, the mechanics behind a <strong>calorie deficit calculator</strong>, and how you can establish a robust framework for a <strong>daily calorie intake for weight loss</strong>.</p>
+            <p>Our premium tool is designed not just to throw numbers at you, but to provide a foundational <strong>weight loss plan calculator</strong> experience. Whether you're looking for the exact <strong>calories needed to lose weight</strong> or trying to optimize your current routine, understanding the biology behind the numbers is your first step to permanent success.</p>
+        </div>
+
+        <div class="content-block">
+            <h2>What is a Weight Loss Calculator?</h2>
+            <p>A <strong>Weight Loss Calculator</strong> is an advanced digital tool that utilizes established scientific algorithms—most notably the Mifflin-St Jeor equation—to estimate your body's daily energy expenditure. Human bodies are incredibly complex engines. We burn fuel (calories) just by existing, breathing, pumping blood, and generating body heat. This baseline requirement is called your Basal Metabolic Rate (BMR).</p>
+            <p>However, BMR is only part of the puzzle. Once we factor in your daily movements—whether that's walking up stairs, typing at a desk, or engaging in vigorous cardiovascular exercise—we arrive at your Total Daily Energy Expenditure (TDEE). A high-quality <strong>daily calorie calculator</strong> accurately assesses this TDEE by combining your biological metrics (age, gender, height, current weight) with a lifestyle multiplier.</p>
+            <p>Understanding "<strong>how many calories should I eat to lose weight</strong>" requires knowing this exact TDEE baseline. The calculator eliminates the guesswork, providing a highly personalized blueprint that serves as the foundation for your nutritional strategy.</p>
+        </div>
+
+        <div class="content-block">
+            <h2>How Calorie Deficit Works</h2>
+            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80" alt="Calorie deficit infographic concept with medical aesthetic" class="image-card" loading="lazy">
+            <p>At its core, weight management is governed by the First Law of Thermodynamics: energy can neither be created nor destroyed. If you consume more energy (calories) than your body requires, the excess is stored primarily as adipose tissue (body fat). Conversely, a <strong>calorie deficit</strong> is created when you consume fewer calories than your body expends.</p>
+            <h3>The Science of Fat Loss</h3>
+            <p>When faced with a calorie deficit, your body is forced to look internally for the missing energy required to sustain life and activity. It taps into its fat reserves, breaking down triglycerides into usable energy. This biological process is why utilizing a <strong>weight loss calories calculator</strong> is critical. If your deficit is too small, progress stalls. If your deficit is aggressively large, you risk muscle loss, metabolic adaptation (where your body drastically slows its calorie burn to preserve energy), and severe fatigue.</p>
+            <p>A widely accepted scientific standard is that one pound of human body fat stores approximately 3,500 calories. Therefore, a daily deficit of 500 calories (500 x 7 days = 3,500) typically yields a safe, sustainable weight loss of about one pound per week. This mathematical approach removes emotion from the equation and relies purely on biological facts.</p>
+        </div>
+
+        <div class="content-block">
+            <h2>Benefits of Weight Management</h2>
+            <p>Achieving and maintaining a healthy body weight through a structured <strong>healthy weight loss calculator</strong> extends far beyond aesthetic improvements. The physiological and psychological benefits are profound.</p>
+            <ul>
+                <li><strong>Cardiovascular Health:</strong> Reducing excess body fat dramatically decreases the strain on your heart, lowers blood pressure, and improves cholesterol profiles, drastically cutting the risk of heart disease.</li>
+                <li><strong>Joint Relief:</strong> Every extra pound of weight places roughly four pounds of added stress on your knee joints. Weight loss provides immediate structural relief.</li>
+                <li><strong>Metabolic Syndrome Prevention:</strong> Managing weight improves insulin sensitivity, fundamentally defending your body against the onset of Type 2 Diabetes.</li>
+                <li><strong>Mental Clarity and Sleep:</strong> Individuals maintaining a healthy weight frequently report enhanced sleep quality (reducing issues like sleep apnea) and more consistent daytime energy levels.</li>
+                <li><strong>Longevity:</strong> Extensive clinical data correlates a healthy BMI with a longer, more vibrant life expectancy.</li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h2>Safe Weight Loss Tips</h2>
+            <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80" alt="Healthy active lifestyle, running outdoors" class="image-card" loading="lazy">
+            <p>Armed with the data from your <strong>weight loss calorie calculator</strong>, the execution of your plan must prioritize safety and sustainability. Crash diets may offer rapid scale movements, but they overwhelmingly result in rebound weight gain and muscle degradation.</p>
+            <h3>1. Prioritize Protein</h3>
+            <p>When operating in a calorie deficit, adequate protein intake is non-negotiable. Protein possesses a high thermic effect (meaning your body burns calories just digesting it), promotes immense satiety (keeping you full), and most importantly, preserves lean muscle mass. Consider using our <a href="https://my-hey-doctor-ai-website.vercel.app/protein-intake-calculator.html">Protein Intake Calculator</a> in conjunction with your calorie targets.</p>
+            <h3>2. Hydration is Key</h3>
+            <p>Often, the body confuses thirst for hunger. Optimal hydration ensures your cellular processes run smoothly and assists in metabolic function. Keep a water bottle handy and consult our <a href="https://my-hey-doctor-ai-website.vercel.app/water-intake-calculator.html">Water Intake Calculator</a>.</p>
+            <h3>3. Embrace Resistance Training</h3>
+            <p>While cardio is excellent for heart health and increasing your daily calorie burn, resistance training (lifting weights or bodyweight exercises) signals to your body that your muscles are required, forcing the body to prioritize burning fat over muscle tissue for energy.</p>
+            <h3>4. Sleep and Recovery</h3>
+            <p>Chronically poor sleep elevates cortisol levels and disrupts the hunger hormones ghrelin and leptin, making adherence to your <strong>daily calorie intake for weight loss</strong> exceptionally difficult. Aim for 7-9 hours of quality sleep per night.</p>
+        </div>
+
+        <div class="content-block">
+            <h2>Daily Calorie Requirements and Adjustments</h2>
+            <p>Your calculated numbers are a starting point, not a permanent prescription. As you successfully lose weight, your body becomes smaller. A smaller body requires less energy to exist and move. Therefore, your TDEE will naturally decrease over time.</p>
+            <p>It is highly recommended to recalculate your metrics using our <strong>Weight Loss Plan Calculator</strong> every 4-6 weeks, or after every 5 pounds of weight lost. If you experience a plateau that lasts longer than two weeks despite strict adherence to your plan, it may be time to slightly adjust your caloric intake or increase your daily activity levels (like increasing your daily step count). Always listen to your body and consult a medical professional before making extreme adjustments.</p>
+        </div>
+
+        <div class="content-block">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3>What is a Weight Loss Calculator?</h3>
+                <p>A Weight Loss Calculator uses your biological metrics (age, gender, height, weight) and activity level to estimate your Total Daily Energy Expenditure (TDEE). It then applies a safe calorie deficit to determine exactly how many calories you should eat to lose weight effectively.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How many calories should I eat to lose weight?</h3>
+                <p>To lose weight safely (about 1 pound per week), you generally need a calorie deficit of 500 calories per day from your maintenance level. Our calculator uses the Mifflin-St Jeor equation to determine this precise baseline for you based on your unique body data.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How does a calorie deficit work?</h3>
+                <p>A calorie deficit occurs when you consume fewer calories from food than your body burns to maintain basic functions and daily activity. When this energy gap is created, your body biologically adapts by tapping into stored adipose tissue (body fat) for the missing energy, which results in weight loss.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is it safe to eat fewer than 1,200 calories a day?</h3>
+                <p>For the vast majority of adults, consuming fewer than 1,200 calories (for women) or 1,500 calories (for men) per day is not recommended without direct medical supervision. Such aggressive deficits can lead to nutrient deficiencies, gallstones, muscle loss, and severe metabolic slow-down.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Will I lose weight if I hit my calories but eat junk food?</h3>
+                <p>According to the laws of thermodynamics, if you are in a true calorie deficit, you will lose weight regardless of the food source. However, a diet heavy in highly processed foods will leave you constantly hungry, negatively impact your hormonal health, reduce your energy levels, and likely result in muscle loss rather than optimal fat loss.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conversion Section -->
+    <section class="cta-section">
+        <h2>Ready to optimize your entire health journey?</h2>
+        <p>Your weight loss calories are just the beginning. Discover your complete nutritional profile.</p>
+        <div class="cta-buttons">
+            <a href="https://my-hey-doctor-ai-website.vercel.app/protein-intake-calculator.html" class="btn-outline">Try Protein Calculator</a>
+            <a href="https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html" class="btn-outline">Try Personal Yoga Guru</a>
+            <a href="https://my-hey-doctor-ai-website.vercel.app/wellness.html" class="btn-outline">Explore More Health Tools</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo" style="justify-content: center; color: white; margin-bottom: 20px;">
+            Hey Doctor <span style="color: var(--accent-color);">AI</span>
+        </div>
+        <div class="footer-links">
+            <a href="https://my-hey-doctor-ai-website.vercel.app/">Home</a>
+            <a href="https://my-hey-doctor-ai-website.vercel.app/heydoctor-faq.html">FAQ</a>
+            <a href="#">Privacy Policy</a>
+            <a href="https://my-hey-doctor-ai-website.vercel.app/about-pratyush.html">About Creator</a>
+            <a href="#">LinkedIn Profile</a>
+        </div>
+        <div class="branding">
+            &copy; 2026 Powered by Hey Doctor AI. Created by Pratyush Ranjan. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Calculator Logic Script -->
+    <script>
+        function calculateCalories(e) {
+            e.preventDefault();
+
+            // Fetch Input Values
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const age = parseFloat(document.getElementById('age').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            const goalWeight = parseFloat(document.getElementById('goalWeight').value);
+            const activityMulti = parseFloat(document.getElementById('activity').value);
+
+            // Mifflin-St Jeor Equation for BMR
+            let bmr;
+            if (gender === 'male') {
+                bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+            } else {
+                bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+            }
+
+            // Total Daily Energy Expenditure (TDEE)
+            const tdee = Math.round(bmr * activityMulti);
+            
+            // Goals Calculations
+            const deficit = 500; // Standard safe deficit
+            const weightLossCals = tdee - deficit;
+            const weightGainCals = tdee + deficit;
+
+            // Weekly Weight Change estimate (500 cals/day = 3500/week approx = 1lb approx = 0.45kg)
+            const weeklyChangeKg = (deficit * 7) / 7700; // 7700 kcal approx equal to 1kg of fat
+            
+            // Display Results
+            document.getElementById('resMaint').innerText = tdee;
+            
+            // Ensure calories don't drop to dangerous levels blindly
+            const safeLoss = weightLossCals < 1200 ? 1200 : weightLossCals;
+            document.getElementById('resLoss').innerText = safeLoss;
+            
+            document.getElementById('resGain').innerText = weightGainCals;
+            document.getElementById('resWeekly').innerText = `-${weeklyChangeKg.toFixed(2)}`;
+
+            // Show results container with animation
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.style.display = 'block';
+            
+            // Scroll smoothly to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>
+
