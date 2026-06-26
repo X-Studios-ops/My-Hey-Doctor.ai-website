@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Aid Guide | Emergency Medical Guidance | HeyDoctor.ai</title>
+    <meta name="description" content="Comprehensive emergency first aid guide for bleeding, burns, CPR, snake bites, heart attacks, and more. Learn immediate life-saving steps.">
+    <meta name="keywords" content="First Aid Guide, Emergency First Aid, Snake Bite First Aid, Burn First Aid, CPR Guide, Poisoning First Aid, Heart Attack First Aid, Stroke First Aid, Emergency Medical Guide">
+    <meta name="author" content="HeyDoctor.ai">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="🩺 First Aid Guide | HeyDoctor.ai">
+    <meta property="og:description" content="Immediate emergency guidance for common injuries and medical emergencies.">
+    <meta property="og:url" content="https://my-hey-doctor-ai-website.vercel.app/first-aid-guide.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://my-hey-doctor-ai-website.vercel.app/og-first-aid.jpg">
+
+    <!-- FontAwesome for Beautiful Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://my-hey-doctor-ai-website.vercel.app/" },
+            { "@type": "ListItem", "position": 2, "name": "First Aid Guide", "item": "https://my-hey-doctor-ai-website.vercel.app/first-aid-guide.html" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "headline": "🩺 First Aid Guide: Immediate Emergency Guidance",
+          "author": { "@type": "Organization", "name": "HeyDoctor.ai" },
+          "publisher": { "@type": "Organization", "name": "HeyDoctor.ai", "logo": { "@type": "ImageObject", "url": "https://my-hey-doctor-ai-website.vercel.app/logo.png" } },
+          "description": "Evidence-based immediate emergency guidance for common injuries and medical emergencies.",
+          "mainEntityOfPage": "https://my-hey-doctor-ai-website.vercel.app/first-aid-guide.html"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "When should I perform CPR?", "acceptedAnswer": { "@type": "Answer", "text": "Start CPR immediately if an adult is unresponsive and not breathing normally." } },
+            { "@type": "Question", "name": "What is the first step for a severe burn?", "acceptedAnswer": { "@type": "Answer", "text": "Cool the burn with cool or lukewarm running water for 10 to 20 minutes. Do not use ice." } }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #0F766E;
+            --primary-light: #14B8A6;
+            --primary-dark: #047857;
+            --secondary: #ECFDF5;
+            --danger: #EF4444;
+            --danger-hover: #DC2626;
+            --text-main: #1F2937;
+            --text-muted: #4B5563;
+            --bg-color: #F8FAFC;
+            --white: #FFFFFF;
+            --border: #E2E8F0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style-position: inside; }
+
+        /* Sticky Nav */
+        nav {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 0.5rem; }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a { font-weight: 500; color: var(--text-muted); transition: var(--transition); }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem; }
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: var(--shadow);
+        }
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        /* Layout */
+        .container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            padding: 3rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 5rem;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .sidebar h3 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--primary); border-bottom: 2px solid var(--secondary); padding-bottom: 0.5rem; }
+        .topic-list { display: flex; flex-direction: column; gap: 0.5rem; }
+        .topic-list button {
+            background: none; border: none; text-align: left; padding: 0.5rem; font-size: 0.95rem;
+            color: var(--text-muted); cursor: pointer; border-radius: 6px; transition: var(--transition);
+        }
+        .topic-list button:hover, .topic-list button.active {
+            background: var(--secondary); color: var(--primary); font-weight: 600;
+        }
+
+        /* Main Content Grid */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--primary-light); transform: scaleX(0); transition: var(--transition);
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .card:hover::before { transform: scaleX(1); }
+        .card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .card-title { font-size: 1.2rem; font-weight: 600; color: var(--text-main); }
+
+        /* Detail Section */
+        .detail-view {
+            display: none;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.4s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .back-btn {
+            background: var(--secondary); color: var(--primary); border: none; padding: 0.5rem 1rem;
+            border-radius: 6px; cursor: pointer; font-weight: 500; margin-bottom: 1.5rem; transition: var(--transition);
+        }
+        .back-btn:hover { background: var(--primary); color: var(--white); }
+
+        .detail-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+        .detail-header h2 { font-size: 2rem; color: var(--primary-dark); }
+        .detail-icon { font-size: 2.5rem; }
+
+        .warning-box {
+            background: #FEF2F2; border-left: 4px solid var(--danger); padding: 1rem;
+            border-radius: 0 8px 8px 0; margin-bottom: 2rem; color: #991B1B; font-weight: 500;
+        }
+
+        .section-block { margin-bottom: 2rem; }
+        .section-block h3 { color: var(--primary); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+        .section-block ul { margin-left: 1.5rem; margin-bottom: 1rem; color: var(--text-muted); }
+        .section-block li { margin-bottom: 0.4rem; }
+        
+        .bad-practice { color: var(--danger); font-weight: 500; }
+        .good-practice { color: var(--primary-dark); font-weight: 500; }
+
+        .references { background: var(--bg-color); padding: 1rem; border-radius: 8px; font-size: 0.9rem; margin-top: 2rem; }
+        .references h4 { color: var(--text-muted); margin-bottom: 0.5rem; }
+
+        /* Floating Elements */
+        .floating-emergency {
+            position: fixed; bottom: 2rem; left: 2rem; background: var(--danger); color: var(--white);
+            width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            font-size: 1.5rem; box-shadow: var(--shadow-hover); z-index: 1000; animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); } 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); } }
+        
+        .back-to-top {
+            position: fixed; bottom: 2rem; right: 2rem; background: var(--primary); color: var(--white);
+            width: 50px; height: 50px; border-radius: 50%; display: none; justify-content: center; align-items: center;
+            font-size: 1.2rem; cursor: pointer; box-shadow: var(--shadow); z-index: 1000; border: none;
+        }
+        .back-to-top.visible { display: flex; }
+
+        /* Footer */
+        footer { background: var(--text-main); color: var(--white); padding: 3rem 5% 1.5rem; margin-top: 4rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-col h4 { margin-bottom: 1rem; color: var(--primary-light); }
+        .footer-col ul { list-style: none; margin: 0; padding: 0; }
+        .footer-col a { color: #D1D5DB; transition: var(--transition); }
+        .footer-col a:hover { color: var(--white); text-decoration: underline; }
+        .disclaimer { border-top: 1px solid #4B5563; padding-top: 1.5rem; font-size: 0.85rem; color: #9CA3AF; text-align: center; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; padding: 2rem 5%; }
+            .sidebar { display: none; } /* Hide sidebar on mobile, rely on grid */
+        }
+        @media (max-width: 600px) {
+            .nav-links { display: none; } /* Hamburger could be added here */
+            .hero h1 { font-size: 2rem; }
+            .floating-emergency { left: 1rem; bottom: 1rem; width: 50px; height: 50px; font-size: 1.2rem; }
+            .back-to-top { right: 1rem; bottom: 1rem; width: 40px; height: 40px; }
+            .detail-view { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><i class="fa-solid fa-heart-pulse"></i> HeyDoctor.ai</div>
+        <div class="nav-links">
+            <a href="https://my-hey-doctor-ai-website.vercel.app/">Home</a>
+            <a href="https://my-hey-doctor-ai-website.vercel.app/weight-loss-calculator">Weight Loss Calculator</a>
+            <a href="https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html">Yoga Guru</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>🩺 First Aid Guide</h1>
+        <p>Immediate evidence-based emergency guidance for common injuries and medical emergencies.</p>
+        <div class="search-box">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search first aid topics (e.g. CPR, Snake Bite)..." onkeyup="filterTopics()">
+        </div>
+    </section>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Emergency Topics</h3>
+            <div class="topic-list" id="sidebarList">
+                <!-- Populated by JS -->
+            </div>
+        </aside>
+
+        <main>
+            <div class="topics-grid" id="topicsGrid">
+                <!-- Populated by JS -->
+            </div>
+
+            <div class="detail-view" id="detailView">
+                <!-- Populated by JS -->
+            </div>
+        </main>
+    </div>
+
+    <a href="tel:911" class="floating-emergency" title="Call Emergency Services"><i class="fa-solid fa-phone-volume"></i></a>
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>HeyDoctor.ai</h4>
+                <p>Your AI-powered medical and health companion.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Health Tools</h4>
+                <ul>
+                    <li><a href="https://my-hey-doctor-ai-website.vercel.app/">AI Symptom Checker</a></li>
+                    <li><a href="https://my-hey-doctor-ai-website.vercel.app/weight-loss-calculator">Weight Loss Calculator</a></li>
+                    <li><a href="https://my-hey-doctor-ai-website.vercel.app/personal-yoga-guru.html">Personal Yoga Guru</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Important</h4>
+                <ul>
+                    <li><a href="#" onclick="showTopic('adult-cpr-guide'); return false;">Adult CPR Guide</a></li>
+                    <li><a href="#" onclick="showTopic('heart-attack'); return false;">Heart Attack Signs</a></li>
+                    <li><a href="#" onclick="showTopic('stroke'); return false;">Stroke (FAST)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="disclaimer">
+            <p><strong>Medical Disclaimer:</strong> The information provided in this First Aid Guide is for educational and informational purposes only and does not substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. <strong>In a life-threatening medical emergency, call your local emergency services (e.g., 911, 112, 999) immediately.</strong> Do not rely solely on this guide for life-saving interventions.</p>
+            <p style="margin-top: 1rem;">&copy; 2026 HeyDoctor.ai. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Standard Reference Strings
+        const refStandard = ["World Health Organization (WHO)", "CDC", "Mayo Clinic", "American Red Cross"];
+        const refAHA = ["American Heart Association (AHA)", "CDC", "Mayo Clinic", "Red Cross"];
+
+        // Data for all 35 Topics
+        const topicsData = [
+            { id: "bleeding", icon: "🩸", title: "Bleeding", warning: "Severe bleeding can lead to shock and death within minutes. Act immediately.", symptoms: ["Steady or spurting blood flow", "Blood pooling", "Confusion or pale skin (signs of shock)"], firstAid: ["Apply direct, firm pressure to the wound using a clean cloth or sterile dressing.", "Elevate the injured area above the heart if possible.", "If bleeding seeps through, add more layers—do NOT remove the first cloth."], notToDo: ["Do NOT remove objects deeply embedded in the wound.", "Do NOT remove a dressing once applied.", "Do NOT apply a tourniquet unless you are trained and bleeding cannot be controlled."], callEms: "If bleeding is severe, spurting, or doesn't stop after 10 minutes of pressure.", prevention: ["Handle sharp tools safely.", "Wear protective gear when working."], recovery: ["Keep the wound clean and dry.", "Watch for signs of infection (redness, warmth, pus)."], faqs: [{q: "Should I wash a severe cut?", a: "For severe bleeding, stopping the blood loss with pressure is more important than cleaning it immediately."}], related: ["Severe Cut", "Fracture"], references: refStandard },
+            { id: "burns", icon: "🔥", title: "Burns", warning: "Electrical and chemical burns, or burns on the face, hands, and genitals require immediate emergency care.", symptoms: ["Red, blistered, or charred skin", "Severe pain or numbness (in 3rd degree)", "Swelling"], firstAid: ["Cool the burn under cool (not cold) running water for 10-20 minutes.", "Remove restrictive items (jewelry, belts) near the burn.", "Cover the burn loosely with sterile gauze or cling film."], notToDo: ["Do NOT apply ice, butter, toothpaste, or ointments.", "Do NOT pop blisters.", "Do NOT remove clothing stuck to the skin."], callEms: "If the burn is deep, larger than 3 inches, or caused by electricity/chemicals.", prevention: ["Keep hot liquids away from edges.", "Check water heater temperature.", "Install smoke alarms."], recovery: ["Keep the area clean.", "Use prescribed antibiotic ointments.", "Avoid sun exposure."], faqs: [{q: "Why shouldn't I use ice?", a: "Ice restricts blood flow and can cause further tissue damage (frostbite) to already compromised skin."}], related: ["Chemical Exposure", "Electric Shock"], references: refStandard },
+            { id: "snake-bite", icon: "🐍", title: "Snake Bite", warning: "Assume all snake bites are venomous until proven otherwise. Time is tissue.", symptoms: ["Puncture marks", "Rapid swelling and severe pain", "Nausea, vomiting, or dizziness", "Difficulty breathing or muscle twitching"], firstAid: ["Call emergency services immediately.", "Keep the person calm and still to slow the spread of venom.", "Keep the bitten area positioned at or slightly below the level of the heart.", "Remove tight clothing, rings, or watches before swelling starts."], notToDo: ["Do NOT apply a tourniquet.", "Do NOT cut the wound or attempt to suck out the venom.", "Do NOT apply ice or submerge the wound in water.", "Do NOT give the person alcohol or caffeine."], callEms: "Immediately for ANY snake bite.", prevention: ["Wear heavy boots and long pants in tall grass.", "Stay on clear paths.", "Do not reach into dark crevices."], recovery: ["Follow hospital treatment plan, including antivenom administration.", "Keep wound clean."], faqs: [{q: "Do commercial snake bite kits work?", a: "No. Medical professionals strongly advise against using suction kits as they damage tissue and do not remove significant venom."}], related: ["Scorpion Sting", "Spider Bite"], references: refStandard },
+            { id: "scorpion-sting", icon: "🦂", title: "Scorpion Sting", warning: "Most scorpion stings are localized, but some species (like the Bark Scorpion) can cause life-threatening systemic reactions.", symptoms: ["Intense pain and tingling", "Numbness around the sting", "Muscle twitching or thrashing", "Unusual eye movements"], firstAid: ["Wash the area with soap and water.", "Apply a cool compress for 10 minutes at a time to reduce pain.", "Keep the affected area below heart level."], notToDo: ["Do NOT cut the wound or attempt suction.", "Do NOT consume alcohol or sedatives."], callEms: "If stung person is a child/elderly, or if severe symptoms (muscle spasms, breathing difficulty) occur.", prevention: ["Shake out shoes and clothes before wearing.", "Clear debris around the home."], recovery: ["Rest and monitor for delayed allergic reactions.", "Take over-the-counter pain relievers if approved by a doctor."], faqs: [{q: "Are all scorpions deadly?", a: "No, most cause only local pain, but identification is key. Seek help if systemic symptoms arise."}], related: ["Snake Bite", "Spider Bite"], references: refStandard },
+            { id: "bee-sting", icon: "🐝", title: "Bee Sting", warning: "Bee stings can trigger severe allergic reactions (anaphylaxis) in sensitive individuals.", symptoms: ["Sharp pain", "Redness and swelling", "Itching", "Hives or difficulty breathing (if allergic)"], firstAid: ["Remove the stinger immediately by scraping it with a straight edge (like a credit card).", "Wash the area with soap and water.", "Apply a cold pack to reduce swelling."], notToDo: ["Do NOT squeeze the stinger with tweezers (this injects more venom).", "Do NOT scratch the sting site."], callEms: "If the person shows signs of anaphylaxis (trouble breathing, swelling of throat/face).", prevention: ["Avoid wearing sweet-smelling perfumes outdoors.", "Remain calm and walk away slowly if bees are near."], recovery: ["Use hydrocortisone cream for itching.", "Monitor for signs of infection over next few days."], faqs: [{q: "Should I use an EpiPen?", a: "Only if the person is known to be allergic or exhibits signs of anaphylaxis and it is prescribed to them."}], related: ["Allergic Reaction", "Anaphylaxis"], references: refStandard },
+            { id: "dog-bite", icon: "🐕", title: "Dog Bite", warning: "Animal bites carry a high risk of infection, including rabies and tetanus.", symptoms: ["Puncture wounds or lacerations", "Bleeding", "Pain and swelling", "Signs of infection (later)"], firstAid: ["Wash the wound thoroughly with warm tap water and soap for 5-10 minutes.", "Control bleeding with direct pressure using a clean cloth.", "Apply an over-the-counter antibiotic cream and a sterile bandage."], notToDo: ["Do NOT ignore deep puncture wounds, even if they look small.", "Do NOT try to catch the animal yourself."], callEms: "If bleeding is severe, bone is exposed, or the bite is on the face/neck.", prevention: ["Never approach an unfamiliar dog.", "Do not disturb dogs while they are eating or sleeping."], recovery: ["See a doctor for potential rabies post-exposure prophylaxis and a tetanus shot.", "Monitor for fever."], faqs: [{q: "Do I need a rabies shot for a pet dog bite?", a: "If the pet is fully vaccinated and observed for 10 days, post-exposure prophylaxis may not be necessary. Consult a doctor."}], related: ["Cat Bite", "Bleeding"], references: refStandard },
+            { id: "cat-bite", icon: "🐈", title: "Cat Bite", warning: "Cat bites frequently cause deep puncture wounds that are highly prone to serious bacterial infections.", symptoms: ["Deep puncture marks", "Rapid swelling and redness", "Intense pain", "Warmth around the wound"], firstAid: ["Wash the wound aggressively with soap and running water immediately.", "Apply a sterile bandage.", "Seek medical evaluation promptly."], notToDo: ["Do NOT seal a deep puncture wound with glue or tight tape without cleaning it thoroughly.", "Do NOT delay seeing a doctor."], callEms: "If there is uncontrollable bleeding or rapid onset of severe swelling.", prevention: ["Avoid aggressive play with cats.", "Do not pet stray cats."], recovery: ["Most cat bites require a course of oral antibiotics prescribed by a doctor.", "Keep the area elevated."], faqs: [{q: "Why are cat bites worse than dog bites?", a: "Cat teeth are sharp and thin, injecting bacteria deep into tissues where it's hard to clean."}], related: ["Dog Bite", "Bleeding"], references: refStandard },
+            { id: "electric-shock", icon: "⚡", title: "Electric Shock", warning: "Do NOT touch the person if they are still in contact with the electrical current.", symptoms: ["Burns at entry and exit points", "Muscle spasms", "Numbness or tingling", "Unconsciousness or cardiac arrest"], firstAid: ["Turn off the source of electricity if possible.", "If you cannot turn it off, use a dry, non-conducting object (like a wooden broom) to push the person away from the source.", "Once safe, check for breathing and begin CPR if necessary."], notToDo: ["Do NOT touch the person with your bare hands if they are touching the current.", "Do NOT use water to put out an electrical fire.", "Do NOT get near high-voltage wires (stay 20+ feet away)."], callEms: "Immediately for ANY significant electrical shock.", prevention: ["Keep appliances away from water.", "Use childproof covers on outlets.", "Inspect cords regularly."], recovery: ["Follow hospital care for internal burns or cardiac monitoring.", "Rest extensively."], faqs: [{q: "Can a small shock cause damage?", a: "Yes, even low voltage can cause dangerous arrhythmias or internal damage. Always seek medical evaluation."}], related: ["Burns", "Cardiac Arrest", "Adult CPR Guide"], references: refStandard },
+            { id: "heart-attack", icon: "💔", title: "Heart Attack", warning: "A heart attack is a medical emergency. Act immediately to restore blood flow to the heart.", symptoms: ["Chest pain, pressure, or tightness", "Pain radiating to the arm, neck, jaw, or back", "Shortness of breath", "Cold sweat, nausea, or lightheadedness"], firstAid: ["Call emergency services immediately.", "Have the person sit down, rest, and try to keep calm.", "Loosen tight clothing.", "If the person is not allergic, have them chew and swallow one adult aspirin (325 mg)."], notToDo: ["Do NOT let the person drive themselves to the hospital.", "Do NOT wait to see if symptoms go away.", "Do NOT give them food or drink (other than aspirin)."], callEms: "Immediately upon suspecting a heart attack.", prevention: ["Maintain a healthy diet and exercise.", "Manage blood pressure and avoid smoking."], recovery: ["Follow cardiac rehabilitation program.", "Take prescribed medications diligently."], faqs: [{q: "Are women's symptoms different?", a: "Yes, women may experience less typical symptoms like jaw pain, nausea, extreme fatigue, or upper back pain."}], related: ["Cardiac Arrest", "Adult CPR Guide"], references: refAHA },
+            { id: "cardiac-arrest", icon: "🫀", title: "Cardiac Arrest", warning: "The heart has stopped beating. Without immediate CPR, death occurs within minutes.", symptoms: ["Sudden collapse", "No pulse", "Not breathing, or only gasping", "Unresponsiveness"], firstAid: ["Call emergency services immediately and put phone on speaker.", "Send someone to get an AED (Automated External Defibrillator).", "Begin CPR immediately (push hard and fast in the center of the chest).", "Use the AED as soon as it arrives; follow its voice prompts."], notToDo: ["Do NOT delay starting chest compressions.", "Do NOT stop compressions unless the person wakes up or EMS takes over."], callEms: "Immediately. This is the highest priority emergency.", prevention: ["Treat underlying heart conditions.", "Maintain a heart-healthy lifestyle."], recovery: ["Requires intensive care unit (ICU) hospitalization.", "Neurological monitoring."], faqs: [{q: "What if I don't know rescue breathing?", a: "Perform Hands-Only CPR. Just push hard and fast in the center of the chest at 100-120 beats per minute."}], related: ["Adult CPR Guide", "Baby CPR Guide", "Heart Attack"], references: refAHA },
+            { id: "stroke", icon: "🧠", title: "Stroke", warning: "Think F.A.S.T. Time lost is brain lost.", symptoms: ["F - Face drooping on one side", "A - Arm weakness or numbness", "S - Speech difficulty (slurred or strange)", "T - Time to call EMS immediately"], firstAid: ["Call emergency services right away. Note the time symptoms first appeared.", "Keep the person calm and comfortable.", "If they are unconscious but breathing, place them in the recovery position."], notToDo: ["Do NOT give them anything to eat or drink (choking risk).", "Do NOT give them aspirin (if it's a hemorrhagic stroke, aspirin will make it worse).", "Do NOT let them sleep it off."], callEms: "Immediately. Treatment windows are extremely tight (often within 3 hours).", prevention: ["Control blood pressure and diabetes.", "Quit smoking and exercise regularly."], recovery: ["Extensive physical, occupational, and speech therapy.", "Medication adherence."], faqs: [{q: "Can a young person have a stroke?", a: "Yes. While more common in older adults, strokes can happen at any age."}], related: ["Fainting", "Heart Attack"], references: refAHA },
+            { id: "fainting", icon: "😵", title: "Fainting (Syncope)", warning: "Fainting is usually harmless, but can indicate a serious underlying condition or cause injury from the fall.", symptoms: ["Dizziness or lightheadedness", "Vision fading or blurring", "Loss of consciousness", "Pale, cool, clammy skin"], firstAid: ["Catch the person if they are falling.", "Lay them flat on their back and elevate their legs above heart level.", "Loosen tight clothing, especially around the neck.", "Ensure they have fresh air."], notToDo: ["Do NOT splash water on their face.", "Do NOT force them to sit or stand up quickly.", "Do NOT give them food or drink until fully conscious."], callEms: "If they don't regain consciousness within 1 minute, have trouble breathing, or are injured from the fall.", prevention: ["Stay hydrated.", "Avoid standing for prolonged periods in hot environments.", "Stand up slowly."], recovery: ["Rest for the remainder of the day.", "Drink fluids slowly."], faqs: [{q: "Why elevate the legs?", a: "Elevating the legs helps blood flow back to the brain, which usually resolves the faint quickly."}], related: ["Heat Stroke", "Stroke"], references: refStandard },
+            { id: "choking", icon: "😮", title: "Choking", warning: "A severe airway obstruction blocks oxygen to the brain. Act quickly.", symptoms: ["Inability to speak or breathe", "Clutching the throat (universal sign)", "Face turning red, then blue", "Wheezing or silent coughing"], firstAid: ["Ask 'Are you choking?' If they nod yes, intervene.", "Give 5 Back Blows: Lean them forward, strike firmly between shoulder blades.", "Give 5 Abdominal Thrusts (Heimlich): Stand behind, make a fist above the navel, and pull inward and upward.", "Alternate until the object is dislodged."], notToDo: ["Do NOT do a blind finger sweep (you may push the object deeper).", "Do NOT give them water while choking.", "Do NOT leave them alone."], callEms: "If the object doesn't come out after a few cycles, or if they become unconscious.", prevention: ["Cut food into small pieces.", "Chew food thoroughly.", "Keep small objects away from toddlers."], recovery: ["Seek medical evaluation even if the object is cleared, as internal damage may have occurred."], faqs: [{q: "What if the choking person is pregnant?", a: "Perform chest thrusts instead of abdominal thrusts by placing your fist on the lower breastbone."}], related: ["Baby CPR Guide", "Adult CPR Guide"], references: refAHA },
+            { id: "poisoning", icon: "🤢", title: "Poisoning", warning: "Poisons can be swallowed, inhaled, or absorbed. Action depends on the type of poison.", symptoms: ["Nausea, vomiting, or abdominal pain", "Burns or redness around the mouth", "Breath that smells like chemicals", "Confusion, drowsiness, or seizures"], firstAid: ["If swallowed: Call Poison Control or EMS immediately.", "If inhaled: Move the person to fresh air right away.", "If on skin/eyes: Flush with continuous running water for 15-20 minutes.", "Find the poison container to tell emergency responders."], notToDo: ["Do NOT induce vomiting unless specifically told to do so by Poison Control.", "Do NOT give them activated charcoal without medical advice.", "Do NOT wait for symptoms to appear."], callEms: "If the person is unconscious, having seizures, or cannot breathe.", prevention: ["Store chemicals and medicines in locked cabinets.", "Keep products in original containers."], recovery: ["Follow hospital discharge instructions strictly.", "Monitor liver and kidney function if advised."], faqs: [{q: "Should I make them drink milk?", a: "No. Milk or water should only be given if specifically instructed by a medical professional."}], related: ["Chemical Exposure", "Allergic Reaction"], references: refStandard },
+            { id: "chemical-exposure", icon: "☣", title: "Chemical Exposure", warning: "Chemicals can cause deep tissue damage and systemic toxicity rapidly.", symptoms: ["Redness, irritation, or burning pain on skin/eyes", "Blisters", "Shortness of breath (if inhaled)", "Coughing"], firstAid: ["Brush off any dry chemicals with a gloved hand or cloth before using water.", "Flush the affected area with copious amounts of cool running water for at least 20 minutes.", "Remove contaminated clothing and jewelry while flushing."], notToDo: ["Do NOT try to neutralize the chemical (e.g., using acid on an alkali) as this causes a heat reaction.", "Do NOT rub the eyes if affected.", "Do NOT delay washing the area to search for an antidote."], callEms: "Immediately, while someone else is flushing the area with water.", prevention: ["Wear protective goggles, gloves, and aprons when handling chemicals.", "Work in well-ventilated areas."], recovery: ["Long-term wound care.", "Ophthalmologist evaluation for eye exposures."], faqs: [{q: "Why brush off dry chemicals first?", a: "Some dry chemicals react violently with water, causing severe thermal burns on top of the chemical burn."}], related: ["Burns", "Poisoning", "Eye Injury"], references: refStandard },
+            { id: "heat-stroke", icon: "🌡", title: "Heat Stroke", warning: "Heat stroke is a failure of the body's temperature control system and is fatal without immediate cooling.", symptoms: ["High body temperature (103°F/39.4°C or higher)", "Hot, red, dry, or damp skin (lack of sweating)", "Confusion, agitation, or slurred speech", "Nausea or vomiting", "Loss of consciousness"], firstAid: ["Call emergency services immediately.", "Move the person to a cooler place (shade or AC).", "Cool the person rapidly: apply cold water, ice packs to neck/armpits/groin, or immerse in a cold bath.", "Fan the person while misting with cool water."], notToDo: ["Do NOT force them to drink liquids if their mental state is altered.", "Do NOT give them fever-reducing medications (like Tylenol/aspirin)—they do not work for environmental heat.", "Do NOT leave them alone."], callEms: "Immediately. Heat stroke is a strict medical emergency.", prevention: ["Stay hydrated.", "Avoid strenuous activity during the hottest parts of the day.", "Never leave children/pets in parked cars."], recovery: ["Requires hospital admission.", "Rest in a cool environment for days following."], faqs: [{q: "What is the difference between heat exhaustion and heat stroke?", a: "Heat exhaustion includes heavy sweating and weakness. Heat stroke involves confusion/altered mental state and often a lack of sweating."}], related: ["Fainting", "Sunburn"], references: refStandard },
+            { id: "hypothermia", icon: "🥶", title: "Hypothermia", warning: "Core body temperature drops dangerously low, affecting brain and organ function.", symptoms: ["Shivering (may stop in severe cases)", "Slurred speech or mumbling", "Clumsiness or lack of coordination", "Confusion or poor decision-making", "Drowsiness"], firstAid: ["Move the person gently to a warm, dry shelter.", "Remove any wet clothing immediately.", "Warm the center of the body first (chest, neck, head, groin) using warm, dry blankets or skin-to-skin contact.", "Offer warm, sweet, non-alcoholic beverages if fully conscious."], notToDo: ["Do NOT apply direct heat (hot water bottles, heating pads) to arms and legs (can force cold blood to the heart).", "Do NOT massage or rub the person.", "Do NOT give alcohol or caffeine."], callEms: "Immediately if temperature is below 95°F (35°C) or symptoms are severe.", prevention: ["Wear layers in cold weather.", "Stay dry.", "Cover the head and neck."], recovery: ["Gradual rewarming in a medical setting.", "Monitor for cardiac arrhythmias."], faqs: [{q: "Why shouldn't I rub their hands to warm them?", a: "Rubbing can cause tissue damage if frostbite is present, and rough handling can trigger a fatal heart rhythm in severe hypothermia."}], related: ["Frostbite"], references: refStandard },
+            { id: "fracture", icon: "🦴", title: "Fracture (Broken Bone)", warning: "Do not attempt to realign the bone. Moving it can sever nerves and blood vessels.", symptoms: ["Intense pain", "Visible deformity or bone poking through skin", "Swelling, bruising, or tenderness", "Inability to move the limb"], firstAid: ["Stop any bleeding by applying pressure to the edges of the wound (not over the bone).", "Immobilize the injured area using a splint or sling in the position you found it.", "Apply ice packs wrapped in a cloth to reduce swelling.", "Treat for shock by keeping the person warm and laying them down if possible."], notToDo: ["Do NOT try to push the bone back in or realign it.", "Do NOT apply heat.", "Do NOT give the person anything to eat or drink if they need surgery."], callEms: "If it's a compound fracture (bone through skin), involves the head/neck/back, or causes severe bleeding.", prevention: ["Wear protective gear during sports.", "Remove tripping hazards at home.", "Maintain bone health with calcium/Vitamin D."], recovery: ["Casting, bracing, or surgery.", "Physical therapy after healing."], faqs: [{q: "How tight should a splint be?", a: "Tight enough to keep the limb from moving, but loose enough to maintain blood circulation. Check fingers/toes for color and warmth."}], related: ["Bleeding", "Head Injury"], references: refStandard },
+            { id: "head-injury", icon: "🤕", title: "Head Injury", warning: "All head injuries must be monitored closely for traumatic brain injury (TBI) or concussion.", symptoms: ["Loss of consciousness", "Severe headache or neck pain", "Vomiting more than once", "Unequal pupil size", "Clear fluid leaking from ears or nose"], firstAid: ["Keep the person absolutely still. Support their head and neck in the position found.", "Stop any bleeding with firm pressure (unless you suspect a skull fracture).", "Monitor breathing and be ready to perform CPR."], notToDo: ["Do NOT move the person unless absolutely necessary for safety.", "Do NOT apply direct pressure to a bleeding head wound if you feel a depression in the skull.", "Do NOT remove helmets (like motorcycle helmets) unless airway is blocked."], callEms: "Immediately for any loss of consciousness, confusion, or suspected severe injury.", prevention: ["Always wear seatbelts.", "Wear appropriate helmets for biking, riding, or construction."], recovery: ["Brain rest (limit screens, reading, bright lights).", "Follow up with a neurologist."], faqs: [{q: "Should I keep them awake?", a: "It's no longer considered necessary to keep someone awake, but you should wake them periodically (every 2-3 hours) as advised by a doctor to ensure they can be roused."}], related: ["Fracture", "Stroke"], references: refStandard },
+            { id: "eye-injury", icon: "👁", title: "Eye Injury", warning: "The eye is extremely delicate. Incorrect first aid can cause permanent blindness.", symptoms: ["Severe pain", "Tearing or redness", "Visible object in the eye", "Vision changes or loss of vision"], firstAid: ["For chemicals: Flush immediately with water for 15-20 minutes.", "For loose debris: Blink repeatedly; flush gently with water or saline.", "For embedded objects: Cover both eyes (to prevent eye movement) with a sterile shield or paper cup.", "Seek immediate medical help."], notToDo: ["Do NOT rub the eye.", "Do NOT attempt to remove an embedded object.", "Do NOT apply ointments or medications.", "Do NOT apply pressure to the eye."], callEms: "If an object is embedded, or there is chemical exposure, or sudden vision loss.", prevention: ["Wear safety goggles during yard work, construction, or handling chemicals.", "Wear sunglasses with UV protection."], recovery: ["Follow ophthalmologist instructions strictly.", "Use prescribed eye drops."], faqs: [{q: "Why cover BOTH eyes for an object in ONE eye?", a: "Eyes move together. Covering both eyes prevents the injured eye from moving and causing further damage while looking around."}], related: ["Chemical Exposure", "Severe Cut"], references: refStandard },
+            { id: "ear-injury", icon: "👂", title: "Ear Injury", warning: "Never insert objects into the ear canal to remove a foreign body.", symptoms: ["Pain or ringing in the ear", "Bleeding or clear fluid draining from the ear", "Hearing loss", "Dizziness"], firstAid: ["For bleeding outside: Apply direct pressure.", "For a bug: Turn head so the affected ear faces up; float the bug out with mineral oil (only if no eardrum rupture is suspected).", "For ruptured eardrum: Place sterile cotton loosely in outer ear to keep dirt out."], notToDo: ["Do NOT use cotton swabs, tweezers, or pins to remove objects.", "Do NOT stop clear fluid or blood draining from inside the ear (could indicate skull fracture).", "Do NOT strike the head to dislodge water/objects."], callEms: "If fluid/blood is leaking from inside the ear after a head trauma.", prevention: ["Do not clean ears with cotton swabs.", "Wear ear protection in loud environments."], recovery: ["Keep ear dry during showers.", "See an ENT specialist."], faqs: [{q: "What if my child puts a bead in their ear?", a: "Go to an urgent care or ER. Do not try to remove it with tweezers, as you will likely push it deeper."}], related: ["Head Injury"], references: refStandard },
+            { id: "nosebleed", icon: "👃", title: "Nosebleed", warning: "Frequent or heavy nosebleeds require medical evaluation.", symptoms: ["Blood flowing from one or both nostrils", "Swallowing blood", "Spitting up blood"], firstAid: ["Sit upright and lean slightly forward (not backward).", "Pinch the soft part of the nose just below the bony bridge.", "Breathe through your mouth.", "Hold pressure continuously for 10-15 minutes."], notToDo: ["Do NOT tilt your head back (blood will run down throat and cause vomiting).", "Do NOT blow your nose immediately after it stops.", "Do NOT pack the nose with tissue or cotton."], callEms: "If bleeding is heavy, doesn't stop after 20 minutes of pressure, or follows a severe head injury.", prevention: ["Use a humidifier in dry environments.", "Avoid picking the nose.", "Sneeze with an open mouth."], recovery: ["Rest quietly for a few hours.", "Avoid strenuous activity or heavy lifting for 24 hours."], faqs: [{q: "Why shouldn't I lay down?", a: "Laying down increases blood pressure in the head and encourages swallowing of blood, which irritates the stomach."}], related: ["Head Injury", "Bleeding"], references: refStandard },
+            { id: "broken-tooth", icon: "🦷", title: "Broken/Knocked-Out Tooth", warning: "A knocked-out permanent tooth can often be saved if reinserted within 30-60 minutes.", symptoms: ["Missing or fractured tooth", "Bleeding from gums", "Pain or sensitivity to air/fluids"], firstAid: ["Knocked-out tooth: Pick it up by the crown (top), not the root. Rinse gently with water if dirty.", "Try to reinsert the tooth into the socket and bite down on gauze.", "If reinsertion isn't possible, store the tooth in a container of cold milk, or the person's own saliva.", "Control bleeding by biting on gauze."], notToDo: ["Do NOT scrub the tooth root or remove any attached tissue.", "Do NOT store the tooth in tap water.", "Do NOT delay seeing a dentist."], callEms: "Generally, go straight to an emergency dentist. Call EMS if part of a severe facial/head trauma.", prevention: ["Wear mouthguards during contact sports.", "Avoid chewing ice or hard candies."], recovery: ["Eat soft foods.", "Take prescribed antibiotics to prevent infection."], faqs: [{q: "Why milk?", a: "Milk has the right pH and fluid balance to keep the root cells alive longer than water, which causes the cells to burst."}], related: ["Head Injury", "Bleeding"], references: refStandard },
+            { id: "allergic-reaction", icon: "🤧", title: "Allergic Reaction (Mild to Moderate)", warning: "Monitor closely. A mild reaction can quickly escalate to anaphylaxis.", symptoms: ["Hives, itching, or skin rash", "Nasal congestion or sneezing", "Watery, red eyes", "Mild swelling of the lips or face"], firstAid: ["Remove the person from the allergen (e.g., stop eating the food, move away from animal).", "Administer an over-the-counter oral antihistamine (like Benadryl) if available and safe for the person.", "Apply cool compresses to itchy skin or hives."], notToDo: ["Do NOT assume the reaction will stay mild.", "Do NOT ignore signs of throat tightness or breathing difficulty.", "Do NOT drive yourself to the hospital if symptoms worsen."], callEms: "If symptoms worsen, spread rapidly, or if breathing becomes difficult.", prevention: ["Avoid known allergens.", "Read food labels carefully.", "Inform restaurants of allergies."], recovery: ["Rest and monitor for 24 hours.", "Consult an allergist."], faqs: [{q: "When does it become anaphylaxis?", a: "When multiple body systems are involved (e.g., skin rash + vomiting) or when airway/breathing/circulation is compromised."}], related: ["Anaphylaxis", "Bee Sting"], references: refStandard },
+            { id: "anaphylaxis", icon: "💉", title: "Anaphylaxis", warning: "This is a severe, life-threatening allergic reaction. Administer epinephrine immediately if available.", symptoms: ["Swelling of the lips, tongue, or throat", "Wheezing or severe difficulty breathing", "Rapid, weak pulse", "Dizziness, fainting, or pale skin", "Nausea or vomiting"], firstAid: ["Call emergency services immediately.", "Administer an epinephrine auto-injector (EpiPen) into the outer mid-thigh if one is available.", "Lay the person flat on their back and elevate their legs.", "If they vomit or struggle to breathe, turn them on their side."], notToDo: ["Do NOT wait to see if symptoms improve.", "Do NOT give them oral medications if they are struggling to swallow or breathe.", "Do NOT have them sit or stand up suddenly (can drop blood pressure)."], callEms: "IMMEDIATELY. Do not hesitate.", prevention: ["Strictly avoid triggers.", "Always carry two doses of prescribed epinephrine.", "Wear a medical alert bracelet."], recovery: ["Requires hospital observation, as secondary reactions can occur hours later.", "Follow up with an allergist."], faqs: [{q: "Can I use an EpiPen through clothing?", a: "Yes, an EpiPen is designed to be injected through clothing like jeans. Do not waste time undressing the person."}], related: ["Allergic Reaction", "Asthma Attack"], references: refStandard },
+            { id: "drowning", icon: "🌊", title: "Drowning", warning: "Safety first. Do not become a victim yourself while trying to rescue someone.", symptoms: ["Submersion in water", "Unconsciousness", "Not breathing or gasping", "Blue lips or skin"], firstAid: ["Remove the person from the water safely (Reach, Throw, Row, Go).", "Check for breathing. If not breathing, start CPR immediately, beginning with 2 rescue breaths.", "Continue with 30 compressions to 2 breaths.", "If an AED is available, dry the chest before applying pads."], notToDo: ["Do NOT attempt a swimming rescue unless you are a trained lifeguard.", "Do NOT try to clear water from their lungs by doing abdominal thrusts (Heimlich) unless they are choking on a solid object.", "Do NOT delay CPR."], callEms: "Immediately, as soon as the person is out of the water.", prevention: ["Supervise children around water constantly.", "Learn to swim.", "Wear life jackets."], recovery: ["All drowning victims must be evaluated in a hospital, even if they seem fine, due to 'dry/secondary drowning' risks."], faqs: [{q: "Why start with breaths for drowning?", a: "Drowning is primarily a hypoxic (lack of oxygen) event, unlike sudden cardiac arrest. Restoring oxygen via breaths is critical."], related: ["Adult CPR Guide", "Baby CPR Guide"], references: refAHA },
+            { id: "asthma-attack", icon: "🫁", title: "Asthma Attack", warning: "A severe asthma attack can be fatal if the airway closes completely.", symptoms: ["Severe wheezing when breathing both in and out", "Coughing that won't stop", "Very rapid breathing", "Chest tightness or pressure", "Difficulty talking in full sentences"], firstAid: ["Help the person sit upright comfortably.", "Assist them in using their rescue inhaler (e.g., Albuterol) with a spacer if available. Give 4 puffs, one at a time, taking 4 breaths per puff.", "Keep them calm and encourage slow, deep breaths.", "Wait 4 minutes. If no improvement, give 4 more puffs."], notToDo: ["Do NOT have them lie flat.", "Do NOT leave them alone.", "Do NOT assume they are faking or just anxious."], callEms: "If there is no improvement after the second round of the inhaler, if lips turn blue, or if they struggle to speak.", prevention: ["Identify and avoid triggers (smoke, dust, pollen).", "Take controller medications as prescribed."], recovery: ["Follow an asthma action plan.", "Rest and avoid exertion."], faqs: [{q: "What if they don't have their inhaler?", a: "Call emergency services immediately. Keep them calm and upright while waiting."}], related: ["Anaphylaxis", "Choking"], references: refStandard },
+            { id: "severe-cut", icon: "🩸", title: "Severe Cut (Laceration)", warning: "Deep cuts can sever tendons, nerves, and major blood vessels.", symptoms: ["Deep, gaping wound", "Visible fat, muscle, or bone", "Heavy or spurting bleeding", "Numbness around the area"], firstAid: ["Apply immediate, firm pressure with a clean cloth.", "Elevate the limb above the heart.", "Once bleeding is controlled, wash hands and carefully bandage the wound tightly (but not so tight it cuts off circulation).", "Keep the person calm to lower heart rate and blood pressure."], notToDo: ["Do NOT remove the original blood-soaked cloth; just add more on top.", "Do NOT wash a severely bleeding wound (control bleeding first).", "Do NOT blow on the wound."], callEms: "If bleeding won't stop, if it's on the neck, chest, or abdomen, or if it's spurting.", prevention: ["Keep knives sharp (dull knives slip more).", "Cut away from your body."], recovery: ["Will likely require stitches or surgical glue.", "Keep clean to prevent infection."], faqs: [{q: "When are stitches needed?", a: "If the cut is deeper than 1/4 inch, is gaping, is over a joint, or won't stop bleeding after 15 minutes of pressure."}], related: ["Bleeding", "Fracture"], references: refStandard },
+            { id: "fish-hook-injury", icon: "🪝", title: "Fish Hook Injury", warning: "Fish hooks have barbs designed to prevent them from coming out easily.", symptoms: ["Hook embedded in skin", "Pain and minor bleeding", "Swelling"], firstAid: ["If the hook is superficial, you can try the string-yank method or push-through method (pushing the barb out, clipping it, and pulling the shank back).", "If the hook is deeply embedded or near an eye/joint, leave it alone.", "Tape the hook in place to prevent movement.", "Clean the surrounding area gently."], notToDo: ["Do NOT try to pull a barbed hook straight out backward.", "Do NOT attempt removal if it is near the face, eyes, or deep in a joint.", "Do NOT remove if you feel resistance."], callEms: "If the hook is in the eye or face.", prevention: ["Wear protective glasses when fishing.", "Look behind you before casting."], recovery: ["Requires a tetanus shot if not up to date.", "Watch for infection from marine bacteria."], faqs: [{q: "What is the string-yank method?", a: "Looping a string around the bend of the hook, pressing the eye of the hook down to disengage the barb, and sharply yanking the string parallel to the skin."}], related: ["Bleeding", "Eye Injury"], references: refStandard },
+            { id: "spider-bite", icon: "🦂", title: "Spider Bite", warning: "Most spider bites are harmless, but Black Widow and Brown Recluse bites require medical attention.", symptoms: ["Redness, pain, and swelling", "Black Widow: Severe muscle cramps, abdominal pain, sweating", "Brown Recluse: Bullseye blister, progressing to an open ulcer"], firstAid: ["Clean the bite area with mild soap and water.", "Apply a cold compress (10 mins on, 10 mins off) to reduce pain and swelling.", "Elevate the bitten limb if possible.", "Try to identify or safely capture the spider for identification."], notToDo: ["Do NOT attempt to cut the bite and suck out venom.", "Do NOT apply heat to the area.", "Do NOT apply a tourniquet."], callEms: "If you suspect a Black Widow or Brown Recluse bite, or if severe pain/cramps develop.", prevention: ["Wear gloves when moving firewood or cleaning attics/basements.", "Shake out shoes before putting them on."], recovery: ["Keep the wound clean.", "Brown Recluse bites may require surgical debridement of dead tissue."], faqs: [{q: "How quickly do symptoms appear?", a: "Black Widow symptoms can appear within 30-60 minutes. Brown Recluse symptoms often take hours or days to become severe."}], related: ["Scorpion Sting", "Snake Bite"], references: refStandard },
+            { id: "tick-bite", icon: "🦠", title: "Tick Bite", warning: "Ticks can transmit diseases like Lyme disease and Rocky Mountain spotted fever.", symptoms: ["Tick attached to the skin", "Red spot or rash near the bite site", "Bullseye rash (sign of Lyme)", "Fever, chills, muscle aches (days later)"], firstAid: ["Use fine-tipped tweezers to grasp the tick as close to the skin's surface as possible.", "Pull upward with steady, even pressure. Don't twist or jerk.", "After removing, thoroughly clean the bite area and your hands with rubbing alcohol or soap and water.", "Dispose of the tick by flushing it, putting it in alcohol, or sealing it in a bag/tape."], notToDo: ["Do NOT crush the tick with your fingers.", "Do NOT use petroleum jelly, nail polish, or matches to try and detach the tick.", "Do NOT twist the tick when pulling."], callEms: "Rarely needed immediately. See a doctor if you develop a rash or fever within 30 days.", prevention: ["Use bug repellent with DEET.", "Wear long pants tucked into socks in wooded areas.", "Perform full-body tick checks after being outdoors."], recovery: ["Monitor the site for 30 days.", "Antibiotics may be prescribed if Lyme is suspected."], faqs: [{q: "What if the tick's head breaks off in my skin?", a: "Leave it alone and let the skin heal. Trying to dig it out can cause infection. The body will usually expel it."}], related: ["Spider Bite"], references: refStandard },
+            { id: "sunburn", icon: "☀", title: "Sunburn", warning: "Severe sunburns (sun poisoning) can cause dehydration, fever, and infection.", symptoms: ["Red, warm, and tender skin", "Swelling or blistering", "Headache, fever, nausea, or fatigue (in severe cases)"], firstAid: ["Get out of the sun immediately.", "Take a cool bath or shower to cool the skin.", "Apply a soothing moisturizer containing aloe vera or soy.", "Drink plenty of water to prevent dehydration.", "Take an OTC pain reliever (like Ibuprofen) to reduce inflammation."], notToDo: ["Do NOT pop blisters (they protect against infection).", "Do NOT apply petroleum jelly (Vaseline) or heavy creams, which trap heat.", "Do NOT use '-caine' products (like benzocaine), which can irritate the skin."], callEms: "If severe blistering covers a large portion of the body, or accompanied by high fever or confusion.", prevention: ["Use broad-spectrum sunscreen (SPF 30+).", "Wear protective clothing and hats.", "Avoid peak sun hours (10 AM - 4 PM)."], recovery: ["Keep skin moisturized.", "Avoid sun exposure until completely healed."], faqs: [{q: "Does vinegar help a sunburn?", a: "There is no scientific evidence for this. Stick to cool water and aloe vera."}], related: ["Heat Stroke", "Burns"], references: refStandard },
+            { id: "frostbite", icon: "❄", title: "Frostbite", warning: "Do not thaw frostbitten tissue if there is a chance it will refreeze before getting medical help.", symptoms: ["Cold, prickly feeling", "Numbness", "Skin that looks pale, waxy, or bluish-gray", "Hard or wooden-feeling skin", "Clumsiness due to joint and muscle stiffness"], firstAid: ["Get into a warm room as soon as possible.", "Remove wet clothing and tight jewelry.", "Warm the affected area gradually in warm (NOT hot) water (around 104°F/40°C) for 20-30 minutes.", "Wrap in sterile, dry dressings, separating fingers/toes."], notToDo: ["Do NOT rub or massage the frostbitten area (causes severe tissue damage).", "Do NOT use a heating pad, heat lamp, or stove for warming (numb skin can easily burn).", "Do NOT walk on frostbitten toes if possible."], callEms: "If there is deep frostbite (skin is hard, white/blue, and completely numb) or signs of hypothermia.", prevention: ["Dress in warm layers.", "Keep skin dry.", "Limit time outdoors in extreme cold."], recovery: ["Requires careful medical management.", "Pain during rewarming can be severe."], faqs: [{q: "Why shouldn't I rub it?", a: "Ice crystals form inside the frozen tissue. Rubbing grinds these crystals, destroying the cells."}], related: ["Hypothermia", "Burns"], references: refStandard },
+            { id: "baby-cpr-guide", icon: "👶", title: "Baby CPR Guide (< 1 Year)", warning: "Cardiac arrest in infants is usually caused by a breathing problem (choking, drowning) rather than a heart problem.", symptoms: ["Unresponsive to taps or shouts", "Not breathing, or only gasping", "No pulse (check inside upper arm)"], firstAid: ["1. Check responsiveness by tapping the bottom of the foot and shouting.", "2. If unresponsive and alone, give 2 minutes of CPR before calling 911.", "3. Compressions: Place 2 fingers in the center of the chest, just below the nipple line. Push fast and hard (about 1.5 inches deep) at 100-120 bpm.", "4. Breaths: After 30 compressions, open the airway, seal your mouth over BOTH the baby's mouth and nose, and give 2 gentle puffs just enough to make the chest rise.", "5. Continue 30:2 ratio."], notToDo: ["Do NOT tilt the head back too far (it can block their tiny airway).", "Do NOT blow too hard (can damage their lungs).", "Do NOT use adult AED pads on an infant if pediatric pads are available."], callEms: "Immediately, or after 2 minutes of CPR if you are alone with no phone.", prevention: ["Keep small objects out of reach.", "Always supervise near water.", "Put babies to sleep on their backs."], recovery: ["Immediate transport to emergency room/NICU."], faqs: [{q: "What if I am alone without a phone?", a: "Do 5 cycles (about 2 minutes) of CPR before leaving the baby to call 911."}], related: ["Adult CPR Guide", "Choking", "Drowning"], references: refAHA },
+            { id: "adult-cpr-guide", icon: "❤️", title: "Adult CPR Guide", warning: "Any CPR is better than no CPR. Don't be afraid to act.", symptoms: ["Unresponsive (doesn't wake when shaken/shouted at)", "Not breathing normally (gasping is not normal breathing)", "No pulse"], firstAid: ["1. Ensure scene safety. Tap shoulders and shout, 'Are you okay?'", "2. If no response, point to someone and say, 'Call 911 and get an AED!'", "3. Compressions: Place the heel of one hand in the center of the chest, place other hand on top, and interlock fingers.", "4. Keep arms straight and push hard and fast (at least 2 inches deep, 100-120 compressions per minute). Allow chest to recoil fully.", "5. Breaths: (If trained) Tilt head back, pinch nose, give 2 breaths (1 second each) after 30 compressions. If untrained, do Hands-Only CPR.", "6. Use AED as soon as it arrives."], notToDo: ["Do NOT interrupt compressions for more than 10 seconds.", "Do NOT lean on the chest between compressions.", "Do NOT stop until EMS arrives, an AED is analyzing, or the person wakes up."], callEms: "Immediately upon finding an unresponsive person.", prevention: ["Maintain heart health.", "Learn CPR in a certified class."], recovery: ["Post-cardiac arrest care in ICU.", "Therapeutic hypothermia may be used."], faqs: [{q: "Can I get sued for doing CPR incorrectly?", a: "Good Samaritan laws in most jurisdictions protect bystanders who provide good-faith emergency care from legal liability."}], related: ["Heart Attack", "Cardiac Arrest", "Baby CPR Guide"], references: refAHA }
+        ];
+
+        // Ensure data is sorted alphabetically
+        topicsData.sort((a, b) => a.title.localeCompare(b.title));
+
+        // Elements
+        const topicsGrid = document.getElementById('topicsGrid');
+        const sidebarList = document.getElementById('sidebarList');
+        const detailView = document.getElementById('detailView');
+        const searchInput = document.getElementById('searchInput');
+        const backToTopBtn = document.getElementById('backToTop');
+
+        // Render Functions
+        function renderCards(filterText = '') {
+            topicsGrid.innerHTML = '';
+            const filtered = topicsData.filter(t => t.title.toLowerCase().includes(filterText.toLowerCase()) || t.symptoms.join(' ').toLowerCase().includes(filterText.toLowerCase()));
+            
+            if(filtered.length === 0) {
+                topicsGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">No topics found matching your search. Please try another term.</p>';
+                return;
+            }
+
+            filtered.forEach(topic => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.onclick = () => showTopic(topic.id);
+                card.innerHTML = `
+                    <div class="card-icon">${topic.icon}</div>
+                    <div class="card-title">${topic.title}</div>
+                `;
+                topicsGrid.appendChild(card);
+            });
+        }
+
+        function renderSidebar(filterText = '') {
+            sidebarList.innerHTML = '';
+            const filtered = topicsData.filter(t => t.title.toLowerCase().includes(filterText.toLowerCase()));
+            filtered.forEach(topic => {
+                const btn = document.createElement('button');
+                btn.id = `sidebar-btn-${topic.id}`;
+                btn.onclick = () => showTopic(topic.id);
+                btn.innerHTML = `${topic.icon} ${topic.title}`;
+                sidebarList.appendChild(btn);
+            });
+        }
+
+        function showTopic(id) {
+            const topic = topicsData.find(t => t.id === id);
+            if(!topic) return;
+
+            // Highlight sidebar
+            document.querySelectorAll('.topic-list button').forEach(b => b.classList.remove('active'));
+            const activeBtn = document.getElementById(`sidebar-btn-${id}`);
+            if(activeBtn) activeBtn.classList.add('active');
+
+            // Hide grid, show detail
+            topicsGrid.style.display = 'none';
+            detailView.style.display = 'block';
+
+            // Generate Lists
+            const renderList = (arr, className = '') => `<ul>${arr.map(item => `<li class="${className}">${item}</li>`).join('')}</ul>`;
+            const renderFaqs = (faqs) => faqs.map(f => `<strong>Q: ${f.q}</strong><br>A: ${f.a}<br><br>`).join('');
+            const renderLinks = (links) => links.map(l => {
+                const target = topicsData.find(t => t.title === l);
+                if(target) return `<a href="#" onclick="showTopic('${target.id}'); return false;" style="color:var(--primary); text-decoration:underline; margin-right: 15px;">${target.title}</a>`;
+                return '';
+            }).join('');
+
+            detailView.innerHTML = `
+                <button class="back-btn" onclick="hideTopic()"><i class="fa-solid fa-arrow-left"></i> Back to All Topics</button>
+                <div class="detail-header">
+                    <div class="detail-icon">${topic.icon}</div>
+                    <h2>${topic.title}</h2>
+                </div>
+                
+                <div class="warning-box">
+                    <i class="fa-solid fa-triangle-exclamation"></i> <strong>Warning:</strong> ${topic.warning}
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fa-solid fa-stethoscope"></i> Symptoms</h3>
+                    ${renderList(topic.symptoms)}
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fa-solid fa-kit-medical"></i> Immediate First Aid</h3>
+                    ${renderList(topic.firstAid, 'good-practice')}
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fa-solid fa-ban"></i> What NOT To Do</h3>
+                    ${renderList(topic.notToDo, 'bad-practice')}
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fa-solid fa-phone-volume"></i> When to Call Emergency Services</h3>
+                    <p style="margin-left: 1.5rem; color: var(--danger); font-weight: bold;">${topic.callEms}</p>
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fa-solid fa-shield-halved"></i> Prevention Tips</h3>
+                    ${renderList(topic.prevention)}
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fa-solid fa-bed-pulse"></i> Recovery Advice</h3>
+                    ${renderList(topic.recovery)}
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fa-solid fa-circle-question"></i> FAQs</h3>
+                    <p style="margin-left: 1.5rem;">${renderFaqs(topic.faqs)}</p>
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fa-solid fa-link"></i> Related Guides</h3>
+                    <p style="margin-left: 1.5rem;">${renderLinks(topic.related)}</p>
+                </div>
+
+                <div class="references">
+                    <h4>Evidence & References</h4>
+                    ${renderList(topic.references)}
+                </div>
+            `;
+            
+            // Scroll to top of detail view smoothly
+            window.scrollTo({ top: document.querySelector('.container').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function hideTopic() {
+            detailView.style.display = 'none';
+            topicsGrid.style.display = 'grid';
+            document.querySelectorAll('.topic-list button').forEach(b => b.classList.remove('active'));
+            window.scrollTo({ top: document.querySelector('.container').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function filterTopics() {
+            const text = searchInput.value;
+            if(detailView.style.display === 'block') {
+                hideTopic();
+            }
+            renderCards(text);
+            renderSidebar(text);
+        }
+
+        // Back to top functionality
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.classList.add("visible");
+            } else {
+                backToTopBtn.classList.remove("visible");
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initial Initialization
+        renderCards();
+        renderSidebar();
+
+    </script>
+</body>
+</html>
