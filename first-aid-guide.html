@@ -529,9 +529,18 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Initial Initialization
-        renderCards();
-        renderSidebar();
+        // ... script ke niche jahan initialization hai ...
+
+// Ye line ensure karegi ki jab bhi user type kare, function trigger ho
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', () => {
+    filterTopics();
+});
+
+// Initial Initialization
+renderCards();
+renderSidebar();
+
 
     </script>
 </body>
