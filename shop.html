@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HeyDoctor AI Health Store - Discover trusted health, fitness, skincare, haircare and wellness products recommended by HeyDoctor AI.">
+    <title>HeyDoctor AI Health Store</title>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "HeyDoctor AI Health Store",
+      "description": "Discover trusted health, fitness, skincare, haircare and wellness products recommended by HeyDoctor AI.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "HeyDoctor AI"
+      }
+    }
+    </script>
+
+    <style>
+        /* CSS Variables for Dark/Light Mode & Theming */
+        :root {
+            --primary: #10B981;
+            --primary-hover: #059669;
+            --bg-body: #f8fafc;
+            --bg-glass: rgba(255, 255, 255, 0.7);
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-body: #0f172a;
+                --bg-glass: rgba(15, 23, 42, 0.8);
+                --bg-card: #1e293b;
+                --text-main: #f8fafc;
+                --text-muted: #94a3b8;
+                --border-color: rgba(255, 255, 255, 0.1);
+                --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+            background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(15,23,42,0) 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            background: -webkit-linear-gradient(45deg, var(--primary), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Sticky Controls: Search, Sort, Tabs */
+        .sticky-controls {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow-glass);
+        }
+
+        .search-sort-container {
+            display: flex;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto 1rem auto;
+            flex-wrap: wrap;
+        }
+
+        .search-bar {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border-radius: 999px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-main);
+            font-size: 1rem;
+            outline: none;
+            transition: box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+        }
+
+        .search-bar::before {
+            content: '🔍';
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .sort-select {
+            padding: 0.75rem 1rem;
+            border-radius: 999px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-main);
+            font-size: 1rem;
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 0.5rem;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .category-tabs::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .tab-btn {
+            background: var(--bg-card);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            min-height: 60vh;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Product Cards */
+        .product-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            animation: fadeIn 0.5s ease backwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            background: #e2e8f0;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .card-img {
+            transform: scale(1.05);
+        }
+        
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(15, 23, 42, 0.8);
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-rating {
+            color: #fbbf24;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-rating span {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-left: 0.25rem;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .card-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .btn-buy {
+            background-color: var(--primary);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.2s, transform 0.1s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-buy:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-buy:active {
+            transform: scale(0.95);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-muted);
+            grid-column: 1 / -1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .search-sort-container { flex-direction: column; }
+            .sort-select { width: 100%; }
+            .product-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>🛒 HeyDoctor AI Health Store</h1>
+        <p>Discover trusted health, fitness, skincare, haircare and wellness products recommended by HeyDoctor AI.</p>
+    </header>
+
+    <div class="sticky-controls">
+        <div class="search-sort-container">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search health products...">
+            </div>
+            <select id="sortSelect" class="sort-select">
+                <option value="popular">Most Popular</option>
+                <option value="rating">Highest Rated</option>
+                <option value="newest">Newest</option>
+                <option value="price-asc">Price Low → High</option>
+                <option value="price-desc">Price High → Low</option>
+            </select>
+        </div>
+        <div class="category-tabs" id="categoryTabs">
+            <button class="tab-btn active" data-category="All">All Products</button>
+            <button class="tab-btn" data-category="Fitness">💪 Fitness</button>
+            <button class="tab-btn" data-category="Hair Care">💇 Hair Care</button>
+            <button class="tab-btn" data-category="Skin Care">🧴 Skin Care</button>
+            <button class="tab-btn" data-category="Medical Devices">🩺 Medical Devices</button>
+            <button class="tab-btn" data-category="Nutrition">🥗 Nutrition</button>
+            <button class="tab-btn" data-category="Supplements">💊 Supplements</button>
+            <button class="tab-btn" data-category="Sleep">😴 Sleep</button>
+            <button class="tab-btn" data-category="Wellness">🧘 Wellness</button>
+        </div>
+    </div>
+
+    <main>
+        <div id="dynamicSections">
+            <!-- Sections (Editor's Picks, Trending, etc.) injected via JS -->
+        </div>
+    </main>
+
+    <script>
+        // Dummy Product Database
+        const products = [
+            { id: 1, name: "Smart AI Posture Corrector", category: "Wellness", price: 45.99, rating: 4.6, reviews: 1240, desc: "Gentle vibrations remind you to sit up straight. Syncs with HeyDoctor AI.", img: "https://images.unsplash.com/photo-1576633644078-d0df6083815e?auto=format&fit=crop&w=600&q=80", section: "⭐ Editor's Picks", date: "2023-10-01", popScore: 95 },
+            { id: 2, name: "Advanced Sleep Tracker Ring", category: "Sleep", price: 199.00, rating: 4.8, reviews: 342, desc: "Monitor your REM, deep sleep, and readiness score seamlessly.", img: "https://images.unsplash.com/photo-1542491523-28639209587f?auto=format&fit=crop&w=600&q=80", section: "🔥 Trending Products", date: "2024-01-15", popScore: 98 },
+            { id: 3, name: "Premium Whey Protein Isolate", category: "Nutrition", price: 34.50, rating: 4.7, reviews: 8900, desc: "Clean, fast-absorbing protein to support muscle recovery and growth.", img: "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=600&q=80", section: "🏆 Best Sellers", date: "2022-05-20", popScore: 100 },
+            { id: 4, name: "Digital Blood Pressure Monitor", category: "Medical Devices", price: 39.99, rating: 4.5, reviews: 2100, desc: "Clinical accuracy at home. FDA cleared and bluetooth enabled.", img: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=600&q=80", section: "⚡ Today's Deals", date: "2023-08-11", popScore: 85 },
+            { id: 5, name: "Adjustable Dumbbell Set", category: "Fitness", price: 149.99, rating: 4.9, reviews: 5430, desc: "Space-saving design. Adjust weight from 5 to 52.5 lbs instantly.", img: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=600&q=80", section: "🏆 Best Sellers", date: "2021-11-10", popScore: 99 },
+            { id: 6, name: "Biotin Hair Growth Serum", category: "Hair Care", price: 24.00, rating: 4.4, reviews: 850, desc: "Nourishes scalp and promotes thicker, healthier hair naturally.", img: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=600&q=80", section: "🔥 Trending Products", date: "2023-12-05", popScore: 88 },
+            { id: 7, name: "Vitamin C Daily Moisturizer", category: "Skin Care", price: 29.50, rating: 4.6, reviews: 1560, desc: "Hydrates and brightens skin tone while reducing fine lines.", img: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=80", section: "⭐ Editor's Picks", date: "2023-02-28", popScore: 92 },
+            { id: 8, name: "Organic Ashwagandha Extract", category: "Supplements", price: 18.95, rating: 4.7, reviews: 4200, desc: "Supports stress relief, mood balance, and sustained energy levels.", img: "https://images.unsplash.com/photo-1610484826967-09c5720778c7?auto=format&fit=crop&w=600&q=80", section: "🏆 Best Sellers", date: "2022-09-14", popScore: 96 },
+            { id: 9, name: "White Noise Sound Machine", category: "Sleep", price: 22.00, rating: 4.5, reviews: 3100, desc: "Block out distractions and achieve deep, uninterrupted sleep.", img: "https://images.unsplash.com/photo-1516641396056-0ce60a85d49f?auto=format&fit=crop&w=600&q=80", section: "⚡ Today's Deals", date: "2021-04-12", popScore: 80 },
+            { id: 10, name: "Smart Pulse Oximeter", category: "Medical Devices", price: 15.99, rating: 4.8, reviews: 670, desc: "Instantly check blood oxygen saturation and pulse rate.", img: "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=600&q=80", section: "None", date: "2024-02-20", popScore: 75 }
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const sortSelect = document.getElementById('sortSelect');
+        const categoryTabs = document.getElementById('categoryTabs');
+        const dynamicSections = document.getElementById('dynamicSections');
+
+        let currentCategory = 'All';
+        let currentSearch = '';
+        let currentSort = 'popular';
+
+        // Initialize
+        function init() {
+            attachEventListeners();
+            renderView();
+        }
+
+        function attachEventListeners() {
+            // Search Input
+            searchInput.addEventListener('input', (e) => {
+                currentSearch = e.target.value.toLowerCase();
+                renderView();
+            });
+
+            // Sort Select
+            sortSelect.addEventListener('change', (e) => {
+                currentSort = e.target.value;
+                renderView();
+            });
+
+            // Category Tabs
+            categoryTabs.addEventListener('click', (e) => {
+                if (e.target.classList.contains('tab-btn')) {
+                    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    
+                    // Extract category from text (remove emoji) or data attribute
+                    currentCategory = e.target.getAttribute('data-category');
+                    renderView();
+                }
+            });
+        }
+
+        // Filtering and Sorting Logic
+        function getFilteredAndSortedProducts() {
+            let filtered = products.filter(p => {
+                const matchesCategory = currentCategory === 'All' || p.category === currentCategory;
+                const matchesSearch = p.name.toLowerCase().includes(currentSearch) || p.desc.toLowerCase().includes(currentSearch);
+                return matchesCategory && matchesSearch;
+            });
+
+            filtered.sort((a, b) => {
+                switch(currentSort) {
+                    case 'rating': return b.rating - a.rating;
+                    case 'newest': return new Date(b.date) - new Date(a.date);
+                    case 'price-asc': return a.price - b.price;
+                    case 'price-desc': return b.price - a.price;
+                    case 'popular':
+                    default: return b.popScore - a.popScore;
+                }
+            });
+
+            return filtered;
+        }
+
+        // Star Rating Generator
+        function getStars(rating) {
+            const fullStars = Math.floor(rating);
+            const halfStar = rating % 1 >= 0.5 ? 1 : 0;
+            const emptyStars = 5 - fullStars - halfStar;
+            return '★'.repeat(fullStars) + (halfStar ? '⯨' : '') + '☆'.repeat(emptyStars);
+        }
+
+        // Build HTML for a single product card
+        function buildProductCard(product) {
+            return `
+                <div class="product-card" style="animation-delay: ${Math.random() * 0.2}s">
+                    <div class="card-img-container">
+                        ${product.section !== "None" && currentCategory === 'All' && currentSearch === '' ? `<div class="badge">${product.section.split(' ')[1] || product.section}</div>` : ''}
+                        <img src="${product.img}" alt="${product.name}" class="card-img" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">${product.name}</h3>
+                        <div class="card-rating">
+                            ${getStars(product.rating)} <span>(${product.reviews})</span>
+                        </div>
+                        <p class="card-desc">${product.desc}</p>
+                        <div class="card-footer">
+                            <span class="card-price">$${product.price.toFixed(2)}</span>
+                            <a href="#amazon-link" class="btn-buy">🛒 Buy on Amazon</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render the view (Sections or Single Grid)
+        function renderView() {
+            const displayProducts = getFilteredAndSortedProducts();
+            dynamicSections.innerHTML = ''; // Clear current view
+
+            if (displayProducts.length === 0) {
+                dynamicSections.innerHTML = `<div class="no-results"><h3>No products found. Try a different search or category.</h3></div>`;
+                return;
+            }
+
+            // If user is searching or viewing a specific category, just show a plain grid.
+            // If they are on "All" with no search, show the sections (Editor's picks, etc.)
+            if (currentCategory === 'All' && currentSearch === '' && currentSort === 'popular') {
+                const sections = [
+                    "⭐ Editor's Picks",
+                    "🔥 Trending Products",
+                    "⚡ Today's Deals",
+                    "🏆 Best Sellers"
+                ];
+
+                sections.forEach(secTitle => {
+                    const secProducts = displayProducts.filter(p => p.section === secTitle);
+                    if (secProducts.length > 0) {
+                        const sectionHTML = `
+                            <h2 class="section-title">${secTitle}</h2>
+                            <div class="product-grid">
+                                ${secProducts.map(buildProductCard).join('')}
+                            </div>
+                        `;
+                        dynamicSections.insertAdjacentHTML('beforeend', sectionHTML);
+                    }
+                });
+
+                // Add any uncategorized or remaining products in an "All Products" section at the bottom
+                const remaining = displayProducts.filter(p => !sections.includes(p.section));
+                if (remaining.length > 0) {
+                    dynamicSections.insertAdjacentHTML('beforeend', `
+                        <h2 class="section-title" style="margin-top: 3rem;">📦 More Products</h2>
+                        <div class="product-grid">
+                            ${remaining.map(buildProductCard).join('')}
+                        </div>
+                    `);
+                }
+            } else {
+                // Render just the filtered grid
+                dynamicSections.innerHTML = `
+                    <div class="product-grid" style="margin-top: 1rem;">
+                        ${displayProducts.map(buildProductCard).join('')}
+                    </div>
+                `;
+            }
+        }
+
+        // Run
+        init();
+    </script>
+</body>
+</html>
+
