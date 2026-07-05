@@ -203,201 +203,153 @@
     </main>
 
     <script>
-        // TERE ASLI PRODUCTS AUR REAL AMAZON LINKS YAHAN HAIN
-       const products = [
-    { 
-        id: 1, 
-        name: "Adjustable Dumbbell Set", 
-        category: "Fitness", 
-        price: "₹ Check on Amazon", 
-        rating: 4.5, 
-        reviews: 1240, 
-        desc: "Perfect adjustable dumbbells for your home strength training and muscle building.", 
-        img: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=600&q=80", 
-        section: "🏆 Best Sellers", 
-        date: "2026-06-01", 
-        popScore: 100,
-        link: "https://amzn.to/4bc3sC3" 
-    },
-    { 
-        id: 2, 
-        name: "OZiva Protein & Herbs (Women)", 
-        category: "Nutrition", 
-        price: "₹ Check on Amazon", 
-        rating: 4.6, 
-        reviews: 4500, 
-        desc: "Chocolate flavor, 0g added sugar. Designed specially for women's wellness and fitness.", 
-        img: "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=600&q=80", 
-        section: "🔥 Trending Products", 
-        date: "2026-06-15", 
-        popScore: 98,
-        link: "https://amzn.to/4vFAJOe" 
-    },
-    { 
-        id: 3, 
-        name: "Just Herbs Anti Hairfall Shampoo", 
-        category: "Hair Care", 
-        price: "₹ Check on Amazon", 
-        rating: 4.3, 
-        reviews: 3200, 
-        desc: "Ayurvedic blend to strengthen roots, reduce hair fall, and improve scalp health.", 
-        img: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=600&q=80", 
-        section: "⭐ Editor's Picks", 
-        date: "2026-07-01", 
-        popScore: 95,
-        link: "https://amzn.to/44R4M9L" 
-    },
-    { 
-        id: 4, 
-        name: "Just Herbs 8-in-1 Amla Neem Shampoo", 
-        category: "Hair Care", 
-        price: "₹ Check on Amazon", 
-        rating: 4.4, 
-        reviews: 2800, 
-        desc: "Root nourishing, hair fall control, sulphate & paraben free. Suitable for oily scalp.", 
-        img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=80", 
-        section: "🔥 Trending Products", 
-        date: "2026-07-05", 
-        popScore: 97,
-        link: "https://amzn.to/4fkwMZu" 
-    },
-    { 
-        id: 5, 
-        name: "TATA 1MG Creatine Monohydrate", 
-        category: "Nutrition", 
-        price: "₹ Check on Amazon", 
-        rating: 4.7, 
-        reviews: 5100, 
-        desc: "100% Pure, micronized creatine. Boosts strength, power, and muscle recovery.", 
-        img: "https://images.unsplash.com/photo-1579722820308-d74e571900a9?auto=format&fit=crop&w=600&q=80", 
-        section: "🏆 Best Sellers", 
-        date: "2026-07-05", 
-        popScore: 99,
-        link: "https://amzn.to/4wrdPu6" 
-    },
+    // Tere 6 Products yahan hain
+    const products = [
         { 
-        id: 6, 
-        name: "Bodyband Hand Grip Strengthener", 
-        category: "Fitness", 
-        price: "₹ 99", 
-        rating: 4.0, 
-        reviews: 4200, 
-        desc: "Adjustable hand gripper for forearm exercise and finger power. Perfect for gym or home workouts.", 
-        img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=600&q=80", 
-        section: "⚡ Today's Deals", 
-        date: "2026-07-05", 
-        popScore: 96,
-        link: "https://amzn.to/4p4RhN1" 
+            id: 1, name: "Adjustable Dumbbell Set", category: "Fitness", price: "₹ Check on Amazon", 
+            rating: 4.5, reviews: 1240, desc: "Perfect adjustable dumbbells for your home strength training and muscle building.", 
+            img: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=600&q=80", 
+            section: "🏆 Best Sellers", date: "2026-06-01", popScore: 100, link: "https://amzn.to/4bc3sC3" 
+        },
+        { 
+            id: 2, name: "OZiva Protein & Herbs (Women)", category: "Nutrition", price: "₹ Check on Amazon", 
+            rating: 4.6, reviews: 4500, desc: "Chocolate flavor, 0g added sugar. Designed specially for women's wellness and fitness.", 
+            img: "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=600&q=80", 
+            section: "🔥 Trending Products", date: "2026-06-15", popScore: 98, link: "https://amzn.to/4vFAJOe" 
+        },
+        { 
+            id: 3, name: "Just Herbs Anti Hairfall Shampoo", category: "Hair Care", price: "₹ Check on Amazon", 
+            rating: 4.3, reviews: 3200, desc: "Ayurvedic blend to strengthen roots, reduce hair fall, and improve scalp health.", 
+            img: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=600&q=80", 
+            section: "⭐ Editor's Picks", date: "2026-07-01", popScore: 95, link: "https://amzn.to/44R4M9L" 
+        },
+        { 
+            id: 4, name: "Just Herbs 8-in-1 Amla Neem Shampoo", category: "Hair Care", price: "₹ Check on Amazon", 
+            rating: 4.4, reviews: 2800, desc: "Root nourishing, hair fall control, sulphate & paraben free. Suitable for oily scalp.", 
+            img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=80", 
+            section: "🔥 Trending Products", date: "2026-07-05", popScore: 97, link: "https://amzn.to/4fkwMZu" 
+        },
+        { 
+            id: 5, name: "TATA 1MG Creatine Monohydrate", category: "Nutrition", price: "₹ Check on Amazon", 
+            rating: 4.7, reviews: 5100, desc: "100% Pure, micronized creatine. Boosts strength, power, and muscle recovery.", 
+            img: "https://images.unsplash.com/photo-1579722820308-d74e571900a9?auto=format&fit=crop&w=600&q=80", 
+            section: "🏆 Best Sellers", date: "2026-07-05", popScore: 99, link: "https://amzn.to/4wrdPu6" 
+        },
+        { 
+            id: 6, name: "Bodyband Hand Grip Strengthener", category: "Fitness", price: "₹ Check on Amazon", 
+            rating: 4.5, reviews: 4200, desc: "Adjustable hand gripper for forearm exercise and finger power. Perfect for gym or home workouts.", 
+            img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=600&q=80", 
+            section: "⚡ Today's Deals", date: "2026-07-05", popScore: 96, link: "https://amzn.to/4p4RhN1" 
+        }
+    ];
+
+    // Yahan se products ko screen par laane ka magic shuru hota hai
+    const searchInput = document.getElementById('searchInput');
+    const sortSelect = document.getElementById('sortSelect');
+    const categoryTabs = document.getElementById('categoryTabs');
+    const dynamicSections = document.getElementById('dynamicSections');
+
+    let currentCategory = 'All';
+    let currentSearch = '';
+    let currentSort = 'popular';
+
+    function init() {
+        attachEventListeners();
+        renderView();
     }
-];
 
-        const searchInput = document.getElementById('searchInput');
-        const sortSelect = document.getElementById('sortSelect');
-        const categoryTabs = document.getElementById('categoryTabs');
-        const dynamicSections = document.getElementById('dynamicSections');
+    function attachEventListeners() {
+        searchInput.addEventListener('input', (e) => { currentSearch = e.target.value.toLowerCase(); renderView(); });
+        sortSelect.addEventListener('change', (e) => { currentSort = e.target.value; renderView(); });
+        categoryTabs.addEventListener('click', (e) => {
+            if (e.target.classList.contains('tab-btn')) {
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                currentCategory = e.target.getAttribute('data-category');
+                renderView();
+            }
+        });
+    }
 
-        let currentCategory = 'All';
-        let currentSearch = '';
-        let currentSort = 'popular';
+    function getFilteredAndSortedProducts() {
+        let filtered = products.filter(p => {
+            const matchesCategory = currentCategory === 'All' || p.category === currentCategory;
+            const matchesSearch = p.name.toLowerCase().includes(currentSearch) || p.desc.toLowerCase().includes(currentSearch);
+            return matchesCategory && matchesSearch;
+        });
 
-        function init() {
-            attachEventListeners();
-            renderView();
+        filtered.sort((a, b) => {
+            switch(currentSort) {
+                case 'rating': return b.rating - a.rating;
+                case 'newest': return new Date(b.date) - new Date(a.date);
+                case 'popular': default: return b.popScore - a.popScore;
+            }
+        });
+        return filtered;
+    }
+
+    function getStars(rating) {
+        const fullStars = Math.floor(rating);
+        const halfStar = rating % 1 >= 0.5 ? 1 : 0;
+        const emptyStars = 5 - fullStars - halfStar;
+        return '★'.repeat(fullStars) + (halfStar ? '⯨' : '') + '☆'.repeat(emptyStars);
+    }
+
+    function buildProductCard(product) {
+        return `
+            <div class="product-card" style="animation-delay: ${Math.random() * 0.2}s">
+                <div class="card-img-container">
+                    ${product.section !== "None" && currentCategory === 'All' && currentSearch === '' ? `<div class="badge">${product.section.split(' ')[1] || product.section}</div>` : ''}
+                    <img src="${product.img}" alt="${product.name}" class="card-img" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">${product.name}</h3>
+                    <div class="card-rating">
+                        ${getStars(product.rating)} <span>(${product.reviews})</span>
+                    </div>
+                    <p class="card-desc">${product.desc}</p>
+                    <div class="card-footer">
+                        <span class="card-price" style="font-size: 1rem; color: #10B981;">${product.price}</span>
+                        <a href="${product.link}" target="_blank" class="btn-buy">🛒 Buy on Amazon</a>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function renderView() {
+        const displayProducts = getFilteredAndSortedProducts();
+        dynamicSections.innerHTML = ''; 
+
+        if (displayProducts.length === 0) {
+            dynamicSections.innerHTML = `<div class="no-results"><h3>No products found. Try a different search or category.</h3></div>`;
+            return;
         }
 
-        function attachEventListeners() {
-            searchInput.addEventListener('input', (e) => { currentSearch = e.target.value.toLowerCase(); renderView(); });
-            sortSelect.addEventListener('change', (e) => { currentSort = e.target.value; renderView(); });
-            categoryTabs.addEventListener('click', (e) => {
-                if (e.target.classList.contains('tab-btn')) {
-                    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-                    e.target.classList.add('active');
-                    currentCategory = e.target.getAttribute('data-category');
-                    renderView();
+        if (currentCategory === 'All' && currentSearch === '' && currentSort === 'popular') {
+            const sections = ["🏆 Best Sellers", "🔥 Trending Products", "⭐ Editor's Picks", "⚡ Today's Deals"];
+            sections.forEach(secTitle => {
+                const secProducts = displayProducts.filter(p => p.section === secTitle);
+                if (secProducts.length > 0) {
+                    const sectionHTML = `
+                        <h2 class="section-title">${secTitle}</h2>
+                        <div class="product-grid">
+                            ${secProducts.map(buildProductCard).join('')}
+                        </div>
+                    `;
+                    dynamicSections.insertAdjacentHTML('beforeend', sectionHTML);
                 }
             });
-        }
-
-        function getFilteredAndSortedProducts() {
-            let filtered = products.filter(p => {
-                const matchesCategory = currentCategory === 'All' || p.category === currentCategory;
-                const matchesSearch = p.name.toLowerCase().includes(currentSearch) || p.desc.toLowerCase().includes(currentSearch);
-                return matchesCategory && matchesSearch;
-            });
-
-            filtered.sort((a, b) => {
-                switch(currentSort) {
-                    case 'rating': return b.rating - a.rating;
-                    case 'newest': return new Date(b.date) - new Date(a.date);
-                    case 'popular': default: return b.popScore - a.popScore;
-                }
-            });
-            return filtered;
-        }
-
-        function getStars(rating) {
-            const fullStars = Math.floor(rating);
-            const halfStar = rating % 1 >= 0.5 ? 1 : 0;
-            const emptyStars = 5 - fullStars - halfStar;
-            return '★'.repeat(fullStars) + (halfStar ? '⯨' : '') + '☆'.repeat(emptyStars);
-        }
-
-        // YAHAN MERA MAGIC HAI: ${product.link} ASLI LINK CALL KAR RAHA HAI
-        function buildProductCard(product) {
-            return `
-                <div class="product-card" style="animation-delay: ${Math.random() * 0.2}s">
-                    <div class="card-img-container">
-                        ${product.section !== "None" && currentCategory === 'All' && currentSearch === '' ? `<div class="badge">${product.section.split(' ')[1] || product.section}</div>` : ''}
-                        <img src="${product.img}" alt="${product.name}" class="card-img" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">${product.name}</h3>
-                        <div class="card-rating">
-                            ${getStars(product.rating)} <span>(${product.reviews})</span>
-                        </div>
-                        <p class="card-desc">${product.desc}</p>
-                        <div class="card-footer">
-                            <span class="card-price" style="font-size: 1rem; color: #10B981;">${product.price}</span>
-                            <a href="${product.link}" target="_blank" class="btn-buy">🛒 Buy on Amazon</a>
-                        </div>
-                    </div>
+        } else {
+            dynamicSections.innerHTML = `
+                <div class="product-grid" style="margin-top: 1rem;">
+                    ${displayProducts.map(buildProductCard).join('')}
                 </div>
             `;
         }
+    }
 
-        function renderView() {
-            const displayProducts = getFilteredAndSortedProducts();
-            dynamicSections.innerHTML = ''; 
-
-            if (displayProducts.length === 0) {
-                dynamicSections.innerHTML = `<div class="no-results"><h3>No products found. Try a different search or category.</h3></div>`;
-                return;
-            }
-
-            if (currentCategory === 'All' && currentSearch === '' && currentSort === 'popular') {
-                const sections = ["🏆 Best Sellers", "🔥 Trending Products", "⭐ Editor's Picks",⚡ Today's Deals];
-                sections.forEach(secTitle => {
-                    const secProducts = displayProducts.filter(p => p.section === secTitle);
-                    if (secProducts.length > 0) {
-                        const sectionHTML = `
-                            <h2 class="section-title">${secTitle}</h2>
-                            <div class="product-grid">
-                                ${secProducts.map(buildProductCard).join('')}
-                            </div>
-                        `;
-                        dynamicSections.insertAdjacentHTML('beforeend', sectionHTML);
-                    }
-                });
-            } else {
-                dynamicSections.innerHTML = `
-                    <div class="product-grid" style="margin-top: 1rem;">
-                        ${displayProducts.map(buildProductCard).join('')}
-                    </div>
-                `;
-            }
-        }
-
-        init();
-    </script>
+    init();
+</script>
 </body>
 </html>
