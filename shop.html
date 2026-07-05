@@ -375,7 +375,7 @@
             }
 
             if (currentCategory === 'All' && currentSearch === '' && currentSort === 'popular') {
-                const sections = ["🏆 Best Sellers", "🔥 Trending Products", "⭐ Editor's Picks"];
+                const sections = ["🏆 Best Sellers", "🔥 Trending Products", "⭐ Editor's Picks",⚡ Today's Deals];
                 sections.forEach(secTitle => {
                     const secProducts = displayProducts.filter(p => p.section === secTitle);
                     if (secProducts.length > 0) {
