@@ -191,6 +191,7 @@
             <button class="tab-btn" data-category="Fitness">💪 Fitness</button>
             <button class="tab-btn" data-category="Nutrition">🥗 Nutrition</button>
             <button class="tab-btn" data-category="Hair Care">💇 Hair Care</button>
+            <button class="tab-btn" data-category="Medical">🏥 Medical</button>
         </div>
     </div>
 
@@ -396,7 +397,8 @@
         }
 
         if (currentCategory === 'All' && currentSearch === '' && currentSort === 'popular') {
-            const sections = ["🏆 Best Sellers", "🔥 Trending Products", "⭐ Editor's Picks", "⚡ Today's Deals"];
+            // Nayi line (Isse Copy-Paste kar lo):
+            const sections = ["🏆 Best Sellers", "🔥 Trending Products", "⭐ Editor's Picks", "⚡ Today's Deals", "🏥 Medical Essentials"];
             sections.forEach(secTitle => {
                 const secProducts = displayProducts.filter(p => p.section === secTitle);
                 if (secProducts.length > 0) {
