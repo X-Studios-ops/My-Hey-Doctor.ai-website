@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heydoctor AI | The Ultimate Learning Super-App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Animated Gradient Background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #0f172a, #082f49);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism Navbar */
+        .navbar {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .navbar p {
+            margin: 0;
+            font-size: 13px;
+            color: #94a3b8;
+            font-weight: 300;
+            margin-top: 2px;
+        }
+
+        .status-badge {
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.4);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #4ade80;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 0 10px rgba(74, 222, 128, 0.2);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+        }
+
+        /* AI App Container with Neon Glow */
+        .app-container {
+            flex-grow: 1;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            box-sizing: border-box;
+        }
+
+        /* Iframe floating and glowing styling */
+        iframe {
+            width: 100%;
+            max-width: 1300px;
+            height: 100%;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 16px;
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.2), 0 0 10px rgba(129, 140, 248, 0.1);
+            background-color: #ffffff;
+            transition: all 0.4s ease;
+        }
+
+        iframe:hover {
+            box-shadow: 0 0 45px rgba(56, 189, 248, 0.4), 0 0 20px rgba(129, 140, 248, 0.3);
+            border: 1px solid rgba(56, 189, 248, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Minimalist Footer */
+        .footer {
+            text-align: center;
+            padding: 12px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(5px);
+            font-size: 13px;
+            color: #64748b;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .footer span {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div>
+            <h1>⚡ Heydoctor.ai</h1>
+            <p>Your Advanced Multimodal Tutor</p>
+        </div>
+        <div>
+            <div class="status-badge">
+                <div class="status-dot"></div>
+                Systems Online
+            </div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <iframe src="https://heydoctor-study-ai.streamlit.app/?embed=true" title="Heydoctor AI App"></iframe>
+    </div>
+
+    <div class="footer">
+        Engineered with ❤️ by <span>Pratyush Ranjan Roul</span> | Multi-Modal Intelligence
+    </div>
+
+</body>
+</html>
