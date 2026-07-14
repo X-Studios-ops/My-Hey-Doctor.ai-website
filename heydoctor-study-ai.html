@@ -17,7 +17,7 @@
             color: #ffffff;
             display: flex;
             flex-direction: column;
-            height: 100vh;
+            height: 100vh; /* Keeps layout full screen */
             overflow: hidden;
         }
 
@@ -33,7 +33,7 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 15px 40px;
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -42,7 +42,7 @@
 
         .navbar h1 {
             margin: 0;
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 700;
             background: linear-gradient(90deg, #38bdf8, #818cf8);
             -webkit-background-clip: text;
@@ -55,21 +55,50 @@
             font-size: 13px;
             color: #94a3b8;
             font-weight: 300;
-            margin-top: 2px;
         }
 
+        /* Nav Right Buttons */
+        .nav-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* Back to Home Button */
+        .back-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #e2e8f0;
+            padding: 8px 15px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .back-btn:hover {
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.5);
+            color: #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+
+        /* Status Badge */
         .status-badge {
             background: rgba(74, 222, 128, 0.1);
             border: 1px solid rgba(74, 222, 128, 0.4);
-            padding: 5px 12px;
+            padding: 6px 12px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 13px;
             color: #4ade80;
             font-weight: 500;
             display: flex;
             align-items: center;
             gap: 6px;
-            box-shadow: 0 0 10px rgba(74, 222, 128, 0.2);
         }
 
         .status-dot {
@@ -86,42 +115,36 @@
             100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
         }
 
-        /* AI App Container with Neon Glow */
+        /* AI App Container */
         .app-container {
-            flex-grow: 1;
+            flex-grow: 1; /* Pushes footer down and fills space */
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 25px;
+            padding: 20px;
             box-sizing: border-box;
+            height: 100%;
         }
 
-        /* Iframe floating and glowing styling */
+        /* Iframe styling */
         iframe {
             width: 100%;
             max-width: 1300px;
             height: 100%;
             border: 1px solid rgba(56, 189, 248, 0.3);
-            border-radius: 16px;
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.2), 0 0 10px rgba(129, 140, 248, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
             background-color: #ffffff;
-            transition: all 0.4s ease;
         }
 
-        iframe:hover {
-            box-shadow: 0 0 45px rgba(56, 189, 248, 0.4), 0 0 20px rgba(129, 140, 248, 0.3);
-            border: 1px solid rgba(56, 189, 248, 0.6);
-            transform: translateY(-2px);
-        }
-
-        /* Minimalist Footer */
+        /* Footer Styling */
         .footer {
             text-align: center;
-            padding: 12px;
+            padding: 10px;
             background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(5px);
-            font-size: 13px;
+            font-size: 12px;
             color: #64748b;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -131,32 +154,23 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 700;
-            letter-spacing: 0.5px;
-
-                    /* Back to Home Button */
-        .back-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #e2e8f0;
-            padding: 8px 18px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .back-btn:hover {
-            background: rgba(56, 189, 248, 0.15);
-            border: 1px solid rgba(56, 189, 248, 0.5);
-            color: #38bdf8;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
-            transform: translateY(-1px);
-        }
-            
+        /* Mobile Adjustments (Sahi Layout Ke Liye) */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+                padding: 15px 10px;
+            }
+            .nav-right {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .app-container {
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -167,7 +181,12 @@
             <h1>⚡ Heydoctor.ai</h1>
             <p>Your Advanced Multimodal Tutor</p>
         </div>
-        <div>
+        
+        <div class="nav-right">
+            <a href="https://my-hey-doctor-ai-website.vercel.app" class="back-btn">
+                🏠 Main Website
+            </a>
+            
             <div class="status-badge">
                 <div class="status-dot"></div>
                 Systems Online
@@ -182,25 +201,6 @@
     <div class="footer">
         Engineered with ❤️ by <span>Pratyush Ranjan Roul</span> | Multi-Modal Intelligence
     </div>
-        <div class="navbar">
-        <div>
-            <h1>⚡ Heydoctor ai</h1>
-            <p>Your Advanced Multimodal Health Ai</p>
-        </div>
-        
-        <div style="display: flex; gap: 20px; align-items: center;">
-            
-            <a href="https://my-hey-doctor-ai-website.vercel.app" class="back-btn">
-                🏠 Main Website
-            </a>
-
-            <div class="status-badge">
-                <div class="status-dot"></div>
-                Systems Online
-            </div>
-        </div>
-    </div>
-
 
 </body>
 </html>
