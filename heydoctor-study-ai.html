@@ -132,6 +132,31 @@
             -webkit-text-fill-color: transparent;
             font-weight: 700;
             letter-spacing: 0.5px;
+
+                    /* Back to Home Button */
+        .back-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #e2e8f0;
+            padding: 8px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.5);
+            color: #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+            transform: translateY(-1px);
+        }
+            
         }
     </style>
 </head>
@@ -157,6 +182,25 @@
     <div class="footer">
         Engineered with ❤️ by <span>Pratyush Ranjan Roul</span> | Multi-Modal Intelligence
     </div>
+        <div class="navbar">
+        <div>
+            <h1>⚡ Heydoctor ai</h1>
+            <p>Your Advanced Multimodal Health Ai</p>
+        </div>
+        
+        <div style="display: flex; gap: 20px; align-items: center;">
+            
+            <a href="https://my-hey-doctor-ai-website.vercel.app" class="back-btn">
+                🏠 Main Website
+            </a>
+
+            <div class="status-badge">
+                <div class="status-dot"></div>
+                Systems Online
+            </div>
+        </div>
+    </div>
+
 
 </body>
 </html>
