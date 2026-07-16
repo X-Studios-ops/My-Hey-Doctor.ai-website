@@ -130,24 +130,20 @@
 
                 /* AI App Container */
         .app-container {
-            flex-grow: 1; 
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px; /* Left-Right ka safe gap maintain karega */
             box-sizing: border-box;
-            /* 👇 Yahan change kiya hai */
-            min-height: 85vh; /* Screen ka 85% hissa cover karega */
+            margin-bottom: 10px; /* Ad dabbe ke beech thoda spacing */
         }
 
         /* Iframe styling */
         iframe {
             width: 100%;
             max-width: 1300px;
-            /* 👇 Yahan change kiya hai */
-            height: 750px; /* Iframe ki pakki lambai fix kar di */
-            min-height: 80vh; /* Ya fir phone ki screen ke hisaab se lamba rahega */
+            height: 500px; /* Normal height, na bahut bada na bahut chota */
             border: 1px solid rgba(56, 189, 248, 0.3);
             border-radius: 12px;
             box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
@@ -171,6 +167,7 @@
             -webkit-text-fill-color: transparent;
             font-weight: 700;
         }
+
 
 
         /* Mobile Adjustments (Sahi Layout Ke Liye) */
