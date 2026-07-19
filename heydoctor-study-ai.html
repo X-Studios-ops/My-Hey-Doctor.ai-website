@@ -150,16 +150,19 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Iframe styling */
+                /* Iframe styling */
         iframe {
             width: 100%;
             max-width: 1300px;
-            height: 500px; /* Normal height, na bahut bada na bahut chota */
+            /* 👇 Yahan height badha di hai 👇 */
+            height: 700px; /* Pehle 500px tha, ab 700px kar diya */
+            min-height: 75vh; /* Mobile screen ka 75% hissa cover karega */
             border: 1px solid rgba(56, 189, 248, 0.3);
             border-radius: 12px;
             box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
             background-color: #ffffff; 
         }
+
         
         .footer span {
             background: linear-gradient(90deg, #38bdf8, #818cf8);
