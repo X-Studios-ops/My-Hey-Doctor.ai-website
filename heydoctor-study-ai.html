@@ -220,54 +220,54 @@
         <iframe src="https://heydoctor-study-ai.streamlit.app/?embed=true" title="Heydoctor AI App"></iframe>
     </div>
 
-        <!-- ========================================== -->
-    <!-- 💰 STICKY BOTTOM AD (High Views, Zero Disturbance) 💰 -->
+            <!-- ========================================== -->
+    <!-- 💰 STRICT STICKY BOTTOM AD (Locked Height) 💰 -->
     <!-- ========================================== -->
     <div class="sticky-ad-container" style="
-        position: fixed; /* Yeh ad ko screen par ek jagah lock kar dega */
-        bottom: 0;       /* Screen ke ekdum neeche chipka dega */
+        position: fixed; 
+        bottom: 0;       
         left: 0;
         width: 100%;
-        background: rgba(15, 23, 42, 0.95); /* Tere dark theme se match karta hua */
+        height: 70px !important;       /* 👇 Isko strictly 70px par lock kar diya */
+        max-height: 70px !important;   /* 👇 Isse ek pixel bada nahi hoga */
+        overflow: hidden !important;   /* 👇 Agar script safed dabba banayegi, toh woh kat jayega aur dikhega nahi */
+        background: rgba(15, 23, 42, 0.95); 
         backdrop-filter: blur(10px);
         border-top: 1px solid rgba(56, 189, 248, 0.2);
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        padding: 5px 0;
-        z-index: 1000;   /* Hamesha baaki cheezon ke upar rahega */
+        z-index: 1000;   
         box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
     ">
         
-        <!-- Chota sa close button (Optional: Agar user hatana chahe) -->
-        <div style="width: 100%; max-width: 320px; text-align: right;">
+        <!-- Close button -->
+        <div style="width: 100%; text-align: right; background: transparent; padding: 2px 10px;">
             <span onclick="this.parentElement.parentElement.style.display='none'" style="
                 color: rgba(255,255,255,0.4); 
-                font-size: 10px; 
+                font-size: 11px; 
                 cursor: pointer; 
-                margin-right: 5px;
                 font-family: sans-serif;
             ">✖ Close</span>
         </div>
 
-        <!-- 👇 TERA BANNER AD CODE YAHAN DAAL (320x50 Size Wala) 👇 -->
-        <script>
-          atOptions = {
-            'key' : 'a01b90a854fed7bbe382b7344995ad22', // Tera Adsterra key
-            'format' : 'iframe',
-            'height' : 50,
-            'width' : 320,
-            'params' : {}
-          };
-        </script>
-        <script src="https://www.highperformanceformat.com/a01b90a854fed7bbe382b7344995ad22/invoke.js"></script>
-        <!-- 👆 TERA BANNER AD CODE YAHAN DAAL 👆 -->
+        <!-- 👇 TERA BANNER AD CODE 👇 -->
+        <div style="height: 50px; overflow: hidden; display: flex; justify-content: center;">
+            <script>
+              atOptions = {
+                'key' : 'a01b90a854fed7bbe382b7344995ad22', 
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highperformanceformat.com/a01b90a854fed7bbe382b7344995ad22/invoke.js"></script>
+        </div>
+        <!-- 👆 TERA BANNER AD CODE 👆 -->
 
     </div>
-
-    <!-- Website ke sabse neeche thodi khali jagah (taaki sticky ad footer ko na chupaye) -->
-    <div style="height: 70px;"></div>
 
     <!-- ========================================== -->
 <!-- 🚀 CENTERED PRODUCT HUNT BADGE 🚀 -->
