@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta tags for true native mobile app feel (prevents pinch-to-zoom) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Streamlit Application</title>
+
+    <style>
+        /* CSS Reset & Full-Screen Enforcement */
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* Prevents double scrollbars from body */
+            background-color: #f0f2f6; /* Streamlit's default light theme background */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Loading Skeleton & Spinner */
+        .loader-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1; /* Sits behind the iframe */
+        }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid rgba(0, 0, 0, 0.05);
+            border-left-color: #ff4b4b; /* Streamlit primary red */
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+        }
+
+        .loading-text {
+            color: #31333F;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Iframe Styling */
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            display: block;
+            position: relative;
+            z-index: 10; /* Sits on top of the loader */
+            opacity: 0; /* Hidden initially */
+            transition: opacity 0.4s ease-in-out; /* Smooth fade-in */
+        }
+
+        /* Class applied via JS once loaded */
+        iframe.loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loading State -->
+    <div class="loader-container">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading App...</div>
+    </div>
+
+    <!-- Embedded Streamlit App -->
+    <iframe 
+        id="streamlit-iframe" 
+        src="https://heydoctor-trending-news.streamlit.app" 
+        allowfullscreen 
+        sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-downloads"
+    ></iframe>
+
+    <script>
+        // Listen for the iframe to finish loading, then fade it in
+        document.addEventListener('DOMContentLoaded', () => {
+            const iframe = document.getElementById('streamlit-iframe');
+            
+            iframe.addEventListener('load', () => {
+                iframe.classList.add('loaded');
+            });
+        });
+    </script>
+
+</body>
+</html>
+
