@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HeyDoctor AI Health Store - Discover trusted health, fitness, skincare, haircare and wellness products recommended by HeyDoctor AI.">
-    <title>HeyDoctor AI Health Store</title>
+    <meta name="description" content="Heydoctor AI Store - Discover trusted books, gaming laptops, health, fitness, and wellness products recommended by HeyDoctor AI.">
+    <title>Heydoctor AI Ultimate Store</title>
     
     <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "HeyDoctor AI Health Store",
-      "description": "Discover trusted health, fitness, skincare, haircare and wellness products recommended by HeyDoctor AI.",
+      "name": "HeyDoctor AI Ultimate Store",
+      "description": "Discover trusted books, gaming laptops, health, fitness, and wellness products recommended by HeyDoctor AI.",
       "publisher": {
         "@type": "Organization",
-        "name": "HeyDoctor AI"
+        "name": "Heydoctor AI"
       }
     }
     </script>
@@ -171,14 +171,14 @@
 <body>
 
     <header class="hero">
-        <h1>🛒 HeyDoctor AI Health Store</h1>
-        <p>Discover trusted health, fitness, skincare, haircare and wellness products recommended by HeyDoctor AI.</p>
+        <h1>🛒 HeyDoctor AI Ultimate Store</h1>
+        <p>Discover trusted books, gaming laptops, health, fitness, and wellness products recommended by HeyDoctor AI.</p>
     </header>
 
     <div class="sticky-controls">
         <div class="search-sort-container">
             <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search health products...">
+                <input type="text" id="searchInput" placeholder="Search store products...">
             </div>
             <select id="sortSelect" class="sort-select">
                 <option value="popular">Most Popular</option>
@@ -188,6 +188,8 @@
         </div>
         <div class="category-tabs" id="categoryTabs">
             <button class="tab-btn active" data-category="All">All Products</button>
+            <button class="tab-btn" data-category="Books">📚 Books</button>
+            <button class="tab-btn" data-category="Electronics">💻 Electronics</button>
             <button class="tab-btn" data-category="Fitness">💪 Fitness</button>
             <button class="tab-btn" data-category="Nutrition">🥗 Nutrition</button>
             <button class="tab-btn" data-category="Hair Care">💇 Hair Care</button>
@@ -202,118 +204,94 @@
     </main>
 
     <script>
-    // Tere 6 Products yahan hain
+    // Products list including only user-provided items and original store products
     const products = [
         { 
-            id: 1, name: "Adjustable Dumbbell Set", category: "Fitness", price: "₹ Check on Amazon", 
+            id: 1, name: "The Final Experiment", category: "Books", price: "₹ Check on Amazon", 
+            rating: 4.8, reviews: 1420, desc: "The Mystery Thriller of the Year | Witness the Fall of our World.", 
+            img: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80", 
+            section: "📚 Featured Books", date: "2026-06-01", popScore: 105, link: "https://link.amazon/B0gQ329bQ" 
+        },
+        { 
+            id: 2, name: "Beginning C++ Game Programming", category: "Books", price: "₹ Check on Amazon", 
+            rating: 4.7, reviews: 3100, desc: "Learn to program with C++ by building fun games.", 
+            img: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=80", 
+            section: "📚 Featured Books", date: "2026-06-05", popScore: 103, link: "https://link.amazon/B09oImqCh" 
+        },
+        { 
+            id: 3, name: "HP Smartchoice Victus Gaming Laptop", category: "Electronics", price: "₹ Check on Amazon", 
+            rating: 4.6, reviews: 950, desc: "AMD Ryzen 7 7445HS, 6GB RTX 3050, 16GB DDR5(Upgradeable) 512GB SSD, 144Hz, 300 nits, 15.6''/39.6cm, Win 11, Office 24, Blue, 2.29kg, fb3134/20ax, Xbox Gamepass*, Gaming Laptop[span_0](start_span)[span_0](end_span).", 
+            img: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=600&q=80", 
+            section: "💻 Tech & Gadgets", date: "2026-07-01", popScore: 104, link: "https://link.amazon/B01mGEWqn" 
+        },
+        { 
+            id: 4, name: "Adjustable Dumbbell Set", category: "Fitness", price: "₹ Check on Amazon", 
             rating: 4.5, reviews: 1240, desc: "Perfect adjustable dumbbells for your home strength training and muscle building.", 
             img: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=600&q=80", 
             section: "🏆 Best Sellers", date: "2026-06-01", popScore: 100, link: "https://amzn.to/4bc3sC3" 
         },
         { 
-            id: 2, name: "OZiva Protein & Herbs (Women)", category: "Nutrition", price: "₹ Check on Amazon", 
+            id: 5, name: "OZiva Protein & Herbs (Women)", category: "Nutrition", price: "₹ Check on Amazon", 
             rating: 4.6, reviews: 4500, desc: "Chocolate flavor, 0g added sugar. Designed specially for women's wellness and fitness.", 
             img: "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=600&q=80", 
             section: "🔥 Trending Products", date: "2026-06-15", popScore: 98, link: "https://amzn.to/4vFAJOe" 
         },
         { 
-            id: 3, name: "Just Herbs Anti Hairfall Shampoo", category: "Hair Care", price: "₹ Check on Amazon", 
+            id: 6, name: "Just Herbs Anti Hairfall Shampoo", category: "Hair Care", price: "₹ Check on Amazon", 
             rating: 4.3, reviews: 3200, desc: "Ayurvedic blend to strengthen roots, reduce hair fall, and improve scalp health.", 
             img: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=600&q=80", 
             section: "⭐ Editor's Picks", date: "2026-07-01", popScore: 95, link: "https://amzn.to/44R4M9L" 
         },
         { 
-            id: 4, name: "Just Herbs 8-in-1 Amla Neem Shampoo", category: "Hair Care", price: "₹ Check on Amazon", 
+            id: 7, name: "Just Herbs 8-in-1 Amla Neem Shampoo", category: "Hair Care", price: "₹ Check on Amazon", 
             rating: 4.4, reviews: 2800, desc: "Root nourishing, hair fall control, sulphate & paraben free. Suitable for oily scalp.", 
             img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=80", 
             section: "🔥 Trending Products", date: "2026-07-05", popScore: 97, link: "https://amzn.to/4fkwMZu" 
         },
         { 
-            id: 5, name: "TATA 1MG Creatine Monohydrate", category: "Nutrition", price: "₹ Check on Amazon", 
+            id: 8, name: "TATA 1MG Creatine Monohydrate", category: "Nutrition", price: "₹ Check on Amazon", 
             rating: 4.7, reviews: 5100, desc: "100% Pure, micronized creatine. Boosts strength, power, and muscle recovery.", 
             img: "https://images.unsplash.com/photo-1579722820308-d74e571900a9?auto=format&fit=crop&w=600&q=80", 
             section: "🏆 Best Sellers", date: "2026-07-05", popScore: 99, link: "https://amzn.to/4wrdPu6" 
         },
         { 
-            id: 6, name: "Bodyband Hand Grip Strengthener", category: "Fitness", price: "₹ 99", 
+            id: 9, name: "Bodyband Hand Grip Strengthener", category: "Fitness", price: "₹ 99", 
             rating: 4.5, reviews: 4200, desc: "Adjustable hand gripper for forearm exercise and finger power. Perfect for gym or home workouts.", 
             img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=600&q=80", 
             section: "⚡ Today's Deals", date: "2026-07-05", popScore: 96, link: "https://amzn.to/4p4RhN1" 
         },
-            { 
-        id: 7, 
-        name: "VICTORY Boxing Gloves (10-12 Oz)", 
-        category: "Fitness", 
-        price: "₹ 409", 
-        rating: 4.5, 
-        reviews: 1850, 
-        desc: "Durable PU material with moulded foam padding. Suitable for Boxing, Training, MMA, and Muay Thai.", 
-        img: "https://m.media-amazon.com/images/I/71w1v39Q3eL._SL1500_.jpg", 
-        section: "🔥 Trending Products", 
-        date: "2026-07-05", 
-        popScore: 94, 
-        link: "https://amzn.to/3QTvDyS" 
-    },
-            { 
-        id: 8, 
-        name: "LENSKART BLU Zero Power Computer Glasses", 
-        category: "Fitness", 
-        price: "₹548 (Approx. $6.50)", 
-        rating: 4.6, 
-        reviews: 2840, 
-        desc: "Protect your eyes from harmful blue light. Features TR90 lightweight frame, anti-glare coating, and UV protection. Essential for developers and gamers.", 
-        img: "https://m.media-amazon.com/images/I/51pT-aV4cIL._SL1500_.jpg", 
-        section: "🔥 Trending Products", 
-        date: "2026-07-07", 
-        popScore: 99, 
-        link: "https://amzn.to/4yof7I6" 
-    },
-            { 
-        id: 9, 
-        name: "Hansaplast Fast Aid Kit (35 Pieces)", 
-        category: "Medical", 
-        price: "₹399 (Approx. $4.80)", 
-        rating: 4.5, 
-        reviews: 2100, 
-        desc: "Essential first aid kit for home, office, or travel. Includes 35 pieces for quick wound care and injuries.", 
-        img: "https://m.media-amazon.com/images/I/71YV1j+Y5oL._SL1500_.jpg", 
-        section: "🏥 Medical Essentials", 
-        date: "2026-07-08", 
-        popScore: 97, 
-        link: "https://link.amazon/B0gcUsy0M" 
-    },
-            { 
-        id: 10, 
-        name: "Dr. Morepen Digital Thermometer", 
-        category: "Medical", 
-        price: "₹249 (Approx. $3.00)", 
-        rating: 4.3, 
-        reviews: 4200, 
-        desc: "Fast, safe, and accurate temperature measurement with beep alert and low battery indication.", 
-        img: "https://m.media-amazon.com/images/I/6182Qe-i-LL._SL1500_.jpg", 
-        section: "🏥 Medical Essentials", 
-        date: "2026-07-08", 
-        popScore: 95, 
-        link: "https://link.amazon/B03HILWYz" 
-    },
-            { 
-        id: 11, 
-        name: "Tata 1mg Pulse Oximeter", 
-        category: "Medical", 
-        price: "₹1,299 (Approx. $15.50)", 
-        rating: 4.6, 
-        reviews: 5500, 
-        desc: "High accuracy SpO2 monitor with OLED display. Essential for monitoring oxygen levels at home.", 
-        img: "https://m.media-amazon.com/images/I/61m8k27s4xL._SL1500_.jpg", 
-        section: "🏥 Medical Essentials", 
-        date: "2026-07-08", 
-        popScore: 96, 
-        link: "https://link.amazon/B09IwVDjI" 
-    }
-
+        { 
+            id: 10, name: "VICTORY Boxing Gloves (10-12 Oz)", category: "Fitness", price: "₹ 409", 
+            rating: 4.5, reviews: 1850, desc: "Durable PU material with moulded foam padding. Suitable for Boxing, Training, MMA, and Muay Thai.", 
+            img: "https://m.media-amazon.com/images/I/71w1v39Q3eL._SL1500_.jpg", 
+            section: "🔥 Trending Products", date: "2026-07-05", popScore: 94, link: "https://amzn.to/3QTvDyS" 
+        },
+        { 
+            id: 11, name: "LENSKART BLU Zero Power Computer Glasses", category: "Electronics", price: "₹ 548", 
+            rating: 4.6, reviews: 2840, desc: "Protect eyes from blue light. Features TR90 lightweight frame, anti-glare coating. Essential for developers & gamers.", 
+            img: "https://m.media-amazon.com/images/I/51pT-aV4cIL._SL1500_.jpg", 
+            section: "💻 Tech & Gadgets", date: "2026-07-07", popScore: 99, link: "https://amzn.to/4yof7I6" 
+        },
+        { 
+            id: 12, name: "Hansaplast Fast Aid Kit (35 Pieces)", category: "Medical", price: "₹ 399", 
+            rating: 4.5, reviews: 2100, desc: "Essential first aid kit for home, office, or travel. Includes 35 pieces for quick wound care.", 
+            img: "https://m.media-amazon.com/images/I/71YV1j+Y5oL._SL1500_.jpg", 
+            section: "🏥 Medical Essentials", date: "2026-07-08", popScore: 97, link: "https://link.amazon/B0gcUsy0M" 
+        },
+        { 
+            id: 13, name: "Dr. Morepen Digital Thermometer", category: "Medical", price: "₹ 249", 
+            rating: 4.3, reviews: 4200, desc: "Fast, safe, and accurate temperature measurement with beep alert and low battery indication.", 
+            img: "https://m.media-amazon.com/images/I/6182Qe-i-LL._SL1500_.jpg", 
+            section: "🏥 Medical Essentials", date: "2026-07-08", popScore: 95, link: "https://link.amazon/B03HILWYz" 
+        },
+        { 
+            id: 14, name: "Tata 1mg Pulse Oximeter", category: "Medical", price: "₹ 1,299", 
+            rating: 4.6, reviews: 5500, desc: "High accuracy SpO2 monitor with OLED display. Essential for monitoring oxygen levels at home.", 
+            img: "https://m.media-amazon.com/images/I/61m8k27s4xL._SL1500_.jpg", 
+            section: "🏥 Medical Essentials", date: "2026-07-08", popScore: 96, link: "https://link.amazon/B09IwVDjI" 
+        }
     ];
 
-    // Yahan se products ko screen par laane ka magic shuru hota hai
     const searchInput = document.getElementById('searchInput');
     const sortSelect = document.getElementById('sortSelect');
     const categoryTabs = document.getElementById('categoryTabs');
@@ -397,8 +375,7 @@
         }
 
         if (currentCategory === 'All' && currentSearch === '' && currentSort === 'popular') {
-            // Nayi line (Isse Copy-Paste kar lo):
-            const sections = ["🏆 Best Sellers", "🔥 Trending Products", "⭐ Editor's Picks", "⚡ Today's Deals", "🏥 Medical Essentials"];
+            const sections = ["📚 Featured Books", "💻 Tech & Gadgets", "🏆 Best Sellers", "🔥 Trending Products", "⭐ Editor's Picks", "⚡ Today's Deals", "🏥 Medical Essentials"];
             sections.forEach(secTitle => {
                 const secProducts = displayProducts.filter(p => p.section === secTitle);
                 if (secProducts.length > 0) {
