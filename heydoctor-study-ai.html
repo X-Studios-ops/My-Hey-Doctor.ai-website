@@ -5,48 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heydoctor AI | The Ultimate Learning Super-App</title>
 
-        <meta name="description" content="Meet Heydoctor Study AI, your ultimate multimodal learning companion. Upload textbook photos, analyze PDFs, and generate smart notes instantly. Engineered by Pratyush Ranjan Roul.">
+    <meta name="description" content="Meet Heydoctor Study AI, your ultimate multimodal learning companion. Upload textbook photos, analyze PDFs, and generate smart notes instantly. Engineered by Pratyush Ranjan Roul.">
     <meta name="keywords" content="Heydoctor Study AI, AI tutor, multimodal learning, PDF analyzer, AI study notes, Pratyush Ranjan Roul, smart learning app, homework helper, AI vision tool">
     <meta name="author" content="Pratyush Ranjan Roul">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#0f172a"> <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0f172a"> 
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://my-hey-doctor-ai-website.vercel.app/Hey-doctor-study-ai">
     <meta property="og:title" content="⚡ Heydoctor Study AI | Ultimate Learning Super-App">
     <meta property="og:description" content="Upload textbook photos, analyze PDFs, and generate smart notes instantly. The ultimate multimodal AI tutor engineered by Pratyush Ranjan Roul.">
     <meta property="twitter:title" content="⚡ Heydoctor Study AI | Ultimate Learning Super-App">
     <meta property="twitter:description" content="Upload textbook photos, analyze PDFs, and generate smart notes instantly. The ultimate multimodal AI tutor engineered by Pratyush Ranjan Roul.">
     
-
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
     <style>
+        /* ========================================= */
+        /* 🚀 EPIC CSS OVERHAUL BEGINS HERE 🚀       */
+        /* ========================================= */
+
+        /* Custom Scrollbar for a premium feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #38bdf8, #818cf8); 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #7dd3fc, #a5b4fc); 
+        }
 
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
-            height: auto; /* Page ko content ke hisaab se lamba hone dega */
+            height: auto;
             min-height: 100vh;
             background-color: #0f172a; 
             overflow-x: hidden;
-            overflow-y: auto !important; /* Zabardasti scroll on rakhega */
+            overflow-y: auto !important;
             display: flex;
             flex-direction: column;
-        }
-
-        
-        /* Animated Gradient Background */
-        body {
-            margin: 0;
-            padding: 0;
             font-family: 'Outfit', sans-serif;
-            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #0f172a, #082f49);
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+        
+        /* Deep Animated Gradient Background */
+        body {
+            background: linear-gradient(-45deg, #020617, #0f172a, #1e1b4b, #082f49);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            height: 100vh; /* Keeps layout full screen */
-            overflow: hidden;
         }
 
         @keyframes gradientBG {
@@ -55,78 +67,96 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Glassmorphism Navbar */
+        /* Upgraded Glassmorphism Navbar */
         .navbar {
-            background: rgba(15, 23, 42, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 15px 30px;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            padding: 16px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 10;
+            animation: slideDownFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideDownFade {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .navbar h1 {
             margin: 0;
-            font-size: 24px;
-            font-weight: 700;
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            font-size: 26px;
+            font-weight: 800;
+            background: linear-gradient(to right, #38bdf8, #a5b4fc, #38bdf8);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 1px;
+            animation: shine 4s linear infinite;
+            letter-spacing: 0.5px;
+            text-shadow: 0px 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
         }
 
         .navbar p {
-            margin: 0;
+            margin: 4px 0 0 0;
             font-size: 13px;
             color: #94a3b8;
             font-weight: 300;
+            letter-spacing: 0.5px;
         }
 
         /* Nav Right Buttons */
         .nav-right {
             display: flex;
-            gap: 15px;
+            gap: 16px;
             align-items: center;
         }
 
-        /* Back to Home Button */
+        /* Interactive Back to Home Button */
         .back-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #e2e8f0;
-            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f8fafc;
+            padding: 10px 18px;
             border-radius: 30px;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .back-btn:hover {
-            background: rgba(56, 189, 248, 0.15);
-            border: 1px solid rgba(56, 189, 248, 0.5);
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.6);
             color: #38bdf8;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4), inset 0 0 10px rgba(56, 189, 248, 0.1);
+            transform: translateY(-2px);
         }
 
-        /* Status Badge */
+        /* Glowing Status Badge */
         .status-badge {
-            background: rgba(74, 222, 128, 0.1);
-            border: 1px solid rgba(74, 222, 128, 0.4);
-            padding: 6px 12px;
-            border-radius: 20px;
+            background: rgba(74, 222, 128, 0.05);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            padding: 8px 16px;
+            border-radius: 30px;
             font-size: 13px;
             color: #4ade80;
             font-weight: 500;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            box-shadow: 0 0 15px rgba(74, 222, 128, 0.1);
         }
 
         .status-dot {
@@ -134,64 +164,103 @@
             height: 8px;
             background-color: #4ade80;
             border-radius: 50%;
-            animation: pulse 2s infinite;
+            box-shadow: 0 0 8px #4ade80;
+            animation: pulseGlow 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
-                
+        @keyframes pulseGlow {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
         }
 
-        /* AI App Container */
+        /* App Container Layout */
         .app-container {
             flex-grow: 1; 
             width: 100%;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* 👇 'center' ki jagah 'flex-start' karna zaroori hai 👇 */
-            padding: 20px 15px 50px 15px; /* Neeche extra padding (50px) di hai taaki scroll karne ki mast jagah mile */
+            align-items: flex-start; 
+            padding: 30px 20px 20px 20px; 
             box-sizing: border-box;
+            animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.2s;
+            opacity: 0;
         }
 
-        /* Iframe styling (Yeh same rahega jo last kiya tha) */
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Futuristic Iframe Styling */
         iframe {
             width: 100%;
             max-width: 1300px;
             height: 700px; 
             min-height: 75vh;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            border-radius: 12px;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
-            background-color: #ffffff; 
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.15);
+            background-color: #0f172a; 
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            z-index: 2;
         }
 
-
+        iframe:hover {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(56, 189, 248, 0.25), 0 0 15px rgba(129, 140, 248, 0.3);
+            border-color: rgba(129, 140, 248, 0.6);
+            transform: translateY(-4px);
+        }
         
+        /* Sleek Footer Styling */
+        .footer {
+            text-align: center;
+            padding: 10px 20px 100px 20px; /* Extra bottom padding to stay above the 70px sticky ad */
+            font-size: 14px;
+            color: #94a3b8;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            animation: fadeIn 2s ease forwards;
+            animation-delay: 1s;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
         .footer span {
             background: linear-gradient(90deg, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 700;
+            padding: 0 2px;
         }
-
-
 
         /* Mobile Adjustments (Sahi Layout Ke Liye) */
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
-                gap: 15px;
+                gap: 16px;
                 text-align: center;
-                padding: 15px 10px;
+                padding: 20px 15px;
             }
             .nav-right {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 12px;
             }
             .app-container {
-                padding: 10px;
+                padding: 15px 10px;
+            }
+            iframe {
+                height: 80vh;
+                border-radius: 12px;
+            }
+            .footer {
+                padding-bottom: 90px;
             }
         }
     </style>
@@ -220,7 +289,7 @@
         <iframe src="https://heydoctor-study-ai.streamlit.app/?embed=true" title="Heydoctor AI App"></iframe>
     </div>
 
-            <!-- ========================================== -->
+    <!-- ========================================== -->
     <!-- 💰 STRICT STICKY BOTTOM AD (Locked Height) 💰 -->
     <!-- ========================================== -->
     <div class="sticky-ad-container" style="
@@ -270,30 +339,28 @@
     </div>
 
     <!-- ========================================== -->
-<!-- 🚀 CENTERED PRODUCT HUNT BADGE 🚀 -->
-<!-- ========================================== -->
-<div class="ph-badge-container" style="
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 15px auto; /* Upar-neeche 15px ka gap aur naturally centered */
-    padding: 5px 0;
-">
-    
-    <a href="https://www.producthunt.com/products/hey-doctor-ai?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-heydoctor-study-ai" target="_blank" rel="noopener noreferrer">
-        <img alt="Heydoctor Study AI - The ultimate multi-modal learning super-app for students. ⚡ | Product Hunt" 
-             width="250" 
-             height="54" 
-             src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1200567&amp;theme=neutral&amp;t=1784466117185"
-             style="display: block; border: none;">
-    </a>
+    <!-- 🚀 CENTERED PRODUCT HUNT BADGE 🚀 -->
+    <!-- ========================================== -->
+    <div class="ph-badge-container" style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 15px auto; /* Upar-neeche 15px ka gap aur naturally centered */
+        padding: 5px 0;
+    ">
+        
+        <a href="https://www.producthunt.com/products/hey-doctor-ai?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-heydoctor-study-ai" target="_blank" rel="noopener noreferrer">
+            <img alt="Heydoctor Study AI - The ultimate multi-modal learning super-app for students. ⚡ | Product Hunt" 
+                 width="250" 
+                 height="54" 
+                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1200567&amp;theme=neutral&amp;t=1784466117185"
+                 style="display: block; border: none;">
+        </a>
 
-</div>
-<!-- ========================================== -->
+    </div>
+    <!-- ========================================== -->
   
-
-
     <div class="footer">
         Engineered with ❤️ by <span>Pratyush Ranjan Roul</span> | Multi-Modal Intelligence
     </div>
