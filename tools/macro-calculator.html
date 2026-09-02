@@ -1,0 +1,102 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://my-hey-doctor-ai-website.vercel.app/tools/macro-calculator" />
+    <meta name="description" content="Estimate daily protein, carbohydrate, and fat targets based on your calorie needs and goals. - Heydoctor.ai">  
+    <title>Macro Calculator | Heydoctor.ai</title>  
+    <link rel="icon" type="image/png" href="../logo.png">  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">  
+    <style>  
+        :root {  
+            --bg-color: #0b1510;  
+            --card-bg: #12221a;  
+            --accent-green: #1ebd74;  
+            --text-main: #ffffff;  
+            --text-muted: #a0aec0;  
+            --gradient-accent: linear-gradient(135deg, #1ebd74, #0f9b58);  
+        }  
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }  
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }  
+        
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: rgba(11, 21, 16, 0.8); border-bottom: 1px solid rgba(30, 189, 116, 0.1); }  
+        .logo { font-size: 24px; font-weight: 800; letter-spacing: 1px; color: var(--text-main); text-decoration: none; }  
+        .logo span { color: var(--accent-green); }  
+        
+        .container { max-width: 600px; margin: 60px auto; padding: 0 20px; }
+        .tool-card { background-color: var(--card-bg); border: 1px solid rgba(30, 189, 116, 0.2); padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .tool-card h1 { font-size: 26px; margin-bottom: 10px; color: var(--accent-green); }
+        .tool-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 30px; }
+        
+        .tool-input { width: 100%; padding: 14px 15px; margin-bottom: 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-main); border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.3s; }
+        .tool-input:focus { border-color: var(--accent-green); }
+        
+        .tool-btn { background: var(--gradient-accent); color: white; border: none; padding: 14px 20px; border-radius: 8px; font-weight: 600; width: 100%; cursor: pointer; transition: opacity 0.3s, transform 0.2s; font-size: 16px; }
+        .tool-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+        
+        .tool-result { margin-top: 25px; padding: 20px; background: rgba(0, 0, 0, 0.3); border-radius: 8px; font-size: 15px; color: var(--text-main); display: none; border-left: 4px solid var(--accent-green); line-height: 1.8; }
+        
+        .back-link { display: inline-block; margin-top: 20px; color: var(--accent-green); text-decoration: none; font-size: 14px; }
+        .back-link:hover { text-decoration: underline; }
+    </style>  
+</head>  
+<body>  
+    <nav class="navbar">
+        <a href="/" class="logo">Heydoctor<span>.ai</span></a>
+    </nav>
+    <div class="container">
+        <div class="tool-card">
+            <h1>Macro Calculator</h1>
+            <p class="tool-desc">Estimate daily protein, carbohydrate, and fat targets based on your calorie needs and goals.</p>
+            
+            
+      <input type="number" id="calories" class="tool-input" placeholder="Daily Calorie Target (kcal)">
+      <select id="goal" class="tool-input">
+        <option value="maintenance">Maintenance (Balanced 30/35/35)</option>
+        <option value="loss">Weight Loss (High Protein 40/40/20)</option>
+        <option value="gain">Muscle Gain (High Carb 30/50/20)</option>
+      </select>
+    
+            
+            <button onclick="calculate()" class="tool-btn">Calculate</button>
+            <div id="result" class="tool-result"></div>
+            
+            <a href="/" class="back-link">⬅ Back to Home</a>
+        </div>
+    </div>
+    
+    <script>
+        function calculate() {
+            
+      const calories = parseFloat(document.getElementById('calories').value);
+      const goal = document.getElementById('goal').value;
+      const resultBox = document.getElementById('result');
+      
+      if(!calories || calories <= 0) {
+        resultBox.style.display = 'block';
+        resultBox.style.borderLeftColor = '#ff4d4d';
+        resultBox.innerHTML = '⚠️ Please enter a valid calorie target.';
+        return;
+      }
+      
+      let pPct, cPct, fPct;
+      if(goal === 'maintenance') { pPct=0.30; cPct=0.35; fPct=0.35; }
+      else if(goal === 'loss') { pPct=0.40; cPct=0.40; fPct=0.20; }
+      else if(goal === 'gain') { pPct=0.30; cPct=0.50; fPct=0.20; }
+      
+      const protein = (calories * pPct) / 4; // 4 kcal/g
+      const carbs = (calories * cPct) / 4;   // 4 kcal/g
+      const fat = (calories * fPct) / 9;     // 9 kcal/g
+      
+      resultBox.style.display = 'block';
+      resultBox.style.borderLeftColor = '#1ebd74';
+      resultBox.innerHTML = '<strong>Daily Macros:</strong><br>' +
+        'Protein (' + (pPct*100) + '%): <strong>' + Math.round(protein) + 'g</strong><br>' +
+        'Carbs (' + (cPct*100) + '%): <strong>' + Math.round(carbs) + 'g</strong><br>' +
+        'Fat (' + (fPct*100) + '%): <strong>' + Math.round(fat) + 'g</strong>';
+    
+        }
+    </script>
+</body>  
+</html>

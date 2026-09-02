@@ -4,7 +4,9 @@
   "description": "Advanced Multimodal AI Health Concierge - Heydoctor.ai",
   "main": "index.html.html",
   "scripts": {
-    "dev": "echo 'This is a static HTML website. Open index.html.html in a browser or use a local server.'",
+    "dev": "node server.js",
+    "build": "echo 'No build step required for static HTML'",
+    "start": "node server.js",
     "vercel-build": "echo 'No build step required for static HTML'"
   },
   "repository": {
@@ -23,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/X-Studios-ops/My-Hey-Doctor.ai-website/issues"
   },
-  "homepage": "https://github.com/X-Studios-ops/My-Hey-Doctor.ai-website#readme"
+  "homepage": "https://github.com/X-Studios-ops/My-Hey-Doctor.ai-website#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }

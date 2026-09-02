@@ -1,0 +1,101 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://my-hey-doctor-ai-website.vercel.app/tools/bmi-calculator" />
+    <meta name="description" content="Advanced Body Mass Index interpretation, including limitations and age-related considerations. - Heydoctor.ai">  
+    <title>BMI & Health Interpretation Tool | Heydoctor.ai</title>  
+    <link rel="icon" type="image/png" href="../logo.png">  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">  
+    <style>  
+        :root {  
+            --bg-color: #0b1510;  
+            --card-bg: #12221a;  
+            --accent-green: #1ebd74;  
+            --text-main: #ffffff;  
+            --text-muted: #a0aec0;  
+            --gradient-accent: linear-gradient(135deg, #1ebd74, #0f9b58);  
+        }  
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }  
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }  
+        
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: rgba(11, 21, 16, 0.8); border-bottom: 1px solid rgba(30, 189, 116, 0.1); }  
+        .logo { font-size: 24px; font-weight: 800; letter-spacing: 1px; color: var(--text-main); text-decoration: none; }  
+        .logo span { color: var(--accent-green); }  
+        
+        .container { max-width: 600px; margin: 60px auto; padding: 0 20px; }
+        .tool-card { background-color: var(--card-bg); border: 1px solid rgba(30, 189, 116, 0.2); padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .tool-card h1 { font-size: 26px; margin-bottom: 10px; color: var(--accent-green); }
+        .tool-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 30px; }
+        
+        .tool-input { width: 100%; padding: 14px 15px; margin-bottom: 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-main); border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.3s; }
+        .tool-input:focus { border-color: var(--accent-green); }
+        
+        .tool-btn { background: var(--gradient-accent); color: white; border: none; padding: 14px 20px; border-radius: 8px; font-weight: 600; width: 100%; cursor: pointer; transition: opacity 0.3s, transform 0.2s; font-size: 16px; }
+        .tool-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+        
+        .tool-result { margin-top: 25px; padding: 20px; background: rgba(0, 0, 0, 0.3); border-radius: 8px; font-size: 15px; color: var(--text-main); display: none; border-left: 4px solid var(--accent-green); line-height: 1.8; }
+        
+        .back-link { display: inline-block; margin-top: 20px; color: var(--accent-green); text-decoration: none; font-size: 14px; }
+        .back-link:hover { text-decoration: underline; }
+    </style>  
+</head>  
+<body>  
+    <nav class="navbar">
+        <a href="/" class="logo">Heydoctor<span>.ai</span></a>
+    </nav>
+    <div class="container">
+        <div class="tool-card">
+            <h1>BMI & Health Interpretation Tool</h1>
+            <p class="tool-desc">Advanced Body Mass Index interpretation, including limitations and age-related considerations.</p>
+            
+            
+      <input type="number" id="weight" class="tool-input" placeholder="Weight in kg (e.g., 70)">
+      <input type="number" id="height" class="tool-input" placeholder="Height in cm (e.g., 175)">
+      <input type="number" id="age" class="tool-input" placeholder="Age (years)">
+    
+            
+            <button onclick="calculate()" class="tool-btn">Calculate</button>
+            <div id="result" class="tool-result"></div>
+            
+            <a href="/" class="back-link">⬅ Back to Home</a>
+        </div>
+    </div>
+    
+    <script>
+        function calculate() {
+            
+      const weight = parseFloat(document.getElementById('weight').value);
+      const heightCm = parseFloat(document.getElementById('height').value);
+      const age = parseInt(document.getElementById('age').value);
+      const resultBox = document.getElementById('result');
+      
+      if(!weight || !heightCm || !age) {
+        resultBox.style.display = 'block';
+        resultBox.style.borderLeftColor = '#ff4d4d';
+        resultBox.innerHTML = '⚠️ Please fill all fields.';
+        return;
+      }
+      
+      const bmi = (weight / Math.pow(heightCm/100, 2)).toFixed(1);
+      let cat = '';
+      let color = '';
+      if (bmi < 18.5) { cat = 'Underweight'; color = '#f6ad55'; }
+      else if (bmi < 25) { cat = 'Normal Weight'; color = '#1ebd74'; }
+      else if (bmi < 30) { cat = 'Overweight'; color = '#f6ad55'; }
+      else { cat = 'Obese'; color = '#ff4d4d'; }
+      
+      let note = "BMI is a simple height-to-weight ratio. It does not distinguish between muscle and fat mass.";
+      if (age > 65) {
+        note += " For older adults, a slightly higher BMI may offer protective health benefits.";
+      }
+      
+      resultBox.style.display = 'block';
+      resultBox.style.borderLeftColor = color;
+      resultBox.innerHTML = 'BMI: <strong>' + bmi + '</strong> (<span style="color:' + color + '">' + cat + '</span>)<br><br><strong>Interpretation & Limitations:</strong><br>' + note;
+    
+        }
+    </script>
+</body>  
+</html>

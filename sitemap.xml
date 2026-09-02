@@ -148,4 +148,65 @@
   <priority>0.9</priority>
 </url>
   
+
+  <url>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/tools/water-intake-calculator</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/tools/calorie-calculator</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/tools/ideal-weight-calculator</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/tools/sleep-calculator</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/tools/heart-rate-zone-calculator</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/tools/body-fat-calculator</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/tools/macro-calculator</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/tools/pregnancy-due-date-calculator</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/tools/blood-pressure-checker</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-hey-doctor-ai-website.vercel.app/tools/bmi-calculator</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
